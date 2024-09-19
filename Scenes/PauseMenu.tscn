@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwoybiejqaab3"]
+
+[ext_resource type="Shader" path="res://GDScripts/Shaders/PauseMenu.gdshader" id="1_gmfd4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay1a2"]
+shader = ExtResource("1_gmfd4")
+shader_parameter/lod = 0.0
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ay1a2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -194.0
+offset_right = 147.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -85.5
+offset_right = 71.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
