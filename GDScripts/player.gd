@@ -10,9 +10,6 @@ var gravity = 9.8
 @onready var head = $head
 @onready var camera = $head/Camera3D
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg1dq5xnfex0r"]
+
+[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/world.tscn" id="1_gbxum"]
+[ext_resource type="Script" path="res://GDScripts/game_manager.gd" id="1_my0g2"]
+[ext_resource type="Script" path="res://GDScripts/input_manager.gd" id="2_fawn2"]
+[ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/PauseMenu.tscn" id="3_hhntt"]
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_my0g2")
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("2_fawn2")
+
+[node name="World" parent="." instance=ExtResource("1_gbxum")]
+process_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_hhntt")]
+
+[connection signal="paused" from="." to="CanvasLayer/PauseMenu" method="_on_game_paused"]
+[connection signal="paused" from="." to="InputManager" method="_on_game_paused"]
+[connection signal="resumed" from="." to="CanvasLayer/PauseMenu" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="InputManager" method="_on_game_resumed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="CanvasLayer/PauseMenu"]
