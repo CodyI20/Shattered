@@ -93,7 +93,7 @@ material_override = SubResource("StandardMaterial3D_ub0ug")
 use_collision = true
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.390195, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0606481, 0)
 script = ExtResource("1_2w3v1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
@@ -105,6 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17339, 0)
 shape = SubResource("ConvexPolygonShape3D_l6cey")
 
 [node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71895, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76132, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00633425, -0.00200105, -0.00420582)
