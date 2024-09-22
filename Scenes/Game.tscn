@@ -20,10 +20,10 @@ process_mode = 2
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_hhntt")]
 
-[connection signal="paused" from="." to="CanvasLayer/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="InputManager" method="_on_game_paused"]
-[connection signal="resumed" from="." to="CanvasLayer/PauseMenu" method="_on_game_resumed"]
+[connection signal="paused" from="." to="CanvasLayer/PauseMenu" method="_on_game_paused"]
 [connection signal="resumed" from="." to="InputManager" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="CanvasLayer/PauseMenu" method="_on_game_resumed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
