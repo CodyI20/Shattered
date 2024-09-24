@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		AudioManager.jump_sfx.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get input direction and handle movement.
@@ -47,6 +48,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+	
+	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		AudioManager.walk_sfx.play()
+	if Input.is_action_just_released("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		AudioManager.walk_sfx.stop()
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 
