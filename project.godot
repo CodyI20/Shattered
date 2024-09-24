@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Shattered"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/safe_resource_loader/plugin.cfg")
+
 [input]
 
 up={

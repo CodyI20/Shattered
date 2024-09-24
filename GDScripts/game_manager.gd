@@ -1,7 +1,12 @@
 extends Node3D
-	
+
+class_name gameManager
+ 
 signal paused
 signal resumed
+
+var LoadedLevel : String
+var SpawnIndex : int
 
 func _process(delta: float) -> void:
 	game_state_change()

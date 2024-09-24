@@ -1,0 +1,6 @@
+/Music/Minecraft[[:space:]]Footsteps[[:space:]]-[[:space:]]Sound[[:space:]]Effect[[:space:]](HD).mp3 filter=lfs diff=lfs merge=lfs -text
+/Music/adaptiveSoundtrackCalmDemo.mp3 filter=lfs diff=lfs merge=lfs -text
+/Music/mysteryAmbient.mp3 filter=lfs diff=lfs merge=lfs -text
+/Art/SFX/Music/Minecraft[[:space:]]Footsteps[[:space:]]-[[:space:]]Sound[[:space:]]Effect[[:space:]](HD).mp3 filter=lfs diff=lfs merge=lfs -text
+/Art/SFX/Music/adaptiveSoundtrackCalmDemo.mp3 filter=lfs diff=lfs merge=lfs -text
+/Art/SFX/Music/mysteryAmbient.mp3 filter=lfs diff=lfs merge=lfs -text
