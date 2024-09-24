@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg1dq5xnfex0r"]
 
-[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/world.tscn" id="1_gbxum"]
+[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/World.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/input_manager.gd" id="2_fawn2"]
 [ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/PauseMenu.tscn" id="3_hhntt"]
+
 
 [node name="Game" type="Node3D"]
 process_mode = 3
