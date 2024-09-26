@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
+@export var world_root:NodePath
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -10,6 +11,11 @@ var gravity = 9.8
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
+
+var _world_root:Node3D = null
+
+func _ready():
+	_world_root = get_node(world_root)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
