@@ -13,6 +13,13 @@
 process_mode = 3
 script = ExtResource("1_my0g2")
 
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("2_fawn2")
+
+[node name="SaveLoadManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_35roi")
+
 [node name="WorldRoot" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_4s16o")
@@ -22,7 +29,6 @@ process_mode = 1
 script = ExtResource("6_lgsix")
 
 [node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
-unique_name_in_owner = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -32,18 +38,9 @@ process_mode = 2
 [node name="LoadButton2" type="Button" parent="UI/PauseMenu/VBoxContainer" index="6"]
 layout_mode = 2
 
-[node name="Utilities" type="Node" parent="."]
-
-[node name="SaveLoadManager" type="Node" parent="Utilities"]
-unique_name_in_owner = true
-script = ExtResource("3_35roi")
-
-[node name="InputManager" type="Node" parent="Utilities"]
-script = ExtResource("2_fawn2")
-
-[connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
+[connection signal="paused" from="." to="InputManager" method="_on_game_paused"]
 [connection signal="paused" from="." to="UI/PauseMenu" method="_on_game_paused"]
-[connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="InputManager" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="UI/PauseMenu" method="_on_game_resumed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

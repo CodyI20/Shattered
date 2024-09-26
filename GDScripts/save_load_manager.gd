@@ -1,7 +1,8 @@
 class_name SaverLoader
 extends Node
 
-@onready var _player:Player = %Player as Player
+@onready var _player: Player = %player
+
 @onready var _world_root:WorldRoot = %WorldRoot
 
 
@@ -11,8 +12,7 @@ func save_game():
 	# save the path to the currently loaded level
 	saved_game.level_path = _world_root.get_current_level_path()
 	
-	# store player health and position
-	saved_game.player_health = _player.health
+	# store player position
 	saved_game.player_position = _player.global_position
 
 	# collect all dynamic game elements	
@@ -23,7 +23,7 @@ func save_game():
 	saved_game.saved_data = saved_data
 	
 	# write the savegame to disk
-	ResourceSaver.save(saved_game, "user://savegame.tres")
+	ResourceSaver.save(saved_game, "res://savegame.tres")
 
 	
 	
@@ -47,9 +47,7 @@ func load_game():
 	
 	# restore player position
 	_player.global_position = saved_game.player_position
-	# verify & restore player health
-	_player.health = min(saved_game.player_health, 200)
-	
+		
 	# restore all dynamic game elements	
 	for item in saved_game.saved_data:
 		# skip over data we don't use anymore

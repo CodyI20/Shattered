@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SavedGame" load_steps=3 format=3 uid="uid://bfkleel1j468y"]
+
+[ext_resource type="Script" path="res://GDScripts/saved_data.gd" id="1_8l7hb"]
+[ext_resource type="Script" path="res://GDScripts/saved_game.gd" id="2_p2ebo"]
+
+[resource]
+script = ExtResource("2_p2ebo")
+level_path = "res://invalid.tscn"
+player_position = Vector3(-4.26306, -0.135215, 0.919733)
+saved_data = Array[ExtResource("1_8l7hb")]([])
