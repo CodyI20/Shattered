@@ -1,24 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg1dq5xnfex0r"]
 
-[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/world.tscn" id="1_gbxum"]
-[ext_resource type="Script" path="res://GDScripts/game_manager.gd" id="1_my0g2"]
-[ext_resource type="Script" path="res://GDScripts/input_manager.gd" id="2_fawn2"]
-[ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/PauseMenu.tscn" id="3_hhntt"]
+[ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_ftnuy"]
+[ext_resource type="Script" path="res://GDScripts/Managers/input_manager.gd" id="2_vo8nv"]
+[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/world.tscn" id="3_ekkth"]
+[ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/UIScenes/PauseMenu.tscn" id="4_ew7oh"]
 
 [node name="Game" type="Node3D"]
 process_mode = 3
-script = ExtResource("1_my0g2")
+script = ExtResource("1_ftnuy")
 
 [node name="InputManager" type="Node" parent="."]
-script = ExtResource("2_fawn2")
+script = ExtResource("2_vo8nv")
 
-[node name="World" parent="." instance=ExtResource("1_gbxum")]
+[node name="World" parent="." instance=ExtResource("3_ekkth")]
 process_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_hhntt")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_ew7oh")]
 
 [connection signal="paused" from="." to="InputManager" method="_on_game_paused"]
 [connection signal="paused" from="." to="CanvasLayer/PauseMenu" method="_on_game_paused"]
