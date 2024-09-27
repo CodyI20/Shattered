@@ -17,7 +17,7 @@ config/icon="res://Art/icon.svg"
 
 [autoload]
 
-AudioManager="*res://audio_manager.tscn"
+AudioManager="*res://Scenes/ScenePrefabs/audio_manager.tscn"
 
 [dotnet]
 
