@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="6_lgsix"]
 
-
 [node name="Game" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_my0g2")
@@ -42,10 +41,10 @@ script = ExtResource("3_35roi")
 [node name="InputManager" type="Node" parent="Utilities"]
 script = ExtResource("2_fawn2")
 
-[connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
 [connection signal="paused" from="." to="UI/PauseMenu" method="_on_game_paused"]
-[connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
+[connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
 [connection signal="resumed" from="." to="UI/PauseMenu" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

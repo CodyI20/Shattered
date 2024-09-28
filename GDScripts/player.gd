@@ -18,6 +18,7 @@ var gravity = 9.8
 
 
 var initial_camera_y = 0.0
+var _world_root:Node3D = null
 
 func _ready():
 	# Capture the mouse
@@ -25,11 +26,8 @@ func _ready():
 
 
 	initial_camera_y = camera.transform.origin.y
-
-var _world_root:Node3D = null
-
-func _ready():
 	_world_root = get_node(world_root)
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
