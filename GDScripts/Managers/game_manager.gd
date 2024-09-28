@@ -1,7 +1,13 @@
+class_name gameManager
 extends Node3D
-	
+ 
 signal paused
 signal resumed
+
+@onready var _saver_loader:SaverLoader = %SaveLoadManager
+
+var LoadedLevel : String
+var SpawnIndex : int
 
 func _process(delta: float) -> void:
 	game_state_change()
@@ -42,4 +48,9 @@ func _on_menu_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_save_game() -> void:
+	print("Saving game!")
+	_saver_loader.save_game()
+
 #endregion
