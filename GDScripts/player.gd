@@ -1,4 +1,7 @@
+class_name Player
 extends CharacterBody3D
+
+@export var world_root:NodePath
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -22,6 +25,11 @@ func _ready():
 
 
 	initial_camera_y = camera.transform.origin.y
+
+var _world_root:Node3D = null
+
+func _ready():
+	_world_root = get_node(world_root)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:

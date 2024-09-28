@@ -14,8 +14,12 @@ script = ExtResource("2_vo8nv")
 
 [node name="World" parent="." instance=ExtResource("3_ekkth")]
 process_mode = 1
+script = ExtResource("6_lgsix")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_ew7oh")]
@@ -30,4 +34,25 @@ process_mode = 2
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 
-[editable path="CanvasLayer/PauseMenu"]
+[node name="Utilities" type="Node" parent="."]
+
+[node name="SaveLoadManager" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("3_35roi")
+
+[node name="InputManager" type="Node" parent="Utilities"]
+script = ExtResource("2_fawn2")
+
+[connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
+[connection signal="paused" from="." to="UI/PauseMenu" method="_on_game_paused"]
+[connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="UI/PauseMenu" method="_on_game_resumed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/SaveButton" to="." method="_on_save_game"]
+
+[editable path="WorldRoot/TestLevel"]
+[editable path="UI/PauseMenu"]
