@@ -23,6 +23,10 @@ AudioManager="*res://Scenes/ScenePrefabs/audio_manager.tscn"
 
 project/assembly_name="Shattered"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/safe_resource_loader/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -32,10 +36,6 @@ folder_colors={
 "res://Scenes/": "green",
 "res://addons/": "yellow"
 }
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/safe_resource_loader/plugin.cfg")
 
 [input]
 
