@@ -9,6 +9,7 @@ signal resumed
 var LoadedLevel : String
 var SpawnIndex : int
 
+
 func _process(delta: float) -> void:
 	game_state_change()
 
@@ -43,7 +44,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_menu_button_pressed() -> void:
 	pause_game(false);
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file(FilePaths.MENU_SCENE_PATH)
 
 
 func _on_quit_button_pressed() -> void:
