@@ -14,12 +14,17 @@ var t_bob = 0.0
 
 var gravity = 9.8
 
+var is_crouching : bool = false
+
 @onready var head = $head
 @onready var camera = $head/Camera3D
 
 
 var initial_camera_y = 0.0
 
+func _input(event):
+	if event.is_action_pressed("crouch"):
+		toggle_crouch()
 
 func _ready():
 	# Capture the mouse
@@ -68,6 +73,13 @@ func _physics_process(delta: float) -> void:
 	camera.transform.origin = camera_pos
 
 	move_and_slide()
+	
+func toggle_crouch():
+	if is_crouching == true:
+		print("Uncrouch")
+	elif is_crouching == false:
+		print("Crouching")
+	is_crouching = !is_crouching
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=19 format=3 uid="uid://ban76iqpjhveh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,6 +33,98 @@ albedo_color = Color(1, 0.270588, 0.360784, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub0ug"]
 albedo_color = Color(0.460073, 0.692233, 0.949715, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpwkc"]
+albedo_color = Color(0.942899, 0.511648, 0.219903, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l6cey"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="Animation" id="Animation_cjql4"]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0606481, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.71895, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aq63l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0606481, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.71895, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ql1u4"]
+_data = {
+"RESET": SubResource("Animation_aq63l"),
+"crouch": SubResource("Animation_cjql4")
+}
 
 [node name="World" type="Node3D"]
 
@@ -84,3 +176,34 @@ height = 0.269139
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95822, 0.533265, 5.21207)
 material_override = SubResource("StandardMaterial3D_ub0ug")
 use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09646, 1.51679, -1.55029)
+material_override = SubResource("StandardMaterial3D_hpwkc")
+use_collision = true
+size = Vector3(2.13971, 0.150879, 4.10059)
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0606481, 0)
+script = ExtResource("1_2w3v1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17339, 0)
+mesh = SubResource("CapsuleMesh_o0080")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17339, 0)
+shape = SubResource("ConvexPolygonShape3D_l6cey")
+
+[node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71895, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00633425, -0.00200105, -0.00420582)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+libraries = {
+"": SubResource("AnimationLibrary_ql1u4")
+}
+
+[node name="audioManager" parent="." instance=ExtResource("2_vhqte")]
