@@ -53,4 +53,7 @@ func _on_save_game() -> void:
 	print("Saving game!")
 	_saver_loader.save_game()
 
+func _on_load_game() -> void:
+	print("Loading game")
+	_saver_loader.load_game()
 #endregion
