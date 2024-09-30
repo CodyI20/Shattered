@@ -19,7 +19,6 @@ var gravity = 9.8
 
 
 var initial_camera_y = 0.0
-var _world_root:Node3D = null
 
 
 func _ready():
