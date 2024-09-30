@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-@onready var _world_root: WorldRoot = %WorldRoot
+# @onready var _world_root: WorldRoot = %WorldRoot
 
 
 const SPEED = 5.0
