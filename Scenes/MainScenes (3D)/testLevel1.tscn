@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=12 format=3 uid="uid://b84t00uyybvne"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_08r0s"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_piydm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,7 +37,7 @@ albedo_color = Color(1, 0.270588, 0.360784, 1)
 albedo_color = Color(0.460073, 0.692233, 0.949715, 1)
 
 [node name="World" type="Node3D" groups=["level"]]
-script = ExtResource("1_08r0s")
+script = ExtResource("1_piydm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
