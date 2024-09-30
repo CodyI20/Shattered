@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=2 format=3 uid="uid://ciw5dtoa8rkpj"]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=2 format=3 uid="uid://iktx7jwj7r45"]
 
 [ext_resource type="Script" path="res://GDScripts/saved_game.gd" id="1_bjvrl"]
 

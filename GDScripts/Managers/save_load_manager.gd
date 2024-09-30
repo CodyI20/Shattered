@@ -14,16 +14,9 @@ func save_game():
 	
 	# store player position
 	saved_game.player_position = _player.global_position
-
-	# collect all dynamic game elements	
-	var saved_data:Array[SavedData] = []
-	get_tree().call_group("game_events", "on_save_game", saved_data)
-	
-	# store them in the savegame
-	saved_game.saved_data = saved_data
 	
 	# write the savegame to disk
-	ResourceSaver.save(saved_game, "res://savegame.tres")
+	ResourceSaver.save(saved_game, "user://savegame.tres")
 
 	
 	
@@ -47,20 +40,3 @@ func load_game():
 	
 	# restore player position
 	_player.global_position = saved_game.player_position
-		
-	# restore all dynamic game elements	
-	for item in saved_game.saved_data:
-		# skip over data we don't use anymore
-		if item is UnusedData:
-			continue
-		
-		# load the scene of the saved item and create a new instance
-		var scene := load(item.scene_path) as PackedScene
-		var restored_node = scene.instantiate()
-		# add it to the world root
-		_world_root.add_child(restored_node)
-		# and run any custom load logic
-		if restored_node.has_method("on_load_game"):
-			restored_node.on_load_game(item)
-		
-	
