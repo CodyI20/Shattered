@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=17 format=3 uid="uid://cy0fst5s03t0c"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_08r0s"]
+[ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="2_3i2x5"]
+[ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/alter_1_layout.gd" id="3_8nwk8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,6 +37,18 @@ albedo_color = Color(1, 0.270588, 0.360784, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub0ug"]
 albedo_color = Color(0.460073, 0.692233, 0.949715, 1)
+
+[sub_resource type="Animation" id="Animation_1ke38"]
+resource_name = "PersonalitySwitch"
+
+[sub_resource type="Animation" id="Animation_7byhp"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u4sb5"]
+_data = {
+"PersonalitySwitch": SubResource("Animation_1ke38"),
+"RESET": SubResource("Animation_7byhp")
+}
 
 [node name="World" type="Node3D" groups=["level"]]
 script = ExtResource("1_08r0s")
@@ -76,14 +90,38 @@ material_override = SubResource("StandardMaterial3D_kk5v2")
 use_collision = true
 size = Vector3(0.05, 2.166, 20)
 
-[node name="cylinder" type="CSGCylinder3D" parent="."]
+[node name="MainPersonalityLayout" type="Node3D" parent="."]
+script = ExtResource("2_3i2x5")
+
+[node name="cylinder" type="CSGCylinder3D" parent="MainPersonalityLayout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.338, 0.179928, -0.287)
 material_override = SubResource("StandardMaterial3D_d3ndf")
 use_collision = true
 radius = 0.640691
 height = 0.269139
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="MainPersonalityLayout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95822, 0.533265, 5.21207)
 material_override = SubResource("StandardMaterial3D_ub0ug")
 use_collision = true
+
+[node name="Alter1Layout" type="Node3D" parent="."]
+visible = false
+script = ExtResource("3_8nwk8")
+
+[node name="cylinder" type="CSGCylinder3D" parent="Alter1Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33634, 0.179928, 2.84557)
+material_override = SubResource("StandardMaterial3D_d3ndf")
+use_collision = true
+radius = 0.640691
+height = 0.269139
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Alter1Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94005, 0.533265, 3.65893)
+material_override = SubResource("StandardMaterial3D_ub0ug")
+use_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u4sb5")
+}

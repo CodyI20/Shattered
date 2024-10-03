@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=7 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/player.gd" id="1_xrn6u"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_ntxft"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/main_personality_state.gd" id="3_8qxcv"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/alter_1_state.gd" id="3_tqs6j"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
 
@@ -22,3 +25,17 @@ shape = SubResource("CapsuleShape3D_i58ng")
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76132, 0)
+
+[node name="AlterSwapFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ntxft")
+initial_state = NodePath("MainPersonality")
+
+[node name="MainPersonality" type="Node" parent="AlterSwapFSM"]
+script = ExtResource("3_8qxcv")
+
+[node name="Alter1" type="Node" parent="AlterSwapFSM"]
+script = ExtResource("3_tqs6j")
+
+[node name="Alter2" type="Node" parent="AlterSwapFSM"]
+
+[node name="Alter3" type="Node" parent="AlterSwapFSM"]
