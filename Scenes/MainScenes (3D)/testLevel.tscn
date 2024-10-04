@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=21 format=3 uid="uid://cy0fst5s03t0c"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_08r0s"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="2_3i2x5"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_clkhv"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/alter_1_layout.gd" id="3_8nwk8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
@@ -38,16 +39,244 @@ albedo_color = Color(1, 0.270588, 0.360784, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub0ug"]
 albedo_color = Color(0.460073, 0.692233, 0.949715, 1)
 
-[sub_resource type="Animation" id="Animation_1ke38"]
-resource_name = "PersonalitySwitch"
-
 [sub_resource type="Animation" id="Animation_7byhp"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FSM/MainPersonalityLayout/MPcylinder:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/MainPersonalityLayout/MPCSGBox3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/Alter1Layout/A1cylinder:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FSM/Alter1Layout/A1CSGBox3D:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FSM/Alter1Layout:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FSM/MainPersonalityLayout:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1ke38"]
+resource_name = "SwitchFromMainPersonality"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FSM/MainPersonalityLayout/MPcylinder:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/MainPersonalityLayout/MPCSGBox3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/MainPersonalityLayout:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wo3vu"]
+resource_name = "SwitchToMainPersonality"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FSM/MainPersonalityLayout/MPcylinder:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/MainPersonalityLayout/MPCSGBox3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/MainPersonalityLayout:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_7dyk2"]
+resource_name = "SwitchToAlter1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FSM/Alter1Layout/A1cylinder:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/Alter1Layout/A1CSGBox3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/Alter1Layout:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_6cp03"]
+resource_name = "SwitchFromAlter1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FSM/Alter1Layout/A1cylinder:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FSM/Alter1Layout/A1CSGBox3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/Alter1Layout:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4sb5"]
 _data = {
-"PersonalitySwitch": SubResource("Animation_1ke38"),
-"RESET": SubResource("Animation_7byhp")
+"RESET": SubResource("Animation_7byhp"),
+"SwitchFromAlter1": SubResource("Animation_6cp03"),
+"SwitchFromMainPersonality": SubResource("Animation_1ke38"),
+"SwitchToAlter1": SubResource("Animation_7dyk2"),
+"SwitchToMainPersonality": SubResource("Animation_wo3vu")
 }
 
 [node name="World" type="Node3D" groups=["level"]]
@@ -90,38 +319,51 @@ material_override = SubResource("StandardMaterial3D_kk5v2")
 use_collision = true
 size = Vector3(0.05, 2.166, 20)
 
-[node name="MainPersonalityLayout" type="Node3D" parent="."]
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_clkhv")
+initial_state = NodePath("MainPersonalityLayout")
+
+[node name="MainPersonalityLayout" type="Node3D" parent="FSM"]
 script = ExtResource("2_3i2x5")
 
-[node name="cylinder" type="CSGCylinder3D" parent="MainPersonalityLayout"]
+[node name="MPcylinder" type="CSGCylinder3D" parent="FSM/MainPersonalityLayout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.338, 0.179928, -0.287)
 material_override = SubResource("StandardMaterial3D_d3ndf")
 use_collision = true
 radius = 0.640691
 height = 0.269139
 
-[node name="CSGBox3D" type="CSGBox3D" parent="MainPersonalityLayout"]
+[node name="MPCSGBox3D" type="CSGBox3D" parent="FSM/MainPersonalityLayout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95822, 0.533265, 5.21207)
 material_override = SubResource("StandardMaterial3D_ub0ug")
 use_collision = true
 
-[node name="Alter1Layout" type="Node3D" parent="."]
+[node name="MainPersAnimator" type="AnimationPlayer" parent="FSM/MainPersonalityLayout"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_u4sb5")
+}
+
+[node name="Alter1Layout" type="Node3D" parent="FSM"]
 visible = false
 script = ExtResource("3_8nwk8")
 
-[node name="cylinder" type="CSGCylinder3D" parent="Alter1Layout"]
+[node name="A1cylinder" type="CSGCylinder3D" parent="FSM/Alter1Layout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33634, 0.179928, 2.84557)
 material_override = SubResource("StandardMaterial3D_d3ndf")
+transparency = 1.0
 use_collision = true
 radius = 0.640691
 height = 0.269139
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Alter1Layout"]
+[node name="A1CSGBox3D" type="CSGBox3D" parent="FSM/Alter1Layout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94005, 0.533265, 3.65893)
 material_override = SubResource("StandardMaterial3D_ub0ug")
+transparency = 1.0
 use_collision = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Alter1Animator" type="AnimationPlayer" parent="FSM/Alter1Layout"]
+root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_u4sb5")
 }

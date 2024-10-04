@@ -1,6 +1,19 @@
-extends MainMechanicLayoutBase
+extends State
+class_name Alter1LayoutState
+
+@onready var alter_1_animator: AnimationPlayer = $Alter1Animator
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Events.alter1_swap.connect(on_alter_swap)
+	alter_1_animator.play("RESET")
+	Events.main_personality_swap.connect(on_main_personality_swap)
+	
+func Enter():
+	alter_1_animator.play("SwitchToAlter1")
+
+func Exit():
+	print_debug("EXITING ALTER1LAYOUT")
+	alter_1_animator.play("SwitchFromAlter1")
+
+func on_main_personality_swap() -> void:
+	state_transition.emit(self, "MainPersonalityLayout")
