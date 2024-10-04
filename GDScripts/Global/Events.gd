@@ -7,5 +7,5 @@ signal player_waking(is_walking: bool)
 
 # ALTER EVENTS
 
-signal alter1_swap(entered: bool)
-signal main_personality_swap(entered: bool)
+signal alter1_swap()
+signal main_personality_swap()
