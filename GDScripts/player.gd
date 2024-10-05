@@ -41,15 +41,20 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	# Add gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		Events.player_waking.emit(false)
+		
 	else:
 		if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 			Events.player_waking.emit(true)
-		if Input.is_action_just_released("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		elif Input.is_action_just_released("up") or Input.is_action_just_released("down") or Input.is_action_just_released("left") or Input.is_action_just_released("right"):
 			Events.player_waking.emit(false)
+
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
