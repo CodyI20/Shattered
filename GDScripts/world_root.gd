@@ -23,12 +23,6 @@ func load_level_async(path:String):
 	# add to world root
 	add_child(next_level)
 
-	# move any other nodes to front so they render above the level
-	for child in get_children():
-		if child.is_in_group("world_root_no_touch"):
-			child.move_to_front()
-	
-
 	get_tree().paused = false
 	# connect the signal to get notified when the exit is reached
 

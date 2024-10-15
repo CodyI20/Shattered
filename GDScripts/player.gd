@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 # @onready var _world_root: WorldRoot = %WorldRoot
-
+@export var world_root:NodePath
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

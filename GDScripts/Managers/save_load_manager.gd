@@ -1,6 +1,7 @@
 class_name SaverLoader
 extends Node
 
+
 @onready var _player: Player = %player
 
 @onready var _world_root:WorldRoot = %WorldRoot

@@ -19,9 +19,10 @@ script = ExtResource("5_4s16o")
 [node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
 process_mode = 1
 
-[node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
+[node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
 process_mode = 1
+world_root = NodePath("..")
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2

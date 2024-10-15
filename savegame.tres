@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_bjvrl")
 level_path = "res://Levels/testLevel.tscn"
+player_node = ""
 player_position = Vector3(-2.40663, -0.135215, 0.220104)
