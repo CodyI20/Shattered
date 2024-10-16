@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg1dq5xnfex0r"]
+[gd_scene load_steps=13 format=3 uid="uid://bg1dq5xnfex0r"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interactable.gd" id="4_jhwf8"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
+[ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Keypad/Keypad.tscn" id="5_ggsvn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjv6r"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q4tsj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1e2n5"]
 
 [node name="Game" type="Node3D"]
 process_mode = 3
@@ -22,6 +30,20 @@ process_mode = 1
 
 [node name="StaticBody3D" parent="WorldRoot/TestLevel/MeshInstance3D" index="0"]
 script = ExtResource("4_jhwf8")
+
+[node name="Keypad" parent="WorldRoot/TestLevel" instance=ExtResource("5_ggsvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71232, 1.65757, 0.109212)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 3.03629, 0, 0, 0, 1, 4.70261, 0.48291, -0.508911)
+material_override = SubResource("StandardMaterial3D_rjv6r")
+mesh = SubResource("BoxMesh_q4tsj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldRoot/TestLevel/MeshInstance3D2"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/TestLevel/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_1e2n5")
 
 [node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
