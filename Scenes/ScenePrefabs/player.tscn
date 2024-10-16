@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=8 format=3 uid="uid://dwgdjyovkr0dc"]
 
-[ext_resource type="Script" path="res://GDScripts/player.gd" id="1_xrn6u"]
+[ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
+[ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_ntxft"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/main_personality_state.gd" id="3_8qxcv"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/alter_1_state.gd" id="3_tqs6j"]
@@ -10,7 +11,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i58ng"]
 
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.390195, 0)
 script = ExtResource("1_xrn6u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -25,6 +25,12 @@ shape = SubResource("CapsuleShape3D_i58ng")
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76132, 0)
+
+[node name="InteractionRayCast" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000308514, -0.00338995, 1.54972e-05)
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+script = ExtResource("2_i2c3v")
 
 [node name="AlterSwapFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_ntxft")
