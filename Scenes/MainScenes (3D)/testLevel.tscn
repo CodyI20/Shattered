@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=25 format=3 uid="uid://cy0fst5s03t0c"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_08r0s"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="2_3i2x5"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_clkhv"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/alter_1_layout.gd" id="3_8nwk8"]
+[ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="5_vrcyn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -337,6 +338,17 @@ collision_layer = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_1e2n5")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.95632, 0, 0, 0, 1, 4.70261, 0.48291, -0.105042)
+material_override = SubResource("StandardMaterial3D_rjv6r")
+mesh = SubResource("BoxMesh_q4tsj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_1e2n5")
+
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_clkhv")
 initial_state = NodePath("MainPersonalityLayout")
@@ -385,3 +397,6 @@ root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_u4sb5")
 }
+
+[node name="Keypad" parent="." instance=ExtResource("5_vrcyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7109, 1.63908, 0.392558)

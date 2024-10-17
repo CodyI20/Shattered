@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm8uqmaf1bwa4"]
 
-[ext_resource type="Script" path="res://GDScripts/Keypad/KeypadButton.gd" id="1_pnuqu"]
+[ext_resource type="Script" path="res://GDScripts/Keypad/KeypadButton.gd" id="1_3jq36"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awvfr"]
 albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
@@ -17,7 +17,7 @@ size = Vector3(0.1, 0.1, 0.012)
 
 [node name="KeypadButton" type="StaticBody3D"]
 collision_layer = 2
-script = ExtResource("1_pnuqu")
+script = ExtResource("1_3jq36")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_2dvas")

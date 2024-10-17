@@ -34,7 +34,7 @@ func on_button_interact(value):
 	
 	#is_audio_playing = true
 	#pressed_audio.playing = true
-	print("interacted with" + value)
+	print("interacted with " + value)
 	
 # Logic for when enter key is pressed
 	if value == ".":
