@@ -32,8 +32,7 @@ func set_interaction_text(text):
 	if !text:
 		interaction_label.visible = false
 	else:
-# Grabs the interact key from the interact keymap
-# TODO: Try this fucking code and see if it works: https://docs.godotengine.org/en/stable/classes/class_inputmap.html#class-inputmap-method-action-get-events Array[InputEvent] action_get_events(action: StringName) String as_text() const
-		var key_name = InputMap.action_get_events("interact")[0].as_text_keycode
-		interaction_label.text = "Press %s to %s" % [key_name, text]
+		# Grabs the interact key from the interact keymap
+		var key_name = OS.get_keycode_string(InputMap.action_get_events("interact")[0].physical_keycode)
+		interaction_label.text = "Press %s to interact" % [key_name]
 		interaction_label.visible = true
