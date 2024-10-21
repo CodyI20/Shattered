@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg1dq5xnfex0r"]
+[gd_scene load_steps=14 format=3 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
@@ -7,6 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/UIScenes/PauseMenu.tscn" id="3_hhntt"]
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
+[ext_resource type="PackedScene" path="res://Scenes/MainScenes (3D)/rollercoaster_v_1_1.tscn" id="5_oxcar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnute"]
+albedo_color = Color(1, 0.780392, 0.839216, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nmlut"]
+size = Vector2(10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehv5c"]
+albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_an21h"]
+bake_interval = 49.43
+_data = {
+"points": PackedVector3Array(0, 0, 20, 0, 0, 20, -100, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 50, 0, 40, 0, 0, 20, 0, 0, -20, 100, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, -40, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0, 0, 0, 0, 0, 0, -50, 0, -40, 0, 0, -20, 0, 0, 0, -100, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+up_vector_enabled = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wsnxa"]
 
 [node name="Game" type="Node3D"]
 process_mode = 3
@@ -16,12 +37,223 @@ script = ExtResource("1_my0g2")
 unique_name_in_owner = true
 script = ExtResource("5_4s16o")
 
-[node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
-process_mode = 1
-
 [node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
 process_mode = 1
+movement_speed = 2.778
+
+[node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
+process_mode = 1
+
+[node name="DirectionalLight3D" parent="WorldRoot/TestLevel" index="0"]
+visible = false
+
+[node name="wall1" parent="WorldRoot/TestLevel" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.769852, -11.741, 1.127, 5.34818)
+size = Vector3(0.05, 2.166, 11.6934)
+
+[node name="wall6" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.741, 1.127, -5.70795)
+material_override = SubResource("StandardMaterial3D_wnute")
+use_collision = true
+size = Vector3(0.05, 2.166, 9.58411)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02693, 0.808768, 0)
+mesh = SubResource("PlaneMesh_nmlut")
+
+[node name="Park#1" type="Node3D" parent="WorldRoot"]
+visible = false
+
+[node name="floor2" type="CSGBox3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.492, 0, -0.392)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(100, 0.1, 20)
+
+[node name="floor3" type="CSGBox3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(1.80524, 0, 0, 0, 1, 0, 0, 0, 16.5946, -80.732, 0, -0.334)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor4" type="CSGBox3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -947.07, 0, -413.079)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor5" type="CSGBox3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -955.71, 0, 403.143)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="wall6" type="CSGBox3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.741, 1.127, -5.70795)
+material_override = SubResource("StandardMaterial3D_wnute")
+use_collision = true
+size = Vector3(0.05, 2.166, 9.58411)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(-4.37114e-08, 0.692343, 0, -1, -3.02633e-08, 0, 0, 0, 1, -110.39, 51.7438, 0)
+radius = 50.0
+height = 0.039
+sides = 18
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="WorldRoot/Park#1"]
+transform = Transform3D(2073.2, 0, 0, 0, -7.94105, 0, 0, 0, 342.78, -1154.43, 0, 0)
+radial_segments = 25
+
+[node name="Park#2" type="Node3D" parent="WorldRoot"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 110.762, 46.2849, 0)
+radius = 45.705
+height = 0.039
+sides = 23
+
+[node name="underground" type="CSGBox3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(799.863, 0.1, 650)
+
+[node name="Water" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358193, 0)
+polygon = PackedVector2Array(0, 0, 2, 2, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0, -0.039)
+curve = SubResource("Curve3D_an21h")
+
+[node name="Ferris wheel area" type="Node3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0.025, 0)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="WorldRoot/Park#2/Ferris wheel area"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -82.5047, 0, 0)
+polygon = PackedVector2Array(0, 0, 0, 50, 15, 50, 30, 35, 50, 20, 72, 10, 72, -10, 50, -20, 30, -35, 15, -50, 0, -50)
+depth = 0.05
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldRoot/Park#2/Ferris wheel area"]
+mesh = SubResource("ArrayMesh_wsnxa")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.505, 0.025, 0)
+radius = 10.0
+height = 0.05
+sides = 16
+
+[node name="Fountain" type="Node3D" parent="WorldRoot/Park#2/Ferris wheel area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0.05, 0)
+
+[node name="Sides" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+radius = 4.0
+height = 1.0
+sides = 64
+
+[node name="Middle" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+use_collision = true
+height = 3.0
+
+[node name="Bench" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.535, 0.3, -3.535)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench2" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.535, 0.3, 3.535)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench3" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 3.535, 0.3, 3.535)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench4" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.535, 0.3, -3.535)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench5" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.3, 0)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench6" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.3, 0)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench7" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.3, 5)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Bench8" type="CSGBox3D" parent="WorldRoot/Park#2/Ferris wheel area/Fountain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.3, -5)
+use_collision = true
+size = Vector3(0.5, 0.6, 1)
+
+[node name="Park right area middle trees" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 219.022, -80.838, 80.838)
+polygon = PackedVector2Array(7.65405, -13.7137, 21.7323, -13.7898, 35.5056, 3.86957, 48.2835, 19.3922, 65.2751, 36.6084, 86.2953, 47.4229, 106.591, 72.2305, 109.34, 90.6312, 98.0505, 128.927, 17.3725, 132.124, 6.08176, 75.1155, -54.795, 71.4586, -151.146, 79.3906, -152.293, 50.731, -113.316, 44.999, -90.3878, 19.7786, -85.8022, -27.2232, -67.46, -28.3696, -53.7034, -3.14915, -45.6787, 15.193, -19.3118, 19.7786, 5.90868, 12.9002)
+depth = 0.05
+
+[node name="Park path left side" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 109.511, 0, 80.838)
+polygon = PackedVector2Array(7.65405, -13.7137, 21.7323, -13.7898, 35.5056, 3.86957, 48.2835, 19.3922, 65.2751, 36.6084, 86.2953, 47.4229, 106.591, 72.2305, 109.34, 90.6312, 98.0505, 128.927, 17.3725, 132.124, 6.08176, 75.1155, -54.795, 71.4586, -151.146, 79.3906, -152.293, 50.731, -113.316, 44.999, -90.3878, 19.7786, -85.8022, -27.2232, -67.46, -28.3696, -53.7034, -3.14915, -45.6787, 15.193, -19.3118, 19.7786, 5.90868, 12.9002)
+depth = 0.05
+
+[node name="Park path right side" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 130.125, 0, -48.3321)
+polygon = PackedVector2Array(-9.11371, -15.8487, -26.2243, -38.0924, -44.1903, -47.5032, -61.3008, -42.3701, -84.4001, -27.8261, -92.0999, -3.01584, -106.644, -6.43795, -111.777, -26.9706, -130.599, -32.1038, -153.698, -19.2709, -171.664, -3.87137, -197.33, -5.58242, -222.14, -23.5485, -228.984, -57.7696, -207.596, -86.8575, -214.44, -102.257, -265.772, -81.7243, -274.327, -108.246, -219.573, -127.067, -151.987, -139.9, -114.344, -140.756, -81.8335, -137.334, -66.4341, -161.288, -79.267, -205.776, -56.1677, -213.475, -36.4906, -168.988, -5.69159, -139.045, 25.1074, -99.6904, 67.8837, -86.8575, 113.227, -78.3022, 114.082, -51.7809, 75.5834, -42.3701, 40.5068, -27.8261, 8.85236, -15.8487)
+depth = 0.05
+
+[node name="Park path entrance #2" type="CSGBox3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0.05, 0)
+size = Vector3(144.639, 0.05, 20)
+
+[node name="Building" type="CSGBox3D" parent="WorldRoot/Park#2/Park path entrance #2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3833, 2.45, 14.6144)
+size = Vector3(55.5435, 7, 12)
+
+[node name="Building3" type="CSGBox3D" parent="WorldRoot/Park#2/Park path entrance #2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3967, 2.45, -14.351)
+size = Vector3(73.5703, 7, 12)
+
+[node name="Park path entrance #1" type="CSGBox3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 265.067, 0.025, 60.5165)
+size = Vector3(101.053, 0.05, 20)
+
+[node name="Building3" type="CSGBox3D" parent="WorldRoot/Park#2/Park path entrance #1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.5978, 2.475, 13.216)
+size = Vector3(12, 7, 85.3868)
+
+[node name="Building4" type="CSGBox3D" parent="WorldRoot/Park#2/Park path entrance #1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.21572, 2.475, -14.5434)
+size = Vector3(12, 7, 85.3868)
+
+[node name="Rollercoaster v1_1" parent="WorldRoot/Park#2" instance=ExtResource("5_oxcar")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -231.45, -1.74917, 2.52975)
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
