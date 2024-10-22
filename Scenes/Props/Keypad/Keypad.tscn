@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjpt0ihtv1t6q"]
 
-[ext_resource type="Script" path="res://GDScripts/Keypad/Keypad.gd" id="1_2mj1g"]
+[ext_resource type="Script" path="res://GDScripts/Props Logic/Keypad/Keypad.gd" id="1_2mj1g"]
 [ext_resource type="PackedScene" uid="uid://bm8uqmaf1bwa4" path="res://Scenes/Props/Keypad/Keypad Button/Keypad Button.tscn" id="1_hqti3"]
 [ext_resource type="Texture2D" uid="uid://qgpiy3bbe5ye" path="res://Art/Assets/white tick.png" id="3_a0bov"]
 

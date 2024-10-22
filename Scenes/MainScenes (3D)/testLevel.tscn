@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=26 format=3 uid="uid://cy0fst5s03t0c"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_08r0s"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="2_3i2x5"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_clkhv"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/alter_1_layout.gd" id="3_8nwk8"]
 [ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="5_vrcyn"]
+[ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="6_quiuy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -400,3 +401,6 @@ libraries = {
 
 [node name="Keypad" parent="." instance=ExtResource("5_vrcyn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7109, 1.63908, 0.392558)
+
+[node name="Paper" parent="." instance=ExtResource("6_quiuy")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.72473, 0.99087, -2.85011)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg1dq5xnfex0r"]
+[gd_scene load_steps=10 format=3 uid="uid://bg1dq5xnfex0r"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interactable.gd" id="4_jhwf8"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v8rq"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Game" type="Node3D"]
 process_mode = 3
@@ -32,6 +35,13 @@ world_root = NodePath("..")
 process_mode = 2
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("3_hhntt")]
+
+[node name="ColorRect" parent="UI/PauseMenu" index="0"]
+offset_left = -3.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 2.0
+scale = Vector2(1.00192, 1)
 
 [node name="InteractionLabel" type="Label" parent="UI"]
 anchors_preset = 12
@@ -58,6 +68,39 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Letter" type="Panel" parent="UI"]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -300.0
+offset_right = 225.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2v8rq")
+
+[node name="MarginContainer" type="ScrollContainer" parent="UI/Letter"]
+custom_minimum_size = Vector2(450, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996144, 0.985059)
+
+[node name="Label" type="Label" parent="UI/Letter/MarginContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(450, 600)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 0
+autowrap_mode = 3
 
 [node name="Utilities" type="Node" parent="."]
 

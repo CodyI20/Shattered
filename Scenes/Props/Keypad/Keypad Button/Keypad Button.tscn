@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm8uqmaf1bwa4"]
 
-[ext_resource type="Script" path="res://GDScripts/Keypad/KeypadButton.gd" id="1_3jq36"]
+[ext_resource type="Script" path="res://GDScripts/Props Logic/Keypad/KeypadButton.gd" id="1_3jq36"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awvfr"]
 albedo_color = Color(0.372549, 0.372549, 0.372549, 1)
