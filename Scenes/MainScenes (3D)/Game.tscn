@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/UIScenes/PauseMenu.tscn" id="3_hhntt"]
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
-[ext_resource type="PackedScene" path="res://Scenes/MainScenes (3D)/rollercoaster_v_1_1.tscn" id="5_oxcar"]
+[ext_resource type="PackedScene" uid="uid://3yum6obony1d" path="res://Scenes/Imports/Rollercoaster v1.4.fbx" id="6_k07fg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnute"]
 albedo_color = Color(1, 0.780392, 0.839216, 1)
@@ -40,7 +40,6 @@ script = ExtResource("5_4s16o")
 [node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
 process_mode = 1
-movement_speed = 2.778
 
 [node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
 process_mode = 1
@@ -252,8 +251,8 @@ size = Vector3(12, 7, 85.3868)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.21572, 2.475, -14.5434)
 size = Vector3(12, 7, 85.3868)
 
-[node name="Rollercoaster v1_1" parent="WorldRoot/Park#2" instance=ExtResource("5_oxcar")]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -231.45, -1.74917, 2.52975)
+[node name="Rollercoaster v1_4" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -231.45, 0, 2.53)
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2

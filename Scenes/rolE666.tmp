@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvg7tun68ajc2"]
+
+[ext_resource type="PackedScene" uid="uid://c168ec4y2qlq8" path="res://Scenes/UIScenes/Rollercoaster v1.0.fbx" id="1_cw2lm"]
+
+[node name="Rollercoaster v1_0" instance=ExtResource("1_cw2lm")]
+
+[node name="Light" parent="." index="0"]
+visible = false
+
+[node name="Camera" parent="." index="1"]
+visible = false
+
+[node name="Track_001" parent="." index="8"]
+visible = false
