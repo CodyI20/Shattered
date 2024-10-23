@@ -13,14 +13,14 @@ var SpawnIndex : int
 func _process(delta: float) -> void:
 	game_state_change()
 
-func game_state_change() -> void:
+func game_state_change():
 	if Input.is_action_just_pressed("Esc"):
 		pause_game(!get_tree().paused)
 		
 
 ## This function handles both the pausing/resuming of the game and the event firing (emitting signals)
 ## CALL THIS FUNCTION WHENEVER YOU WANT TO PAUSE/RESUME THE GAME
-func pause_game(shouldPause := false) -> void:
+func pause_game(shouldPause := false):
 	get_tree().paused = shouldPause;
 	if get_tree().paused:
 		paused.emit()
