@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://hu646x1u0nu3"]
+
+[ext_resource type="PackedScene" uid="uid://r2oqhvvxjrxp" path="res://Scenes/Imports/car.fbx" id="1_32v5k"]
+
+[node name="car" instance=ExtResource("1_32v5k")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4int3gysyu3a"]
+[gd_scene load_steps=15 format=3 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
@@ -28,6 +28,9 @@ point_count = 9
 up_vector_enabled = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wsnxa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6uo6"]
+albedo_color = Color(0.619608, 0.92549, 0.564706, 1)
 
 [node name="Game" type="Node3D"]
 process_mode = 3
@@ -106,6 +109,13 @@ radial_segments = 25
 
 [node name="Park#2" type="Node3D" parent="WorldRoot"]
 
+[node name="underground" type="CSGBox3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(799.863, 0.1, 650)
+metadata/_edit_lock_ = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldRoot/Park#2"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
@@ -115,12 +125,6 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 110.76
 radius = 45.705
 height = 0.039
 sides = 23
-
-[node name="underground" type="CSGBox3D" parent="WorldRoot/Park#2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
-material_override = SubResource("StandardMaterial3D_ehv5c")
-use_collision = true
-size = Vector3(799.863, 0.1, 650)
 
 [node name="Water" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358193, 0)
@@ -212,23 +216,72 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.3
 use_collision = true
 size = Vector3(0.5, 0.6, 1)
 
-[node name="Park right area middle trees" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 219.022, -80.838, 80.838)
-polygon = PackedVector2Array(7.65405, -13.7137, 21.7323, -13.7898, 35.5056, 3.86957, 48.2835, 19.3922, 65.2751, 36.6084, 86.2953, 47.4229, 106.591, 72.2305, 109.34, 90.6312, 98.0505, 128.927, 17.3725, 132.124, 6.08176, 75.1155, -54.795, 71.4586, -151.146, 79.3906, -152.293, 50.731, -113.316, 44.999, -90.3878, 19.7786, -85.8022, -27.2232, -67.46, -28.3696, -53.7034, -3.14915, -45.6787, 15.193, -19.3118, 19.7786, 5.90868, 12.9002)
-depth = 0.05
-
 [node name="Park path left side" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 109.511, 0, 80.838)
 polygon = PackedVector2Array(7.65405, -13.7137, 21.7323, -13.7898, 35.5056, 3.86957, 48.2835, 19.3922, 65.2751, 36.6084, 86.2953, 47.4229, 106.591, 72.2305, 109.34, 90.6312, 98.0505, 128.927, 17.3725, 132.124, 6.08176, 75.1155, -54.795, 71.4586, -151.146, 79.3906, -152.293, 50.731, -113.316, 44.999, -90.3878, 19.7786, -85.8022, -27.2232, -67.46, -28.3696, -53.7034, -3.14915, -45.6787, 15.193, -19.3118, 19.7786, 5.90868, 12.9002)
 depth = 0.05
 
 [node name="Park path right side" type="CSGPolygon3D" parent="WorldRoot/Park#2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 130.125, 0, -48.3321)
-polygon = PackedVector2Array(-9.11371, -15.8487, -26.2243, -38.0924, -44.1903, -47.5032, -61.3008, -42.3701, -84.4001, -27.8261, -92.0999, -3.01584, -106.644, -6.43795, -111.777, -26.9706, -130.599, -32.1038, -153.698, -19.2709, -171.664, -3.87137, -197.33, -5.58242, -222.14, -23.5485, -228.984, -57.7696, -207.596, -86.8575, -214.44, -102.257, -265.772, -81.7243, -274.327, -108.246, -219.573, -127.067, -151.987, -139.9, -114.344, -140.756, -81.8335, -137.334, -66.4341, -161.288, -79.267, -205.776, -56.1677, -213.475, -36.4906, -168.988, -5.69159, -139.045, 25.1074, -99.6904, 67.8837, -86.8575, 113.227, -78.3022, 114.082, -51.7809, 75.5834, -42.3701, 40.5068, -27.8261, 8.85236, -15.8487)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 130.125, 0, -36.1219)
+polygon = PackedVector2Array(-10.0206, -13.8782, -17.5509, -28.66, -31.2555, -37.5108, -47.8152, -41.2225, -66.659, -34.3702, -80.649, -22.6642, -88.6434, -7.81758, -104.918, -10.9582, -111.777, -26.9706, -130.599, -32.1038, -153.698, -19.2709, -171.583, -8.52386, -197.33, -5.58242, -211.875, -11.7212, -222.14, -23.5485, -228.585, -38.9259, -228.984, -57.7696, -220, -74, -207.596, -86.8575, -214.44, -102.257, -265.772, -81.7243, -274.327, -108.246, -219.573, -127.067, -151.987, -139.9, -114.344, -140.756, -93.6996, -138.439, -72.7421, -147.068, -62.8797, -163.711, -67.1944, -232.131, -43.1549, -235.83, -42.1662, -159.31, -29.5698, -125.066, -11.8858, -98.2892, -2.96683, -85.7617, 3.69693, -77.5537, 16.3578, -69.7298, 29.4219, -65.8713, 43.6814, -67.7213, 74.3355, -72.508, 106.751, -75.9107, 123.304, -71.2327, 123.304, -52.341, 100.633, -52.8808, 84.0808, -51.9812, 58.712, -48.9225, 45.3978, -46.0438, 33.5231, -43.5249, 20.9286, -40.1064, 10.853, -32.9096, 5.63535, -24.8132, 4.97964, -13.8775)
 depth = 0.05
+metadata/_edit_lock_ = true
+
+[node name="Park right area middle trees2" type="Node3D" parent="WorldRoot/Park#2/Park path right side"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -69.091, -97.268, 0)
+
+[node name="Tree area right side" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -84.6519, 0.2431, -30.4792)
+polygon = PackedVector2Array(48.043, 22.0375, 38.4282, 21.5317, 29.232, 21.9887, 18.8, 23.5569, 10.4781, 25.2364, 1.64902, 27.5952, -2.24077, 29.9785, -5.84692, 31.4359, -8.89784, 31.2757, -18.2716, 29.4055, -28.2981, 30.1767, -33.944, 32.6523, -38.5716, 31.5725, -40.8854, 28.1789, -42.258, 20.9515, -37.4918, 18.3067, -28.5451, 15.2217, -18.2101, 12.5994, -3.40184, 10.4398, 12.746, 9.40652, 32.6335, 9.32547, 65.1818, 9.89648, 89.4503, 9.61098, 102.298, 15.3212, 107, 20, 107.152, 26.7417, 101.727, 33.594, 97.223, 35.0384, 92.4617, 34.6644, 85.7756, 32.7195, 77.6333, 31.5878, 73.8953, 31.1562, 69.7497, 29.5277, 65.6776, 26.4921, 62.2348, 24.9003, 55.2627, 23.3579)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area in the middle" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -45.4533, 0.05, 12.6494)
+polygon = PackedVector2Array(-31.0492, 16.7413, -36.6674, 18.946, -41.2414, 18.1375, -44.9136, 17.6733, -46.8934, 13.7685, -44.2711, 6.51864, -41.3403, 3.58782, -36.4042, 4.35909, -31.7935, 5.70153, -29.7987, 9.15398, -29.3602, 13.1469)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area left side" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 40.4005, 0.05, 5.0903)
+polygon = PackedVector2Array(-7.84956, -0.716248, -3.1918, 2.59374, 2.24606, 7.82269, 7.38828, 14.5881, 10.8922, 20.1428, 13.6398, 25.7018, 15.555, 30.351, 14.6121, 34.3658, 10.7422, 38.7842, 6.0787, 38.7551, 1.21931, 36.6355, -9.1949, 33.8627, -20.7495, 32.6008, -35.1257, 34.3664, -52.404, 40.9203, -66.7522, 44.9372, -79.9454, 44.4084, -96.6885, 42.2539, -106.55, 43.8876, -115.653, 46.3742, -125.48, 47.7043, -131.226, 44.2337, -131.269, 37.5659, -122.734, 33.613, -110.908, 31.2924, -94.5082, 28.6151, -78.2353, 28.288, -67.8257, 27.4189, -56.2939, 23.0755, -43.0452, 19.943, -30.9216, 14.9586, -26.3216, 10.2198, -21.0064, 4.66965, -13.6372, -0.474075)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area upper side" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -98.771, 0.05, 22.5483)
+polygon = PackedVector2Array(-7.64974, -11.8178, 1.53409, -8.52972, 1.42071, -5.92196, -0.846901, -2.63392, -2.20747, 2.46821, -1.64056, 10.745, 0.286907, 17.888, -1.52719, 21.5162, -6.96946, 22.1964, -10.711, 19.2485, -14.9061, 14.3732, -16.7202, 7.91048, -18.8744, 0.880882, -19.7815, -7.05576, -18.761, -10.4572, -13.9991, -12.1579)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area in the middle #2" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.88794, 0.05, 1.80652)
+visible = false
+polygon = PackedVector2Array(-22.1231, 22.2584, -26.6478, 22.5566, -31.3953, 23.2504, -37.7633, 23.3882, -43.3899, 22.858, -47.4461, 23.8238, -50.5255, 24.1339, -54.6067, 25.5697, -56.4376, 24.5314, -57.391, 20.24, -60.4105, 14.8978, -64.8896, 10.4213, -68.75, 7.62667, -73.0685, 4.57214, -72.4998, 2.71664, -70.7558, 0.922882, -67.193, 0.402969, -62.9129, -0.314896, -57.421, -1.67596, -51.9542, -2.56694, -47.2174, -3.02496, -40.1067, -3.82939, -33.4913, -4.18854, -26.9134, -3.84282, -18.0489, -2.19908, -13.7094, 0.384583, -8.43662, 4.21996, -2.77156, 6.60213, 5.15325, 7.70887, 10.2781, 8.28841, 13.1081, 9.12521, 14.9411, 9.42613, 15.5423, 10.1278, 15.2896, 11.4105, 14.0407, 12.2659, 12.1522, 12.9823, 5.64025, 15.6034, -1.77048, 18.0936, -11.1981, 20.183, -16.7975, 21.352)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area in the middle #2 split bottom" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.88794, 0.05, 1.80652)
+polygon = PackedVector2Array(-39.4008, -3.65321, -37.7428, -4.96835, -35.6898, -5.23628, -32.9426, -4.86546, -26.9134, -3.84282, -18.0489, -2.19908, -13.7094, 0.384583, -8.43662, 4.21996, -2.77156, 6.60213, 5.15325, 7.70887, 10.2781, 8.28841, 13.1081, 9.12521, 14.9411, 9.42613, 15.5423, 10.1278, 15.2896, 11.4105, 14.0407, 12.2659, 12.1522, 12.9823, 5.64025, 15.6034, -1.77048, 18.0936, -11.1981, 20.183, -14.056, 20.5689, -16.2397, 20.0895, -17.5029, 18.8176, -18.9523, 15.6019, -22.0457, 12.1461, -26.5866, 9.91396, -30.9105, 7.43556, -34.0757, 4.42744, -36.4857, 1.59653, -39.1185, -1.13176)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
+
+[node name="Tree area in the middle #2 split top" type="CSGPolygon3D" parent="WorldRoot/Park#2/Park path right side/Park right area middle trees2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.88794, 0.05, 1.80652)
+polygon = PackedVector2Array(-22.288, 23.7321, -24.8681, 24.1994, -28.0089, 24.3423, -31.9524, 24.7809, -37.5259, 24.8521, -43.2797, 24.9987, -47.2256, 25.4374, -51.4153, 25.5993, -54.6067, 25.5697, -56.4376, 24.5314, -57.391, 20.24, -60.4105, 14.8978, -64.8896, 10.4213, -68.75, 7.62667, -73.0685, 4.57214, -72.4998, 2.71664, -70.7558, 0.922882, -67.193, 0.402969, -62.9129, -0.314896, -57.421, -1.67596, -51.9542, -2.56694, -47.2174, -3.02496, -44.6092, -2.67371, -43.2879, -1.38362, -41.5386, 0.918045, -39.8691, 3.3129, -37.2931, 6.15897, -35.6647, 8.03415, -33.451, 9.6019, -30.832, 10.7893, -28.7529, 11.7577, -25.9205, 13.4505, -23.8146, 14.7649, -21.5864, 17.2057, -20.4759, 18.2235, -19.0833, 19.5323, -18.5267, 20.1033, -18.96, 21.965, -19.9493, 23.0176)
+depth = 0.05
+material = SubResource("StandardMaterial3D_s6uo6")
+metadata/_edit_lock_ = true
 
 [node name="Park path entrance #2" type="CSGBox3D" parent="WorldRoot/Park#2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.889, -0.0140564, -0.389053)
 size = Vector3(144.639, 0.05, 20)
 
 [node name="Building" type="CSGBox3D" parent="WorldRoot/Park#2/Park path entrance #2"]
@@ -253,6 +306,30 @@ size = Vector3(12, 7, 85.3868)
 
 [node name="Rollercoaster v1_4" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -231.45, 0, 2.53)
+
+[node name="Rollercoaster v1_4 placeholder #1" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 47.3995, 0, -265.457)
+
+[node name="Rollercoaster v1_4 placeholder #2" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, 217.532, 0, -250.457)
+
+[node name="Rollercoaster v1_4 placeholder #3" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.13952, 3.05176e-05, 263.518)
+
+[node name="Rollercoaster v1_4 placeholder #4" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, 234.34, 0, 34.8515)
+
+[node name="Rollercoaster v1_4 placeholder #5" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 169.582, 0, 216.81)
+
+[node name="Rollercoaster v1_4 placeholder #6" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, -258.224, 0, 189.108)
+
+[node name="Rollercoaster v1_4 placeholder #7" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, -309.542, 0, -250.457)
+
+[node name="Rollercoaster v1_4 placeholder #8" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
+transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, -371.842, 0, -23.8473)
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
