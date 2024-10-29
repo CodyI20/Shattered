@@ -21,6 +21,11 @@ AudioManager="*res://Scenes/ScenePrefabs/audio_manager.tscn"
 Events="*res://GDScripts/Global/Events.gd"
 FilePaths="*res://GDScripts/Global/FilePaths.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="Shattered"

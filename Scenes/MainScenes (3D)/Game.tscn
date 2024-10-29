@@ -26,7 +26,7 @@ process_mode = 1
 [node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1601, 2.11618, 26.8004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445421, -0.0294523, 4.26041)
 
 [node name="room test wo light and camera" parent="WorldRoot" instance=ExtResource("5_0umrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6218, 0, 20.7007)

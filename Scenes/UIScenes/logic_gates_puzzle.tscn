@@ -1,0 +1,170 @@
+[gd_scene load_steps=8 format=3 uid="uid://vcpyf6oawkrf"]
+
+[ext_resource type="Texture2D" uid="uid://c7yudn7u8bc0c" path="res://Art/2D/LogicGatePuzzle/logic-gate-or.png" id="1_hlpma"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DragItem.gd" id="2_7ofig"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DropZone.gd" id="2_ydt8n"]
+[ext_resource type="Texture2D" uid="uid://cp38xkomod3s5" path="res://Art/2D/LogicGatePuzzle/frame.png" id="3_4cn8l"]
+[ext_resource type="Texture2D" uid="uid://ccrp0deodjw0h" path="res://Art/2D/LogicGatePuzzle/logic-gate-and.png" id="3_o4kp6"]
+[ext_resource type="Texture2D" uid="uid://bos1opdlugnp5" path="res://Art/2D/LogicGatePuzzle/lightbulb_off.png" id="6_gwc8c"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
+
+[node name="LogicGatesPuzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ANDGATE1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.935
+anchor_top = 0.211
+anchor_right = 0.935
+anchor_bottom = 0.211
+offset_left = -70.2001
+offset_top = -70.88
+offset_right = 70.7999
+offset_bottom = 70.12
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(74, 72)
+texture = ExtResource("3_o4kp6")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("2_7ofig")
+
+[node name="ORGATE" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.935917
+anchor_top = 0.359722
+anchor_right = 0.935917
+anchor_bottom = 0.359722
+offset_left = -69.9601
+offset_top = -70.5
+offset_right = 71.0399
+offset_bottom = 70.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(74, 71)
+texture = ExtResource("1_hlpma")
+expand_mode = 5
+script = ExtResource("2_7ofig")
+gatetype = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ANDGATE2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.935
+anchor_top = 0.211
+anchor_right = 0.935
+anchor_bottom = 0.211
+offset_left = -68.2001
+offset_top = 252.12
+offset_right = 72.7999
+offset_bottom = 393.12
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(74, 72)
+texture = ExtResource("3_o4kp6")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("2_7ofig")
+
+[node name="MainFrame" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.451
+anchor_top = 0.5
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = -692.92
+offset_top = -538.0
+offset_right = 693.08
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ANDZONE1" type="TextureRect" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49062
+anchor_top = 0.29987
+anchor_right = 0.49062
+anchor_bottom = 0.29987
+offset_left = -89.0
+offset_top = -83.66
+offset_right = 78.0
+offset_bottom = 83.34
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4cn8l")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_ydt8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="ORZONE" type="TextureRect" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.370851
+anchor_top = 0.587974
+anchor_right = 0.370851
+anchor_bottom = 0.587974
+offset_left = -89.0
+offset_top = -83.66
+offset_right = 78.0
+offset_bottom = 83.34
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4cn8l")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_ydt8n")
+correct_gate = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ANDZONE2" type="TextureRect" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.613276
+anchor_top = 0.590762
+anchor_right = 0.613276
+anchor_bottom = 0.590762
+offset_left = -89.0
+offset_top = -83.66
+offset_right = 78.0
+offset_bottom = 83.34
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4cn8l")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_ydt8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainGoal" type="TextureRect" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.491279
+anchor_top = 0.0674833
+anchor_right = 0.491279
+anchor_bottom = 0.0674833
+offset_left = -54.912
+offset_top = -54.612
+offset_right = 55.088
+offset_bottom = 55.388
+texture = ExtResource("6_gwc8c")
+expand_mode = 1
+script = ExtResource("7_8vhff")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="MainFrame/ANDZONE1" to="MainFrame/ANDZONE1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainFrame/ANDZONE1" to="MainFrame/ANDZONE1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainFrame/ORZONE" to="MainFrame/ORZONE" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainFrame/ORZONE" to="MainFrame/ORZONE" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainFrame/ANDZONE2" to="MainFrame/ANDZONE2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainFrame/ANDZONE2" to="MainFrame/ANDZONE2" method="_on_mouse_exited"]
