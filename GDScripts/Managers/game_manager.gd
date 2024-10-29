@@ -11,6 +11,8 @@ var SpawnIndex : int
 
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("TestPuzzle"):
+		Events.puzzle_toggle.emit()
 	game_state_change()
 
 func game_state_change() -> void:

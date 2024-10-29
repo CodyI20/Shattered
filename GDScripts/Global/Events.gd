@@ -19,3 +19,5 @@ signal valid_drop_target_exited
 signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
 signal gate_solved()
+
+signal puzzle_toggle()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=9 format=3 uid="uid://vcpyf6oawkrf"]
 
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
 [ext_resource type="Texture2D" uid="uid://c7yudn7u8bc0c" path="res://Art/2D/LogicGatePuzzle/logic-gate-or.png" id="1_hlpma"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DragItem.gd" id="2_7ofig"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DropZone.gd" id="2_ydt8n"]
@@ -9,12 +10,14 @@
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
 
 [node name="LogicGatesPuzzle" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1eygj")
 
 [node name="ANDGATE1" type="TextureRect" parent="."]
 layout_mode = 1
