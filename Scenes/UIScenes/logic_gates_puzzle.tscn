@@ -34,6 +34,7 @@ texture = ExtResource("3_o4kp6")
 expand_mode = 5
 stretch_mode = 5
 script = ExtResource("2_7ofig")
+gatetype = 0
 
 [node name="ORGATE" type="TextureRect" parent="."]
 layout_mode = 1
@@ -73,6 +74,7 @@ texture = ExtResource("3_o4kp6")
 expand_mode = 5
 stretch_mode = 5
 script = ExtResource("2_7ofig")
+gatetype = 0
 
 [node name="MainFrame" type="Control" parent="."]
 layout_mode = 1
@@ -105,6 +107,7 @@ texture = ExtResource("3_4cn8l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_ydt8n")
+correct_gate = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="ORZONE" type="TextureRect" parent="MainFrame"]
@@ -144,6 +147,7 @@ texture = ExtResource("3_4cn8l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_ydt8n")
+correct_gate = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="MainGoal" type="TextureRect" parent="MainFrame"]

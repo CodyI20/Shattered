@@ -4,7 +4,7 @@ class_name DropZone
 var item : DragItem = null  # Reference to the item currently in this slot
 var is_hovered = false  # Tracks if an item is hovering over this slot
 
-@export var correct_gate = GateEnum.gate_type.AND
+@export var correct_gate = GateEnum.gate_type.NONE
 
 func _ready() -> void:
 	Events.object_started_dragging.connect(clear_item)
@@ -46,3 +46,6 @@ func set_item(new_item: DragItem, checkItem: bool = true):
 	if item.gatetype == correct_gate:
 		print_debug("CORRECT GATE!")
 		Events.correct_gate_entered.emit(self)
+	else:
+		print_debug("WRONG GATE ENTERED!")
+		Events.wrong_gate_entered.emit(self)

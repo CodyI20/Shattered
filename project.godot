@@ -20,6 +20,7 @@ config/icon="res://Art/icon.svg"
 AudioManager="*res://Scenes/ScenePrefabs/audio_manager.tscn"
 Events="*res://GDScripts/Global/Events.gd"
 FilePaths="*res://GDScripts/Global/FilePaths.gd"
+Utility="*res://GDScripts/Global/Utility.gd"
 
 [display]
 

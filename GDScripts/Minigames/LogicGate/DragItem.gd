@@ -5,17 +5,19 @@ var dragging = false
 var original_position = Vector2.ZERO
 var valid_drop_target = null  # Store a reference to the valid drop target if it exists
 var current_slot : DropZone = null  # Reference to the slot this item is currently in
-@export var gatetype = GateEnum.gate_type.AND
+@export var gatetype = GateEnum.gate_type.NONE
 
 func _ready() -> void:
 	Events.valid_drop_target_entered.connect(_on_valid_drop_target_entered)
 	Events.valid_drop_target_exited.connect(_on_valid_drop_target_exited)
+	Events.gate_solved.connect(disable_process)
 	create_drop_zone()
 	
 func create_drop_zone() -> void:
 	if current_slot == null:
 		var personal_zone = DropZone.new()
 		personal_zone.global_position = global_position + (size / 2)
+		personal_zone.correct_gate = GateEnum.gate_type.NONE
 		add_sibling.call_deferred(personal_zone)
 		personal_zone.set_item(self)
 
@@ -52,3 +54,6 @@ func _on_valid_drop_target_entered(dropTarget: DropZone):
 
 func _on_valid_drop_target_exited(dropTarget: DropZone):
 	set_valid_drop_target(null)
+	
+func disable_process() -> void:
+	set_process(false)
