@@ -139,7 +139,7 @@ shadow_enabled = true
 environment = SubResource("Environment_tpjvm")
 
 [node name="floor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77141, -0.0114661, -0.166967)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.791, 0.0453619, -0.190142)
 material_override = SubResource("StandardMaterial3D_ehv5c")
 use_collision = true
 size = Vector3(20, 0.1, 20)
