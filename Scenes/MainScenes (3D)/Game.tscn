@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4int3gysyu3a"]
+[gd_scene load_steps=18 format=3 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
 [ext_resource type="PackedScene" uid="uid://3yum6obony1d" path="res://Scenes/Imports/Rollercoaster v1.4.fbx" id="6_k07fg"]
+[ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="6_vwt54"]
+[ext_resource type="PackedScene" uid="uid://bbcgl0lpb3vr" path="res://Scenes/3D Models/house.tscn" id="7_554ml"]
+[ext_resource type="PackedScene" uid="uid://de8c4elqrxlr" path="res://Scenes/3D Models/vending_machine_2.tscn" id="8_6ft8p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnute"]
 albedo_color = Color(1, 0.780392, 0.839216, 1)
@@ -61,7 +64,7 @@ use_collision = true
 size = Vector3(0.05, 2.166, 9.58411)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="WorldRoot/TestLevel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02693, 0.808768, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02693, 0.808768, 7.15917)
 mesh = SubResource("PlaneMesh_nmlut")
 
 [node name="Park#1" type="Node3D" parent="WorldRoot"]
@@ -316,9 +319,6 @@ transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.2828
 [node name="Rollercoaster v1_4 placeholder #3" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.13952, 3.05176e-05, 263.518)
 
-[node name="Rollercoaster v1_4 placeholder #4" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
-transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, 234.34, 0, 34.8515)
-
 [node name="Rollercoaster v1_4 placeholder #5" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 169.582, 0, 216.81)
 
@@ -330,6 +330,138 @@ transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.2828
 
 [node name="Rollercoaster v1_4 placeholder #8" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
 transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, -371.842, 0, -23.8473)
+
+[node name="Trees left" type="Node3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.644, -0.357338, -53.331)
+
+[node name="treenumbertwo" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, 6.0933)
+
+[node name="treenumbertwo(very big)" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, 0, 0, 0.450699)
+
+[node name="treenumbertwo(big)" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, 0, -0.427843)
+
+[node name="treenumbertwo(very big)2" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 0, 0, 11.1033)
+
+[node name="treenumbertwo(very big)3" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 14.7656, 0, -4.33089)
+
+[node name="treenumbertwo2" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, 0, -16.9342)
+
+[node name="treenumbertwo(big)2" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -2.12859, 0, -16.4402)
+
+[node name="treenumbertwo3" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, -7.08245)
+
+[node name="treenumbertwo4" parent="WorldRoot/Park#2/Trees left" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17064, 0, -2.56321)
+
+[node name="Trees left2" type="Node3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 191.091, -0.357338, -33.3246)
+
+[node name="treenumbertwo" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, 6.0933)
+
+[node name="treenumbertwo(very big)" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, 0, 0, 0.450699)
+
+[node name="treenumbertwo(big)" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, 0, -0.427843)
+
+[node name="treenumbertwo(very big)2" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 0, 0, 11.1033)
+
+[node name="treenumbertwo(very big)3" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 14.7656, 0, -4.33089)
+
+[node name="treenumbertwo2" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, 0, -16.9342)
+
+[node name="treenumbertwo(big)2" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -2.12859, 0, -16.4402)
+
+[node name="treenumbertwo3" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, -7.08245)
+
+[node name="treenumbertwo4" parent="WorldRoot/Park#2/Trees left2" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17064, 0, -2.56321)
+
+[node name="Trees left3" type="Node3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 194.556, -0.357338, -61.9441)
+
+[node name="treenumbertwo" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, 6.0933)
+
+[node name="treenumbertwo(very big)" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, 0, 0, 0.450699)
+
+[node name="treenumbertwo(big)" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, 0, -0.427843)
+
+[node name="treenumbertwo(very big)2" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 0, 0, 11.1033)
+
+[node name="treenumbertwo(very big)3" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 14.7656, 0, -4.33089)
+
+[node name="treenumbertwo2" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, 0, -16.9342)
+
+[node name="treenumbertwo(big)2" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -2.12859, 0, -16.4402)
+
+[node name="treenumbertwo3" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, -7.08245)
+
+[node name="treenumbertwo4" parent="WorldRoot/Park#2/Trees left3" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17064, 0, -2.56321)
+
+[node name="Trees left4" type="Node3D" parent="WorldRoot/Park#2"]
+transform = Transform3D(-0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 184.906, -0.357338, 24.7903)
+
+[node name="treenumbertwo" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, 6.0933)
+
+[node name="treenumbertwo(very big)" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, 0, 0, 0.450699)
+
+[node name="treenumbertwo(big)" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, 0, -0.427843)
+
+[node name="treenumbertwo(very big)2" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 0, 0, 11.1033)
+
+[node name="treenumbertwo(very big)3" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 14.7656, 0, -4.33089)
+
+[node name="treenumbertwo2" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, 0, -16.9342)
+
+[node name="treenumbertwo(big)2" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -2.12859, 0, -16.4402)
+
+[node name="treenumbertwo3" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2303, 0, -7.08245)
+
+[node name="treenumbertwo4" parent="WorldRoot/Park#2/Trees left4" instance=ExtResource("6_vwt54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17064, 0, -2.56321)
+
+[node name="house" parent="WorldRoot/Park#2" instance=ExtResource("7_554ml")]
+transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, 195.561, -0.642674, -12.9224)
+
+[node name="house2" parent="WorldRoot/Park#2" instance=ExtResource("7_554ml")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 196.127, -0.642674, 11.6382)
+
+[node name="Vending machine" parent="WorldRoot/Park#2" instance=ExtResource("8_6ft8p")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 195.867, 0, 0.5)
+
+[node name="Vending machine 2" parent="WorldRoot/Park#2" instance=ExtResource("8_6ft8p")]
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 195.867, 0, -0.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
