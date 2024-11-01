@@ -19,10 +19,10 @@ func _ready():
 	toggle_inventory()
 	for i in ItemSlotsCount:
 		var slot = InventorySlotPrefab.instantiate() as InventorySlot
-		InventoryGrid.add_child(slot)
 		slot.InventorySlotID = i
 		slot.OnItemDropped.connect(ItemDroppedOnSlot.bind())
 		slot.OnItemEquiped.connect(ItemEquipped.bind())
+		InventoryGrid.add_child(slot)
 		InventorySlots.append(slot)
 
 func toggle_inventory():

@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://GDScripts/player.gd" id="1_8n78g"]
 [ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="2_wu4j2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="3_7drko"]
-[ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://GDScripts/Others/Inventory/test_item_cube.tscn" id="4_7hfjm"]
+[ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://Scenes/ScenePrefabs/test_item_cube.tscn" id="4_7hfjm"]
+[ext_resource type="Resource" uid="uid://binkcymtnarjd" path="res://Resources/Inventory/ItemData/test_cube_data.tres" id="4_61b8a"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="5_l2e8d"]
 [ext_resource type="PackedScene" uid="uid://jbx1o36ecr2i" path="res://Scenes/ScenePrefabs/audio_manager.tscn" id="6_ffohh"]
 
@@ -133,11 +134,6 @@ _data = {
 "crouch": SubResource("Animation_cjql4")
 }
 
-[sub_resource type="Resource" id="Resource_v68dd"]
-script = ExtResource("3_7drko")
-ItemName = "TestCube"
-ItemModelPrefab = ExtResource("4_7hfjm")
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_mip4i"]
 radius = 1.48154
 
@@ -226,19 +222,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_wu4j2")
-ItemTypes = Array[ExtResource("3_7drko")]([SubResource("Resource_v68dd")])
+ItemTypes = Array[ExtResource("3_7drko")]([ExtResource("4_61b8a")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/InteractionArea"]
 shape = SubResource("SphereShape3D_mip4i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="player"]
-process_mode = 2
+process_mode = 1
 
 [node name="InventoryUI" type="Control" parent="player/CanvasLayer" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+focus_mode = 2
 script = ExtResource("5_l2e8d")
 PlayerBody = NodePath("../..")
 CollisionMask = 1
@@ -250,12 +247,15 @@ offset_left = 250.0
 offset_top = 102.0
 offset_right = 869.0
 offset_bottom = 566.0
+focus_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="player/CanvasLayer/InventoryUI/Panel"]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 618.0
 offset_bottom = 464.0
+focus_mode = 2
+mouse_filter = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -264,6 +264,8 @@ theme_override_constants/margin_bottom = 5
 [node name="GridContainer" type="GridContainer" parent="player/CanvasLayer/InventoryUI/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 2
+mouse_filter = 0
 columns = 5
 
 [node name="audioManager" parent="." instance=ExtResource("6_ffohh")]

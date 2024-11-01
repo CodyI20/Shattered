@@ -11,7 +11,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eiid"]
 bg_color = Color(0.561792, 0.704736, 0.772044, 1)
 
-[node name="InventorySlot" type="Button" node_paths=PackedStringArray("EquippedHighlight", "IconSlot")]
+[node name="InventorySlot" type="Button" node_paths=PackedStringArray("EquippedHighlight")]
 anchors_preset = -1
 anchor_right = 0.09
 anchor_bottom = 0.157
@@ -22,7 +22,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1xs3w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1yw4m")
 script = ExtResource("1_pkll7")
 EquippedHighlight = NodePath("EqupiedHighlight")
-IconSlot = NodePath("TextureRect")
 
 [node name="EqupiedHighlight" type="Panel" parent="."]
 visible = false
@@ -33,16 +32,3 @@ anchor_bottom = 1.01
 offset_right = 0.0239944
 offset_bottom = -0.0199966
 theme_override_styles/panel = SubResource("StyleBoxFlat_0eiid")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
