@@ -49,10 +49,12 @@ script = ExtResource("1_my0g2")
 
 [node name="WorldRoot" type="Node3D" parent="." groups=["world_root_no_touch"]]
 unique_name_in_owner = true
+process_mode = 1
 script = ExtResource("5_4s16o")
 
 [node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
 unique_name_in_owner = true
+movement_speed = 3.0
 
 [node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
 process_mode = 1
@@ -74,10 +76,6 @@ size = Vector3(0.05, 2.166, 9.58411)
 [node name="CSGMesh3D" type="CSGMesh3D" parent="WorldRoot/TestLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02693, 0.808768, 7.15917)
 mesh = SubResource("PlaneMesh_nmlut")
-
-[node name="TestLevel2" parent="WorldRoot" instance=ExtResource("1_gbxum")]
-process_mode = 1
-visible = false
 
 [node name="Park#1" type="Node3D" parent="WorldRoot"]
 visible = false
@@ -491,11 +489,6 @@ transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.2828
 [node name="Rollercoaster v1_4 placeholder #8" parent="WorldRoot/Park#2" instance=ExtResource("6_k07fg")]
 transform = Transform3D(-0.282843, 0, 0.282843, 0, 0.4, 0, -0.282843, 0, -0.282843, -371.842, 0, -23.8473)
 
-[node name="player2" parent="WorldRoot" instance=ExtResource("4_fw4my")]
-unique_name_in_owner = true
-process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445421, -0.0294523, 4.26041)
-
 [node name="room test wo light and camera" parent="WorldRoot" instance=ExtResource("5_0umrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6218, 0, 20.7007)
 
@@ -503,10 +496,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6218, 0, 20.7007)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/room test wo light and camera/Plane/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_olocs")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="UI" instance=ExtResource("3_hhntt")]
 
 [node name="WhenPausedUI" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -532,19 +521,10 @@ script = ExtResource("3_35roi")
 [node name="InputManager2" type="Node" parent="Utilities"]
 script = ExtResource("2_fawn2")
 
-[connection signal="paused" from="." to="UI/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
-[connection signal="resumed" from="." to="UI/PauseMenu" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="WhenPausedUI/PauseMenu" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/SaveButton" to="." method="_on_save_game"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/LoadButton" to="." method="_on_load_game"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
@@ -555,6 +535,5 @@ script = ExtResource("2_fawn2")
 
 [editable path="WorldRoot/TestLevel"]
 [editable path="WorldRoot/room test wo light and camera"]
-[editable path="UI/PauseMenu"]
 [editable path="WhenPausedUI/PauseMenu"]
 [editable path="WhenPausedUI/LogicGatesPuzzle"]

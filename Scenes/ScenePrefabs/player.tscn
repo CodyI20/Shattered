@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=12 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_ntxft"]
-[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/main_personality_state.gd" id="3_8qxcv"]
-[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/alter_1_state.gd" id="3_tqs6j"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/AlterSwapMechanic/main_personality_state.gd" id="3_8qxcv"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/AlterSwapMechanic/alter_1_state.gd" id="3_tqs6j"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/idle_state.gd" id="5_7bsou"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/jump_state.gd" id="6_corkh"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/walking_state.gd" id="7_ykbpr"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/falling_state.gd" id="9_m1dmj"]
+[ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/landing_state.gd" id="10_k31vs"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
 radius = 0.3
@@ -44,3 +49,24 @@ script = ExtResource("3_tqs6j")
 [node name="Alter2" type="Node" parent="AlterSwapFSM"]
 
 [node name="Alter3" type="Node" parent="AlterSwapFSM"]
+
+[node name="MovementFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ntxft")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="MovementFSM"]
+script = ExtResource("5_7bsou")
+
+[node name="Jumping" type="Node" parent="MovementFSM"]
+script = ExtResource("6_corkh")
+
+[node name="Walking" type="Node" parent="MovementFSM"]
+script = ExtResource("7_ykbpr")
+
+[node name="Running" type="Node" parent="MovementFSM"]
+
+[node name="Falling" type="Node" parent="MovementFSM"]
+script = ExtResource("9_m1dmj")
+
+[node name="Landing" type="Node" parent="MovementFSM"]
+script = ExtResource("10_k31vs")

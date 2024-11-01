@@ -54,34 +54,11 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 func _process(delta: float) -> void:
-	# Add gravity.
-	if not is_on_floor():
-		Events.player_waking.emit(false)
-		
-	else:
-		if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
-			Events.player_waking.emit(true)
-		elif Input.is_action_just_released("up") or Input.is_action_just_released("down") or Input.is_action_just_released("left") or Input.is_action_just_released("right"):
-			Events.player_waking.emit(false)
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		Events.player_jumped.emit()
-		velocity.y = JUMP_VELOCITY
-
-	# Get input direction and handle movement.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * movement_speed
-		velocity.z = direction.z * movement_speed
-	else:
-		velocity.x = 0.0
-		velocity.z = 0.0
 	
 	t_bob += delta * float(is_on_floor()) * velocity.length() * t_bob_factor / movement_speed
 
