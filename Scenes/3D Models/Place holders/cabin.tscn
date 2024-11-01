@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvklf4bi27sx5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b25d7"]
+radius = 1.5
+height = 5.0
+
+[node name="Cabin" type="CSGMesh3D"]
+transform = Transform3D(1.65556, 0, 0, 0, 1.30421, 0, 0, 0, 2.42191, 0, -2.62281, 0)
+mesh = SubResource("CapsuleMesh_b25d7")
