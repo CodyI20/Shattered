@@ -1,4 +1,4 @@
-extends Node
+extends Control
 class_name InventoryHandler
 
 @export var PlayerBody : CharacterBody3D
@@ -12,8 +12,11 @@ class_name InventoryHandler
 var InventorySlots : Array[InventorySlot] = []
 
 var EquippedSlot : int = -1
+var toggled_on : bool = true
 
 func _ready():
+	Events.toggle_inventory.connect(toggle_inventory)
+	toggle_inventory()
 	for i in ItemSlotsCount:
 		var slot = InventorySlotPrefab.instantiate() as InventorySlot
 		InventoryGrid.add_child(slot)
@@ -22,6 +25,15 @@ func _ready():
 		slot.OnItemEquiped.connect(ItemEquipped.bind())
 		InventorySlots.append(slot)
 
+func toggle_inventory():
+	toggled_on = !toggled_on
+	visible = toggled_on
+	set_process(toggled_on)
+	if toggled_on:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 func PickupItem(item : ItemData):
 	var foundSlot : bool = false
 	for slot in InventorySlots:

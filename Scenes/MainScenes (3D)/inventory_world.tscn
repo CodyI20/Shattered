@@ -1,11 +1,11 @@
 [gd_scene load_steps=25 format=3 uid="uid://ban76iqpjhveh"]
 
-[ext_resource type="Script" path="res://GDScripts/player.gd" id="1_2wakh"]
-[ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="2_1w8rv"]
-[ext_resource type="PackedScene" uid="uid://jbx1o36ecr2i" path="res://Scenes/ScenePrefabs/audio_manager.tscn" id="2_vhqte"]
-[ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="3_w13cn"]
-[ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://GDScripts/Others/Inventory/test_item_cube.tscn" id="4_ibjol"]
-[ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="6_fk11f"]
+[ext_resource type="Script" path="res://GDScripts/player.gd" id="1_8n78g"]
+[ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="2_wu4j2"]
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="3_7drko"]
+[ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://GDScripts/Others/Inventory/test_item_cube.tscn" id="4_7hfjm"]
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="5_l2e8d"]
+[ext_resource type="PackedScene" uid="uid://jbx1o36ecr2i" path="res://Scenes/ScenePrefabs/audio_manager.tscn" id="6_ffohh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -134,14 +134,14 @@ _data = {
 }
 
 [sub_resource type="Resource" id="Resource_v68dd"]
-script = ExtResource("3_w13cn")
+script = ExtResource("3_7drko")
 ItemName = "TestCube"
-ItemModelPrefab = ExtResource("4_ibjol")
+ItemModelPrefab = ExtResource("4_7hfjm")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mip4i"]
 radius = 1.48154
 
-[node name="World" type="Node3D"]
+[node name="InventoryWorld" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -200,7 +200,7 @@ size = Vector3(2.13971, 0.150879, 4.10059)
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0606481, 0)
-script = ExtResource("1_2wakh")
+script = ExtResource("1_8n78g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17339, 0)
@@ -225,30 +225,33 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("2_1w8rv")
-ItemTypes = Array[ExtResource("3_w13cn")]([SubResource("Resource_v68dd")])
+script = ExtResource("2_wu4j2")
+ItemTypes = Array[ExtResource("3_7drko")]([SubResource("Resource_v68dd")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/InteractionArea"]
 shape = SubResource("SphereShape3D_mip4i")
 
-[node name="InventoryUI" type="Control" parent="player" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="CanvasLayer" type="CanvasLayer" parent="player"]
+process_mode = 2
+
+[node name="InventoryUI" type="Control" parent="player/CanvasLayer" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-script = ExtResource("6_fk11f")
-PlayerBody = NodePath("..")
+script = ExtResource("5_l2e8d")
+PlayerBody = NodePath("../..")
 CollisionMask = 1
 InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
 
-[node name="Panel" type="Panel" parent="player/InventoryUI"]
+[node name="Panel" type="Panel" parent="player/CanvasLayer/InventoryUI"]
 layout_mode = 0
 offset_left = 250.0
 offset_top = 102.0
 offset_right = 869.0
 offset_bottom = 566.0
 
-[node name="MarginContainer" type="MarginContainer" parent="player/InventoryUI/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="player/CanvasLayer/InventoryUI/Panel"]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 618.0
@@ -258,16 +261,16 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="player/InventoryUI/Panel/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="player/CanvasLayer/InventoryUI/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 5
 
-[node name="audioManager" parent="." instance=ExtResource("2_vhqte")]
+[node name="audioManager" parent="." instance=ExtResource("6_ffohh")]
 
-[node name="TestItemCube" parent="." instance=ExtResource("4_ibjol")]
+[node name="TestItemCube" parent="." instance=ExtResource("4_7hfjm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07671, 2.43298)
 
-[connection signal="OnItemPickedUp" from="player/InteractionArea" to="player/InventoryUI" method="PickupItem"]
+[connection signal="OnItemPickedUp" from="player/InteractionArea" to="player/CanvasLayer/InventoryUI" method="PickupItem"]
 [connection signal="body_entered" from="player/InteractionArea" to="player/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="player/InteractionArea" to="player/InteractionArea" method="OnObjectExitedArea"]

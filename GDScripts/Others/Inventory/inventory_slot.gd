@@ -23,7 +23,7 @@ func FillSlot(data : ItemData, equipped : bool):
 	EquippedHighlight.visible = equipped
 	if (SlotData != null):
 		SlotFilled = true
-		IconSlot.texture = data.Icon
+		IconSlot.texture = data.Item
 	else:
 		SlotFilled = false
 		IconSlot.texture = null
