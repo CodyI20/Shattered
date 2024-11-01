@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://diisk4r1nb00h"]
+
+[ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
+[ext_resource type="Script" path="res://GDScripts/Managers/game_manager.gd" id="1_my0g2"]
+[ext_resource type="Script" path="res://GDScripts/Managers/input_manager.gd" id="2_fawn2"]
+[ext_resource type="Script" path="res://GDScripts/Managers/save_load_manager.gd" id="3_35roi"]
+[ext_resource type="PackedScene" uid="uid://dw4mcukexjwwq" path="res://Scenes/UIScenes/PauseMenu.tscn" id="3_hhntt"]
+[ext_resource type="PackedScene" uid="uid://c168ec4y2qlq8" path="res://Scenes/UIScenes/Rollercoaster v1.0.fbx" id="4_4i5fq"]
+[ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
+[ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehv5c"]
+albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnute"]
+albedo_color = Color(1, 0.780392, 0.839216, 1)
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_my0g2")
+
+[node name="WorldRoot" type="Node3D" parent="." groups=["world_root_no_touch"]]
+unique_name_in_owner = true
+script = ExtResource("5_4s16o")
+
+[node name="TestLevel" parent="WorldRoot" instance=ExtResource("1_gbxum")]
+process_mode = 1
+
+[node name="wall1" parent="WorldRoot/TestLevel" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.769852, -11.741, 1.127, 5.34818)
+size = Vector3(0.05, 2.166, 11.6934)
+
+[node name="floor2" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -0.011, -0.334)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(100, 0.1, 20)
+
+[node name="floor3" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1.80524, 0, 0, 0, 1, 0, 0, 0, 16.5946, -80.732, -0.011, -0.334)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor4" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -947.07, -0.0114661, -413.079)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor5" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -955.71, -0.0114661, 403.143)
+material_override = SubResource("StandardMaterial3D_ehv5c")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="wall6" type="CSGBox3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.741, 1.127, -5.70795)
+material_override = SubResource("StandardMaterial3D_wnute")
+use_collision = true
+size = Vector3(0.05, 2.166, 9.58411)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -110.39, 51.7438, 0)
+radius = 50.0
+height = 0.039
+sides = 18
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="WorldRoot/TestLevel"]
+transform = Transform3D(2073.2, 0, 0, 0, -7.94105, 0, 0, 0, 342.78, -1154.43, 0, 0)
+radial_segments = 25
+
+[node name="Rollercoaster v1_0" parent="WorldRoot/TestLevel" instance=ExtResource("4_4i5fq")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -1965.63, 3, -1.701)
+
+[node name="player" parent="WorldRoot" instance=ExtResource("4_fw4my")]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("3_hhntt")]
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="SaveLoadManager" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("3_35roi")
+
+[node name="InputManager" type="Node" parent="Utilities"]
+script = ExtResource("2_fawn2")
+
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/SaveButton" to="." method="_on_save_game"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/LoadButton" to="." method="_on_load_game"]
+
+[editable path="WorldRoot/TestLevel"]
+[editable path="UI/PauseMenu"]

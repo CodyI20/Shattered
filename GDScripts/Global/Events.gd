@@ -10,6 +10,18 @@ signal player_waking(is_walking: bool)
 signal alter1_swap()
 signal main_personality_swap()
 
+extends Node
+
+# PLAYER EVENTS
+
+signal player_jumped
+signal player_waking(is_walking: bool)
+
+# ALTER EVENTS
+
+signal alter1_swap()
+signal main_personality_swap()
+
 # LOGIC GATE MINIGAME EVENTS
 signal object_started_dragging(object: DragItem)
 signal object_stopped_dragging(object: DragItem)
