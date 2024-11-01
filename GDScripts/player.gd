@@ -29,7 +29,7 @@ func _input(event):
 func _ready():
 	# Capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	initial_camera_y = camera.transform.origin.y
 	# _world_root = get_node(world_root)
