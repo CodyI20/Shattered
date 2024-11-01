@@ -1,5 +1,5 @@
-class_name Player
 extends CharacterBody3D
+class_name Player
 
 # @onready var _world_root: WorldRoot = %WorldRoot
 
