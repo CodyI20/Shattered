@@ -406,12 +406,138 @@ outer_radius = 45.0
 sides = 48
 ring_sides = 12
 
+[node name="Node3D" type="Node3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 0.999999, 1, 1.91069e-15, 4.37114e-08, 0, 0.999999, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-3.09086e-08, 3.09086e-08, 0.999999, 0.707107, 0.707106, 0, -0.707107, 0.707106, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-4.2222e-08, 1.13133e-08, 0.999999, 0.258819, 0.965925, 0, -0.965926, 0.258819, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-3.78552e-08, 2.18557e-08, 0.999999, 0.5, 0.866025, 0, -0.866025, 0.5, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-2.18557e-08, 3.78551e-08, 0.999999, 0.866025, 0.5, 0, -0.5, 0.866025, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-1.13133e-08, 4.22219e-08, 0.999999, 0.965926, 0.258819, 0, -0.258819, 0.965925, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 0.999999, -0.707107, 0.707106, 0, -0.707107, -0.707106, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-4.2222e-08, -1.13133e-08, 0.999999, -0.258819, 0.965925, 0, -0.965926, -0.258819, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-3.78552e-08, -2.18557e-08, 0.999999, -0.5, 0.866025, 0, -0.866025, -0.5, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-2.18557e-08, -3.78551e-08, 0.999999, -0.866025, 0.5, 0, -0.5, -0.866025, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D/Node3D"]
+transform = Transform3D(-1.13133e-08, -4.22219e-08, 0.999999, -0.965926, 0.258819, 0, -0.258819, -0.965925, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
 [node name="CSGTorus3D2" type="CSGTorus3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4, 0, 0)
 inner_radius = 44.0
 outer_radius = 45.0
 sides = 48
 ring_sides = 12
+
+[node name="Node3D" type="Node3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 0.999999, 1, 1.91069e-15, 4.37114e-08, 0, 0.999999, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-3.09086e-08, 3.09086e-08, 0.999999, 0.707107, 0.707106, 0, -0.707107, 0.707106, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-4.2222e-08, 1.13133e-08, 0.999999, 0.258819, 0.965925, 0, -0.965926, 0.258819, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-3.78552e-08, 2.18557e-08, 0.999999, 0.5, 0.866025, 0, -0.866025, 0.5, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-2.18557e-08, 3.78551e-08, 0.999999, 0.866025, 0.5, 0, -0.5, 0.866025, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-1.13133e-08, 4.22219e-08, 0.999999, 0.965926, 0.258819, 0, -0.258819, 0.965925, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 0.999999, -0.707107, 0.707106, 0, -0.707107, -0.707106, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-4.2222e-08, -1.13133e-08, 0.999999, -0.258819, 0.965925, 0, -0.965926, -0.258819, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-3.78552e-08, -2.18557e-08, 0.999999, -0.5, 0.866025, 0, -0.866025, -0.5, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-2.18557e-08, -3.78551e-08, 0.999999, -0.866025, 0.5, 0, -0.5, -0.866025, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel/CSGTorus3D2/Node3D"]
+transform = Transform3D(-1.13133e-08, -4.22219e-08, 0.999999, -0.965926, 0.258819, 0, -0.258819, -0.965925, -4.37114e-08, 0, 0, 0)
+radius = 0.1
+height = 89.0
 
 [node name="Beams" type="Node3D" parent="WorldRoot/Park#2/Ferris wheel area/Ferris wheel/The wheel"]
 
