@@ -37,18 +37,20 @@ func _input(event):
 		toggle_crouch()
 	if event.is_action_pressed("sprint"):
 		toggle_sprint()
+	if event.is_action_pressed("inventory"):
+		print_debug("Toggling the inventory...")
+		Events.toggle_inventory.emit()
 
 func _ready():
 	# Capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 
 	initial_camera_y = camera.transform.origin.y
 	# _world_root = get_node(world_root)
 
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))

@@ -4,6 +4,7 @@ extends Node
 
 signal player_jumped()
 signal player_waking(is_walking: bool)
+signal toggle_inventory()
 
 # ALTER EVENTS
 

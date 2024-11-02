@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bssdajpd1ih1y"]
+
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_slot.gd" id="1_pkll7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftsrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xs3w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yw4m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eiid"]
+bg_color = Color(0.561792, 0.704736, 0.772044, 1)
+
+[node name="InventorySlot" type="Button" node_paths=PackedStringArray("EquippedHighlight")]
+anchors_preset = -1
+anchor_right = 0.09
+anchor_bottom = 0.157
+offset_right = 0.319992
+offset_bottom = 0.264
+theme_override_styles/hover = SubResource("StyleBoxFlat_ftsrg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1xs3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yw4m")
+script = ExtResource("1_pkll7")
+EquippedHighlight = NodePath("EqupiedHighlight")
+
+[node name="EqupiedHighlight" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.019
+anchor_bottom = 1.01
+offset_right = 0.0239944
+offset_bottom = -0.0199966
+theme_override_styles/panel = SubResource("StyleBoxFlat_0eiid")
