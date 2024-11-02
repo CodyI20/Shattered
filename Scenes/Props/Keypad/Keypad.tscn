@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjpt0ihtv1t6q"]
+
+[ext_resource type="Script" path="res://GDScripts/Props Logic/Keypad/Keypad.gd" id="1_2mj1g"]
+[ext_resource type="PackedScene" uid="uid://bm8uqmaf1bwa4" path="res://Scenes/Props/Keypad/Keypad Button/Keypad Button.tscn" id="1_hqti3"]
+[ext_resource type="Texture2D" uid="uid://qgpiy3bbe5ye" path="res://Art/Assets/white tick.png" id="3_a0bov"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qi7gf"]
+size = Vector3(0.35, 0.55, 0.02)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l0ald"]
+viewport_path = NodePath("PasswordViewport")
+
+[node name="Keypad" type="Node3D"]
+script = ExtResource("1_2mj1g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qi7gf")
+
+[node name="Keys" type="Node3D" parent="."]
+
+[node name="Key1" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109977, 0.115627, 0.0109966)
+number = "1"
+
+[node name="Key2" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000311159, 0.114791, 0.0124778)
+number = "2"
+
+[node name="Key3" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109116, 0.114297, 0.0132214)
+number = "3"
+
+[node name="Key4" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109081, 0.00552369, 0.0113186)
+number = "4"
+
+[node name="Key5" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00115652, 0.00686312, 0.0115554)
+number = "5"
+
+[node name="Key6" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110603, 0.00704239, 0.0119846)
+number = "6"
+
+[node name="Key7" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(0.999944, 0, 0.010559, 0, 1, 0, -0.010559, 0, 0.999944, -0.110025, -0.105093, 0.0110598)
+number = "7"
+
+[node name="Key8" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000574451, -0.105611, 0.0115074)
+number = "8"
+
+[node name="Key9" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110998, -0.104006, 0.0112161)
+number = "9"
+
+[node name="KeyClear" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112227, -0.213222, 0.0107921)
+number = "C"
+
+[node name="Key0" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000698786, -0.213315, 0.00979939)
+
+[node name="KeyEnter" parent="Keys" instance=ExtResource("1_hqti3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112151, -0.213742, 0.0101188)
+number = "."
+
+[node name="TickMark" type="Sprite3D" parent="Keys/KeyEnter"]
+transform = Transform3D(0.146882, 0, 0, 0, 0.154868, 0, 0, 0, 0.1, 0.000411808, 0.000239335, 0.00585869)
+texture = ExtResource("3_a0bov")
+
+[node name="PasswordViewport" type="SubViewport" parent="."]
+size = Vector2i(40, 18)
+
+[node name="Panel" type="Panel" parent="PasswordViewport"]
+
+[node name="PasswordLabel" type="Label" parent="PasswordViewport"]
+custom_minimum_size = Vector2(36, 19)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1234"
+vertical_alignment = 1
+
+[node name="PasswordScreen" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.224855, 0.0111478)
+texture = SubResource("ViewportTexture_l0ald")

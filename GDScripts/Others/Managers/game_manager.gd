@@ -8,21 +8,30 @@ signal resumed
 
 var LoadedLevel : String
 var SpawnIndex : int
+var PausedByLetter : bool
 
+func interacted_with_letter():
+	PausedByLetter = true
+
+func _ready() -> void:
+	Events.on_interact.connect(interacted_with_letter)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("TestPuzzle"):
 		Events.puzzle_toggle.emit()
 	game_state_change()
 
-func game_state_change() -> void:
+func game_state_change():
 	if Input.is_action_just_pressed("Esc"):
-		pause_game(!get_tree().paused)
-		
+		if not PausedByLetter:
+			pause_game(!get_tree().paused)
+		else:
+			get_tree().paused = false
+			PausedByLetter = false
 
 ## This function handles both the pausing/resuming of the game and the event firing (emitting signals)
 ## CALL THIS FUNCTION WHENEVER YOU WANT TO PAUSE/RESUME THE GAME
-func pause_game(shouldPause := false) -> void:
+func pause_game(shouldPause := false):
 	get_tree().paused = shouldPause;
 	if get_tree().paused:
 		paused.emit()
@@ -59,4 +68,5 @@ func _on_save_game() -> void:
 func _on_load_game() -> void:
 	print("Loading game")
 	_saver_loader.load_game()
+	pause_game(false)
 #endregion

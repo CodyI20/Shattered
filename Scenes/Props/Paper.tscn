@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3mouro4ujgh4"]
+
+[ext_resource type="Script" path="res://GDScripts/Props Logic/Paper.gd" id="1_imfxu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qqwr0"]
+size = Vector3(0.5, 0.75, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pugxq"]
+size = Vector3(0.5, 0.75, 0.001)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_styxh"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Paper" type="StaticBody3D"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+script = ExtResource("1_imfxu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qqwr0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pugxq")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(90, 120)
+
+[node name="Label" type="Label" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -63.5
+offset_right = 39.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "---------------
+--------------
+-----------
+---------------
+--------------"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.540261, 0, 0, 0, 0.599587, 0, 0, 0, 0.968576, 0, 0, 0.00391951)
+texture = SubResource("ViewportTexture_styxh")

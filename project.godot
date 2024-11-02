@@ -44,6 +44,11 @@ folder_colors={
 "res://addons/": "yellow"
 }
 
+[global_group]
+
+Letter=""
+LetterText=""
+
 [input]
 
 up={

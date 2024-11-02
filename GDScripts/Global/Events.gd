@@ -11,6 +11,10 @@ signal toggle_inventory()
 signal alter1_swap()
 signal main_personality_swap()
 
+# LETTER EVENTS
+
+signal on_interact
+
 # LOGIC GATE MINIGAME EVENTS
 signal object_started_dragging(object: DragItem)
 signal object_stopped_dragging(object: DragItem)
