@@ -46,7 +46,6 @@ data = PackedVector3Array(0.0049, 0.0129, -0.0001, 0.0049, 0.0129, 0, 0.0074, 0.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g3wg"]
 resource_name = "Marble floor"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -89,7 +88,6 @@ points = PackedVector3Array(0.0371011, 0.0195482, -5.80826e-10, 0.0370595, -0.01
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85ea0"]
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -129,7 +127,6 @@ shadow_mesh = SubResource("ArrayMesh_qxk16")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5rca"]
 resource_name = "Marble floor.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -169,7 +166,6 @@ shadow_mesh = SubResource("ArrayMesh_12w2g")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnthr"]
 resource_name = "switchgear"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -212,7 +208,6 @@ shadow_mesh = SubResource("ArrayMesh_ftk7r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktkew"]
 resource_name = "switchgear.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -255,7 +250,6 @@ shadow_mesh = SubResource("ArrayMesh_76qu1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1cnp"]
 resource_name = "switchgear.002"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -298,7 +292,6 @@ shadow_mesh = SubResource("ArrayMesh_7wdog")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kir8n"]
 resource_name = "switchgear.003"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -341,7 +334,6 @@ shadow_mesh = SubResource("ArrayMesh_1yxp6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8jru"]
 resource_name = "Material"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -423,7 +415,6 @@ shadow_mesh = SubResource("ArrayMesh_obtad")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cayg8"]
 resource_name = "Material.038"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -549,7 +540,6 @@ shadow_mesh = SubResource("ArrayMesh_l01lc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae6r3"]
 resource_name = "Material.006"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -593,7 +583,6 @@ shadow_mesh = SubResource("ArrayMesh_bp1gh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bkh7"]
 resource_name = "Material.005"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -635,7 +624,6 @@ shadow_mesh = SubResource("ArrayMesh_r6rws")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrgeq"]
 resource_name = "Material.004"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -679,7 +667,6 @@ shadow_mesh = SubResource("ArrayMesh_v85gk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5hiw"]
 resource_name = "Material.007"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -723,7 +710,6 @@ shadow_mesh = SubResource("ArrayMesh_w4ss7")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nymk"]
 resource_name = "Material.008"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -765,7 +751,6 @@ shadow_mesh = SubResource("ArrayMesh_mvim4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7v0u"]
 resource_name = "Material.009"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -809,7 +794,6 @@ shadow_mesh = SubResource("ArrayMesh_ceo76")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkr45"]
 resource_name = "Material.022"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -851,7 +835,6 @@ shadow_mesh = SubResource("ArrayMesh_e35a8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arqsd"]
 resource_name = "Material.023"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -895,7 +878,6 @@ shadow_mesh = SubResource("ArrayMesh_jeoou")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j8vl"]
 resource_name = "Material.024"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -939,7 +921,6 @@ shadow_mesh = SubResource("ArrayMesh_ojj2a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2h3h"]
 resource_name = "Material.025"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -981,7 +962,6 @@ shadow_mesh = SubResource("ArrayMesh_o0snk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjm04"]
 resource_name = "Material.026"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1025,7 +1005,6 @@ shadow_mesh = SubResource("ArrayMesh_eogw2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuhhn"]
 resource_name = "Material.027"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1069,7 +1048,6 @@ shadow_mesh = SubResource("ArrayMesh_ogxmo")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1tov"]
 resource_name = "Material.028"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1111,7 +1089,6 @@ shadow_mesh = SubResource("ArrayMesh_pnj3o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bs8w"]
 resource_name = "Material.029"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1155,7 +1132,6 @@ shadow_mesh = SubResource("ArrayMesh_pnaa1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vgvh"]
 resource_name = "Material.030"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1199,7 +1175,6 @@ shadow_mesh = SubResource("ArrayMesh_84850")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wtry"]
 resource_name = "Material.031"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1241,7 +1216,6 @@ shadow_mesh = SubResource("ArrayMesh_kfptw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_143f0"]
 resource_name = "Material.032"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1285,7 +1259,6 @@ shadow_mesh = SubResource("ArrayMesh_iklj3")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpwhn"]
 resource_name = "Material.033"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1329,7 +1302,6 @@ shadow_mesh = SubResource("ArrayMesh_lct77")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdjyb"]
 resource_name = "Material.002"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1371,7 +1343,6 @@ shadow_mesh = SubResource("ArrayMesh_un8b2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvo7g"]
 resource_name = "Material.003"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1415,7 +1386,6 @@ shadow_mesh = SubResource("ArrayMesh_a44ug")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8m14"]
 resource_name = "Material.010"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1459,7 +1429,6 @@ shadow_mesh = SubResource("ArrayMesh_q062l")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toarr"]
 resource_name = "Material.011"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1501,7 +1470,6 @@ shadow_mesh = SubResource("ArrayMesh_lefo8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ftbq"]
 resource_name = "Material.012"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1545,7 +1513,6 @@ shadow_mesh = SubResource("ArrayMesh_1q5u8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otgqr"]
 resource_name = "Material.013"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1589,7 +1556,6 @@ shadow_mesh = SubResource("ArrayMesh_gsnie")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phfkd"]
 resource_name = "Material.014"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1631,7 +1597,6 @@ shadow_mesh = SubResource("ArrayMesh_d0td0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hro83"]
 resource_name = "Material.015"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1675,7 +1640,6 @@ shadow_mesh = SubResource("ArrayMesh_38muf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn151"]
 resource_name = "Material.016"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1719,7 +1683,6 @@ shadow_mesh = SubResource("ArrayMesh_rmmvl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3b3x"]
 resource_name = "Material.017"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1761,7 +1724,6 @@ shadow_mesh = SubResource("ArrayMesh_a7toh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx25v"]
 resource_name = "Material.018"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1805,7 +1767,6 @@ shadow_mesh = SubResource("ArrayMesh_fwdnh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axgm2"]
 resource_name = "Material.019"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1849,7 +1810,6 @@ shadow_mesh = SubResource("ArrayMesh_iqq1u")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwg0p"]
 resource_name = "Material.020"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1891,7 +1851,6 @@ shadow_mesh = SubResource("ArrayMesh_wckt8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjw17"]
 resource_name = "Material.021"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1935,7 +1894,6 @@ shadow_mesh = SubResource("ArrayMesh_bcw86")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip1at"]
 resource_name = "Material.034"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1979,7 +1937,6 @@ shadow_mesh = SubResource("ArrayMesh_iqew5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btdxs"]
 resource_name = "Material.035"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2021,7 +1978,6 @@ shadow_mesh = SubResource("ArrayMesh_1lcab")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh0ni"]
 resource_name = "Material.036"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2065,7 +2021,6 @@ shadow_mesh = SubResource("ArrayMesh_i2oa0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kukj8"]
 resource_name = "Material.037"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2109,7 +2064,6 @@ shadow_mesh = SubResource("ArrayMesh_8qa0e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxdu4"]
 resource_name = "danger sign"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4271,7 +4225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6218, 0, 20.7007)
 shape = SubResource("ConcavePolygonShape3D_olocs")
 
 [node name="electrical room unfinished" type="Node3D" parent="WorldRoot"]
-transform = Transform3D(-0.0300152, 0, -0.999549, 0, 1, 0, 0.999549, 0, -0.0300152, 0, 0.147754, -52.5879)
+transform = Transform3D(-0.0120061, 0, -0.39982, 0, 0.4, 0, 0.39982, 0, -0.0120061, 20.8101, 0.118509, -39.8185)
 
 [node name="Floor" type="MeshInstance3D" parent="WorldRoot/electrical room unfinished"]
 transform = Transform3D(595.952, 0, 0, 0, -0.000153444, 410.482, 0, -1287.18, -4.89333e-05, 0, 0, 0)
