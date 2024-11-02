@@ -1,4 +1,4 @@
-[gd_scene load_steps=311 format=4 uid="uid://b4int3gysyu3a"]
+[gd_scene load_steps=315 format=4 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://de8c4elqrxlr" path="res://Scenes/3D Models/vending_machine_2.tscn" id="8_6ft8p"]
 [ext_resource type="PackedScene" uid="uid://bvklf4bi27sx5" path="res://Scenes/3D Models/Place holders/cabin.tscn" id="8_hjekj"]
 [ext_resource type="PackedScene" uid="uid://2cfrgaqdyqp" path="res://Scenes/3D Models/treenumber_3.tscn" id="8_tp85y"]
+[ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
+[ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
+[ext_resource type="Script" path="res://GDScripts/Others/input_legend_rect.gd" id="16_w44n4"]
+[ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnute"]
 albedo_color = Color(1, 0.780392, 0.839216, 1)
@@ -5562,6 +5566,7 @@ skeleton = NodePath("")
 
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
+visible = false
 
 [node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
 process_mode = 0
@@ -5636,6 +5641,46 @@ color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="WhenPausedUI" instance=ExtResource("3_hhntt")]
 
+[node name="Panel" parent="WhenPausedUI/PauseMenu" index="1"]
+offset_top = -399.0
+offset_bottom = 399.0
+
+[node name="VBoxContainer" parent="WhenPausedUI/PauseMenu" index="2"]
+offset_left = -130.0
+offset_top = -326.0
+offset_right = 130.0
+offset_bottom = 384.0
+
+[node name="LoadButton" parent="WhenPausedUI/PauseMenu/VBoxContainer" index="6"]
+text = "Load Game"
+
+[node name="InputLegendRect" type="TextureRect" parent="WhenPausedUI/PauseMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -876.0
+offset_top = -472.0
+offset_right = 876.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_53y3s")
+script = ExtResource("16_w44n4")
+
+[node name="InputLegendButton" type="Button" parent="WhenPausedUI/PauseMenu"]
+visible = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = 31.0
+offset_right = 121.0
+offset_bottom = 103.0
+icon = ExtResource("14_k5qdb")
+script = ExtResource("18_hpt41")
+
 [node name="Utilities" type="Node" parent="."]
 
 [node name="SaveLoadManager" type="Node" parent="Utilities"]
@@ -5653,9 +5698,11 @@ script = ExtResource("3_35roi")
 script = ExtResource("2_fawn2")
 
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu" method="_on_game_paused"]
+[connection signal="paused" from="." to="WhenPausedUI/PauseMenu/InputLegendButton" method="_on_game_paused"]
 [connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
 [connection signal="resumed" from="." to="PausableUI/LogicGatesPuzzle" method="handle_external_resume"]
 [connection signal="resumed" from="." to="WhenPausedUI/PauseMenu" method="_on_game_resumed"]
+[connection signal="resumed" from="." to="WhenPausedUI/PauseMenu/InputLegendButton" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
@@ -5664,6 +5711,7 @@ script = ExtResource("2_fawn2")
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/SaveButton" to="." method="_on_save_game"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/LoadButton" to="." method="_on_load_game"]
+[connection signal="pressed" from="WhenPausedUI/PauseMenu/InputLegendButton" to="WhenPausedUI/PauseMenu/InputLegendRect" method="_on_input_legend_button_pressed"]
 
 [editable path="WorldRoot/TestLevel"]
 [editable path="WorldRoot/room test wo light and camera"]

@@ -1,12 +1,14 @@
 extends Control
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("RESET")
+	animation_player.play("RESET")
 
 func _on_game_paused() -> void:
-	$AnimationPlayer.play("Blur")
+	animation_player.play("Blur")
 
 func _on_game_resumed() -> void:
-	$AnimationPlayer.play_backwards("Blur")
+	animation_player.play_backwards("Blur")
+	

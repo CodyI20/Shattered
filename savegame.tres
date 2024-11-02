@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=2 format=3 uid="uid://ciw5dtoa8rkpj"]
-
-[ext_resource type="Script" path="res://GDScripts/Saving logic/saved_game.gd" id="1_bjvrl"]
-
-[resource]
-script = ExtResource("1_bjvrl")
-level_path = "res://Levels/testLevel.tscn"
-player_node = ""
-player_position = Vector3(-2.40663, -0.135215, 0.220104)

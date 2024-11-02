@@ -2,9 +2,9 @@ class_name SaverLoader
 extends Node
 
 
-@onready var _player: Player = %player
+@onready var _player: Player = $"../../WorldRoot/player"
+@onready var _world_root: WorldRoot = %WorldRoot
 
-@onready var _world_root:WorldRoot = %WorldRoot
 
 
 func save_game():
