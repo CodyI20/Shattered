@@ -83,7 +83,6 @@ shadow_mesh = SubResource("ArrayMesh_by6c4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxy3w"]
 resource_name = "Vending machine"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
