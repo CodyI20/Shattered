@@ -5,8 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://bl0h52so4ug05" path="res://Art/SFX/Music/Minecraft Footsteps - Sound Effect (HD).mp3" id="3_lj4w1"]
 [ext_resource type="AudioStream" uid="uid://q87xeuo8ph1i" path="res://Art/SFX/Music/Jump Sound Effect (High Quality).mp3" id="4_siejr"]
 
-
-
 [node name="audioManager" type="Node"]
 script = ExtResource("1_n3lnt")
 

@@ -19,7 +19,7 @@ func _process(_delta):
 			set_interaction_text(collider.get_interaction_text())
 			current_collider = collider
 # When the interact button is pressed, will interact with object
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("Interact"):
 			current_collider.interact()
 			set_interaction_text(collider.get_interaction_text())
 # If there is no object to interact with, sets the collider to nothing
@@ -28,11 +28,13 @@ func _process(_delta):
 		set_interaction_text("")
 
 func set_interaction_text(text):
+	if interaction_label == null:
+		return
 # Shows the interaction text when raycast is colliding with an interactable object
 	if !text:
 		interaction_label.visible = false
 	else:
 		# Grabs the interact key from the interact keymap
-		var key_name = OS.get_keycode_string(InputMap.action_get_events("interact")[0].physical_keycode)
+		var key_name = OS.get_keycode_string(InputMap.action_get_events("Interact")[0].physical_keycode)
 		interaction_label.text = "Press %s to interact" % [key_name]
 		interaction_label.visible = true

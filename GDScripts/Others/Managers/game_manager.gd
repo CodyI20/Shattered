@@ -10,6 +10,8 @@ var LoadedLevel : String
 var SpawnIndex : int
 var PausedByLetter : bool
 
+var game_is_paused_by_script : bool
+
 func interacted_with_letter():
 	PausedByLetter = true
 
@@ -24,6 +26,7 @@ func _process(delta: float) -> void:
 func game_state_change():
 	if Input.is_action_just_pressed("Esc"):
 		if not PausedByLetter:
+			game_is_paused_by_script = true
 			pause_game(!get_tree().paused)
 		else:
 			get_tree().paused = false

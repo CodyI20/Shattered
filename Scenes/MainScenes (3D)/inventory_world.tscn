@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ban76iqpjhveh"]
 
-[ext_resource type="Script" path="res://GDScripts/player.gd" id="1_8n78g"]
+[ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_8n78g"]
 [ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="2_wu4j2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="3_7drko"]
 [ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://Scenes/ScenePrefabs/test_item_cube.tscn" id="4_7hfjm"]

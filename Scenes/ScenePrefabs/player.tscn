@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=21 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
@@ -10,16 +10,107 @@
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/walking_state.gd" id="7_ykbpr"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/falling_state.gd" id="9_m1dmj"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/landing_state.gd" id="10_k31vs"]
+[ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="11_ikjpp"]
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="12_cupow"]
+[ext_resource type="Resource" uid="uid://binkcymtnarjd" path="res://Resources/Inventory/ItemData/test_cube_data.tres" id="13_jhejh"]
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="14_vh0ki"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
 radius = 0.3
-height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i58ng"]
 radius = 0.3
 height = 1.8
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_64ayf"]
+radius = 1.48154
+
+[sub_resource type="Animation" id="Animation_aq63l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0606481, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.71895, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cjql4"]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0606481, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.71895, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ql1u4"]
+_data = {
+"RESET": SubResource("Animation_aq63l"),
+"crouch": SubResource("Animation_cjql4")
+}
+
 [node name="player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0606481, 0)
 script = ExtResource("1_xrn6u")
 movement_speed = 50.0
 
@@ -32,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_i58ng")
 
 [node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71895, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
@@ -76,3 +167,79 @@ script = ExtResource("9_m1dmj")
 
 [node name="Landing" type="Node" parent="MovementFSM"]
 script = ExtResource("10_k31vs")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("11_ikjpp")
+ItemTypes = Array[ExtResource("12_cupow")]([ExtResource("13_jhejh")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_64ayf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 1
+
+[node name="InventoryUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("14_vh0ki")
+PlayerBody = NodePath("")
+CollisionMask = 1
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/InventoryUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -232.0
+offset_right = 309.5
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -231.5
+offset_right = 309.0
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 2
+mouse_filter = 0
+columns = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ql1u4")
+}
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]
