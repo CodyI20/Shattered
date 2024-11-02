@@ -181,7 +181,7 @@ shape = SubResource("SphereShape3D_64ayf")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 1
 
-[node name="InventoryUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="InventoryUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("InventoryGrid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -190,7 +190,6 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 script = ExtResource("14_vh0ki")
-PlayerBody = NodePath("")
 CollisionMask = 1
 InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
 

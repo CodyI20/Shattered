@@ -5654,8 +5654,8 @@ script = ExtResource("2_fawn2")
 
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
-[connection signal="resumed" from="." to="WhenPausedUI/PauseMenu" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="PausableUI/LogicGatesPuzzle" method="handle_external_resume"]
+[connection signal="resumed" from="." to="WhenPausedUI/PauseMenu" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
