@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4int3gysyu3a"]
+[gd_scene load_steps=309 format=4 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="PackedScene" uid="uid://cy0fst5s03t0c" path="res://Scenes/MainScenes (3D)/testLevel.tscn" id="1_gbxum"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
