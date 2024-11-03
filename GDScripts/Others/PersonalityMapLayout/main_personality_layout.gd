@@ -5,7 +5,7 @@ class_name MainPersonalityLayoutState
 
 func _ready() -> void:
 	main_pers_animator.play("RESET")
-	Events.alter1_swap.connect(on_alter1_swap)
+	Events.personality_swap.connect(on_personality_swap)
 
 func Enter():
 	main_pers_animator.play("SwitchToMainPersonality")
@@ -14,5 +14,6 @@ func Exit():
 	print_debug("EXITING MAIN LAYOUT")
 	main_pers_animator.play("SwitchFromMainPersonality")
 
-func on_alter1_swap() -> void:
-	state_transition.emit(self,"Alter1Layout")
+func on_personality_swap(personality: String) -> void:
+	if personality == "Alter1":
+		state_transition.emit(self, "Alter1Layout")

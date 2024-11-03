@@ -8,8 +8,7 @@ signal toggle_inventory()
 
 # ALTER EVENTS
 
-signal alter1_swap()
-signal main_personality_swap()
+signal personality_swap(personality: String)
 
 # INTERACTION EVENTS
 
@@ -28,5 +27,3 @@ signal valid_drop_target_exited
 signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
 signal gate_solved()
-
-signal puzzle_toggle()

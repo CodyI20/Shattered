@@ -6,7 +6,7 @@ class_name Alter1LayoutState
 
 func _ready() -> void:
 	alter_1_animator.play("RESET")
-	Events.main_personality_swap.connect(on_main_personality_swap)
+	Events.personality_swap.connect(on_personality_swap)
 	
 func Enter():
 	alter_1_animator.play("SwitchToAlter1")
@@ -15,5 +15,6 @@ func Exit():
 	print_debug("EXITING ALTER1LAYOUT")
 	alter_1_animator.play("SwitchFromAlter1")
 
-func on_main_personality_swap() -> void:
-	state_transition.emit(self, "MainPersonalityLayout")
+func on_personality_swap(personality: String) -> void:
+	if personality == "MainPersonality":
+		state_transition.emit(self, "MainPersonalityLayout")

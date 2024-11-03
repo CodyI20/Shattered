@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://dppk3c2nuif5d"]
+[gd_scene load_steps=7 format=4 uid="uid://dppk3c2nuif5d"]
 
+[ext_resource type="Script" path="res://GDScripts/Minigames/electric_panel_model.gd" id="1_mw14o"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/electric_panel.gd" id="1_w03je"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8jru"]
@@ -48,6 +49,7 @@ points = PackedVector3Array(0.0125048, 0.01, 0.01, -0.01, 0.01, 0.01, 0.0125048,
 transform = Transform3D(79.5665, 0, 0, 0, -2.08548e-06, 79.5665, 0, -47.7103, -3.47796e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_i30i0")
 skeleton = NodePath("")
+script = ExtResource("1_mw14o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2

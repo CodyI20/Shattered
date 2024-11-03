@@ -13,5 +13,5 @@ func Update(_delta: float):
 
 func EasyStateSwap() -> void:
 	if Input.is_action_just_pressed("SwapAlter1"):
-		Events.alter1_swap.emit()
+		Events.personality_swap.emit("Alter1")
 		state_transition.emit(self, "Alter1")
