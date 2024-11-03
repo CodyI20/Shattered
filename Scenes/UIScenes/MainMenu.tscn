@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs1f6co8vh3p1"]
+[gd_scene load_steps=3 format=3 uid="uid://cs1f6co8vh3p1"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/main_menu.gd" id="1_4ql5n"]
+[ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="2_jheqj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,17 +30,22 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [node name="LoadButton" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Load Game"
 
+[node name="Options" parent="." instance=ExtResource("2_jheqj")]
+layout_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
