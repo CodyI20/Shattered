@@ -25,7 +25,6 @@ var gravity = 9.8
 
 # Toggle variables
 var is_crouching : bool = false
-var is_sprinting : bool = false
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
@@ -36,8 +35,6 @@ var initial_camera_y = 0.0
 func _input(event):
 	if event.is_action_pressed("crouch"):
 		toggle_crouch()
-	if event.is_action_pressed("sprint"):
-		toggle_sprint()
 	if event.is_action_pressed("inventory"):
 		print_debug("Toggling the inventory...")
 		Events.toggle_inventory.emit()
@@ -82,17 +79,6 @@ func toggle_crouch():
 		movement_speed = JOG_SPEED
 		print("movement_speed=", movement_speed)
 	is_crouching = !is_crouching
-
-func toggle_sprint():
-	if is_sprinting == true:
-		print("Sprinting")
-		movement_speed = SPRINT_SPEED
-		print("movement_speed=", movement_speed)
-	elif is_sprinting == false:
-		print("Stop sprinting")
-		movement_speed = JOG_SPEED
-		print("movement_speed=", movement_speed)
-	is_sprinting = !is_sprinting
 
 # Bobs head
 func _headbob(time) -> Vector3:

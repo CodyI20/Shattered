@@ -23,6 +23,8 @@ func StateSwitchLogic() -> void:
 		#state_transition.emit(self, "Running")
 	if !Input.is_action_pressed("left") and !Input.is_action_pressed("right") and !Input.is_action_pressed("up") and !Input.is_action_pressed("down"):
 		state_transition.emit(self, "Idle")
+	if Input.is_action_just_pressed("sprint"):
+		state_transition.emit(self, "Running")
 	if Input.is_action_just_pressed("jump"):
 		state_transition.emit(self, "Jumping")
 	if !player.is_on_floor():

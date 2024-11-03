@@ -1,11 +1,10 @@
+# This script checks if the RayCast is interacting with an interactable object and provides interactibility
 extends RayCast3D
 
 var current_collider: Object
 # Grabs the interaction label node
-@onready var interaction_label: Label = $"WhenPausedUI/LetterUI/UI#InteractionLabel"
+@onready var interaction_label = get_tree().get_first_node_in_group("InteractionLabel")
 
-
-# This script checks if the RayCast is interacting with an interactable object and provides interactibility
 
 func _ready() -> void:
 	set_interaction_text("")
