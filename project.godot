@@ -46,9 +46,7 @@ folder_colors={
 
 [global_group]
 
-Letter=""
-LetterText=""
-InteractionLabel=""
+player=""
 
 [input]
 

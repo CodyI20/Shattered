@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dppk3c2nuif5d"]
+[gd_scene load_steps=8 format=4 uid="uid://dppk3c2nuif5d"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/outline_shader_application.gd" id="1_mw14o"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/electric_panel.gd" id="1_w03je"]
@@ -45,6 +45,9 @@ shadow_mesh = SubResource("ArrayMesh_ujyyr")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wwd6f"]
 points = PackedVector3Array(0.0125048, 0.01, 0.01, -0.01, 0.01, 0.01, 0.0125048, -0.00578241, 0.01, 0.0125048, 0.01, -0.0195621, -0.01, -0.00578241, 0.01, -0.01, 0.01, -0.0195621, 0.0125048, -0.00578241, -0.0195621, -0.01, -0.00578241, -0.0195621)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sq1fo"]
+size = Vector3(0.122412, 0.187964, 0.1)
+
 [node name="ElectricPanel" type="MeshInstance3D"]
 transform = Transform3D(79.5665, 0, 0, 0, -2.08548e-06, 79.5665, 0, -47.7103, -3.47796e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_i30i0")
@@ -57,3 +60,11 @@ script = ExtResource("1_w03je")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_wwd6f")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0.00114746, 0.00462647, 1.38778e-17)
+shape = SubResource("BoxShape3D_sq1fo")
+
+[connection signal="body_exited" from="Area3D" to="StaticBody3D" method="_on_area_3d_body_exited"]

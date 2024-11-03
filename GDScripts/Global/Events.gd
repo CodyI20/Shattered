@@ -28,5 +28,9 @@ signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
 signal gate_solved()
 
+# UI PUZZLES
+signal exited_puzzle_area()
+
 # INVENTORY
-signal OnItemPickedUp(item: Interactable)
+signal OnItemPickedUp(item: ItemData)
+signal item_inspected(item: ItemData)

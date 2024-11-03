@@ -13,12 +13,17 @@ var SlotData : ItemData
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
-			print_debug("InventorySlotID:", InventorySlotID)
-			OnItemEquiped.emit(InventorySlotID)
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				print_debug("Item: %s interacted with" % SlotData)
+				Events.item_inspected.emit(SlotData)
+			elif event.double_click:
+				print_debug("InventorySlotID:", InventorySlotID)
+				OnItemEquiped.emit(InventorySlotID)
 
 
 func FillSlot(data : ItemData, equipped : bool):
+	print_debug("Filling the slot with ", data)
 	SlotData = data
 	EquippedHighlight.visible = equipped
 	if (SlotData != null):

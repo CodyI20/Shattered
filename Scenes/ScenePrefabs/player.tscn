@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=21 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
@@ -23,6 +23,11 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_64ayf"]
 radius = 1.48154
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukwcf"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_aq63l"]
 length = 0.001
@@ -207,6 +212,19 @@ size_flags_horizontal = 4
 focus_mode = 2
 mouse_filter = 0
 columns = 5
+
+[node name="UI#InteractionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press E to interact"
+label_settings = SubResource("LabelSettings_ukwcf")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

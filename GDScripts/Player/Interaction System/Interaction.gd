@@ -3,7 +3,8 @@ extends RayCast3D
 
 var current_collider: Object
 # Grabs the interaction label node
-@onready var interaction_label = get_tree().get_first_node_in_group("InteractionLabel")
+@onready var interaction_label: Label = $"../../../CanvasLayer/UI#InteractionLabel"
+
 
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _process(_delta):
 			current_collider.interact()
 			set_interaction_text(collider.get_interaction_text())
 # If there is no object to interact with, sets the collider to nothing
-	elif is_instance_valid(current_collider):
+	else:
 		current_collider = null
 		set_interaction_text("")
 
