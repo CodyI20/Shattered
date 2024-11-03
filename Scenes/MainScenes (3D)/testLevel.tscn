@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy0fst5s03t0c"]
+[gd_scene load_steps=27 format=3 uid="uid://cy0fst5s03t0c"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_08r0s"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="2_3i2x5"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_clkhv"]
+[ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interactable.gd" id="2_w1jic"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/alter_1_layout.gd" id="3_8nwk8"]
 [ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="5_vrcyn"]
 [ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="6_quiuy"]
@@ -335,6 +336,7 @@ mesh = SubResource("BoxMesh_q4tsj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 collision_layer = 3
+script = ExtResource("2_w1jic")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_1e2n5")

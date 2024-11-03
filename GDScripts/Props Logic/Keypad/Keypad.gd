@@ -4,8 +4,6 @@ extends Node3D
 
 @export var correct_password = "1234"
 
-signal on_correct_password
-signal on_wrong_password
 signal on_clear_password
 signal on_keypad_press
 
@@ -41,11 +39,11 @@ func on_button_interact(value):
 # Logic to check if the password is correct
 		if password == correct_password:
 			#correct_audio.play()
-			emit_signal("on_correct_password", password)
+			Events.on_correct_password.emit()
 			print("You have entered the correct password!")
 		else:
 			#wrong_audio.play()
-			emit_signal("on_wrong_password", password)
+			Events.on_wrong_password.emit()
 			print("You have entered the wrong password!")
 		password = ""
 

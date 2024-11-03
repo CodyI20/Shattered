@@ -2,7 +2,8 @@ extends RayCast3D
 
 var current_collider: Object
 # Grabs the interaction label node
-@onready var interaction_label = get_node("/root/Game/UI/InteractionLabel")
+@onready var interaction_label: Label = $"WhenPausedUI/LetterUI/UI#InteractionLabel"
+
 
 # This script checks if the RayCast is interacting with an interactable object and provides interactibility
 

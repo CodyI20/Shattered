@@ -15,6 +15,10 @@ signal main_personality_swap()
 
 signal on_interact
 
+# PASSWORD PUZZLE
+signal on_correct_password()
+signal on_wrong_password()
+
 # LOGIC GATE MINIGAME EVENTS
 signal object_started_dragging(object: DragItem)
 signal object_stopped_dragging(object: DragItem)
