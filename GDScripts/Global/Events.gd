@@ -34,3 +34,6 @@ signal exited_puzzle_area()
 # INVENTORY
 signal OnItemPickedUp(item: ItemData)
 signal item_inspected(item: ItemData)
+
+# OPTIONS
+signal options_menu_toggle(is_on: bool)

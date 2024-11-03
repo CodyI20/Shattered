@@ -4,10 +4,12 @@ class_name PlayerRun
 @onready var player: Player = $"../.."
 
 func Enter() -> void:
+	Events.player_waking.emit(true)
 	player.movement_speed = player.SPRINT_SPEED
 	print_debug("Entering running state...")
 	
 func Exit() -> void:
+	Events.player_waking.emit(false)
 	print_debug("Exiting running state...")
 
 func Update(_delta:float) -> void:

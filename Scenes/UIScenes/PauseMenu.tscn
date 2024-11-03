@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwoybiejqaab3"]
+[gd_scene load_steps=8 format=3 uid="uid://dwoybiejqaab3"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/pause_menu.gd" id="1_1ciin"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="1_gmfd4"]
+[ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="3_abpgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ay1a2"]
 shader = ExtResource("1_gmfd4")
@@ -13,7 +14,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/path = NodePath("Pause/Blur:material:shader_parameter/lod")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:modulate")
+tracks/1/path = NodePath("Pause/Panel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,7 +38,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/path = NodePath("Pause/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,7 +53,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/path = NodePath("Pause/Blur:material:shader_parameter/lod")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -64,7 +65,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:modulate")
+tracks/1/path = NodePath("Pause/Panel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -76,7 +77,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/path = NodePath("Pause/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -101,7 +102,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ciin")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Pause" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="ColorRect" parent="Pause"]
 material = SubResource("ShaderMaterial_ay1a2")
 layout_mode = 1
 anchors_preset = 15
@@ -110,7 +119,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Pause"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -125,7 +134,7 @@ offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -140,35 +149,40 @@ offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="VBoxContainer"]
+[node name="RestartButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Restart"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="MenuButton" type="Button" parent="VBoxContainer"]
+[node name="MenuButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Menu"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[node name="SaveButton" type="Button" parent="VBoxContainer"]
+[node name="SaveButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 text = "Save Game"
 
-[node name="LoadButton" type="Button" parent="VBoxContainer"]
+[node name="LoadButton" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
+text = "Load Game"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pause"]
 process_mode = 3
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_yn0f4")
 }
+
+[node name="Options" parent="." instance=ExtResource("3_abpgv")]
+layout_mode = 1

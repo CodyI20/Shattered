@@ -14,6 +14,10 @@ config/name="Shattered"
 run/main_scene="res://Scenes/UIScenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://Art/SFX/Music/MainAudioBus.tres"
+
 [autoload]
 
 AudioManager="*res://Scenes/ScenePrefabs/audio_manager.tscn"

@@ -8,14 +8,16 @@ signal resumed
 
 var LoadedLevel : String
 var SpawnIndex : int
-# If this is TRUE, it means that the game should NOT pause --> TRUE = NOT PAUSED ; FALSE = PAUSED
+# If this is TRUE, it means that the game should NOT pause --> TRUE = NOT PAUSED ; FALSE = PAUSED ; Same for resume
 var NoPause : bool = false
+var NoResume : bool = false
 var NoPauseStringArray : Array = ["Paper", "ElectricPanel"]
-
-var game_is_paused_by_script : bool
 
 func no_pause():
 	NoPause = true
+	
+func no_resume(should: bool):
+	NoResume = should
 
 func no_pause_interactions(interactable: Interactable):
 	if NoPauseStringArray.has(interactable.get_interaction_text()):
@@ -24,17 +26,21 @@ func no_pause_interactions(interactable: Interactable):
 func _ready() -> void:
 	Events.on_interact.connect(no_pause_interactions)
 	Events.toggle_inventory.connect(no_pause)
+	Events.options_menu_toggle.connect(no_resume)
 
 func _process(delta: float) -> void:
 	game_state_change()
 
 func game_state_change():
 	if Input.is_action_just_pressed("Esc"):
-		if not NoPause:
+		if not NoPause and not NoResume:
 			pause_game(!get_tree().paused)
-		else:
+		elif NoPause:
 			get_tree().paused = false
 			NoPause = false
+		elif NoResume:
+			get_tree().paused = true
+			NoResume = false
 
 ## This function handles both the pausing/resuming of the game and the event firing (emitting signals)
 ## CALL THIS FUNCTION WHENEVER YOU WANT TO PAUSE/RESUME THE GAME
@@ -57,7 +63,7 @@ func _on_restart_button_pressed() -> void:
 
 
 func _on_options_button_pressed() -> void:
-	print_debug("Pressing the options, for now...")
+	Events.options_menu_toggle.emit(true)
 
 
 func _on_menu_button_pressed() -> void:
