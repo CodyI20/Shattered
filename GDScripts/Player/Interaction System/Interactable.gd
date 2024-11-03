@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 class_name Interactable
 
 # This Class checks if the object is interactable

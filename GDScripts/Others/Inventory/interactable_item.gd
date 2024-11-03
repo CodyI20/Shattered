@@ -1,4 +1,4 @@
-extends Node3D
+extends Interactable
 class_name InteractableItem
 
 @export var ItemHighlightMesh : MeshInstance3D

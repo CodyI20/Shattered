@@ -3,17 +3,19 @@ extends Interactable
 # This script makes the paper node interactable and puts the text in the paper.
 #TODO: Make paper_text more expandable so we don't have to write the text in the code itself. Maybe have it import a .txt file or something.
 #TODO: Add fancy animations to the paper opening, maybe a fade in or the letter scrolling up from the top.
-
+@export var Item_type : ItemData
 # @export path to text file for letter
 var paper_text = "OMG i am so clumsy and forgetful! \n I am gonna write the code in this note now, it's: 1234"
 @onready var letter = get_tree().get_first_node_in_group("Letter")
 @onready var letter_text = get_tree().get_first_node_in_group("LetterText")
+var being_interacted_with: bool = false
 
 func get_interaction_text():
 	return "Paper"
 	
 func interact():
 	Events.on_interact.emit(self)
+	being_interacted_with = true
 	get_tree().paused = true
 	# Make the letter visible on screen.
 	letter.visible = true
@@ -21,5 +23,7 @@ func interact():
 	letter_text.text = paper_text
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Esc"):
+	if being_interacted_with and Input.is_action_just_pressed("Esc"):
+		Events.OnItemPickedUp.emit(Item_type)
 		letter.visible = false
+		queue_free()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://dppk3c2nuif5d"]
 
-[ext_resource type="Script" path="res://GDScripts/Minigames/electric_panel_model.gd" id="1_mw14o"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/outline_shader_application.gd" id="1_mw14o"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/electric_panel.gd" id="1_w03je"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8jru"]

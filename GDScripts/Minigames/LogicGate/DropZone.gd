@@ -4,7 +4,7 @@ class_name DropZone
 var item : DragItem = null  # Reference to the item currently in this slot
 var is_hovered = false  # Tracks if an item is hovering over this slot
 
-@export var correct_gate = GateEnum.gate_type.NONE
+@export var correct_gate = Enums.gate_type.NONE
 
 func _ready() -> void:
 	Events.object_started_dragging.connect(clear_item)

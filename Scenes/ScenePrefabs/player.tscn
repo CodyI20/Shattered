@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=20 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
@@ -12,8 +12,6 @@
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/falling_state.gd" id="9_m1dmj"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/landing_state.gd" id="10_k31vs"]
 [ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="11_ikjpp"]
-[ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="12_cupow"]
-[ext_resource type="Resource" uid="uid://binkcymtnarjd" path="res://Resources/Inventory/ItemData/test_cube_data.tres" id="13_jhejh"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="14_vh0ki"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
@@ -149,7 +147,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("11_ikjpp")
-ItemTypes = Array[ExtResource("12_cupow")]([ExtResource("13_jhejh")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_64ayf")

@@ -1,6 +1,8 @@
 extends Control
 class_name InventoryHandler
 
+@onready var canvas_layer: CanvasLayer = $".."
+
 @export var PlayerBody : CharacterBody3D
 @export_flags_3d_physics var CollisionMask : int
  
@@ -15,7 +17,9 @@ var EquippedSlot : int = -1
 var toggled_on : bool = true
 
 func _ready():
+	# Toggled in the player script under _input
 	Events.toggle_inventory.connect(toggle_inventory)
+	Events.OnItemPickedUp.connect(PickupItem)
 	toggle_inventory()
 	for i in ItemSlotsCount:
 		var slot = InventorySlotPrefab.instantiate() as InventorySlot
@@ -31,8 +35,10 @@ func toggle_inventory():
 	set_process(toggled_on)
 	if toggled_on:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		canvas_layer.layer = 10
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		canvas_layer.layer = 0
 	
 func PickupItem(item : ItemData):
 	var foundSlot : bool = false
@@ -101,3 +107,6 @@ func GetWorldMousePosition() -> Vector3:
 	else:
 		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.5, 0.0)
 	
+func _process(delta: float) -> void:
+	if toggled_on and Input.is_action_just_pressed("Esc"):
+		toggle_inventory()

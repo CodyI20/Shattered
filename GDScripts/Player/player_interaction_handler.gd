@@ -1,7 +1,5 @@
 extends Area3D
 
-signal OnItemPickedUp(item)
-
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
@@ -26,7 +24,7 @@ func PickupNearestItem():
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print("Item id:" + str(i) + " Item Name:" + ItemTypes[i].ItemName)
-				OnItemPickedUp.emit(ItemTypes[i])
+				Events.OnItemPickedUp.emit(ItemTypes[i])
 				return
 		
 		printerr("Item not found")

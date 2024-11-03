@@ -14,12 +14,16 @@ var NoPauseStringArray : Array = ["Paper", "ElectricPanel"]
 
 var game_is_paused_by_script : bool
 
+func no_pause():
+	NoPause = true
+
 func no_pause_interactions(interactable: Interactable):
 	if NoPauseStringArray.has(interactable.get_interaction_text()):
 		NoPause = true
 
 func _ready() -> void:
 	Events.on_interact.connect(no_pause_interactions)
+	Events.toggle_inventory.connect(no_pause)
 
 func _process(delta: float) -> void:
 	game_state_change()

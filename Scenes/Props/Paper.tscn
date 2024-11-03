@@ -1,6 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3mouro4ujgh4"]
+[gd_scene load_steps=9 format=3 uid="uid://b3mouro4ujgh4"]
 
 [ext_resource type="Script" path="res://GDScripts/Props Logic/Paper.gd" id="1_imfxu"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/outline_shader_application.gd" id="2_8w2ap"]
+[ext_resource type="Texture2D" uid="uid://dnusv3vi705e7" path="res://Art/2D/InventoryIcons/paper_icon.png" id="2_x4of4"]
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="3_yq73a"]
+
+[sub_resource type="Resource" id="Resource_rnb72"]
+script = ExtResource("3_yq73a")
+ItemName = "Paper"
+Item = ExtResource("2_x4of4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_qqwr0"]
 size = Vector3(0.5, 0.75, 0.001)
@@ -16,9 +24,11 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 collision_layer = 2
 script = ExtResource("1_imfxu")
+Item_type = SubResource("Resource_rnb72")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_qqwr0")
+script = ExtResource("2_8w2ap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_pugxq")
