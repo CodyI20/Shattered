@@ -5,6 +5,7 @@ signal level_exit_reached(next_level:String)
 
 
 func load_level_async(path:String):
+	print_debug("LOADING LEVEL...")
 	# wait a physics frame so we can modify the tree
 	await get_tree().physics_frame
 	get_tree().paused = true

@@ -8,29 +8,29 @@ signal resumed
 
 var LoadedLevel : String
 var SpawnIndex : int
-var PausedByLetter : bool
+# If this is TRUE, it means that the game should NOT pause --> TRUE = NOT PAUSED ; FALSE = PAUSED
+var NoPause : bool = false
+var NoPauseStringArray : Array = ["Paper", "ElectricPanel"]
 
 var game_is_paused_by_script : bool
 
-func interacted_with_letter():
-	PausedByLetter = true
+func no_pause_interactions(interactable: Interactable):
+	if NoPauseStringArray.has(interactable.get_interaction_text()):
+		NoPause = true
 
 func _ready() -> void:
-	Events.on_interact.connect(interacted_with_letter)
+	Events.on_interact.connect(no_pause_interactions)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("TestPuzzle"):
-		Events.puzzle_toggle.emit()
 	game_state_change()
 
 func game_state_change():
 	if Input.is_action_just_pressed("Esc"):
-		if not PausedByLetter:
-			game_is_paused_by_script = true
+		if not NoPause:
 			pause_game(!get_tree().paused)
 		else:
 			get_tree().paused = false
-			PausedByLetter = false
+			NoPause = false
 
 ## This function handles both the pausing/resuming of the game and the event firing (emitting signals)
 ## CALL THIS FUNCTION WHENEVER YOU WANT TO PAUSE/RESUME THE GAME

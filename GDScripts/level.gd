@@ -15,4 +15,5 @@ func _ready():
 		exit.exit_reached.connect(_on_exit_reached)
 		
 func _on_exit_reached():
+	print_debug("EXIT REACHED...")
 	exit_reached.emit(next_level)

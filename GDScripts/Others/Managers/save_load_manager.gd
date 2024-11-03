@@ -8,6 +8,7 @@ extends Node
 
 
 func save_game():
+	print_debug("SAVING THE GAME...")
 	var saved_game := SavedGame.new()
 	
 	# save the path to the currently loaded level

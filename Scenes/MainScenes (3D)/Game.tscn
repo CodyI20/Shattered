@@ -1,4 +1,4 @@
-[gd_scene load_steps=346 format=4 uid="uid://b4int3gysyu3a"]
+[gd_scene load_steps=344 format=4 uid="uid://b4int3gysyu3a"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
 [ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_rect.gd" id="16_w44n4"]
+[ext_resource type="PackedScene" uid="uid://dppk3c2nuif5d" path="res://Scenes/PuzzleScenes/electric_panel.tscn" id="18_6heic"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
@@ -706,45 +707,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1yxp6")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8jru"]
-resource_name = "Material"
-vertex_color_use_as_albedo = true
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ujyyr"]
-_surfaces = [{
-"aabb": AABB(-0.01, -0.00578241, -0.0195621, 0.022507, 0.0157824, 0.0295621),
-"format": 34359742465,
-"index_count": 84,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMAAwAFAAQABgAEAAUABQAHAAYACAAJAAoACgALAAgABwAFAAMAAwACAAcAAQAAAAQABAAGAAEAAgABAAwADAAKAAIABwAJAA0ADQAGAAcABwACAAoACgAJAAcABgANAAwADAABAAYADgAPAAgACAALAA4ACwAKAAwADAAOAAsADgAMAA0ADQAPAA4ADwANAAkACQAIAA8A"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvGF6vbsK1yM8CtcjvGF6vbu9QKC8CtcjvArXIzy9QKC8KepMPArXIzwK1yM8KepMPArXIzy9QKC8KepMPGF6vbsK1yM8KepMPGF6vbu9QKC800hGPK8+n7sS8Jy800hGPGF6vbsS8Jy8tDUdvGF6vbsS8Jy8tDUdvK8+n7sS8Jy8tDUdvGF6vbu0NR0800hGPGF6vbu0NR08tDUdvK8+n7u0NR0800hGPK8+n7u0NR08")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_i30i0"]
-resource_name = "Cube"
-_surfaces = [{
-"aabb": AABB(-0.01, -0.00578241, -0.0195621, 0.022507, 0.0157824, 0.0295621),
-"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+j8DBPqhlez6PwME+qGV7PpDAwT4AS5M7kMDBPgBLkzsAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+AADAPgAAAAAAACA/AAAAALkfHz8AS5M7kMDBPgBLkzsAAMA+AACAPo/AwT6oZXs+uB8fP6hlez4AACA/AACAPgAAID8AAIA+uB8fP6hlez65Hx8/AEuTOwAAID8AAAAA8Er0PXDAgj2DI2I/cMCCPYEjYj8VmGk/30r0PROYaT+QwME+AEuTO5DAwT4AS5M7uR8fPwBLkzu5Hx8/AEuTO7kfHz8AS5M7uR8fPwBLkzu4Hx8/qGV7PrgfHz+oZXs+uB8fP6hlez64Hx8/qGV7Po/AwT6oZXs+j8DBPqhlez4="),
-"format": 34359742487,
-"index_count": 84,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAHAAYABsAGwAdABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAA"),
-"material": SubResource("StandardMaterial3D_o8jru"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 52,
-"vertex_data": PackedByteArray("CtcjvArXIzwK1yM8CtcjvGF6vbsK1yM8CtcjvGF6vbu9QKC8CtcjvArXIzy9QKC8KepMPArXIzwK1yM8CtcjvArXIzwK1yM8CtcjvArXIzy9QKC8KepMPArXIzy9QKC8KepMPGF6vbsK1yM8KepMPArXIzwK1yM8KepMPArXIzy9QKC8KepMPGF6vbu9QKC800hGPK8+n7sS8Jy800hGPGF6vbsS8Jy8tDUdvGF6vbsS8Jy8tDUdvK8+n7sS8Jy8KepMPGF6vbu9QKC8KepMPArXIzy9QKC8CtcjvArXIzy9QKC8CtcjvGF6vbu9QKC8CtcjvGF6vbsK1yM8CtcjvArXIzwK1yM8KepMPArXIzwK1yM8KepMPGF6vbsK1yM8CtcjvGF6vbu9QKC8CtcjvGF6vbsK1yM8tDUdvGF6vbu0NR08tDUdvGF6vbsS8Jy8KepMPGF6vbu9QKC800hGPGF6vbsS8Jy800hGPGF6vbu0NR08KepMPGF6vbsK1yM8KepMPGF6vbsK1yM800hGPGF6vbu0NR08tDUdvGF6vbu0NR08CtcjvGF6vbsK1yM8tDUdvK8+n7u0NR0800hGPK8+n7u0NR0800hGPK8+n7sS8Jy8tDUdvK8+n7sS8Jy8tDUdvK8+n7sS8Jy8tDUdvGF6vbsS8Jy8tDUdvGF6vbu0NR08tDUdvK8+n7u0NR08tDUdvK8+n7u0NR08tDUdvGF6vbu0NR0800hGPGF6vbu0NR0800hGPK8+n7u0NR0800hGPK8+n7u0NR0800hGPGF6vbu0NR0800hGPGF6vbsS8Jy800hGPK8+n7sS8Jy8AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP7//7//fwAA////v/9/AAD+//+//38AAP7//7////9/////v////3////+/////f////7////9/////v/////////+//////////7//////////v/////////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78=")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ujyyr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m10fo"]
 resource_name = "cables"
@@ -4228,7 +4190,7 @@ collision_layer = 3
 shape = SubResource("BoxShape3D_1e2n5")
 
 [node name="DoorPivot" type="Node3D" parent="WorldRoot/TestLevel"]
-transform = Transform3D(-7.98183e-08, 0, 1, 0, 3.95632, 0, -1.82603, 0, -4.37114e-08, -11.7152, 1.34496, -0.982047)
+transform = Transform3D(-6.61021e-06, 0, 1, 0, 3.95632, 0, -1.82603, 0, -3.61999e-06, -11.7152, 1.34496, -0.982047)
 script = ExtResource("5_dr6d5")
 
 [node name="Door" type="MeshInstance3D" parent="WorldRoot/TestLevel/DoorPivot"]
@@ -4313,10 +4275,6 @@ size = Vector3(0.05, 2.166, 9.58411)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02693, 0.808768, 7.15917)
 mesh = SubResource("PlaneMesh_nmlut")
 
-[node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
-unique_name_in_owner = true
-world_root = NodePath("..")
-
 [node name="Park#1" type="Node3D" parent="WorldRoot"]
 visible = false
 
@@ -4389,7 +4347,7 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Path3D" type="Path3D" parent="WorldRoot/Park#2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0, -0.039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530461, 4.76837e-07, -0.0265627)
 visible = false
 curve = SubResource("Curve3D_an21h")
 
@@ -4399,12 +4357,6 @@ polygon = PackedVector2Array(-83.0403, -46.9304, -71.9861, -41.2044, -60.8524, -
 depth = 0.03
 smooth_faces = true
 material = SubResource("StandardMaterial3D_nmnq1")
-metadata/_edit_lock_ = true
-
-[node name="Island" type="CSGPolygon3D" parent="WorldRoot/Park#2/Water as platform"]
-polygon = PackedVector2Array(-81.2992, -10.6706, -84.6031, -7.97375, -86.3021, -2.48464, -87.0905, 5.50976, -85.8483, 10.43, -81.8872, 15.78, -74.7144, 19.1723, -67.4718, 19.8529, -60.3271, 18.5203, -54.5786, 16.4058, -49.2676, 13.0869, -43.531, 10.3401, -38.3959, 9.89385, -35.3795, 10.942, -30.2441, 13.687, -27.4187, 17.1091, -22.2394, 19.2789, -17.178, 20.4505, -10.1852, 19.8424, -3.27465, 16.7361, 2.30184, 14.8407, 7.61494, 11.9546, 11.7172, 6.67852, 14.9264, 2.05774, 18.115, -1.95283, 21.8594, -6.54259, 22.5795, -13.475, 19.3193, -16.6508, 16.4789, -18.2022, 11.7328, -18.9654, 7.70749, -18.2374, 2.05179, -16.0662, -1.38599, -15.4814, -6.79041, -15.0746, -11.8358, -14.7581, -17.866, -14.5051, -22.1767, -15.9612, -27.7029, -17.194, -34.8325, -17.7016, -40.2888, -15.3677, -45.0078, -14.8145, -50.3095, -13.8413, -56.3529, -12.0539, -61.7925, -11.5904, -67.9251, -10.9933, -74.2546, -12.3486)
-depth = 0.05
-metadata/_edit_lock_ = true
 
 [node name="Ferris wheel area" type="Node3D" parent="WorldRoot/Park#2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0.025, 0)
@@ -5581,7 +5533,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_olocs")
 
 [node name="electrical room unfinished" type="Node3D" parent="WorldRoot"]
-transform = Transform3D(-0.0120061, 0, -0.39982, 0, 0.4, 0, 0.39982, 0, -0.0120061, 20.8101, 0.118509, -39.8185)
+transform = Transform3D(0.0205371, 0, 0.399473, 0, 0.4, 0, -0.399473, 0, 0.0205371, -30.8439, 0.118509, 0.753167)
 
 [node name="Floor" type="MeshInstance3D" parent="WorldRoot/electrical room unfinished"]
 transform = Transform3D(595.952, 0, 0, 0, -0.000153444, 410.482, 0, -1287.18, -4.89333e-05, 0, 0, 0)
@@ -5623,10 +5575,8 @@ transform = Transform3D(0.000131839, 3.22282e-05, -737.295, 1.3097e-12, 737.295,
 mesh = SubResource("ArrayMesh_n8x2v")
 skeleton = NodePath("")
 
-[node name="Cube" type="MeshInstance3D" parent="WorldRoot/electrical room unfinished"]
+[node name="ElectricPanel" parent="WorldRoot/electrical room unfinished" instance=ExtResource("18_6heic")]
 transform = Transform3D(79.5665, 0, 0, 0, -5.68751e-06, 79.5665, 0, -47.7103, -9.48507e-06, 17.5884, 5.59271, -24.685)
-mesh = SubResource("ArrayMesh_i30i0")
-skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="WorldRoot/electrical room unfinished"]
 transform = Transform3D(7.82034, 0, 0, 0, -9.32258e-07, 7.82034, 0, -7.82034, -9.32258e-07, 17.483, 16.8774, -24.9036)
@@ -6058,9 +6008,11 @@ transform = Transform3D(34.3558, 0, 0, 0, -4.14559e-05, 34.3558, 0, -347.758, -4
 mesh = SubResource("ArrayMesh_4jug0")
 skeleton = NodePath("")
 
+[node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5437, 0.0606481, -2.19526)
+
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
-visible = false
 
 [node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
 process_mode = 0

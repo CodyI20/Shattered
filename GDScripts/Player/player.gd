@@ -1,8 +1,6 @@
 extends CharacterBody3D
 class_name Player
 
-# @onready var _world_root: WorldRoot = %WorldRoot
-@export var world_root:NodePath
 
 # The unit of Speed (in Godot?)is m/s so the default for a player walking 5 km/h would be 1.388 m/s
 # The default for a player running 10 km/h would be 2.778 m/s 

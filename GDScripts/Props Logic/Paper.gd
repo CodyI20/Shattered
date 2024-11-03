@@ -9,14 +9,17 @@ var paper_text = "OMG i am so clumsy and forgetful! \n I am gonna write the code
 @onready var letter = get_tree().get_first_node_in_group("Letter")
 @onready var letter_text = get_tree().get_first_node_in_group("LetterText")
 
+func get_interaction_text():
+	return "Paper"
 	
 func interact():
-	Events.on_interact.emit()
+	Events.on_interact.emit(self)
 	get_tree().paused = true
 	# Make the letter visible on screen.
 	letter.visible = true
 # Grabs the paper_text variable and adds it to the label.
 	letter_text.text = paper_text
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("Esc"):
 		letter.visible = false

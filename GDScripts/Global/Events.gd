@@ -11,9 +11,9 @@ signal toggle_inventory()
 signal alter1_swap()
 signal main_personality_swap()
 
-# LETTER EVENTS
+# INTERACTION EVENTS
 
-signal on_interact
+signal on_interact(interactable: Interactable)
 
 # PASSWORD PUZZLE
 signal on_correct_password()
