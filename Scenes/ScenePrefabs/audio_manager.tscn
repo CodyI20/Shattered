@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://jbx1o36ecr2i"]
+[gd_scene load_steps=9 format=3 uid="uid://jbx1o36ecr2i"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/audio_manager.gd" id="1_n3lnt"]
-[ext_resource type="AudioStream" uid="uid://dpihmx1mnhh6m" path="res://Art/SFX/Music/adaptiveSoundtrackCalmDemo.mp3" id="2_cpg6r"]
-[ext_resource type="AudioStream" uid="uid://bl0h52so4ug05" path="res://Art/SFX/Music/Minecraft Footsteps - Sound Effect (HD).mp3" id="3_lj4w1"]
-[ext_resource type="AudioStream" uid="uid://q87xeuo8ph1i" path="res://Art/SFX/Music/Jump Sound Effect (High Quality).mp3" id="4_siejr"]
+[ext_resource type="AudioStream" uid="uid://dpihmx1mnhh6m" path="res://Art/Audio/Music/adaptiveSoundtrackCalmDemo.mp3" id="2_cpg6r"]
+[ext_resource type="AudioStream" uid="uid://bl0h52so4ug05" path="res://Art/Audio/SFX/Minecraft Footsteps - Sound Effect (HD).mp3" id="3_lj4w1"]
+[ext_resource type="AudioStream" uid="uid://q87xeuo8ph1i" path="res://Art/Audio/SFX/Jump Sound Effect (High Quality).mp3" id="4_siejr"]
+[ext_resource type="AudioStream" uid="uid://doej5dtx3vstr" path="res://Art/Audio/SFX/KeypadPuzzle/CorrectCodeSound.ogg" id="5_symgv"]
+[ext_resource type="AudioStream" uid="uid://c8weti84mro2o" path="res://Art/Audio/SFX/KeypadPuzzle/KeySound1.ogg" id="6_ubt73"]
+[ext_resource type="AudioStream" uid="uid://cwubhvhd2q7ea" path="res://Art/Audio/SFX/KeypadPuzzle/WrongCodeSound.ogg" id="10_nft8a"]
+[ext_resource type="AudioStream" uid="uid://bc4ydqqqaubal" path="res://Art/Audio/SFX/LogicGatesPuzzle/ElectricityON.wav" id="11_wqjpj"]
 
 [node name="AudioManager" type="Node"]
 process_mode = 3
@@ -27,4 +31,24 @@ bus = &"SFX"
 
 [node name="jumpSFX" type="AudioStreamPlayer" parent="SFX/PlayerMovementSFX"]
 stream = ExtResource("4_siejr")
+bus = &"SFX"
+
+[node name="KeypadPuzzle" type="Node" parent="SFX"]
+
+[node name="CorrectCodeSound" type="AudioStreamPlayer" parent="SFX/KeypadPuzzle"]
+stream = ExtResource("5_symgv")
+bus = &"SFX"
+
+[node name="KeySound" type="AudioStreamPlayer" parent="SFX/KeypadPuzzle"]
+stream = ExtResource("6_ubt73")
+bus = &"SFX"
+
+[node name="WrongCodeSound" type="AudioStreamPlayer" parent="SFX/KeypadPuzzle"]
+stream = ExtResource("10_nft8a")
+bus = &"SFX"
+
+[node name="LogicGatePuzzle" type="Node" parent="SFX"]
+
+[node name="ElectricityOn" type="AudioStreamPlayer" parent="SFX/LogicGatePuzzle"]
+stream = ExtResource("11_wqjpj")
 bus = &"SFX"

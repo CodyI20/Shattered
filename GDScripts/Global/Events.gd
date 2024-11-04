@@ -13,6 +13,7 @@ signal personality_swap(personality: String)
 # INTERACTION EVENTS
 
 signal on_interact(interactable: Interactable)
+signal on_interact_with_keypad_button()
 
 # PASSWORD PUZZLE
 signal on_correct_password()
@@ -27,6 +28,9 @@ signal valid_drop_target_exited
 signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
 signal gate_solved()
+
+signal logic_gate_puzzle_on()
+signal logic_gate_puzzle_off()
 
 # UI PUZZLES
 signal exited_puzzle_area()

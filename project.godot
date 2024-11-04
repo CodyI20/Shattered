@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 [audio]
 
-buses/default_bus_layout="res://Art/SFX/Music/MainAudioBus.tres"
+buses/default_bus_layout="res://Art/Audio/MainAudioBus.tres"
 
 [autoload]
 

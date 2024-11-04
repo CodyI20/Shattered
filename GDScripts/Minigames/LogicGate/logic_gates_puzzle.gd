@@ -23,9 +23,11 @@ func toggle_puzzle_non_event() -> void:
 	visible = puzzle_active
 	set_process(puzzle_active)
 	if puzzle_active:
+		Events.logic_gate_puzzle_on.emit()
 		pausable_ui.layer = 11
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
+		Events.logic_gate_puzzle_off.emit()
 		pausable_ui.layer = 0
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

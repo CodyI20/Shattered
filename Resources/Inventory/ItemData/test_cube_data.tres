@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://binkcymtnarjd"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/item_data.gd" id="1_aetvv"]
-[ext_resource type="Texture2D" uid="uid://fhudkroavdak" path="res://Art/icon.svg" id="1_fan4m"]
+[ext_resource type="Texture2D" uid="uid://fhudkroavdak" path="res://Art/2D/icon.svg" id="1_fan4m"]
 [ext_resource type="PackedScene" uid="uid://c4jhh485642ah" path="res://Scenes/ScenePrefabs/test_item_cube.tscn" id="2_bvjcj"]
 
 [resource]

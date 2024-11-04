@@ -1,9 +1,20 @@
 extends Node
 
+# MUSIC / AMBIANCE
 @onready var background_music: AudioStreamPlayer = $backgroundMusic
 
+# SFX - PLAYER MOVEMENT
 @onready var walk_sfx: AudioStreamPlayer = $SFX/PlayerMovementSFX/walkSFX
 @onready var jump_sfx: AudioStreamPlayer = $SFX/PlayerMovementSFX/jumpSFX
+
+# SFX - KEYPAD PUZZLE
+@onready var correct_code_sound: AudioStreamPlayer = $SFX/KeypadPuzzle/CorrectCodeSound
+@onready var key_sound: AudioStreamPlayer = $SFX/KeypadPuzzle/KeySound
+@onready var wrong_code_sound: AudioStreamPlayer = $SFX/KeypadPuzzle/WrongCodeSound
+
+# SFX - LOGIC GAME PUZZLE
+@onready var electricity_on: AudioStreamPlayer = $SFX/LogicGatePuzzle/ElectricityOn
+
 
 func _ready() -> void:
 	_event_subscription()
@@ -13,8 +24,17 @@ func _ready() -> void:
 	background_music.play()
 
 func _event_subscription() -> void:
+	# SFX - PLAYER MOVEMENT
 	Events.player_jumped.connect(play_jump_sound)
 	Events.player_waking.connect(play_walk_sound)
+	
+	# SFX - KEYPAD PUZZLE
+	Events.on_correct_password.connect(play_correct_code_sound)
+	Events.on_wrong_password.connect(play_wrong_code_sound)
+	Events.on_interact_with_keypad_button.connect(play_key_sound)
+	
+	# SFX - LOGIC GAME PUZZLE
+	Events.gate_solved.connect(play_electricity_on_sound)
 	
 func play_walk_sound(should_play: bool) -> void:
 	if should_play:
@@ -24,3 +44,15 @@ func play_walk_sound(should_play: bool) -> void:
 
 func play_jump_sound() -> void:
 	jump_sfx.play()
+	
+func play_key_sound() -> void:
+	key_sound.play()
+	
+func play_correct_code_sound() -> void:
+	correct_code_sound.play()
+
+func play_wrong_code_sound() -> void:
+	wrong_code_sound.play()
+
+func play_electricity_on_sound() -> void:
+	electricity_on.play()

@@ -20,11 +20,16 @@ var password = ""
 
 # Grabs all the keys of the keypad
 func _ready():
+	Events.on_correct_password.connect(handle_correct_password)
 	for child in keys.get_children():
 		if child is StaticBody3D:
 			child.connect("on_interact", Callable(self, "on_button_interact"))
 	
 	password_label.text = ""
+	
+# TODO: MAKE SURE IT'S NOT INTERACTABLE AFTER INPUTTING THE CORRECT PASSWORD
+func handle_correct_password() -> void:
+	pass
 
 func on_button_interact(value):
 	#if is_audio_playing:

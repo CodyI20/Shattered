@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl0h52so4ug05"
+path="res://.godot/imported/Minecraft Footsteps - Sound Effect (HD).mp3-50315c17a29df59191ead097914b1cee.mp3str"
+
+[deps]
+
+source_file="res://Art/Audio/SFX/Minecraft Footsteps - Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Minecraft Footsteps - Sound Effect (HD).mp3-50315c17a29df59191ead097914b1cee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

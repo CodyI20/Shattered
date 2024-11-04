@@ -18,4 +18,5 @@ func get_interaction_text():
 
 # Send the number to the screen when you interact with the keypad button
 func interact():
+	Events.on_interact_with_keypad_button.emit()
 	emit_signal("on_interact", number)

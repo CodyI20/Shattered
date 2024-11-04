@@ -5,6 +5,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.on_correct_password.connect(open_door)
+	animation_player.play("RESET")
 
 func open_door() -> void:
 	animation_player.play("Door_open")
