@@ -31,8 +31,6 @@ var is_crouching : bool = false
 var initial_camera_y = 0.0
 
 func _input(event):
-	if event.is_action_pressed("crouch"):
-		toggle_crouch()
 	if event.is_action_pressed("inventory"):
 		print_debug("Toggling the inventory...")
 		Events.toggle_inventory.emit()
@@ -65,18 +63,6 @@ func _physics_process(delta: float) -> void:
 	camera.transform.origin = camera_pos
 
 	move_and_slide()
-	
-	#These toggles have to be turned into states later
-func toggle_crouch():
-	if is_crouching == true:
-		print("Crouch")
-		movement_speed = WALK_SPEED
-		print("movement_speed=", movement_speed)
-	elif is_crouching == false:
-		print("Uncrouching")
-		movement_speed = JOG_SPEED
-		print("movement_speed=", movement_speed)
-	is_crouching = !is_crouching
 
 # Bobs head
 func _headbob(time) -> Vector3:

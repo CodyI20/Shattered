@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jbx1o36ecr2i"]
+[gd_scene load_steps=10 format=3 uid="uid://jbx1o36ecr2i"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/audio_manager.gd" id="1_n3lnt"]
 [ext_resource type="AudioStream" uid="uid://dpihmx1mnhh6m" path="res://Art/Audio/Music/adaptiveSoundtrackCalmDemo.mp3" id="2_cpg6r"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://q87xeuo8ph1i" path="res://Art/Audio/SFX/Jump Sound Effect (High Quality).mp3" id="4_siejr"]
 [ext_resource type="AudioStream" uid="uid://doej5dtx3vstr" path="res://Art/Audio/SFX/KeypadPuzzle/CorrectCodeSound.ogg" id="5_symgv"]
 [ext_resource type="AudioStream" uid="uid://c8weti84mro2o" path="res://Art/Audio/SFX/KeypadPuzzle/KeySound1.ogg" id="6_ubt73"]
+[ext_resource type="AudioStream" uid="uid://d2beulb1r1b0r" path="res://Art/Audio/SFX/Paper/PagePickUp.wav" id="9_rytdo"]
 [ext_resource type="AudioStream" uid="uid://cwubhvhd2q7ea" path="res://Art/Audio/SFX/KeypadPuzzle/WrongCodeSound.ogg" id="10_nft8a"]
 [ext_resource type="AudioStream" uid="uid://bc4ydqqqaubal" path="res://Art/Audio/SFX/LogicGatesPuzzle/ElectricityON.wav" id="11_wqjpj"]
 
@@ -51,4 +52,10 @@ bus = &"SFX"
 
 [node name="ElectricityOn" type="AudioStreamPlayer" parent="SFX/LogicGatePuzzle"]
 stream = ExtResource("11_wqjpj")
+bus = &"SFX"
+
+[node name="Paper" type="Node" parent="SFX"]
+
+[node name="PagePickUp" type="AudioStreamPlayer" parent="SFX/Paper"]
+stream = ExtResource("9_rytdo")
 bus = &"SFX"
