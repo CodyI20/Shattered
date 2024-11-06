@@ -6,8 +6,8 @@ const OUTLINED_SHADER = preload("res://Art/Shaders/outlined_shader.tres")
 func _ready() -> void:
 	Events.personality_swap.connect(toggle_outline)
 
-func toggle_outline(personality: String) -> void:
-	if personality == "Alter1":
+func toggle_outline(personality: int) -> void:
+	if personality == enums.PersonalityStates.ATLAS:
 		material_overlay = OUTLINED_SHADER
 	else:
 		material_overlay = null

@@ -1,11 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=25 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="2_ntxft"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/AlterSwapMechanic/main_personality_state.gd" id="3_8qxcv"]
+[ext_resource type="Texture2D" uid="uid://ddrvvvwuuhs5q" path="res://Art/2D/UI/Alter-Related/character-selection-indicator-atlas.svg" id="3_hlger"]
+[ext_resource type="Script" path="res://GDScripts/Player/AlterAvatarUI.gd" id="3_i5qdl"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/AlterSwapMechanic/alter_1_state.gd" id="3_tqs6j"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/idle_state.gd" id="5_7bsou"]
+[ext_resource type="Script" path="res://GDScripts/Player/AlterNameUI.gd" id="5_ucrh1"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/jump_state.gd" id="6_corkh"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/walking_state.gd" id="7_ykbpr"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/run_state.gd" id="9_6x174"]
@@ -14,6 +17,11 @@
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/landing_state.gd" id="10_k31vs"]
 [ext_resource type="Script" path="res://GDScripts/Player/player_interaction_handler.gd" id="11_ikjpp"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="14_vh0ki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukwcf"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o0080"]
 radius = 0.3
@@ -24,11 +32,6 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_64ayf"]
 radius = 1.48154
-
-[sub_resource type="LabelSettings" id="LabelSettings_ukwcf"]
-font_size = 40
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_aq63l"]
 length = 0.001
@@ -93,72 +96,6 @@ _data = {
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_xrn6u")
 movement_speed = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-mesh = SubResource("CapsuleMesh_o0080")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_i58ng")
-
-[node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71895, 0)
-
-[node name="Camera3D" type="Camera3D" parent="head"]
-
-[node name="InteractionRayCast" type="RayCast3D" parent="head/Camera3D"]
-target_position = Vector3(0, 0, -2)
-collision_mask = 2
-script = ExtResource("2_i2c3v")
-
-[node name="AlterSwapFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_ntxft")
-initial_state = NodePath("MainPersonality")
-
-[node name="MainPersonality" type="Node" parent="AlterSwapFSM"]
-script = ExtResource("3_8qxcv")
-
-[node name="Alter1" type="Node" parent="AlterSwapFSM"]
-script = ExtResource("3_tqs6j")
-
-[node name="Alter2" type="Node" parent="AlterSwapFSM"]
-
-[node name="Alter3" type="Node" parent="AlterSwapFSM"]
-
-[node name="MovementFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_ntxft")
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="MovementFSM"]
-script = ExtResource("5_7bsou")
-
-[node name="Jumping" type="Node" parent="MovementFSM"]
-script = ExtResource("6_corkh")
-
-[node name="Walking" type="Node" parent="MovementFSM"]
-script = ExtResource("7_ykbpr")
-
-[node name="Crouching" type="Node" parent="MovementFSM"]
-script = ExtResource("9_tpv6v")
-
-[node name="Running" type="Node" parent="MovementFSM"]
-script = ExtResource("9_6x174")
-
-[node name="Falling" type="Node" parent="MovementFSM"]
-script = ExtResource("9_m1dmj")
-
-[node name="Landing" type="Node" parent="MovementFSM"]
-script = ExtResource("10_k31vs")
-
-[node name="InteractionArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("11_ikjpp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
-shape = SubResource("SphereShape3D_64ayf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 1
@@ -229,6 +166,119 @@ text = "Press E to interact"
 label_settings = SubResource("LabelSettings_ukwcf")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AlterUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.076
+anchor_top = 0.905
+anchor_right = 0.076
+anchor_bottom = 0.905
+offset_left = -145.92
+offset_top = -102.4
+offset_right = 144.08
+offset_bottom = 102.6
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="AlterAvatar" type="TextureRect" parent="CanvasLayer/AlterUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 108.0
+grow_horizontal = 2
+texture = ExtResource("3_hlger")
+script = ExtResource("3_i5qdl")
+
+[node name="AlterNameLabel" type="RichTextLabel" parent="CanvasLayer/AlterUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.407
+anchor_top = 0.812
+anchor_right = 0.407
+anchor_bottom = 0.812
+offset_left = -28.03
+offset_top = -11.46
+offset_right = 27.97
+offset_bottom = 11.54
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[b] NICK
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("5_ucrh1")
+metadata/_edit_use_anchors_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_o0080")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_i58ng")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71895, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="InteractionRayCast" type="RayCast3D" parent="head/Camera3D"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+script = ExtResource("2_i2c3v")
+
+[node name="AlterSwapFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ntxft")
+initial_state = NodePath("Nick")
+
+[node name="Nick" type="Node" parent="AlterSwapFSM"]
+script = ExtResource("3_8qxcv")
+
+[node name="Atlas" type="Node" parent="AlterSwapFSM"]
+script = ExtResource("3_tqs6j")
+
+[node name="Mitch" type="Node" parent="AlterSwapFSM"]
+
+[node name="Alter3" type="Node" parent="AlterSwapFSM"]
+
+[node name="MovementFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ntxft")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="MovementFSM"]
+script = ExtResource("5_7bsou")
+
+[node name="Jumping" type="Node" parent="MovementFSM"]
+script = ExtResource("6_corkh")
+
+[node name="Walking" type="Node" parent="MovementFSM"]
+script = ExtResource("7_ykbpr")
+
+[node name="Crouching" type="Node" parent="MovementFSM"]
+script = ExtResource("9_tpv6v")
+
+[node name="Running" type="Node" parent="MovementFSM"]
+script = ExtResource("9_6x174")
+
+[node name="Falling" type="Node" parent="MovementFSM"]
+script = ExtResource("9_m1dmj")
+
+[node name="Landing" type="Node" parent="MovementFSM"]
+script = ExtResource("10_k31vs")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25111, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("11_ikjpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_64ayf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

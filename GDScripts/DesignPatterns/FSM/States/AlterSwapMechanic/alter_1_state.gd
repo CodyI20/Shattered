@@ -2,6 +2,7 @@ extends State
 class_name Alter1State
 
 func Enter():
+	Events.personality_swap.emit(enums.PersonalityStates.ATLAS)
 	print_debug("Entering Alter1State...")
 
 func Exit():
@@ -12,6 +13,5 @@ func Update(_delta: float):
 	
 
 func EasyStateSwap() -> void:
-	if Input.is_action_just_pressed("SwapMainPersonality"):
-		Events.personality_swap.emit("MainPersonality")
-		state_transition.emit(self, "MainPersonality")
+	if Input.is_action_just_pressed("CyclePersonalities"):
+		state_transition.emit(self, "Nick")

@@ -15,6 +15,6 @@ func Exit():
 	print_debug("EXITING ALTER1LAYOUT")
 	alter_1_animator.play("SwitchFromAlter1")
 
-func on_personality_swap(personality: String) -> void:
-	if personality == "MainPersonality":
-		state_transition.emit(self, "MainPersonalityLayout")
+func on_personality_swap(personality: int) -> void:
+	if personality == enums.PersonalityStates.NICK:
+		state_transition.emit(self, "NickLayout")
