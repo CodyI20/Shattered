@@ -2,7 +2,7 @@ extends State
 class_name Alter1State
 
 func Enter():
-	Events.personality_swap.emit(enums.PersonalityStates.ATLAS)
+	Events.personality_swap.emit(Enums.PersonalityStates.ATLAS)
 	print_debug("Entering Alter1State...")
 
 func Exit():

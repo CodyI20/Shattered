@@ -23,8 +23,13 @@ func no_pause_interactions(interactable: Interactable):
 	if NoPauseStringArray.has(interactable.get_interaction_text()):
 		NoPause = true
 
+func reset_interactions() -> void:
+	NoPause = false
+	NoResume = false
+
 func _ready() -> void:
 	Events.on_interact.connect(no_pause_interactions)
+	Events.exited_puzzle_area.connect(reset_interactions)
 	Events.toggle_inventory.connect(no_pause)
 	Events.options_menu_toggle.connect(no_resume)
 

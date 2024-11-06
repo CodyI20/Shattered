@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func set_alter_icon(personality : int) -> void:
 	match personality:
-		enums.PersonalityStates.NICK:
+		Enums.PersonalityStates.NICK:
 			texture = CHARACTER_SELECTION_INDICATOR_NICK
-		enums.PersonalityStates.ATLAS:
+		Enums.PersonalityStates.ATLAS:
 			texture = CHARACTER_SELECTION_INDICATOR_ATLAS

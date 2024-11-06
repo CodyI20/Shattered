@@ -1,5 +1,4 @@
 extends Node
-class_name enums
 
 # PERSONALITY
 enum PersonalityStates {NICK, ATLAS, MITCH}

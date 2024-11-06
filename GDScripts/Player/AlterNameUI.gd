@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func set_alter_name(personality : int):
 	match personality:
-		enums.PersonalityStates.NICK:
-			text = enums.PersonalityStates.keys()[enums.PersonalityStates.NICK]
-		enums.PersonalityStates.ATLAS:
-			text = enums.PersonalityStates.keys()[enums.PersonalityStates.ATLAS]
+		Enums.PersonalityStates.NICK:
+			text = Enums.PersonalityStates.keys()[Enums.PersonalityStates.NICK]
+		Enums.PersonalityStates.ATLAS:
+			text = Enums.PersonalityStates.keys()[Enums.PersonalityStates.ATLAS]

@@ -8,7 +8,7 @@ signal toggle_inventory()
 
 # ALTER EVENTS
 
-signal personality_swap(personality: enums)
+signal personality_swap(personality: Enums)
 
 # INTERACTION EVENTS
 

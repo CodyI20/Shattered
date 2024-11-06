@@ -7,7 +7,7 @@ func _ready() -> void:
 	Events.personality_swap.connect(toggle_outline)
 
 func toggle_outline(personality: int) -> void:
-	if personality == enums.PersonalityStates.ATLAS:
+	if personality == Enums.PersonalityStates.ATLAS:
 		material_overlay = OUTLINED_SHADER
 	else:
 		material_overlay = null

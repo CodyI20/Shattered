@@ -2,7 +2,7 @@ extends State
 class_name MainPersonalityState
 
 func Enter():
-	Events.personality_swap.emit(enums.PersonalityStates.NICK)
+	Events.personality_swap.emit(Enums.PersonalityStates.NICK)
 	print_debug("Entering MainPersonalityState...")
 	
 func Exit():
