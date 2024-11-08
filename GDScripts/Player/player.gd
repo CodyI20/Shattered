@@ -5,7 +5,7 @@ class_name Player
 # The unit of Speed (in Godot?)is m/s so the default for a player walking 5 km/h would be 1.388 m/s
 # The default for a player running 10 km/h would be 2.778 m/s 
 # The default for a player sprinting 21 km/h would be 5.833 m/s 
-const WALK_SPEED = 1.388
+const WALK_SPEED = 1.336
 const JOG_SPEED = 2.778
 const SPRINT_SPEED = 5.833
 @export var movement_speed := 2.778
@@ -14,8 +14,8 @@ const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 
 # For the head bobbing
-const BOB_FREQ = 10.0
-const BOB_AMP = 0.02
+@export var BOB_FREQ = 10.0
+@export var BOB_AMP = 0.04
 var t_bob = 0.0
 var t_bob_factor = 1.6 # change to bob a bit faster
 

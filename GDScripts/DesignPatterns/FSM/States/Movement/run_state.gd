@@ -6,6 +6,8 @@ class_name PlayerRun
 func Enter() -> void:
 	Events.player_waking.emit(true)
 	player.movement_speed = player.SPRINT_SPEED
+	player.BOB_AMP = 11
+	player.BOB_AMP = 0.04
 	print_debug("Entering running state...")
 	
 func Exit() -> void:
