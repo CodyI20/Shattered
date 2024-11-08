@@ -3,6 +3,9 @@ extends Node
 # MUSIC / AMBIANCE
 @onready var background_music: AudioStreamPlayer = $backgroundMusic
 
+# SFX - OPTIONS MENU FEEDBACK
+@onready var sfx_set_feedback: AudioStreamPlayer = $"SFX/OptionsMenu/SFX-set-feedback"
+
 # SFX - PLAYER MOVEMENT
 @onready var walk_sfx: AudioStreamPlayer = $SFX/PlayerMovementSFX/walkSFX
 @onready var jump_sfx: AudioStreamPlayer = $SFX/PlayerMovementSFX/jumpSFX
@@ -26,6 +29,9 @@ func _ready() -> void:
 	background_music.play()
 
 func _event_subscription() -> void:
+	# SFX - OPTIONS MENU FEEDBACK
+	Events.sfx_slider_value_set.connect(play_sfx_slider_value_changed_sound)
+	
 	# SFX - PLAYER MOVEMENT
 	Events.player_jumped.connect(play_jump_sound)
 	Events.player_waking.connect(play_walk_sound)
@@ -65,3 +71,6 @@ func play_electricity_on_sound() -> void:
 func play_interactable_sound(interactable: Interactable) -> void:
 	if interactable is PaperClass:
 		page_pick_up.play()
+		
+func play_sfx_slider_value_changed_sound() -> void:
+	sfx_set_feedback.play()

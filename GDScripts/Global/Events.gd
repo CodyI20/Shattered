@@ -45,3 +45,4 @@ signal item_inspected(item: ItemData)
 
 # OPTIONS
 signal options_menu_toggle(is_on: bool)
+signal sfx_slider_value_set()
