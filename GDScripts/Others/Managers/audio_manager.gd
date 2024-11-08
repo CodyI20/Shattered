@@ -21,6 +21,9 @@ extends Node
 # SFX - PAPER
 @onready var page_pick_up: AudioStreamPlayer = $SFX/Paper/PagePickUp
 
+# SFX - START SOUND
+@onready var start_sound: AudioStreamPlayer = $SFX/StartGame/StartSound
+
 func _ready() -> void:
 	_event_subscription()
 	if background_music.stream == null:
@@ -46,6 +49,9 @@ func _event_subscription() -> void:
 	
 	# SFX - PAPER
 	Events.on_interact.connect(play_interactable_sound)
+	
+	# SFX - START GAME
+	Events.start_game.connect(play_start_game_sound)
 	
 func play_walk_sound(should_play: bool) -> void:
 	if should_play:
@@ -74,3 +80,6 @@ func play_interactable_sound(interactable: Interactable) -> void:
 		
 func play_sfx_slider_value_changed_sound() -> void:
 	sfx_set_feedback.play()
+	
+func play_start_game_sound() -> void:
+	start_sound.play()
