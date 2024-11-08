@@ -5,6 +5,8 @@ signal paused
 signal resumed
 
 @onready var _saver_loader:SaverLoader = %SaveLoadManager
+@onready var tutorial_scene: PackedScene = load("res://Scenes/UIScenes/tutorials.tscn")
+
 
 var LoadedLevel : String
 var SpawnIndex : int
@@ -27,7 +29,12 @@ func reset_interactions() -> void:
 	NoPause = false
 	NoResume = false
 
+
 func _ready() -> void:
+	if tutorial_scene and tutorial_scene is PackedScene:
+		var tutorial_instance = tutorial_scene.instantiate()
+		get_tree().current_scene.add_child(tutorial_instance)
+
 	Events.on_interact.connect(no_pause_interactions)
 	Events.exited_puzzle_area.connect(reset_interactions)
 	Events.toggle_inventory.connect(no_pause)
