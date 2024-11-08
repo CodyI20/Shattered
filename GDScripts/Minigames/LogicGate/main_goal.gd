@@ -3,6 +3,10 @@ extends TextureRect
 const LIGHTBULB_OFF = preload("res://Art/2D/LogicGatePuzzle/lightbulb_off.png")
 const LIGHTBULB_ON = preload("res://Art/2D/LogicGatePuzzle/lightbulb_on.png")
 
+@export var color_rect_node: NodePath
+@onready var color_rect: ColorRect = $"../ColorRect"
+
+
 var correct_gates : Array
 const number_of_gates = 3
 
@@ -20,6 +24,8 @@ func increment_correct_gates_number(o: DropZone) -> void:
 		print_debug("GATE SOLVED!")
 		texture = LIGHTBULB_ON
 		Events.gate_solved.emit()
+		if color_rect:
+			color_rect.change_to_green()
 	
 func decrease_correct_gates_number(o: DropZone) -> void:
 	var index = correct_gates.find(o)

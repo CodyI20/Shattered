@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=10 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
 [ext_resource type="Texture2D" uid="uid://c7yudn7u8bc0c" path="res://Art/2D/LogicGatePuzzle/logic-gate-or.png" id="1_hlpma"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DropZone.gd" id="2_ydt8n"]
 [ext_resource type="Texture2D" uid="uid://cp38xkomod3s5" path="res://Art/2D/LogicGatePuzzle/frame.png" id="3_4cn8l"]
 [ext_resource type="Texture2D" uid="uid://ccrp0deodjw0h" path="res://Art/2D/LogicGatePuzzle/logic-gate-and.png" id="3_o4kp6"]
+[ext_resource type="Script" path="res://Scenes/UIScenes/color_rect.gd" id="5_5uilw"]
 [ext_resource type="Texture2D" uid="uid://bos1opdlugnp5" path="res://Art/2D/LogicGatePuzzle/lightbulb_off.png" id="6_gwc8c"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
 
@@ -92,6 +93,13 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MainFrame"]
+layout_mode = 0
+offset_right = 1384.0
+offset_bottom = 1072.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("5_5uilw")
 
 [node name="ANDZONE1" type="TextureRect" parent="MainFrame"]
 layout_mode = 1
