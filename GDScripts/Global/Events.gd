@@ -10,6 +10,10 @@ signal toggle_inventory()
 
 signal personality_swap(personality: Enums)
 
+# STATE EVENTS
+
+signal on_state_swap(timer: Timer)
+
 # INTERACTION EVENTS
 
 signal on_interact(interactable: Interactable)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=26 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/AlterSwapMechanic/alter_1_state.gd" id="3_tqs6j"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/idle_state.gd" id="5_7bsou"]
 [ext_resource type="Script" path="res://GDScripts/Player/AlterNameUI.gd" id="5_ucrh1"]
+[ext_resource type="Script" path="res://GDScripts/Player/AlterSwapCooldownDisplay.gd" id="5_w81jm"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/jump_state.gd" id="6_corkh"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/walking_state.gd" id="7_ykbpr"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/run_state.gd" id="9_6x174"]
@@ -189,8 +190,40 @@ offset_left = -54.0
 offset_right = 54.0
 offset_bottom = 108.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("3_hlger")
 script = ExtResource("3_i5qdl")
+
+[node name="KeyToPress" type="RichTextLabel" parent="CanvasLayer/AlterUI/AlterAvatar"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 12.0001
+offset_right = -18.0
+offset_bottom = 35.0001
+grow_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font size = 100] [b]N[/b]"
+scroll_active = false
+
+[node name="VSlider" type="VSlider" parent="CanvasLayer/AlterUI/AlterAvatar"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -76.4999
+offset_right = 1.0
+offset_bottom = 76.5001
+grow_vertical = 2
+mouse_filter = 2
+value = 100.0
+script = ExtResource("5_w81jm")
 
 [node name="AlterNameLabel" type="RichTextLabel" parent="CanvasLayer/AlterUI"]
 layout_mode = 1
@@ -205,6 +238,7 @@ offset_right = 27.97
 offset_bottom = 11.54
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 bbcode_enabled = true
 text = "[b] NICK
 "
@@ -235,6 +269,7 @@ script = ExtResource("2_i2c3v")
 [node name="AlterSwapFSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_ntxft")
 initial_state = NodePath("Nick")
+state_change_cooldown = 2.0
 
 [node name="Nick" type="Node" parent="AlterSwapFSM"]
 script = ExtResource("3_8qxcv")
