@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnk2n2ekxlo22"]
+
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/hotbar_inventory.gd" id="1_uovet"]
+[ext_resource type="PackedScene" uid="uid://bcak0jxptr184" path="res://Scenes/UIScenes/hotbar_slot.tscn" id="1_xmd1y"]
+
+[node name="InventoryHotbar" type="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_right = 0.269
+anchor_bottom = 0.096
+offset_right = 3.51996
+offset_bottom = 0.32
+script = ExtResource("1_uovet")
+
+[node name="Control2" parent="." instance=ExtResource("1_xmd1y")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Control" parent="." instance=ExtResource("1_xmd1y")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Control3" parent="." instance=ExtResource("1_xmd1y")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Control4" parent="." instance=ExtResource("1_xmd1y")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Control5" parent="." instance=ExtResource("1_xmd1y")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2

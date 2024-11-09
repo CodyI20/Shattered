@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bcak0jxptr184"]
+
+[node name="Control" type="Button"]
+anchors_preset = -1
+anchor_right = 0.052
+anchor_bottom = 0.093
+offset_right = 473.16
+offset_bottom = 681.56
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.174656, 0.127802)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.465
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.58
+offset_top = 1174.45
+offset_right = 83.18
+offset_bottom = 1184.25
+grow_horizontal = 2
+grow_vertical = 2
