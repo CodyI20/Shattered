@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://cofyj2deqlvra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kquoo"]
+albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c2xf"]
+albedo_color = Color(1, 0.780392, 0.839216, 1)
+
+[node name="ThemePark (early version)" type="Node3D"]
+
+[node name="floor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.492, 0, -0.392)
+material_override = SubResource("StandardMaterial3D_kquoo")
+use_collision = true
+size = Vector3(100, 0.1, 20)
+
+[node name="floor3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.80524, 0, 0, 0, 1, 0, 0, 0, 16.5946, -80.732, 0, -0.334)
+material_override = SubResource("StandardMaterial3D_kquoo")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor4" type="CSGBox3D" parent="."]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -947.07, 0, -413.079)
+material_override = SubResource("StandardMaterial3D_kquoo")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="floor5" type="CSGBox3D" parent="."]
+transform = Transform3D(-89.4872, 0, 0, 0, 1, 0, 0, 0, -25.792, -955.71, 0, 403.143)
+material_override = SubResource("StandardMaterial3D_kquoo")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+
+[node name="wall6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.741, 1.127, -5.70795)
+material_override = SubResource("StandardMaterial3D_1c2xf")
+use_collision = true
+size = Vector3(0.05, 2.166, 9.58411)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.692343, 0, -1, -3.02633e-08, 0, 0, 0, 1, -110.39, 51.7438, 0)
+radius = 50.0
+height = 0.039
+sides = 18
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(2073.2, 0, 0, 0, -7.94105, 0, 0, 0, 342.78, -1154.43, 0, 0)
+radial_segments = 25
