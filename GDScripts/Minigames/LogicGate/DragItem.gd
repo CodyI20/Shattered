@@ -8,10 +8,10 @@ var current_slot : DropZone = null  # Reference to the slot this item is current
 @export var gatetype = Enums.gate_type.NONE
 
 func _ready() -> void:
+	create_drop_zone()
 	Events.valid_drop_target_entered.connect(_on_valid_drop_target_entered)
 	Events.valid_drop_target_exited.connect(_on_valid_drop_target_exited)
 	Events.gate_solved.connect(disable_process)
-	create_drop_zone()
 	
 func create_drop_zone() -> void:
 	if current_slot == null:
@@ -19,6 +19,7 @@ func create_drop_zone() -> void:
 		personal_zone.global_position = global_position + (size / 2)
 		personal_zone.correct_gate = Enums.gate_type.NONE
 		add_sibling.call_deferred(personal_zone)
+		current_slot = personal_zone
 		personal_zone.set_item(self)
 
 # Called when the dragging starts

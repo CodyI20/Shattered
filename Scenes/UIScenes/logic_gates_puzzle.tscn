@@ -30,9 +30,8 @@ texture = ExtResource("6_gwc8c")
 expand_mode = 1
 script = ExtResource("7_8vhff")
 
-[node name="Gates" type="Node" parent="."]
-
-[node name="GATE" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.088
 anchor_right = 0.965
@@ -42,7 +41,8 @@ offset_top = -61.04
 offset_right = 60.856
 offset_bottom = 61.96
 
-[node name="GATE2" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE2" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.206
 anchor_right = 0.965
@@ -54,7 +54,8 @@ offset_bottom = 61.52
 texture = ExtResource("5_x6rxu")
 gatetype = 1
 
-[node name="GATE3" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE3" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.324
 anchor_right = 0.965
@@ -64,7 +65,8 @@ offset_top = -61.92
 offset_right = 60.856
 offset_bottom = 61.08
 
-[node name="GATE4" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE4" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.441
 anchor_right = 0.965
@@ -74,7 +76,8 @@ offset_top = -61.28
 offset_right = 60.7
 offset_bottom = 61.72
 
-[node name="GATE5" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE5" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.559
 anchor_right = 0.965
@@ -84,7 +87,8 @@ offset_top = -61.72
 offset_right = 60.7
 offset_bottom = 61.28
 
-[node name="GATE6" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE6" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.676
 anchor_right = 0.965
@@ -94,7 +98,8 @@ offset_top = -61.0801
 offset_right = 60.856
 offset_bottom = 61.9199
 
-[node name="GATE7" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE7" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.794
 anchor_right = 0.965
@@ -104,7 +109,8 @@ offset_top = -61.52
 offset_right = 60.856
 offset_bottom = 61.48
 
-[node name="GATE8" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE8" parent="." instance=ExtResource("2_wnkhe")]
+layout_mode = 1
 anchor_left = 0.965
 anchor_top = 0.912
 anchor_right = 0.965
@@ -112,11 +118,10 @@ anchor_bottom = 0.912
 offset_left = -62.3
 offset_top = -61.9601
 offset_right = 60.7
-offset_bottom = 61.0399
+offset_bottom = 61.04
 
-[node name="DropZones" type="Node" parent="."]
-
-[node name="DROP ZONE" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE" parent="." instance=ExtResource("5_7j5xk")]
+layout_mode = 1
 anchor_left = 0.239
 anchor_top = 0.367
 anchor_right = 0.239
@@ -126,7 +131,8 @@ offset_top = -70.36
 offset_right = 69.12
 offset_bottom = 69.64
 
-[node name="DROP ZONE2" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE2" parent="." instance=ExtResource("5_7j5xk")]
+layout_mode = 1
 anchor_left = 0.513
 anchor_top = 0.356
 anchor_right = 0.513

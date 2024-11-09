@@ -8,4 +8,11 @@ func _ready() -> void:
 	animation_player.play("RESET")
 
 func open_door() -> void:
+	if animation_player == null:
+		return
 	animation_player.play("Door_open")
+	animation_player.animation_finished.connect(_on_animation_finished)
+
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == "Door_open":
+		animation_player.queue_free()

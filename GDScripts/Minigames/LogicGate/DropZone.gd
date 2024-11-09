@@ -11,6 +11,7 @@ func _ready() -> void:
 	Events.object_started_dragging.connect(clear_item)
 	Events.logic_gate_puzzle_on.connect(toggle_on)
 	Events.logic_gate_puzzle_off.connect(toggle_off)
+	puzzle_active = true
 
 # Called when mouse enters the slot
 func _on_mouse_entered():
