@@ -50,3 +50,7 @@ signal item_inspected(item: ItemData)
 # OPTIONS
 signal options_menu_toggle(is_on: bool)
 signal sfx_slider_value_set()
+
+# TUTORIAL
+signal play_tutorial_step(step: TutorialStep)
+signal complete_tutorial_step(step: TutorialStep)

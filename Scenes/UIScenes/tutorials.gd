@@ -1,36 +1,47 @@
 extends Control
 
-var tutorial_steps = [
-	"Press 'W' to move forward",
-	"Press 'A' to move left",
-	"Press 'S' to move backward",
-	"Press 'D' to move right",
-	"Press 'N' to switch alter"
-]
+@export var tutorial_steps_sequence : Array[TutorialStep]
+var current_step_count = 0
+var saved_current_step_count = 0
 
-var current_step = 0
+@export var tutorial_steps_non_sequence : Array[TutorialStep]
 
 @onready var label = $Panel/Label
 
 func _ready():
-	label.text = tutorial_steps[current_step]
-	self.visible = true
+	Events.play_tutorial_step.connect(play_step)
+	Events.complete_tutorial_step.connect(advance_tutorial)
+	for step in tutorial_steps_non_sequence:
+		step.Ready()
+	play_step(tutorial_steps_sequence[current_step_count])
 
 func _process(delta):
-	if current_step == 0 and Input.is_action_just_pressed("up"):
-		advance_tutorial()
-	elif current_step == 1 and Input.is_action_just_pressed("left"):
-		advance_tutorial()
-	elif current_step == 2 and Input.is_action_just_pressed("down"):
-		advance_tutorial()
-	elif current_step == 3 and Input.is_action_just_pressed("right"):
-		advance_tutorial()
-	elif current_step == 4 and Input.is_action_just_pressed("CyclePersonalities"):
-		advance_tutorial()
+	if current_step_count >= tutorial_steps_sequence.size():
+		return
+	for steps in tutorial_steps_non_sequence:
+		steps.Process()
+	for steps in tutorial_steps_sequence:
+		steps.Process()
 
-func advance_tutorial():
-	current_step += 1
-	if current_step < tutorial_steps.size():
-		label.text = tutorial_steps[current_step]
-	else:
+func play_step(step : TutorialStep) -> void:
+	if step.completed == true:
+		return
+	self.visible = true
+	var text_template = step.tutorial_text
+	var action = step.tutorial_action
+	label.text = text_template % OS.get_keycode_string(InputMap.action_get_events(action)[0].physical_keycode)
+
+
+func advance_tutorial(finished_step: TutorialStep):
+	if tutorial_steps_non_sequence.has(finished_step) and current_step_count < tutorial_steps_sequence.size():
+		play_step(tutorial_steps_sequence[current_step_count])
+		self.visible = true
+		return
+
+	current_step_count += 1
+	
+	if current_step_count < tutorial_steps_sequence.size():
+		play_step(tutorial_steps_sequence[current_step_count])
+	
+	if current_step_count >= tutorial_steps_sequence.size():
 		self.visible = false

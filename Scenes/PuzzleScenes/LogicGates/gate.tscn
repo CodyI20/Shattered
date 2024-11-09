@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bivo58jalqj7k"]
+
+[ext_resource type="Texture2D" uid="uid://ccrp0deodjw0h" path="res://Art/2D/LogicGatePuzzle/logic-gate-and.png" id="1_debpo"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DragItem.gd" id="2_cytyc"]
+
+[node name="GATE" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.033
+anchor_right = 0.019
+anchor_bottom = 0.033
+offset_left = -36.48
+offset_top = -35.64
+offset_right = 35.52
+offset_bottom = 36.36
+pivot_offset = Vector2(36, 36)
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_debpo")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("2_cytyc")
+gatetype = 0

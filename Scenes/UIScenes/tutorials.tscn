@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://qfdbf37ln3ry"]
+[gd_scene load_steps=6 format=3 uid="uid://qfdbf37ln3ry"]
 
 [ext_resource type="Script" path="res://Scenes/UIScenes/tutorials.gd" id="1_fs6sw"]
+[ext_resource type="Script" path="res://GDScripts/Tutorial/tutorial_step.gd" id="2_l8cb2"]
+[ext_resource type="Resource" uid="uid://bdarrijkg6nnl" path="res://Resources/Tutorial/Steps/walk_forward.tres" id="3_5ie5m"]
+[ext_resource type="Resource" uid="uid://cif52s4ybr6e6" path="res://Resources/Tutorial/Steps/inventory_toggle.tres" id="4_bkbek"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwgyw"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Tutorials" type="Control"]
 layout_mode = 3
@@ -10,6 +18,8 @@ offset_top = 851.0
 offset_right = 1922.0
 offset_bottom = 1079.0
 script = ExtResource("1_fs6sw")
+tutorial_steps_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("3_5ie5m")])
+tutorial_steps_non_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("4_bkbek")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -21,4 +31,7 @@ offset_bottom = 224.0
 layout_mode = 0
 offset_right = 1565.0
 offset_bottom = 229.0
+text = "
+"
+label_settings = SubResource("LabelSettings_vwgyw")
 horizontal_alignment = 1

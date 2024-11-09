@@ -1,13 +1,12 @@
 extends Control
 
 var puzzle_active : bool = false
-@onready var pausable_ui: CanvasLayer = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.on_interact.connect(toggle_puzzle)
 	Events.exited_puzzle_area.connect(close_puzzle)
-	visible = false
+	#visible = false
 
 func toggle_puzzle(interactable: Interactable) -> void:
 	if interactable.get_interaction_text() != "ElectricPanel":
@@ -24,11 +23,9 @@ func toggle_puzzle_non_event() -> void:
 	set_process(puzzle_active)
 	if puzzle_active:
 		Events.logic_gate_puzzle_on.emit()
-		pausable_ui.layer = 11
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Events.logic_gate_puzzle_off.emit()
-		pausable_ui.layer = 0
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta: float) -> void:

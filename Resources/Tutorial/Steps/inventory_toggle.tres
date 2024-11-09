@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialInventoryStep" load_steps=2 format=3 uid="uid://cif52s4ybr6e6"]
+
+[ext_resource type="Script" path="res://GDScripts/Tutorial/inventory_tutoria_step.gd" id="1_fblrw"]
+
+[resource]
+script = ExtResource("1_fblrw")
+tutorial_text = "Press '%s' to toggle your inventory"
+tutorial_action = "inventory"

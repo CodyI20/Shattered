@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxpljelyfm62u"]
+
+[ext_resource type="Texture2D" uid="uid://cp38xkomod3s5" path="res://Art/2D/LogicGatePuzzle/frame.png" id="1_avtsv"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/DropZone.gd" id="2_oq4ym"]
+
+[node name="DROP ZONE" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.065
+anchor_right = 0.036
+anchor_bottom = 0.065
+offset_left = -69.12
+offset_top = -70.2
+offset_right = 70.88
+offset_bottom = 69.8
+pivot_offset = Vector2(41, 38)
+texture = ExtResource("1_avtsv")
+expand_mode = 1
+script = ExtResource("2_oq4ym")
+correct_gate = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
