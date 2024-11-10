@@ -8,7 +8,9 @@ class_name Player
 const WALK_SPEED = 1.336
 const JOG_SPEED = 2.778
 const SPRINT_SPEED = 5.833
-@export var movement_speed := 2.778
+
+# DO NOT TOUCH
+var movement_speed := 2.778
 
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
@@ -56,7 +58,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	t_bob += delta * float(is_on_floor()) * velocity.length() * t_bob_factor / movement_speed
+	t_bob += (delta * float(is_on_floor()) * velocity.length() * t_bob_factor 
+	/ movement_speed)
+	
 
 	var camera_pos = camera.transform.origin
 	camera_pos.y = initial_camera_y + _headbob(t_bob).y

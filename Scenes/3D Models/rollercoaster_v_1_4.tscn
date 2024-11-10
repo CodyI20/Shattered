@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2wvcigfr3pg0"]
-
-[ext_resource type="PackedScene" uid="uid://3yum6obony1d" path="res://Scenes/Imports/Rollercoaster v1.4.fbx" id="1_vduj0"]
-
-[node name="Rollercoaster v1_4" instance=ExtResource("1_vduj0")]

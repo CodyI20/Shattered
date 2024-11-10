@@ -96,7 +96,6 @@ _data = {
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_xrn6u")
-movement_speed = 50.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 1

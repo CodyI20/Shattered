@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2gp75en2dve3"]
+
+[ext_resource type="PackedScene" uid="uid://bdn1m3pgqguyu" path="res://Scenes/Imports/grass blades.fbx" id="1_a8ksn"]
+
+[node name="grass blades" instance=ExtResource("1_a8ksn")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.00795402, 0)

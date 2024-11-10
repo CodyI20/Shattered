@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc4tbl0bsormw"]
+
+[ext_resource type="PackedScene" uid="uid://b12d0u2t4qbq8" path="res://Scenes/Imports/locker.fbx" id="1_n5dtl"]
+
+[node name="locker" instance=ExtResource("1_n5dtl")]
