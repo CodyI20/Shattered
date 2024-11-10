@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
+[ext_resource type="Texture2D" uid="uid://d6q8nr84705l" path="res://Art/2D/LogicGatePuzzle/LightOff.png" id="2_nx0cc"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/LogicGates/gate.tscn" id="2_wnkhe"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/switch.gd" id="5_0fy78"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/LogicGates/drop_zone.tscn" id="5_7j5xk"]
-[ext_resource type="Texture2D" uid="uid://bos1opdlugnp5" path="res://Art/2D/LogicGatePuzzle/lightbulb_off.png" id="6_gwc8c"]
 [ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_lidkr"]
 [ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="7_4nx7n"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
@@ -35,12 +35,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -101.5
-offset_right = 101.5
-offset_bottom = 203.0
+offset_left = -101.0
+offset_top = 24.0
+offset_right = 102.0
+offset_bottom = 227.0
 grow_horizontal = 2
-texture = ExtResource("6_gwc8c")
-expand_mode = 1
+texture = ExtResource("2_nx0cc")
+expand_mode = 4
+stretch_mode = 5
 script = ExtResource("7_8vhff")
 
 [node name="ConnectionLines" type="Control" parent="."]
@@ -205,9 +207,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 942.0
-offset_top = 207.0
-offset_right = 982.0
+offset_left = 939.0
+offset_top = 228.0
+offset_right = 979.0
 offset_bottom = 359.0
 rotation = 0.0115585
 pivot_offset = Vector2(20.8602, 81.8433)

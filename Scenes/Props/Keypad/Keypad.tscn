@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjpt0ihtv1t6q"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpt0ihtv1t6q"]
 
 [ext_resource type="Script" path="res://GDScripts/Props Logic/Keypad/Keypad.gd" id="1_2mj1g"]
 [ext_resource type="PackedScene" uid="uid://bm8uqmaf1bwa4" path="res://Scenes/Props/Keypad/Keypad Button/Keypad Button.tscn" id="1_hqti3"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/outline_shader_application.gd" id="2_5rv3y"]
 [ext_resource type="Texture2D" uid="uid://qgpiy3bbe5ye" path="res://Art/Assets/white tick.png" id="3_a0bov"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qi7gf"]
@@ -15,6 +16,7 @@ script = ExtResource("1_2mj1g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_qi7gf")
+script = ExtResource("2_5rv3y")
 
 [node name="Keys" type="Node3D" parent="."]
 

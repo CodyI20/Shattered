@@ -1,7 +1,7 @@
 extends TextureRect
 
-const LIGHTBULB_OFF = preload("res://Art/2D/LogicGatePuzzle/lightbulb_off.png")
-const LIGHTBULB_ON = preload("res://Art/2D/LogicGatePuzzle/lightbulb_on.png")
+const LIGHTBULB_OFF = preload("res://Art/2D/LogicGatePuzzle/LightOff.png")
+const LIGHTBULB_ON = preload("res://Art/2D/LogicGatePuzzle/LightOn.png")
 
 @onready var drop_zones: Node = $"../DropZones"
 

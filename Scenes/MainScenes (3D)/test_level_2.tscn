@@ -37,7 +37,7 @@ albedo_color = Color(1, 0.780392, 0.839216, 1)
 albedo_color = Color(1, 0.780392, 0.839216, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjv6r"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0.187026, 0.852714, 0.835798, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q4tsj"]
 
@@ -459,7 +459,7 @@ libraries = {
 }
 
 [node name="Keypad" parent="." instance=ExtResource("7_d41qj")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.7073, 1.63908, -1.9086)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.7057, 1.63908, -1.9086)
 
 [node name="Paper" parent="." instance=ExtResource("8_biae5")]
 transform = Transform3D(0.900827, -0.434178, 0, -1.89785e-08, -3.93764e-08, 1, -0.434178, -0.900827, -4.37114e-08, -5.02108, 0.822703, 7.13059)

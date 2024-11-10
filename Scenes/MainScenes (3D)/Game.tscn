@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=20 format=3 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
 [ext_resource type="PackedScene" uid="uid://vcpyf6oawkrf" path="res://Scenes/UIScenes/logic_gates_puzzle.tscn" id="7_d856g"]
 [ext_resource type="PackedScene" uid="uid://cuh02nlr6tiyd" path="res://Scenes/MainScenes (3D)/test_level_2.tscn" id="7_qvigy"]
+[ext_resource type="Script" path="res://GDScripts/pausable_ui.gd" id="8_74wgw"]
 [ext_resource type="PackedScene" uid="uid://cbmnemwe37g5b" path="res://Scenes/MainScenes (3D)/ThemePark.tscn" id="11_s7rjm"]
 [ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
 [ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
@@ -16,6 +17,9 @@
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
 [ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/spot_light_3d.tscn" id="18_my7jc"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/ui#letter.gd" id="21_421gg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gck5t"]
+albedo_color = Color(1, 1, 0.133333, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v8rq"]
 bg_color = Color(1, 1, 1, 1)
@@ -32,7 +36,8 @@ script = ExtResource("5_4s16o")
 [node name="ThemePark" parent="WorldRoot" instance=ExtResource("11_s7rjm")]
 
 [node name="ElectricPanel" parent="WorldRoot" instance=ExtResource("18_6heic")]
-transform = Transform3D(31.8267, 0, 0, 0, -2.275e-06, 31.8266, 0, -19.0842, -3.79404e-06, 200.851, 4.41503, -3.75906)
+transform = Transform3D(-1.39119e-06, -19.0842, 0, -1.39119e-06, 3.64639e-14, 31.8266, -31.8267, 8.34197e-07, -1.39118e-06, 257.142, 2.46492, 77.3689)
+material_override = SubResource("StandardMaterial3D_gck5t")
 
 [node name="SpotLight3D" parent="WorldRoot" instance=ExtResource("18_my7jc")]
 transform = Transform3D(1, 0, 0, 0, -4.37113e-08, 1, 0, -1, -4.37113e-08, 168.93, 4.50134, -14.3813)
@@ -46,6 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.017, 0.217407, 97.1324)
 
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
+script = ExtResource("8_74wgw")
 
 [node name="LetterUI" type="Control" parent="PausableUI"]
 layout_mode = 3

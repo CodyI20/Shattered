@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://bsa12lq2f5r8b"]
+
+[ext_resource type="Script" path="res://GDScripts/Tutorial/tutorial_step.gd" id="1_bv3qo"]
+
+[resource]
+script = ExtResource("1_bv3qo")
+tutorial_text = "If you are ever in trouble, alter swapping can be your friend! Press '%s' to swap alters"
+tutorial_action = "CyclePersonalities"
