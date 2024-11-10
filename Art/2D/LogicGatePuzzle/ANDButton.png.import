@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bklbp6eqiva0k"
-path="res://.godot/imported/Buffer.png-22e77a25e2bd97816a870c916132bc9b.ctex"
+uid="uid://cfwpliyugfao1"
+path="res://.godot/imported/ANDButton.png-292ff2093cff7f9b4b5d3d68d5f76bf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/2D/LogicGatePuzzle/Buffer.png"
-dest_files=["res://.godot/imported/Buffer.png-22e77a25e2bd97816a870c916132bc9b.ctex"]
+source_file="res://Art/2D/LogicGatePuzzle/ANDButton.png"
+dest_files=["res://.godot/imported/ANDButton.png-292ff2093cff7f9b4b5d3d68d5f76bf3.ctex"]
 
 [params]
 

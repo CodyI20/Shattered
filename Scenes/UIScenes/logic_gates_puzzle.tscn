@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=11 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/LogicGates/gate.tscn" id="2_wnkhe"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/switch.gd" id="5_0fy78"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/LogicGates/drop_zone.tscn" id="5_7j5xk"]
-[ext_resource type="Texture2D" uid="uid://c7yudn7u8bc0c" path="res://Art/2D/LogicGatePuzzle/logic-gate-or.png" id="5_x6rxu"]
 [ext_resource type="Texture2D" uid="uid://bos1opdlugnp5" path="res://Art/2D/LogicGatePuzzle/lightbulb_off.png" id="6_gwc8c"]
+[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_lidkr"]
+[ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="7_4nx7n"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
 [ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/LogicGates/connection_line.tscn" id="7_ed55j"]
+[ext_resource type="Texture2D" uid="uid://dcayrticvluvv" path="res://Art/2D/LogicGatePuzzle/BufferButton.png" id="8_vkipc"]
 
 [node name="LogicGatesPuzzle" type="Control"]
 process_mode = 1
@@ -26,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.470588)
+color = Color(0.172833, 0.172833, 0.172833, 1)
 
 [node name="MainGoal" type="TextureRect" parent="."]
 layout_mode = 1
@@ -231,6 +233,8 @@ offset_left = -62.144
 offset_top = -61.04
 offset_right = 60.856
 offset_bottom = 61.96
+texture = ExtResource("8_vkipc")
+gatetype = 4
 
 [node name="GATE2" parent="Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
@@ -242,7 +246,7 @@ offset_left = -62.3
 offset_top = -61.48
 offset_right = 60.7
 offset_bottom = 61.52
-texture = ExtResource("5_x6rxu")
+texture = ExtResource("7_4nx7n")
 gatetype = 1
 
 [node name="GATE3" parent="Gates" instance=ExtResource("2_wnkhe")]
@@ -255,8 +259,8 @@ offset_left = -62.144
 offset_top = -61.92
 offset_right = 60.856
 offset_bottom = 61.08
-texture = ExtResource("5_x6rxu")
-gatetype = 1
+texture = ExtResource("8_vkipc")
+gatetype = 4
 
 [node name="GATE4" parent="Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
@@ -268,6 +272,7 @@ offset_left = -62.3
 offset_top = -61.28
 offset_right = 60.7
 offset_bottom = 61.72
+texture = ExtResource("6_lidkr")
 
 [node name="GATE5" parent="Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
@@ -279,7 +284,7 @@ offset_left = -62.3
 offset_top = -61.72
 offset_right = 60.7
 offset_bottom = 61.28
-texture = ExtResource("5_x6rxu")
+texture = ExtResource("7_4nx7n")
 gatetype = 1
 
 [node name="GATE6" parent="Gates" instance=ExtResource("2_wnkhe")]
@@ -292,6 +297,7 @@ offset_left = -62.144
 offset_top = -61.0801
 offset_right = 60.856
 offset_bottom = 61.9199
+texture = ExtResource("6_lidkr")
 
 [node name="GATE7" parent="Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
@@ -303,6 +309,8 @@ offset_left = -62.144
 offset_top = -61.52
 offset_right = 60.856
 offset_bottom = 61.48
+texture = ExtResource("8_vkipc")
+gatetype = 4
 
 [node name="GATE8" parent="Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
@@ -314,8 +322,8 @@ offset_left = -62.3
 offset_top = -61.9601
 offset_right = 60.7
 offset_bottom = 61.04
-texture = ExtResource("5_x6rxu")
-gatetype = 1
+texture = ExtResource("8_vkipc")
+gatetype = 4
 
 [node name="DropZones" type="Control" parent="."]
 layout_mode = 1
@@ -346,6 +354,7 @@ anchor_right = 0.044
 anchor_bottom = 0.54
 offset_left = -70.48
 offset_right = 69.52
+correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 3" parent="DropZones" instance=ExtResource("5_7j5xk")]
@@ -358,6 +367,7 @@ offset_left = -70.3994
 offset_top = -70.4396
 offset_right = 69.6006
 offset_bottom = 69.5601
+correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 4" parent="DropZones" instance=ExtResource("5_7j5xk")]
@@ -395,7 +405,7 @@ offset_left = -69.96
 offset_top = -70.48
 offset_right = 70.04
 offset_bottom = 69.52
-correct_gate = 1
+correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 7" parent="DropZones" instance=ExtResource("5_7j5xk")]
@@ -408,7 +418,6 @@ offset_left = -69.96
 offset_top = -70.48
 offset_right = 70.04
 offset_bottom = 69.52
-correct_gate = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 8" parent="DropZones" instance=ExtResource("5_7j5xk")]
@@ -421,6 +430,7 @@ offset_left = -69.1604
 offset_top = -69.5998
 offset_right = 70.8396
 offset_bottom = 70.4002
+correct_gate = 4
 
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 1

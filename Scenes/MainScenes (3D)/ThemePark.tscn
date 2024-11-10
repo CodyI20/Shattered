@@ -1,7 +1,6 @@
-[gd_scene load_steps=58 format=4 uid="uid://cbmnemwe37g5b"]
+[gd_scene load_steps=67 format=4 uid="uid://cbmnemwe37g5b"]
 
 [ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="1_mh1w6"]
-[ext_resource type="PackedScene" uid="uid://bbcgl0lpb3vr" path="res://Scenes/3D Models/house.tscn" id="2_miedd"]
 [ext_resource type="PackedScene" uid="uid://de8c4elqrxlr" path="res://Scenes/3D Models/vending_machine_2.tscn" id="3_q6osp"]
 [ext_resource type="PackedScene" uid="uid://bvklf4bi27sx5" path="res://Scenes/3D Models/Place holders/cabin.tscn" id="4_pgfrj"]
 [ext_resource type="PackedScene" uid="uid://2cfrgaqdyqp" path="res://Scenes/3D Models/treenumber_3.tscn" id="5_uxgdu"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbrg5vib3ti3a" path="res://Scenes/3D Models/Bushgame/bushgame_eight.tscn" id="6_w13g1"]
 [ext_resource type="PackedScene" uid="uid://o2aafnr5mfhj" path="res://Scenes/3D Models/Bushgame/bushgame_five.tscn" id="7_bujti"]
 [ext_resource type="PackedScene" uid="uid://b7bhc6qxbxnfx" path="res://Scenes/3D Models/Bushgame/bushgame_four.tscn" id="8_kvljt"]
+[ext_resource type="ArrayMesh" uid="uid://bjluhsp7rm4xl" path="res://Art/3D/house.obj" id="9_gyndg"]
 [ext_resource type="PackedScene" uid="uid://bdjseegng0d0j" path="res://Scenes/3D Models/Bushgame/bushgame_ten.tscn" id="9_p2cyl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kquoo"]
@@ -377,17 +377,40 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7buus")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1jkj6"]
-height = 1.73311
-radius = 0.08
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hdnac"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qhx00"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbb1k"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yifk6"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xkwdc"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a4oiu"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r75ri"]
+points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6uo6"]
 albedo_color = Color(0.619608, 0.92549, 0.564706, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scuwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xa208"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c1l1"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkldj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881v8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06ihw"]
 size = Vector3(4.007, 5.509, 350)
@@ -1290,41 +1313,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.332, 0, 39.6866)
 
 [node name="Buildings" type="Node3D" parent="Ferris wheel area"]
 
-[node name="house" parent="Ferris wheel area/Buildings" instance=ExtResource("2_miedd")]
-transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -7.04799, -0.563, -12.8379)
+[node name="House" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 69.9677, -0.642674, 113.013)
+mesh = ExtResource("9_gyndg")
 
-[node name="Collision" type="StaticBody3D" parent="Ferris wheel area/Buildings/house"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.070076, 2.6856, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hdnac")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
+[node name="House2" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 60.7699, -0.642674, 113.013)
+mesh = ExtResource("9_gyndg")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House2"]
 
-[node name="house2" parent="Ferris wheel area/Buildings" instance=ExtResource("2_miedd")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, -6.48199, -0.563, 11.6382)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qhx00")
 
-[node name="Collision" type="StaticBody3D" parent="Ferris wheel area/Buildings/house2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+[node name="House3" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 49.8082, -0.642674, 103.061)
+mesh = ExtResource("9_gyndg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House3"]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hbb1k")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Ferris wheel area/Buildings/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
+[node name="House4" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 49.8082, -0.642674, 93.9028)
+mesh = ExtResource("9_gyndg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_yifk6")
+
+[node name="House5" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 49.8082, -0.642674, 84.7562)
+mesh = ExtResource("9_gyndg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xkwdc")
+
+[node name="House6" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, -6.11327, -0.642674, 11.6078)
+mesh = ExtResource("9_gyndg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a4oiu")
+
+[node name="House7" type="MeshInstance3D" parent="Ferris wheel area"]
+transform = Transform3D(-4.80825e-10, 0, -0.011, 0, 0.011, 0, 0.011, 0, -4.80825e-10, -7.58428, -0.642674, -12.7817)
+mesh = ExtResource("9_gyndg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/House7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/House7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r75ri")
 
 [node name="Park path left side" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 109.511, 0, 80.838)
@@ -1758,15 +1808,16 @@ sides = 16
 cone = true
 
 [node name="Park entrance path" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Park path entrance #1" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 265.498, 0.025, 59.8751)
+material_override = SubResource("StandardMaterial3D_scuwn")
 use_collision = true
 size = Vector3(100.59, 0.05, 20)
 
 [node name="Park path entrance #2" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.602, 0.025, -0.42)
+material_override = SubResource("StandardMaterial3D_xa208")
 use_collision = true
 size = Vector3(82.9969, 0.05, 20)
 
@@ -1776,9 +1827,9 @@ use_collision = true
 size = Vector3(56.586, 7, 12)
 
 [node name="Building3" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.699, 2.475, -14.771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.901, 2.475, -14.771)
 use_collision = true
-size = Vector3(73.8498, 7, 12)
+size = Vector3(73.4459, 7, 12)
 
 [node name="Building4" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.759, 2.5, 34.0133)
@@ -1786,122 +1837,14 @@ use_collision = true
 size = Vector3(11.816, 7, 85.57)
 
 [node name="Building5" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.955, 2.5, 51.0719)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.955, 2.5, 50.1342)
 use_collision = true
-size = Vector3(12, 7, 61.6983)
+size = Vector3(12, 7, 59.8229)
 
 [node name="Building6" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.825, 2.5, 110.781)
 use_collision = true
 size = Vector3(13.7413, 7, 7.25905)
-
-[node name="house" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(1.3, 0, 1.77636e-14, 0, 1.3, 0, -1.77636e-14, 0, 1.3, 252.576, -0.642674, 94.5377)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="house2" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 271.309, -0.642674, 112.824)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house2/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="house3" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 262.922, -0.642674, 112.824)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house3/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house3/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house3/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="house4" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 262.922, -0.642674, 112.824)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house4/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house4/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house4/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="house5" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(1.3, 0, 1.77636e-14, 0, 1.3, 0, -1.77636e-14, 0, 1.3, 252.576, -0.642674, 102.945)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house5/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house5/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house5/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="house6" parent="Park entrance path" instance=ExtResource("2_miedd")]
-transform = Transform3D(1.3, 0, 1.77636e-14, 0, 1.3, 0, -1.77636e-14, 0, 1.3, 252.576, -0.642674, 86.1398)
-
-[node name="Collision" type="StaticBody3D" parent="Park entrance path/house6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/house6/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144114, 2.93127, -0.218399)
-shape = SubResource("BoxShape3D_21jng")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Park entrance path/house6/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, -2.31674)
-shape = SubResource("CylinderShape3D_1jkj6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Park entrance path/house6/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85285, 1.33751, 2.36394)
-shape = SubResource("CylinderShape3D_1jkj6")
 
 [node name="Front area" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 286.857, 0, 126.047)
@@ -15565,6 +15508,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8312, 0, -10.2005)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Front area/Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3005, 0, 0)
+material_override = SubResource("StandardMaterial3D_881v8")
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 6, 0, 10, 0.261375, 10.8102, 0.629532, 11.5225, 1.13668, 12.0357, 1.72266, 12.3648, 2.71223, 12.4908, 3.62254, 12.8059, 4.32278, 13.3311, 4.70792, 14.1364, 5.16307, 15.4318, 5.96835, 16.9374, 7.15877, 18.0577, 8.52424, 18.863, 10.0298, 19.5282, 11.8154, 20.0534, 13.5, 20.334, 15.2116, 20.1235, 16.9622, 19.7733, 18.3626, 19.3182, 19.8682, 18.3729, 20.7785, 17.3575, 21.4437, 15.887, 21.8989, 14.3465, 22.4591, 13.4361, 23.1593, 12.911, 23.9646, 12.5258, 24.8049, 12.4208, 25.5401, 12.1057, 26.2054, 11.8256, 26.6955, 11.3004, 27, 10, 27, 6, 27, 0, 26, 0, 26, 6, 25.6627, 7.37904, 25.085, 8.25434, 24.2622, 8.77953, 23.25, 9, 22.1965, 8.74451, 21.4262, 8.18432, 20.726, 7.274, 20.5, 6, 20.5, 0.048, 20.5, -0.022, 19.5, 0, 19.5, 6, 19.2555, 7.274, 18.5902, 8.14931, 17.785, 8.74451, 16.75, 9, 15.7192, 8.74451, 14.8789, 8.14931, 14.3187, 7.34403, 14, 6, 14, 0, 13, 0, 13, 6, 12.7082, 7.34403, 12.148, 8.18432, 11.2027, 8.77953, 10.25, 9, 9.31201, 8.74451, 8.50674, 8.25434, 7.87652, 7.30902, 7.5, 6, 7.5, 0, 6.5, 0, 6.5, 6, 6.26596, 7.30902, 5.63574, 8.21933, 4.76044, 8.77953, 3.75, 9, 2.72974, 8.74451, 1.88944, 8.07928, 1.25922, 7.09895, 1, 6, 1, 0)
 

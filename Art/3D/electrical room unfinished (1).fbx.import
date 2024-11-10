@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://djj8yeo0pw60t"
-path="res://.godot/imported/electrical room unfinished.fbx-6402675713f15cd88cd880b957f8c2d7.scn"
+uid="uid://bpgoim34oivql"
+path="res://.godot/imported/electrical room unfinished (1).fbx-ed51261db6cd4fe351289ce84d18b497.scn"
 
 [deps]
 
-source_file="res://Art/3D/electrical room unfinished.fbx"
-dest_files=["res://.godot/imported/electrical room unfinished.fbx-6402675713f15cd88cd880b957f8c2d7.scn"]
+source_file="res://Art/3D/electrical room unfinished (1).fbx"
+dest_files=["res://.godot/imported/electrical room unfinished (1).fbx-ed51261db6cd4fe351289ce84d18b497.scn"]
 
 [params]
 

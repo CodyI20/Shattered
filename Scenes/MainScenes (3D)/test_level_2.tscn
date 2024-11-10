@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://cuh02nlr6tiyd"]
+[gd_scene load_steps=32 format=3 uid="uid://cuh02nlr6tiyd"]
 
 [ext_resource type="Script" path="res://GDScripts/level.gd" id="1_jixxk"]
-[ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interactable.gd" id="2_haxw2"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/door_pivot.gd" id="3_pbpyi"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/Logic/FiniteStateMachine.gd" id="4_df7t3"]
 [ext_resource type="Script" path="res://GDScripts/Others/PersonalityMapLayout/main_personality_layout.gd" id="5_f1jjn"]
@@ -375,18 +374,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.7, 
 material_override = SubResource("StandardMaterial3D_kk5v2")
 use_collision = true
 size = Vector3(0.05, 2.166, 20)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70261, 0.48291, -2.86966)
-material_override = SubResource("StandardMaterial3D_rjv6r")
-mesh = SubResource("BoxMesh_q4tsj")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-collision_layer = 3
-script = ExtResource("2_haxw2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_1e2n5")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3.95632, 0, -1, 0, -4.37114e-08, -11.2178, 0.48291, -1.90152)
