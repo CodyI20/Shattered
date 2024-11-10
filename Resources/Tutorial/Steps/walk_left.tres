@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://d0wuse5gj4ara"]
+
+[ext_resource type="Script" path="res://GDScripts/Tutorial/tutorial_step.gd" id="1_ly22f"]
+
+[resource]
+script = ExtResource("1_ly22f")
+tutorial_text = "Press '%s' to walk left"
+tutorial_action = "left"

@@ -57,4 +57,4 @@ func _on_valid_drop_target_exited(dropTarget: DropZone):
 	set_valid_drop_target(null)
 	
 func disable_process() -> void:
-	set_process(false)
+	set_script(null)
