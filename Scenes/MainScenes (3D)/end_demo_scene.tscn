@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://deft0nwv3c82s"]
+
+[ext_resource type="Script" path="res://GDScripts/Others/Menus/end_demo_scene.gd" id="1_e1uuh"]
+
+[node name="EndDemoScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1uuh")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="THANK_YOU_MESSAGE" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -815.5
+offset_top = -262.5
+offset_right = 815.5
+offset_bottom = 262.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b] [font size=80] [center][wave amp=20.0][rainbow freq = 1.0 sat = 0.5 val = 0.01]
+THANK YOU FOR PLAYING OUR DEMO!"
+
+[node name="MENU BUTTON" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -181.0
+offset_right = 103.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "MENU
+"
+
+[node name="QUIT BUTTON" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -111.0
+offset_right = 103.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "QUIT"
+
+[connection signal="pressed" from="MENU BUTTON" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="QUIT BUTTON" to="." method="_on_quit_button_pressed"]
