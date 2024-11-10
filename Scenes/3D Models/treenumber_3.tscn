@@ -2,4 +2,5 @@
 
 [ext_resource type="PackedScene" uid="uid://cwc0s7so3mgdk" path="res://Scenes/Imports/treenumber3.fbx" id="1_m28qf"]
 
+
 [node name="treenumber3" instance=ExtResource("1_m28qf")]

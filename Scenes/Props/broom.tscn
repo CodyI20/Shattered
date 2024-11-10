@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2mfdkfn143a7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mdhel"]
+top_radius = 0.015
+bottom_radius = 0.015
+
+[node name="Broom" type="Node3D"]
+
+[node name="BroomMesh" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BroomMesh"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, -0.00165807, 0, 0.00165807, 0.999999, 0, 0, 0)
+mesh = SubResource("CylinderMesh_mdhel")

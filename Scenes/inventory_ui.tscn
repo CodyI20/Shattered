@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bghetw8mhirut"]
+
+[ext_resource type="Script" path="res://GDScripts/Others/Inventory/inventory_handler.gd" id="1_2d5bi"]
+
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("InventoryGrid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_2d5bi")
+CollisionMask = 1
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -232.0
+offset_right = 309.5
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -231.5
+offset_right = 309.0
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 2
+mouse_filter = 0
+columns = 5
