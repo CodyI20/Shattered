@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb0cjv6t6xo7b"]
+
+[ext_resource type="Script" path="res://GDScripts/Others/Menus/cinematic_scene.gd" id="1_rur3u"]
+[ext_resource type="VideoStream" path="res://Art/Video/Clip_-_1192024_103822_PM.ogv" id="1_vhyv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6m6kk"]
+font_size = 40
+
+[node name="CinematicScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rur3u")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_vhyv8")
+autoplay = true
+expand = true
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -142.0
+offset_right = -16.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="SkipButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SKIP
+"
+label_settings = SubResource("LabelSettings_6m6kk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

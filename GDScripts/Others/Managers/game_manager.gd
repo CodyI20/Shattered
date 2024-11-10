@@ -80,7 +80,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_menu_button_pressed() -> void:
 	pause_game(false);
-	get_tree().change_scene_to_file(FilePaths.MENU_SCENE_PATH)
+	Utility.go_to_main_menu()
 
 
 func _on_quit_button_pressed() -> void:
