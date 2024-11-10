@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=13 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
+[ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_28j61"]
 [ext_resource type="Texture2D" uid="uid://d6q8nr84705l" path="res://Art/2D/LogicGatePuzzle/LightOff.png" id="2_nx0cc"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/LogicGates/gate.tscn" id="2_wnkhe"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/switch.gd" id="5_0fy78"]
@@ -10,6 +11,10 @@
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/main_goal.gd" id="7_8vhff"]
 [ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/LogicGates/connection_line.tscn" id="7_ed55j"]
 [ext_resource type="Texture2D" uid="uid://dcayrticvluvv" path="res://Art/2D/LogicGatePuzzle/BufferButton.png" id="8_vkipc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0whwx"]
+shader = ExtResource("2_28j61")
+shader_parameter/lod = 0.8
 
 [node name="LogicGatesPuzzle" type="Control"]
 process_mode = 1
@@ -29,6 +34,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0768358, 0.0768358, 0.0768358, 0.588235)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0whwx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MainGoal" type="TextureRect" parent="."]
 layout_mode = 1

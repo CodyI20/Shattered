@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk1rgtf8maf0i"]
+[gd_scene load_steps=3 format=3 uid="uid://dk1rgtf8maf0i"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/options.gd" id="1_8iwmn"]
-[ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_24eit"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqgdd"]
-shader = ExtResource("2_24eit")
-shader_parameter/lod = 0.8
+[ext_resource type="PackedScene" uid="uid://dprhxaq1qixpd" path="res://Scenes/UIScenes/blur.tscn" id="2_lb88k"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -25,29 +21,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0.121569, 0.121569, 0.666667)
 
-[node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_aqgdd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Blur" parent="." instance=ExtResource("2_lb88k")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.517188
+anchor_left = 0.517
 anchor_top = 0.102
-anchor_right = 0.517188
+anchor_right = 0.517
 anchor_bottom = 0.102
-offset_left = -75.8
-offset_top = -27.096
-offset_right = 75.2
-offset_bottom = 26.904
+offset_left = -199.64
+offset_top = -60.16
+offset_right = 199.36
+offset_bottom = 59.84
 grow_horizontal = 2
 bbcode_enabled = true
-text = "[b][color=TURQUOISE][wave amp = 0.01 frequency=0.2][font_size=30] OPTIONS"
+text = "[b][color=TURQUOISE][wave amp = 0.01 frequency=0.2][font_size=50][center] OPTIONS"
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsContainer" type="VBoxContainer" parent="."]

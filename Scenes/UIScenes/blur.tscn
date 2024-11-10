@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dprhxaq1qixpd"]
+
+[ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="1_qgqc5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqgdd"]
+shader = ExtResource("1_qgqc5")
+shader_parameter/lod = 0.8
+
+[node name="Blur" type="ColorRect"]
+material = SubResource("ShaderMaterial_aqgdd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

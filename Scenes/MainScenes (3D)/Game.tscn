@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=21 format=3 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dppk3c2nuif5d" path="res://Scenes/PuzzleScenes/electric_panel.tscn" id="18_6heic"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
 [ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/spot_light_3d.tscn" id="18_my7jc"]
+[ext_resource type="PackedScene" uid="uid://bpgoim34oivql" path="res://Art/3D/electrical room unfinished (1).fbx" id="18_yhlkr"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/ui#letter.gd" id="21_421gg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gck5t"]
@@ -41,7 +42,6 @@ material_override = SubResource("StandardMaterial3D_gck5t")
 
 [node name="SpotLight3D" parent="WorldRoot" instance=ExtResource("18_my7jc")]
 transform = Transform3D(1, 0, 0, 0, -4.37113e-08, 1, 0, -1, -4.37113e-08, 168.93, 4.50134, -14.3813)
-visible = false
 
 [node name="TestLevel" parent="WorldRoot" instance=ExtResource("7_qvigy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.247, 0.05, 96.538)
@@ -149,6 +149,9 @@ script = ExtResource("3_35roi")
 
 [node name="InputManager" type="Node" parent="Utilities"]
 script = ExtResource("2_fawn2")
+
+[node name="electrical room unfinished (1)" parent="." instance=ExtResource("18_yhlkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.749, 0.851104, -73.2042)
 
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu/InputLegendButton" method="_on_game_paused"]

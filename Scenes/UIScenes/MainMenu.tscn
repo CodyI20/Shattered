@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs1f6co8vh3p1"]
+[gd_scene load_steps=5 format=3 uid="uid://cs1f6co8vh3p1"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/main_menu.gd" id="1_4ql5n"]
-[ext_resource type="Texture2D" uid="uid://ckbqoqdtvpycd" path="res://Art/SplashArtpng.png" id="2_8r4sc"]
 [ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="2_jheqj"]
+[ext_resource type="Texture2D" uid="uid://h6pmtrb3qob8" path="res://Art/SplashArt.png" id="2_jv7yv"]
+[ext_resource type="Texture2D" uid="uid://cnvbrnaaam8an" path="res://Art/title_text.png" id="3_k6sbd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,14 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ql5n")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SplashArt" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8r4sc")
+texture = ExtResource("2_jv7yv")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1326.0
+offset_bottom = 337.0
+texture = ExtResource("3_k6sbd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
