@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=23 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction System/Interaction.gd" id="2_i2c3v"]
@@ -33,66 +33,6 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_64ayf"]
 radius = 1.48154
-
-[sub_resource type="Animation" id="Animation_aq63l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("head:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.71895, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_cjql4"]
-resource_name = "crouch"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("head:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.71895, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ql1u4"]
-_data = {
-"RESET": SubResource("Animation_aq63l"),
-"crouch": SubResource("Animation_cjql4")
-}
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_xrn6u")
@@ -311,11 +251,6 @@ script = ExtResource("11_ikjpp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_64ayf")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ql1u4")
-}
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]

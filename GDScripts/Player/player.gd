@@ -58,8 +58,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	t_bob += (delta * float(is_on_floor()) * velocity.length() * t_bob_factor 
-	/ movement_speed)
+	t_bob += (delta * float(is_on_floor()) * velocity.length() * t_bob_factor / movement_speed)
 	
 
 	var camera_pos = camera.transform.origin

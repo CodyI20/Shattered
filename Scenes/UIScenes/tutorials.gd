@@ -18,10 +18,7 @@ func _ready():
 func _process(delta):
 	if current_step_count >= tutorial_steps_sequence.size():
 		return
-	for steps in tutorial_steps_non_sequence:
-		steps.Process()
-	for steps in tutorial_steps_sequence:
-		steps.Process()
+	tutorial_steps_sequence[current_step_count].Process()
 
 func play_step(step : TutorialStep) -> void:
 	if step.completed == true:
