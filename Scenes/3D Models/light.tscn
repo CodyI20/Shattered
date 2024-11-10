@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://buv1hrihkk4vr"]
+
+[ext_resource type="PackedScene" uid="uid://b3t5vqr4ilylv" path="res://Scenes/Imports/light.fbx" id="1_i8lar"]
+
+[node name="light" instance=ExtResource("1_i8lar")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5yoc636xauk3"]
+
+[ext_resource type="PackedScene" uid="uid://865epqvvgvrq" path="res://Scenes/Imports/shopgameone.fbx" id="1_i85ab"]
+
+[node name="shopgameone" instance=ExtResource("1_i85ab")]

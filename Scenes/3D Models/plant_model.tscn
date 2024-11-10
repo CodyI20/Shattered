@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck8iis45b77pe"]
+
+[ext_resource type="PackedScene" uid="uid://nnbwdnle1yas" path="res://Scenes/Imports/plant model.fbx" id="1_hf3hb"]
+
+[node name="plant model" instance=ExtResource("1_hf3hb")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.317978, 0)
