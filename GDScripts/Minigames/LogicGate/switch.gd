@@ -5,8 +5,8 @@ func _ready() -> void:
 
 func _on_toggled(toggled_on: bool) -> void:
 	Events.toggle_electricity.emit(toggled_on)
-	toggle_mode = false
+	disabled = true
 
 func reset_puzzle() -> void:
-	toggle_mode = true
 	button_pressed = false
+	disabled = false

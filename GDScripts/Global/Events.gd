@@ -37,6 +37,7 @@ signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
 signal gate_solved()
 signal gate_not_solved()
+signal gate_not_solved_sound()
 
 signal logic_gate_puzzle_on()
 signal logic_gate_puzzle_off()

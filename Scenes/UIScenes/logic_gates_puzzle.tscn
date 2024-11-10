@@ -395,6 +395,7 @@ offset_left = -69.96
 offset_top = -70.48
 offset_right = 70.04
 offset_bottom = 69.52
+correct_gate = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 7" parent="DropZones" instance=ExtResource("5_7j5xk")]
@@ -407,6 +408,7 @@ offset_left = -69.96
 offset_top = -70.48
 offset_right = 70.04
 offset_bottom = 69.52
+correct_gate = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="DROP ZONE - 8" parent="DropZones" instance=ExtResource("5_7j5xk")]

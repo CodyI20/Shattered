@@ -18,7 +18,7 @@ func _ready() -> void:
 		Events.toggle_electricity.connect(switch_gate_logic)
 	if FINAL_GATE:
 		SWITCH_GATE = false
-		Events.gate_solved.connect(set_line_to_connected)
+		Events.gate_solved.connect(final_gate_logic)
 	if SWITCH_GATE and FINAL_GATE:
 		printerr("You are setting it as both SWITCH_GATE and FINAL_GATE. Please choose one!")
 	if SWITCH_GATE or FINAL_GATE:
@@ -52,6 +52,10 @@ func switch_gate_logic(toggle_on: bool) -> void:
 		set_line_to_connected()
 	else:
 		set_line_to_disconnected()
+	apply_saved_texture(true)
+
+func final_gate_logic() -> void:
+	set_line_to_connected()
 	apply_saved_texture(true)
 	
 func apply_saved_texture(should_apply: bool) -> void:

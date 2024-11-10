@@ -17,6 +17,7 @@ extends Node
 
 # SFX - LOGIC GAME PUZZLE
 @onready var electricity_on: AudioStreamPlayer = $SFX/LogicGatePuzzle/ElectricityOn
+@onready var puzzle_failed: AudioStreamPlayer = $SFX/LogicGatePuzzle/PuzzleFailed
 
 # SFX - PAPER
 @onready var page_pick_up: AudioStreamPlayer = $SFX/Paper/PagePickUp
@@ -46,6 +47,7 @@ func _event_subscription() -> void:
 	
 	# SFX - LOGIC GAME PUZZLE
 	Events.gate_solved.connect(play_electricity_on_sound)
+	Events.gate_not_solved_sound.connect(play_electricity_pop_sound)
 	
 	# SFX - PAPER
 	Events.on_interact.connect(play_interactable_sound)
@@ -83,3 +85,6 @@ func play_sfx_slider_value_changed_sound() -> void:
 	
 func play_start_game_sound() -> void:
 	start_sound.play()
+	
+func play_electricity_pop_sound() -> void:
+	puzzle_failed.play()

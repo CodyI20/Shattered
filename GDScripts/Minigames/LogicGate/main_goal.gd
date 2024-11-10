@@ -45,5 +45,6 @@ func check_puzzle_solved(toggled_on : bool) -> void:
 		texture = LIGHTBULB_ON
 		Events.gate_solved.emit()
 	else:
-		await get_tree().create_timer(1.5).timeout
+		Events.gate_not_solved_sound.emit()
+		await get_tree().create_timer(3).timeout
 		Events.gate_not_solved.emit()
