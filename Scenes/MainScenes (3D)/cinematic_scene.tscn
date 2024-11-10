@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb0cjv6t6xo7b"]
+[gd_scene load_steps=5 format=3 uid="uid://cb0cjv6t6xo7b"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/cinematic_scene.gd" id="1_rur3u"]
 [ext_resource type="VideoStream" path="res://Art/Video/Cutscene-Intro-Part-2.ogv" id="2_5ex4t"]
+[ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="3_arorg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6m6kk"]
 font_size = 40
@@ -52,5 +53,8 @@ text = "SKIP
 label_settings = SubResource("LabelSettings_6m6kk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Options" parent="." instance=ExtResource("3_arorg")]
+layout_mode = 1
 
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

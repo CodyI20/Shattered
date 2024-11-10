@@ -30,9 +30,11 @@ func _ready() -> void:
 	if background_music.stream == null:
 		printerr("THERE IS NO STREAM IN YOUR MUSIC! FIX IT! ~Also check the bus it's in while you're at it~")
 		return
-	background_music.play()
 
 func _event_subscription() -> void:
+	# MUSIC
+	Events.start_game.connect(play_music)
+	
 	# SFX - OPTIONS MENU FEEDBACK
 	Events.sfx_slider_value_set.connect(play_sfx_slider_value_changed_sound)
 	
@@ -54,6 +56,9 @@ func _event_subscription() -> void:
 	
 	# SFX - START GAME
 	Events.start_game.connect(play_start_game_sound)
+	
+	# STOP
+	Events.go_to_final_screen.connect(stop_sfx)
 	
 func play_walk_sound(should_play: bool) -> void:
 	if should_play:
@@ -88,3 +93,9 @@ func play_start_game_sound() -> void:
 	
 func play_electricity_pop_sound() -> void:
 	puzzle_failed.play()
+
+func play_music() -> void:
+	background_music.play()
+
+func stop_sfx() -> void:
+	walk_sfx.stop()

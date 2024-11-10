@@ -18,6 +18,8 @@ func _ready():
 func _process(delta):
 	if current_step_count >= tutorial_steps_sequence.size():
 		return
+	if get_tree().paused:
+		return
 	tutorial_steps_sequence[current_step_count].Process()
 
 func play_step(step : TutorialStep) -> void:

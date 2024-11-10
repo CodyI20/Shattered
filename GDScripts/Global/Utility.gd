@@ -9,6 +9,7 @@ func findByClass(node: Node, className : String, result : Array) -> Array:
 
 func go_to_main_menu() -> void:
 	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_packed(FilePaths.MENU_SCENE_PATH)
 
 func quit_game() -> void:
@@ -21,5 +22,8 @@ func go_to_game_scene() -> void:
 func go_to_cinematic_scene() -> void:
 	get_tree().change_scene_to_packed(FilePaths.CINEMATIC_SCENE_PATH)
 
-func go_to_loading_scene() -> void:
-	pass
+func go_to_final_screen() -> void:
+	Events.go_to_final_screen.emit()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(FilePaths.END_DEMO_SCENE)

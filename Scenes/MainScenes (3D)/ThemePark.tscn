@@ -1832,9 +1832,9 @@ use_collision = true
 size = Vector3(73.4459, 7, 12)
 
 [node name="Building4" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.759, 2.5, 34.0133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.759, 2.5, 42.9379)
 use_collision = true
-size = Vector3(11.816, 7, 85.57)
+size = Vector3(11.816, 7, 67.7209)
 
 [node name="Building5" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.955, 2.5, 50.1342)

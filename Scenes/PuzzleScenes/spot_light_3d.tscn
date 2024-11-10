@@ -6,4 +6,5 @@
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8.22444, 11.1274, 0.755623)
 light_energy = 12.0
 light_bake_mode = 1
+spot_range = 15.0
 script = ExtResource("1_5sdev")

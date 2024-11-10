@@ -6,9 +6,10 @@ signal player_jumped()
 signal player_waking(is_walking: bool)
 signal toggle_inventory()
 
-# START GAME EVENT
+# GAME EVENTS
 
 signal start_game()
+signal go_to_final_screen()
 
 # ALTER EVENTS
 

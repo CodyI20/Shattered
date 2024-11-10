@@ -17,25 +17,40 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Tutorials" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -2.0
-offset_top = 851.0
-offset_right = 1922.0
-offset_bottom = 1079.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -962.0
+offset_top = -228.0
+offset_right = 962.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("1_fs6sw")
 tutorial_steps_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("3_5ie5m"), ExtResource("4_oywsh"), ExtResource("5_o836r"), ExtResource("6_bex6t"), ExtResource("7_tlrcc"), ExtResource("8_gipcq")])
 tutorial_steps_non_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("4_bkbek")])
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 184.0
-offset_right = 1746.0
-offset_bottom = 224.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -781.0
+offset_top = -224.0
+offset_right = 781.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_right = 1565.0
-offset_bottom = 229.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 label_settings = SubResource("LabelSettings_vwgyw")
 horizontal_alignment = 1
 vertical_alignment = 1
