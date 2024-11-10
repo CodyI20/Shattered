@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk1rgtf8maf0i"]
+[gd_scene load_steps=4 format=3 uid="uid://dk1rgtf8maf0i"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/options.gd" id="1_8iwmn"]
+[ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_24eit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqgdd"]
+shader = ExtResource("2_24eit")
+shader_parameter/lod = 0.8
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -11,7 +16,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8iwmn")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.666667)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_aqgdd")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +47,7 @@ offset_right = 75.2
 offset_bottom = 26.904
 grow_horizontal = 2
 bbcode_enabled = true
-text = "[b][color=GREEN][wave amp = 0.01 frequency=0.2][font_size=30] OPTIONS"
+text = "[b][color=TURQUOISE][wave amp = 0.01 frequency=0.2][font_size=30] OPTIONS"
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsContainer" type="VBoxContainer" parent="."]

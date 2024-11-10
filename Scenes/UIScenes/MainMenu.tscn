@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs1f6co8vh3p1"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/main_menu.gd" id="1_4ql5n"]
-[ext_resource type="Texture2D" uid="uid://d4goqs1gu3qsf" path="res://Art/Screenshot 2024-11-09 160216.png" id="2_j13qi"]
+[ext_resource type="Texture2D" uid="uid://ckbqoqdtvpycd" path="res://Art/SplashArtpng.png" id="2_8r4sc"]
 [ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="2_jheqj"]
 
 [node name="MainMenu" type="Control"]
@@ -13,10 +13,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ql5n")
 
-[node name="Screenshot2024-11-09160216" type="Sprite2D" parent="."]
-position = Vector2(962.875, 540.125)
-scale = Vector2(1.12859, 1.13836)
-texture = ExtResource("2_j13qi")
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8r4sc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -51,10 +55,6 @@ text = "Load Game"
 
 [node name="Options" parent="." instance=ExtResource("2_jheqj")]
 layout_mode = 1
-offset_left = 5.0
-offset_top = 3.0
-offset_right = 5.0
-offset_bottom = 3.0
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
