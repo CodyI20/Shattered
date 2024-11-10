@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc8t67um7t1io"]
+
+[ext_resource type="Texture2D" uid="uid://cx8etqo3ke1r0" path="res://Art/2D/LogicGatePuzzle/LineConnected.png" id="1_sk4jy"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/connection_line.gd" id="2_83otc"]
+
+[node name="ConnectionLine" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.134
+anchor_right = 0.01
+anchor_bottom = 0.134
+offset_left = -19.2
+offset_top = -144.72
+offset_right = 20.8
+offset_bottom = 144.28
+texture = ExtResource("1_sk4jy")
+expand_mode = 1
+script = ExtResource("2_83otc")

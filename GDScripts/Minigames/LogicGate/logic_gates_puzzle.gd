@@ -6,7 +6,7 @@ var puzzle_active : bool = false
 func _ready() -> void:
 	Events.on_interact.connect(toggle_puzzle)
 	Events.exited_puzzle_area.connect(close_puzzle)
-	visible = false
+	#visible = false
 
 func toggle_puzzle(interactable: Interactable) -> void:
 	if interactable.get_interaction_text() != "ElectricPanel":

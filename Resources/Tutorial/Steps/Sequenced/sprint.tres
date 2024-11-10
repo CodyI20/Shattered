@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TutorialSprintingStep" load_steps=2 format=3 uid="uid://bjlkcbyp6acr1"]
+
+[ext_resource type="Script" path="res://GDScripts/Tutorial/sprinting_tutorial_step.gd" id="1_glr8o"]
+
+[resource]
+script = ExtResource("1_glr8o")
+other_actions = Array[String](["up", "down", "left", "right"])
+tutorial_text = "Press '%s' while walking to toggle sprint"
+tutorial_action = "sprint"

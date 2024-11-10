@@ -11,6 +11,12 @@ func _ready() -> void:
 	Events.object_started_dragging.connect(clear_item)
 	Events.logic_gate_puzzle_on.connect(toggle_on)
 	Events.logic_gate_puzzle_off.connect(toggle_off)
+	Events.gate_not_solved.connect(reset_puzzle)
+	puzzle_active = true
+	
+func reset_puzzle() -> void:
+	print_debug("DropZone has been reset...")
+	set_item(null, false)
 
 # Called when mouse enters the slot
 func _on_mouse_entered():
@@ -36,6 +42,10 @@ func clear_item(input_item: DragItem):
 func set_item(new_item: DragItem, checkItem: bool = true):
 	if not puzzle_active:
 		return
+		
+	if correct_gate != Enums.gate_type.NONE and item == null:
+		print_debug("WRONG GATE ENTERED! BECAUSE IT'S EMPTY")
+		Events.wrong_gate_entered.emit(self)
 
 	if item != null and checkItem:
 		# If there is an existing item, handle it (e.g., swap or return it)
@@ -44,19 +54,20 @@ func set_item(new_item: DragItem, checkItem: bool = true):
 		original_slot.set_item(item,false)
 
 	item = new_item  # Set the new item that will be slotted
-	item.current_slot = self
-	# Calculate the center position of the slot
-	var slot_center = global_position + (size / 2)
+	if item != null:
+		item.current_slot = self
+		# Calculate the center position of the slot
+		var slot_center = global_position + (size / 2)
 
-	# Calculate the offset needed to center the item
-	var item_offset = item.size / 2
+		# Calculate the offset needed to center the item
+		var item_offset = item.size / 2
 
-	# Adjust item position to center it on the slot
-	item.global_position = slot_center - item_offset
-	
-	if item.gatetype == correct_gate:
-		print_debug("CORRECT GATE!")
-		Events.correct_gate_entered.emit(self)
-	else:
-		print_debug("WRONG GATE ENTERED!")
-		Events.wrong_gate_entered.emit(self)
+		# Adjust item position to center it on the slot
+		item.global_position = slot_center - item_offset
+		
+		if item.gatetype == correct_gate:
+			print_debug("CORRECT GATE!")
+			Events.correct_gate_entered.emit(self)
+		else:
+			print_debug("WRONG GATE ENTERED!")
+			Events.wrong_gate_entered.emit(self)

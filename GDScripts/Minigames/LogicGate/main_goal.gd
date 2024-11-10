@@ -16,17 +16,13 @@ func _ready() -> void:
 	texture = LIGHTBULB_OFF
 	Events.correct_gate_entered.connect(increment_correct_gates_number)
 	Events.wrong_gate_entered.connect(decrease_correct_gates_number)
+	Events.toggle_electricity.connect(check_puzzle_solved)
 	number_of_drop_zones = drop_zones.get_child_count()
 
 func increment_correct_gates_number(o: DropZone) -> void:
 	if !correct_gates.has(o):
 		print_debug("Adding a gate to the ARRAY...")
 		correct_gates.push_back(o)
-		
-	if correct_gates.size() == number_of_drop_zones:
-		print_debug("GATE SOLVED!")
-		texture = LIGHTBULB_ON
-		Events.gate_solved.emit()
 		#if color_rect:
 			#color_rect.change_to_green()
 	
@@ -36,4 +32,18 @@ func decrease_correct_gates_number(o: DropZone) -> void:
 	if index != -1:
 		print_debug("Incorrect gate, removing from the array....")
 		correct_gates.remove_at(index)
+
+func reset_puzzle() -> void:
+	print_debug("MainGOAL has been reset...")
+	correct_gates.clear()
 	
+func check_puzzle_solved(toggled_on : bool) -> void:
+	if !toggled_on:
+		return
+	if correct_gates.size() == number_of_drop_zones:
+		print_debug("GATE SOLVED!")
+		texture = LIGHTBULB_ON
+		Events.gate_solved.emit()
+	else:
+		await get_tree().create_timer(1.5).timeout
+		Events.gate_not_solved.emit()
