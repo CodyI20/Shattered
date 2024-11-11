@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://h68cek51vakm"
 path.bptc="res://.godot/imported/icon.png-9184c917ae1432a53633fd28a90ce6a4.bptc.ctex"
+path.astc="res://.godot/imported/icon.png-9184c917ae1432a53633fd28a90ce6a4.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/icon.png"
-dest_files=["res://.godot/imported/icon.png-9184c917ae1432a53633fd28a90ce6a4.bptc.ctex"]
+dest_files=["res://.godot/imported/icon.png-9184c917ae1432a53633fd28a90ce6a4.bptc.ctex", "res://.godot/imported/icon.png-9184c917ae1432a53633fd28a90ce6a4.astc.ctex"]
 
 [params]
 

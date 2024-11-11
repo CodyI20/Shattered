@@ -185,3 +185,7 @@ InteractWithMouse={
 [layer_names]
 
 3d_physics/layer_2="InteractionLayer"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

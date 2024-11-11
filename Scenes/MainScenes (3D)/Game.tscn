@@ -3596,7 +3596,7 @@ shape = SubResource("BoxShape3D_1e2n5")
 transform = Transform3D(1, 2.359e-12, 0, 6.57252e-13, 0.25276, 0, 5.82077e-11, 2.91038e-11, 1, 0.00708008, 0.292234, 0.512115)
 
 [node name="DoorPivot" type="Node3D" parent="WorldRoot/DoorWithCode"]
-transform = Transform3D(-6.07038e-06, 0, 0.328931, 0, 3.95687, 0, -1.67691, 0, -1.19073e-06, -0.151681, 1.39496, -0.419951)
+transform = Transform3D(-6.0704e-06, 0, 0.328931, 0, 3.95687, 0, -1.67691, 0, -1.19073e-06, -0.151681, 1.39496, -0.419951)
 script = ExtResource("5_1wog0")
 
 [node name="Door" type="MeshInstance3D" parent="WorldRoot/DoorWithCode/DoorPivot"]
