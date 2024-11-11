@@ -3560,6 +3560,66 @@ autowrap_mode = 3
 [node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
 process_mode = 0
 
+[node name="MainGoal" parent="PausableUI/LogicGatesPuzzle" index="2"]
+texture = null
+
+[node name="SWITCH_GATE(FIRST GATE)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="0"]
+texture = null
+
+[node name="ConnectionLine-GATE1" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="1"]
+texture = null
+
+[node name="ConnectionLine-GATE1(2)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="2"]
+texture = null
+
+[node name="ConnectionLine-GATE2" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="3"]
+texture = null
+
+[node name="ConnectionLine-GATE3" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="4"]
+texture = null
+
+[node name="ConnectionLine-GATE4" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="5"]
+texture = null
+
+[node name="ConnectionLine-GATE5" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="6"]
+texture = null
+
+[node name="ConnectionLine-GATE5(2)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="7"]
+texture = null
+
+[node name="ConnectionLine-GATE6" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="8"]
+texture = null
+
+[node name="ConnectionLine-GATE7" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="9"]
+texture = null
+
+[node name="FINAL_LINE_FINAL_GATE" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="10"]
+texture = null
+
+[node name="GATE" parent="PausableUI/LogicGatesPuzzle/Gates" index="0"]
+texture = null
+
+[node name="GATE2" parent="PausableUI/LogicGatesPuzzle/Gates" index="1"]
+texture = null
+
+[node name="GATE3" parent="PausableUI/LogicGatesPuzzle/Gates" index="2"]
+texture = null
+
+[node name="GATE4" parent="PausableUI/LogicGatesPuzzle/Gates" index="3"]
+texture = null
+
+[node name="GATE5" parent="PausableUI/LogicGatesPuzzle/Gates" index="4"]
+texture = null
+
+[node name="GATE6" parent="PausableUI/LogicGatesPuzzle/Gates" index="5"]
+texture = null
+
+[node name="GATE7" parent="PausableUI/LogicGatesPuzzle/Gates" index="6"]
+texture = null
+
+[node name="GATE8" parent="PausableUI/LogicGatesPuzzle/Gates" index="7"]
+texture = null
+
 [node name="WhenPausedUI" type="CanvasLayer" parent="."]
 process_mode = 2
 
