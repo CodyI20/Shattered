@@ -2652,10 +2652,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6drrm")
 
-[sub_resource type="Animation" id="Animation_7rjwk"]
-resource_name = "Take 001"
-length = 1.25
-
 [sub_resource type="Animation" id="Animation_jf31v"]
 resource_name = "OpenDoor"
 tracks/0/type = "value"
@@ -2685,6 +2681,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, -2.14867, 0)]
 }
+
+[sub_resource type="Animation" id="Animation_7rjwk"]
+resource_name = "Take 001"
+length = 1.25
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_756tr"]
 _data = {
@@ -2719,6 +2719,9 @@ size = Vector3(11.816, 7, 76.1227)
 
 [node name="TestLevel" parent="WorldRoot" instance=ExtResource("7_qvigy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.247, 0.05, 96.538)
+
+[node name="DoorPivot" parent="WorldRoot/TestLevel" index="8"]
+transform = Transform3D(-6.61021e-06, 0, 1, 0, 3.95632, 0, -1.82603, 0, -3.61999e-06, -11.7152, 1.34496, -0.982047)
 
 [node name="electro room" type="Node3D" parent="WorldRoot"]
 transform = Transform3D(-1.31134e-06, 0, -30, 0, 30, 0, 30, 0, -1.31134e-06, 273.414, 0.0500015, -4.00056)
@@ -3479,7 +3482,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_pr0q3")
 
 [node name="DoorPivot" type="Node3D" parent="WorldRoot/electro room"]
-transform = Transform3D(-0.546248, 0, -0.837623, 0, 1, 0, 0.837623, 0, -0.546248, 0.0590515, 0, 0.109737)
+transform = Transform3D(-0.546244, 0, -0.837626, 0, 1, 0, 0.837626, 0, -0.546244, 0.0590515, 0, 0.109737)
 
 [node name="Door" type="MeshInstance3D" parent="WorldRoot/electro room/DoorPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0372545, -0.00125614, -0.000946707)

@@ -22,12 +22,7 @@ grow_vertical = 2
 color = Color(0.121569, 0.121569, 0.121569, 0.666667)
 
 [node name="Blur" parent="." instance=ExtResource("2_lb88k")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
