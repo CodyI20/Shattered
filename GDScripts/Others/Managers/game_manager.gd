@@ -39,6 +39,8 @@ func _ready() -> void:
 	Events.exited_puzzle_area.connect(reset_interactions)
 	Events.toggle_inventory.connect(no_pause)
 	Events.options_menu_toggle.connect(no_resume)
+	Events.no_pause_signal.connect(no_pause)
+	Events.no_resume_signal.connect(no_resume)
 
 func _process(delta: float) -> void:
 	game_state_change()

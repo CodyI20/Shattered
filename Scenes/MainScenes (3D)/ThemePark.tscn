@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cbmnemwe37g5b"]
+[gd_scene load_steps=42 format=3 uid="uid://cbmnemwe37g5b"]
 
 [ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="1_mh1w6"]
 [ext_resource type="PackedScene" uid="uid://cvhqy5semf2wp" path="res://Scenes/3D Models/bench.tscn" id="2_vxs5w"]
@@ -13,6 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bjluhsp7rm4xl" path="res://Art/3D/house.obj" id="9_gyndg"]
 [ext_resource type="PackedScene" uid="uid://bdjseegng0d0j" path="res://Scenes/3D Models/Bushgame/bushgame_ten.tscn" id="9_p2cyl"]
 [ext_resource type="PackedScene" uid="uid://hu646x1u0nu3" path="res://Scenes/3D Models/car.tscn" id="11_1wfoc"]
+[ext_resource type="PackedScene" uid="uid://ddb8fb6bh37fv" path="res://Art/3D/barrier.fbx" id="11_ruoq0"]
 [ext_resource type="PackedScene" uid="uid://bohi8ypp5kr55" path="res://Scenes/3D Models/busstop.tscn" id="12_yrx65"]
 [ext_resource type="PackedScene" uid="uid://buv1hrihkk4vr" path="res://Scenes/3D Models/light.tscn" id="13_w0ryh"]
 
@@ -81,6 +82,7 @@ points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625,
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkldj"]
+albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881v8"]
 
@@ -2031,6 +2033,12 @@ shape = SubResource("ConvexPolygonShape3D_xkwdc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.216, 2.5, 108.615)
 use_collision = true
 size = Vector3(10.5238, 7, 3.09993)
+
+[node name="barrier" parent="Park entrance path" instance=ExtResource("11_ruoq0")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 259.928, 1.2509, 75.3364)
+
+[node name="barrier2" parent="Park entrance path" instance=ExtResource("11_ruoq0")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 269.638, 1.2509, 75.3364)
 
 [node name="Front area" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 286.857, 0, 126.047)

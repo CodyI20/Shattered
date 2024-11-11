@@ -1,15 +1,17 @@
-[gd_scene load_steps=239 format=4 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=250 format=4 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/save_load_manager.gd" id="3_35roi"]
 [ext_resource type="PackedScene" uid="uid://dwoybiejqaab3" path="res://Scenes/UIScenes/PauseMenu.tscn" id="3_hhntt"]
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/door_pivot.gd" id="5_1wog0"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
 [ext_resource type="PackedScene" uid="uid://vcpyf6oawkrf" path="res://Scenes/UIScenes/logic_gates_puzzle.tscn" id="7_d856g"]
-[ext_resource type="PackedScene" uid="uid://cuh02nlr6tiyd" path="res://Scenes/MainScenes (3D)/test_level_2.tscn" id="7_qvigy"]
 [ext_resource type="Script" path="res://GDScripts/pausable_ui.gd" id="8_74wgw"]
 [ext_resource type="Script" path="res://GDScripts/end_of_demo_trigger.gd" id="8_e4ype"]
+[ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="9_lyo1c"]
+[ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="10_4563f"]
 [ext_resource type="PackedScene" uid="uid://cbmnemwe37g5b" path="res://Scenes/MainScenes (3D)/ThemePark.tscn" id="11_s7rjm"]
 [ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
 [ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
@@ -18,6 +20,19 @@
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
 [ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/spot_light_3d.tscn" id="18_my7jc"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/ui#letter.gd" id="21_421gg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_x7b6d"]
+sky_material = SubResource("ProceduralSkyMaterial_ple80")
+
+[sub_resource type="Environment" id="Environment_tpjvm"]
+background_mode = 2
+sky = SubResource("Sky_x7b6d")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a7hi"]
 resource_name = "standardSurface1"
@@ -2700,6 +2715,50 @@ albedo_color = Color(1, 1, 0.133333, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t4wqn"]
 size = Vector3(4.63062, 6.59518, 23.5273)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjv6r"]
+albedo_color = Color(0.187026, 0.852714, 0.835798, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q4tsj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1e2n5"]
+
+[sub_resource type="Animation" id="Animation_kcthh"]
+resource_name = "Door_open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, -0.370917, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8m58v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1tbf"]
+_data = {
+"Door_open": SubResource("Animation_kcthh"),
+"RESET": SubResource("Animation_8m58v")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v8rq"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -2712,17 +2771,21 @@ unique_name_in_owner = true
 process_mode = 1
 script = ExtResource("5_4s16o")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldRoot"]
+environment = SubResource("Environment_tpjvm")
+
 [node name="ThemePark" parent="WorldRoot" instance=ExtResource("11_s7rjm")]
 
 [node name="Building4" parent="WorldRoot/ThemePark/Park entrance path" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.759, 2.5, 38.7369)
-size = Vector3(11.816, 7, 76.1227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.831, 2.5, 38.7574)
+size = Vector3(11.6711, 7, 76.0817)
 
-[node name="TestLevel" parent="WorldRoot" instance=ExtResource("7_qvigy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.247, 0.05, 96.538)
+[node name="Building5" parent="WorldRoot/ThemePark/Park entrance path" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.942, 2.5, 49.8874)
+size = Vector3(11.9747, 7, 59.3293)
 
-[node name="DoorPivot" parent="WorldRoot/TestLevel" index="8"]
-transform = Transform3D(-6.61021e-06, 0, 1, 0, 3.95632, 0, -1.82603, 0, -3.61999e-06, -11.7152, 1.34496, -0.982047)
+[node name="Paper" parent="WorldRoot" instance=ExtResource("10_4563f")]
+transform = Transform3D(0.900827, -0.434178, 0, -1.89785e-08, -3.93764e-08, 1, -0.434178, -0.900827, -4.37114e-08, 277.323, 0.148842, 79.8589)
 
 [node name="electro room" type="Node3D" parent="WorldRoot"]
 transform = Transform3D(-1.31134e-06, 0, -30, 0, 30, 0, 30, 0, -1.31134e-06, 273.414, 0.0500015, -4.00056)
@@ -3500,11 +3563,11 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0407171, 0.166902, -0.000910044)
 
 [node name="ElectricPanel" parent="WorldRoot/electro room" instance=ExtResource("18_6heic")]
-transform = Transform3D(1.06089, 0, 0, 0, -2.78066e-08, 1.06089, 0, -0.63614, -4.63728e-08, -0.0664764, 0.0804973, 0.117989)
+transform = Transform3D(-4.6373e-08, -0.63614, -4.6373e-08, 0, -2.78066e-08, 1.06089, -1.06089, 2.78066e-08, 2.02703e-15, 0.162334, 0.088179, 0.0620027)
 material_override = SubResource("StandardMaterial3D_gck5t")
 
 [node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291.806, 0.217407, 95.7911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291.623, 0.217407, 90.9429)
 
 [node name="EndOfDemoTrigger" type="Area3D" parent="WorldRoot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.867, 0, 3.68346)
@@ -3513,6 +3576,45 @@ script = ExtResource("8_e4ype")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/EndOfDemoTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.79759, -2.70288)
 shape = SubResource("BoxShape3D_t4wqn")
+
+[node name="DoorWithCode" type="Node3D" parent="WorldRoot"]
+transform = Transform3D(0.000806546, -0.00141347, -0.999999, 0.000208203, 0.999999, -0.0014133, 1, -0.000207041, 0.000806845, 264.915, 0.0456211, 75.4555)
+
+[node name="DoorPillar" type="MeshInstance3D" parent="WorldRoot/DoorWithCode"]
+transform = Transform3D(-4.3714e-08, -1.74623e-10, 1, 2.06484e-11, 3.95632, 0, -1, 1.26977e-09, -4.3714e-08, 0.0433044, 0.532972, -0.953766)
+material_override = SubResource("StandardMaterial3D_rjv6r")
+mesh = SubResource("BoxMesh_q4tsj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldRoot/DoorWithCode/DoorPillar"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/DoorWithCode/DoorPillar/StaticBody3D"]
+shape = SubResource("BoxShape3D_1e2n5")
+
+[node name="Keypad" parent="WorldRoot/DoorWithCode/DoorPillar" instance=ExtResource("9_lyo1c")]
+transform = Transform3D(1, 2.359e-12, 0, 6.57252e-13, 0.25276, 0, 5.82077e-11, 2.91038e-11, 1, 0.00708008, 0.292234, 0.512115)
+
+[node name="DoorPivot" type="Node3D" parent="WorldRoot/DoorWithCode"]
+transform = Transform3D(-6.07038e-06, 0, 0.328931, 0, 3.95687, 0, -1.67691, 0, -1.19073e-06, -0.151681, 1.39496, -0.419951)
+script = ExtResource("5_1wog0")
+
+[node name="Door" type="MeshInstance3D" parent="WorldRoot/DoorWithCode/DoorPivot"]
+transform = Transform3D(1.17812, -7.16142e-10, 4.36557e-11, 3.18138e-10, 0.999627, 1.81899e-12, 2.32831e-09, 1.62981e-09, 1.00021, -0.607391, -0.216176, -0.015625)
+material_override = SubResource("StandardMaterial3D_rjv6r")
+mesh = SubResource("BoxMesh_q4tsj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldRoot/DoorWithCode/DoorPivot/Door"]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/DoorWithCode/DoorPivot/Door/StaticBody3D"]
+shape = SubResource("BoxShape3D_1e2n5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldRoot/DoorWithCode/DoorPivot"]
+libraries = {
+"": SubResource("AnimationLibrary_g1tbf")
+}
 
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
@@ -3558,67 +3660,6 @@ theme_override_constants/outline_size = 0
 autowrap_mode = 3
 
 [node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
-process_mode = 0
-
-[node name="MainGoal" parent="PausableUI/LogicGatesPuzzle" index="2"]
-texture = null
-
-[node name="SWITCH_GATE(FIRST GATE)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="0"]
-texture = null
-
-[node name="ConnectionLine-GATE1" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="1"]
-texture = null
-
-[node name="ConnectionLine-GATE1(2)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="2"]
-texture = null
-
-[node name="ConnectionLine-GATE2" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="3"]
-texture = null
-
-[node name="ConnectionLine-GATE3" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="4"]
-texture = null
-
-[node name="ConnectionLine-GATE4" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="5"]
-texture = null
-
-[node name="ConnectionLine-GATE5" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="6"]
-texture = null
-
-[node name="ConnectionLine-GATE5(2)" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="7"]
-texture = null
-
-[node name="ConnectionLine-GATE6" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="8"]
-texture = null
-
-[node name="ConnectionLine-GATE7" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="9"]
-texture = null
-
-[node name="FINAL_LINE_FINAL_GATE" parent="PausableUI/LogicGatesPuzzle/ConnectionLines" index="10"]
-texture = null
-
-[node name="GATE" parent="PausableUI/LogicGatesPuzzle/Gates" index="0"]
-texture = null
-
-[node name="GATE2" parent="PausableUI/LogicGatesPuzzle/Gates" index="1"]
-texture = null
-
-[node name="GATE3" parent="PausableUI/LogicGatesPuzzle/Gates" index="2"]
-texture = null
-
-[node name="GATE4" parent="PausableUI/LogicGatesPuzzle/Gates" index="3"]
-texture = null
-
-[node name="GATE5" parent="PausableUI/LogicGatesPuzzle/Gates" index="4"]
-texture = null
-
-[node name="GATE6" parent="PausableUI/LogicGatesPuzzle/Gates" index="5"]
-texture = null
-
-[node name="GATE7" parent="PausableUI/LogicGatesPuzzle/Gates" index="6"]
-texture = null
-
-[node name="GATE8" parent="PausableUI/LogicGatesPuzzle/Gates" index="7"]
-texture = null
 
 [node name="WhenPausedUI" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -3678,7 +3719,6 @@ script = ExtResource("2_fawn2")
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu" method="_on_game_paused"]
 [connection signal="paused" from="." to="WhenPausedUI/PauseMenu/InputLegendButton" method="_on_game_paused"]
 [connection signal="paused" from="." to="Utilities/InputManager" method="_on_game_paused"]
-[connection signal="resumed" from="." to="PausableUI/LogicGatesPuzzle" method="handle_external_resume"]
 [connection signal="resumed" from="." to="WhenPausedUI/PauseMenu" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="WhenPausedUI/PauseMenu/InputLegendButton" method="_on_game_resumed"]
 [connection signal="resumed" from="." to="Utilities/InputManager" method="_on_game_resumed"]
@@ -3693,6 +3733,4 @@ script = ExtResource("2_fawn2")
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/InputLegendButton" to="WhenPausedUI/PauseMenu/InputLegendRect" method="_on_input_legend_button_pressed"]
 
 [editable path="WorldRoot/ThemePark"]
-[editable path="WorldRoot/TestLevel"]
-[editable path="PausableUI/LogicGatesPuzzle"]
 [editable path="WhenPausedUI/PauseMenu"]

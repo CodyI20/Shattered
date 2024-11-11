@@ -59,3 +59,7 @@ signal sfx_slider_value_set()
 # TUTORIAL
 signal play_tutorial_step(step: TutorialStep)
 signal complete_tutorial_step(step: TutorialStep)
+
+# PAUSE
+signal no_pause_signal()
+signal no_resume_signal()

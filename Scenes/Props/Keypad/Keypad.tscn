@@ -13,6 +13,7 @@ viewport_path = NodePath("PasswordViewport")
 
 [node name="Keypad" type="Node3D"]
 script = ExtResource("1_2mj1g")
+correct_password = "2587"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_qi7gf")

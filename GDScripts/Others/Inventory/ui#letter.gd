@@ -1,7 +1,7 @@
 extends Control
 
 @onready var ui_letter_label: Label = $"UI_Letter#Label"
-var paper_text = "OMG i am so clumsy and forgetful! \n I am gonna write the code in this note now, it's: 1234"
+var paper_text = "OMG i am so clumsy and forgetful! \n I am gonna write the code in this note now, it's: 2587"
 @onready var CANVAS: CanvasLayer = $"../.."
 
 @export var Item_type : ItemData
