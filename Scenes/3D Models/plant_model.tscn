@@ -3,4 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://nnbwdnle1yas" path="res://Scenes/Imports/plant model.fbx" id="1_hf3hb"]
 
 [node name="plant model" instance=ExtResource("1_hf3hb")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.317978, 0)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+
+[node name="Circle modded" parent="." index="0"]
+transform = Transform3D(70.8249, 0, 0, 0, -8.44298e-06, 70.8249, 0, -70.8249, -8.44298e-06, 0, 1.70197, 0)
+
+[node name="Circle " parent="." index="1"]
+transform = Transform3D(148.106, -2.98023e-06, 39.0731, -62.8673, 0, 92.0505, -9.59018e-06, -100, 0, 0, 1.57652, 0)
+
+[node name="Empty" parent="." index="2"]
+transform = Transform3D(41.8159, -53.1385, -8.06076e-06, 4.03038e-06, -1.61215e-05, 67.6186, -53.1385, -41.8159, -8.06076e-06, 0, 1.99652, 0)
+
+[node name="Cylinder" parent="." index="3"]
+transform = Transform3D(6.42939, 9.30511e-14, -2.03394e-05, 5.62075e-07, -1.17085e-06, 232.656, 0, 6.54789, 2.77347e-05, 0, 2.31539, 0)
