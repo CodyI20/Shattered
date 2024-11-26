@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm1vno74sk26l"]
+
+[ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/ElectricPuzzle/spot_light_3d.tscn" id="1_x8piy"]
+[ext_resource type="PackedScene" uid="uid://dppk3c2nuif5d" path="res://Scenes/PuzzleScenes/ElectricPuzzle/electric_panel.tscn" id="2_wvbkp"]
+[ext_resource type="PackedScene" uid="uid://vcpyf6oawkrf" path="res://Scenes/UIScenes/logic_gates_puzzle.tscn" id="3_p3xuu"]
+[ext_resource type="Script" path="res://GDScripts/pausable_ui.gd" id="3_s2po5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gck5t"]
+albedo_color = Color(1, 1, 0.133333, 1)
+
+[node name="--ElectricityPuzzleScene--" type="Node3D"]
+
+[node name="SpotLight3D" parent="." instance=ExtResource("1_x8piy")]
+transform = Transform3D(-4.37113e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37113e-08, 1.91068e-15, 0, 0, 0)
+
+[node name="ElectricPanel" parent="." instance=ExtResource("2_wvbkp")]
+transform = Transform3D(31.8267, -2.16005e-12, -1.28749e-19, 0, -8.34198e-07, 31.8267, -2.50111e-12, -19.0842, -1.39119e-06, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_gck5t")
+
+[node name="PausableUI" type="CanvasLayer" parent="."]
+process_mode = 1
+script = ExtResource("3_s2po5")
+
+[node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("3_p3xuu")]

@@ -9,6 +9,34 @@ font_size = 30
 font_color = Color(0.184314, 1, 1, 1)
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_jxctp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.184314, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_twjqs"]
 resource_name = "display_subtitles"
 length = 54.0
@@ -37,34 +65,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.184314, 1, 1, 1), Color(0.751332, 0.534267, 0.190024, 1), Color(0.184314, 1, 1, 1), Color(0.752941, 0.533333, 0.188235, 1), Color(0.184314, 1, 1, 1), Color(0.752941, 0.533333, 0.188235, 1), Color(0.184314, 1, 1, 1), Color(0.752941, 0.533333, 0.188235, 1), Color(1, 1, 1, 1), Color(0.184314, 1, 1, 1), Color(0.752941, 0.533333, 0.188235, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jxctp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["
-"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:label_settings:font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.184314, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cjclg"]

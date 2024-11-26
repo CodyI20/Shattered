@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/main_menu.gd" id="1_4ql5n"]
 [ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="2_jheqj"]
-[ext_resource type="Texture2D" uid="uid://h6pmtrb3qob8" path="res://Art/SplashArt.png" id="2_jv7yv"]
-[ext_resource type="Texture2D" uid="uid://cnvbrnaaam8an" path="res://Art/title_text.png" id="3_k6sbd"]
+[ext_resource type="Texture2D" uid="uid://h6pmtrb3qob8" path="res://Art/2D/SplashArt.png" id="2_jv7yv"]
+[ext_resource type="Texture2D" uid="uid://cnvbrnaaam8an" path="res://Art/2D/title_text.png" id="3_k6sbd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

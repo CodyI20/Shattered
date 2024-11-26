@@ -1,4 +1,4 @@
-[gd_scene load_steps=250 format=4 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=246 format=4 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -7,18 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dwgdjyovkr0dc" path="res://Scenes/ScenePrefabs/player.tscn" id="4_fw4my"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/door_pivot.gd" id="5_1wog0"]
 [ext_resource type="Script" path="res://GDScripts/world_root.gd" id="5_4s16o"]
-[ext_resource type="PackedScene" uid="uid://vcpyf6oawkrf" path="res://Scenes/UIScenes/logic_gates_puzzle.tscn" id="7_d856g"]
-[ext_resource type="Script" path="res://GDScripts/pausable_ui.gd" id="8_74wgw"]
 [ext_resource type="Script" path="res://GDScripts/end_of_demo_trigger.gd" id="8_e4ype"]
+[ext_resource type="PackedScene" uid="uid://bm1vno74sk26l" path="res://Scenes/PuzzleScenes/ElectricPuzzle/__electricity_puzzle_scene__.tscn" id="9_5l43b"]
 [ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="9_lyo1c"]
 [ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="10_4563f"]
 [ext_resource type="PackedScene" uid="uid://cbmnemwe37g5b" path="res://Scenes/MainScenes (3D)/ThemePark.tscn" id="11_s7rjm"]
 [ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
 [ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_rect.gd" id="16_w44n4"]
-[ext_resource type="PackedScene" uid="uid://dppk3c2nuif5d" path="res://Scenes/PuzzleScenes/electric_panel.tscn" id="18_6heic"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_button.gd" id="18_hpt41"]
-[ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/spot_light_3d.tscn" id="18_my7jc"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/ui#letter.gd" id="21_421gg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ple80"]
@@ -2709,9 +2706,6 @@ _data = {
 "Take 001": SubResource("Animation_7rjwk")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gck5t"]
-albedo_color = Color(1, 1, 0.133333, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_t4wqn"]
 size = Vector3(4.63062, 6.59518, 23.5273)
 
@@ -3559,15 +3553,8 @@ libraries = {
 "": SubResource("AnimationLibrary_756tr")
 }
 
-[node name="SpotLight3D" parent="WorldRoot/electro room" instance=ExtResource("18_my7jc")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0407171, 0.166902, -0.000910044)
-
-[node name="ElectricPanel" parent="WorldRoot/electro room" instance=ExtResource("18_6heic")]
-transform = Transform3D(-4.6373e-08, -0.63614, -4.6373e-08, 0, -2.78066e-08, 1.06089, -1.06089, 2.78066e-08, 2.02703e-15, 0.162334, 0.088179, 0.0620027)
-material_override = SubResource("StandardMaterial3D_gck5t")
-
 [node name="player" parent="WorldRoot" groups=["player", "world_root_no_touch"] instance=ExtResource("4_fw4my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291.623, 0.217407, 90.9429)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 265.949, 0.217407, 3.54544)
 
 [node name="EndOfDemoTrigger" type="Area3D" parent="WorldRoot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.867, 0, 3.68346)
@@ -3616,9 +3603,16 @@ libraries = {
 "": SubResource("AnimationLibrary_g1tbf")
 }
 
+[node name="--ElectricityPuzzleScene--" parent="WorldRoot" instance=ExtResource("9_5l43b")]
+
+[node name="SpotLight3D" parent="WorldRoot/--ElectricityPuzzleScene--" index="0"]
+transform = Transform3D(-4.37113e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37113e-08, 1.91068e-15, 273.441, 5.05706, -5.22207)
+
+[node name="ElectricPanel" parent="WorldRoot/--ElectricityPuzzleScene--" index="1"]
+transform = Transform3D(31.8267, -2.16005e-12, -1.28749e-19, 0, -8.34198e-07, 31.8267, -2.50111e-12, -19.0842, -1.39119e-06, 271.611, 2.74161, 0.882114)
+
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
-script = ExtResource("8_74wgw")
 
 [node name="LetterUI" type="Control" parent="PausableUI"]
 layout_mode = 3
@@ -3658,8 +3652,6 @@ grow_vertical = 2
 size_flags_vertical = 0
 theme_override_constants/outline_size = 0
 autowrap_mode = 3
-
-[node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
 
 [node name="WhenPausedUI" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -3733,4 +3725,5 @@ script = ExtResource("2_fawn2")
 [connection signal="pressed" from="WhenPausedUI/PauseMenu/InputLegendButton" to="WhenPausedUI/PauseMenu/InputLegendRect" method="_on_input_legend_button_pressed"]
 
 [editable path="WorldRoot/ThemePark"]
+[editable path="WorldRoot/--ElectricityPuzzleScene--"]
 [editable path="WhenPausedUI/PauseMenu"]
