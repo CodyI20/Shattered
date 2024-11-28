@@ -130,6 +130,17 @@ fit_content = true
 layout_mode = 2
 value = 100.0
 
+[node name="DialogueVolume" type="RichTextLabel" parent="OptionsContainer/Audio"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b] Dialogue Volume
+"
+fit_content = true
+
+[node name="DialogueSlider" type="HSlider" parent="OptionsContainer/Audio"]
+layout_mode = 2
+value = 100.0
+
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -163,6 +174,7 @@ text = "QUIT"
 [connection signal="drag_ended" from="OptionsContainer/Audio/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="OptionsContainer/Audio/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="OptionsContainer/Audio/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsContainer/Audio/DialogueSlider" to="." method="_on_dialogue_slider_value_changed"]
 [connection signal="pressed" from="ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

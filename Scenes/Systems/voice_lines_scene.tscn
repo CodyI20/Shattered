@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://tbpr0j7clapu"]
+
+[ext_resource type="Script" path="res://GDScripts/Systems/VoiceLinesSystem/voice_lines_scene.gd" id="1_vpxyb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3recm"]
+font_size = 40
+
+[node name="VoiceLinesScene" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vpxyb")
+
+[node name="SubtitlesPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 1.0
+anchor_right = 0.936
+anchor_bottom = 1.0
+offset_left = 0.119995
+offset_top = -153.0
+offset_right = -0.120117
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SubtitlesPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="SubtitlesLabel" type="Label" parent="SubtitlesPanel/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3recm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VoiceLinesPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Dialogue"

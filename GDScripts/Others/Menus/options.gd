@@ -7,6 +7,7 @@ var saved_settings : SaveSettings
 var MASTER_VOLUME_INDEX = AudioServer.get_bus_index("Master")
 var MUSIC_VOLUME_INDEX = AudioServer.get_bus_index("Music")
 var SFX_VOLUME_INDEX = AudioServer.get_bus_index("SFX")
+var DIALOGUE_VOLUME_INDEX = AudioServer.get_bus_index("Dialogue")
 #endregion
 
 @onready var resolutions: OptionButton = $OptionsContainer/Resolution/Resolutions
@@ -15,6 +16,7 @@ var SFX_VOLUME_INDEX = AudioServer.get_bus_index("SFX")
 @onready var master_slider: HSlider = $OptionsContainer/Audio/MasterSlider
 @onready var sfx_slider: HSlider = $OptionsContainer/Audio/SFXSlider
 @onready var music_slider: HSlider = $OptionsContainer/Audio/MusicSlider
+@onready var dialogue_slider: HSlider = $OptionsContainer/Audio/DialogueSlider
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +39,8 @@ func set_saved_settings() -> void:
 	music_slider.value = saved_settings.music_volume
 	AudioServer.set_bus_volume_db(SFX_VOLUME_INDEX, linear2db(clamp(saved_settings.sfx_volume/100, 0.0, 1.0)))
 	sfx_slider.value = saved_settings.sfx_volume
+	AudioServer.set_bus_volume_db(DIALOGUE_VOLUME_INDEX, linear2db(clamp(saved_settings.dialogue_volume/100, 0.0, 1.0)))
+	dialogue_slider.value = saved_settings.dialogue_volume
 
 func toggle_menu(enabled: bool) -> void:
 	visible = enabled
@@ -106,6 +110,11 @@ func _on_music_slider_value_changed(value: float) -> void:
 	saved_settings.music_volume = value
 	saved_settings.save()
 	change_volume_db(MUSIC_VOLUME_INDEX, value)
+	
+func _on_dialogue_slider_value_changed(value: float) -> void:
+	saved_settings.dialogue_volume = value
+	saved_settings.save()
+	change_volume_db(DIALOGUE_VOLUME_INDEX, value)
 	
 # Utility function to convert linear volume to decibels
 func linear2db(linear: float) -> float:

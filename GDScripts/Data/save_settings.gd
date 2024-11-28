@@ -11,6 +11,7 @@ class_name SaveSettings
 @export var master_volume := 100
 @export var music_volume := 100
 @export var sfx_volume := 100
+@export var dialogue_volume := 100
 
 const SAVE_PATH := "user://"
 const SETTINGS_FILE_NAME := "settings.tres"
