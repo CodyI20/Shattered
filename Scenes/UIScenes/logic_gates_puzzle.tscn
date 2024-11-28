@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=14 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle.gd" id="1_1eygj"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_28j61"]
 [ext_resource type="Texture2D" uid="uid://d6q8nr84705l" path="res://Art/2D/LogicGatePuzzle/LightOff.png" id="2_nx0cc"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="2_wnkhe"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/layouts.gd" id="3_rwtqb"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/switch.gd" id="5_0fy78"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="5_7j5xk"]
 [ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_lidkr"]
@@ -33,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.0768358, 0.0768358, 0.0768358, 0.588235)
 
 [node name="Blur" type="ColorRect" parent="."]
@@ -43,8 +45,438 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="MainGoal" type="TextureRect" parent="."]
+[node name="Layouts" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_rwtqb")
+
+[node name="Layout1 - EASY" type="Control" parent="Layouts"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ConnectionLines" type="Control" parent="Layouts/Layout1 - EASY"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SWITCH_GATE(FIRST GATE)" parent="Layouts/Layout1 - EASY/ConnectionLines" instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.109
+anchor_top = 0.982
+anchor_right = 0.109
+anchor_bottom = 0.982
+offset_left = -20.28
+offset_top = -75.5601
+offset_right = 19.72
+offset_bottom = 76.4399
+rotation = 0.0115585
+pivot_offset = Vector2(20.8602, 81.8433)
+SWITCH_GATE = true
+
+[node name="SWITCH_GATE(SECOND GATE)2" parent="Layouts/Layout1 - EASY/ConnectionLines" instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.338167
+anchor_top = 0.978296
+anchor_right = 0.338167
+anchor_bottom = 0.978296
+offset_left = -20.28
+offset_top = -75.5601
+offset_right = 19.72
+offset_bottom = 76.4399
+rotation = 0.0115585
+pivot_offset = Vector2(20.8602, 81.8433)
+SWITCH_GATE = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ConnectionLine-GATE1" parent="Layouts/Layout1 - EASY/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.166
+anchor_top = 0.693
+anchor_right = 0.166
+anchor_bottom = 0.693
+offset_left = 95.024
+offset_top = -106.44
+offset_right = 135.024
+offset_bottom = 176.56
+rotation = 0.868583
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
+
+[node name="ConnectionLine-GATE7" parent="Layouts/Layout1 - EASY/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.287417
+anchor_top = 0.693519
+anchor_right = 0.287417
+anchor_bottom = 0.693519
+offset_left = -29.8398
+offset_top = -142.0
+offset_right = 10.1602
+offset_bottom = 149.0
+rotation = -0.817643
+pivot_offset = Vector2(21.5004, 135.421)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE -  2")
+metadata/_edit_use_anchors_ = true
+
+[node name="FINAL_LINE_FINAL_GATE" parent="Layouts/Layout1 - EASY/ConnectionLines" instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.226042
+anchor_top = 0.422
+anchor_right = 0.226042
+anchor_bottom = 0.422
+offset_left = -21.0
+offset_top = -65.76
+offset_right = 19.0
+offset_bottom = 65.24
+rotation = 0.0124619
+pivot_offset = Vector2(20.8602, 81.8433)
+FINAL_GATE = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MainGoal" type="TextureRect" parent="Layouts/Layout1 - EASY"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.227
+anchor_top = 0.269
+anchor_right = 0.227
+anchor_bottom = 0.269
+offset_left = -100.84
+offset_top = -101.52
+offset_right = 102.16
+offset_bottom = 101.48
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("2_nx0cc")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("7_8vhff")
+
+[node name="DropZones" type="Control" parent="Layouts/Layout1 - EASY"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DROP ZONE - 1" parent="Layouts/Layout1 - EASY/DropZones" instance=ExtResource("5_7j5xk")]
+layout_mode = 1
+anchor_left = 0.11
+anchor_top = 0.854
+anchor_right = 0.11
+anchor_bottom = 0.854
+offset_left = -69.4567
+offset_top = -70.3198
+offset_right = 70.5433
+offset_bottom = 69.6799
+correct_gate = 4
+
+[node name="DROP ZONE -  2" parent="Layouts/Layout1 - EASY/DropZones" instance=ExtResource("5_7j5xk")]
+layout_mode = 1
+anchor_left = 0.339562
+anchor_top = 0.848593
+anchor_right = 0.339562
+anchor_bottom = 0.848593
+offset_left = -69.96
+offset_top = -70.48
+offset_right = 70.04
+offset_bottom = 69.52
+correct_gate = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="DROP ZONE - 3" parent="Layouts/Layout1 - EASY/DropZones" instance=ExtResource("5_7j5xk")]
+layout_mode = 1
+anchor_left = 0.22
+anchor_top = 0.543
+anchor_right = 0.22
+anchor_bottom = 0.543
+offset_left = -70.3994
+offset_top = -70.4396
+offset_right = 69.6006
+offset_bottom = 69.5601
+correct_gate = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Gates" type="Control" parent="Layouts/Layout1 - EASY"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="GATE" parent="Layouts/Layout1 - EASY/Gates" instance=ExtResource("2_wnkhe")]
+layout_mode = 1
+anchor_left = 0.961
+anchor_top = 0.336
+anchor_right = 0.961
+anchor_bottom = 0.336
+offset_left = -61.12
+offset_top = -61.88
+offset_right = 61.88
+offset_bottom = 61.12
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_vkipc")
+gatetype = 4
+
+[node name="GATE2" parent="Layouts/Layout1 - EASY/Gates" instance=ExtResource("2_wnkhe")]
+layout_mode = 1
+anchor_left = 0.961
+anchor_top = 0.462
+anchor_right = 0.961
+anchor_bottom = 0.462
+offset_left = -61.12
+offset_top = -60.96
+offset_right = 61.88
+offset_bottom = 62.04
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_4nx7n")
+gatetype = 1
+
+[node name="GATE3" parent="Layouts/Layout1 - EASY/Gates" instance=ExtResource("2_wnkhe")]
+layout_mode = 1
+anchor_left = 0.961
+anchor_top = 0.586
+anchor_right = 0.961
+anchor_bottom = 0.586
+offset_left = -61.12
+offset_top = -61.88
+offset_right = 61.88
+offset_bottom = 61.12
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_vkipc")
+gatetype = 4
+
+[node name="CheckButton" type="CheckButton" parent="Layouts/Layout1 - EASY"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.216938
+anchor_top = 0.958
+anchor_right = 0.216938
+anchor_bottom = 0.958
+offset_left = -87.52
+offset_top = -47.64
+offset_right = -43.52
+offset_bottom = -23.64
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+script = ExtResource("5_0fy78")
+metadata/_edit_use_anchors_ = true
+
+[node name="Layout2 - MEDIUM" type="Control" parent="Layouts"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Layout3 - HARD" type="Control" parent="Layouts"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ConnectionLines" type="Control" parent="Layouts/Layout3 - HARD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SWITCH_GATE(FIRST GATE)" parent="Layouts/Layout3 - HARD/ConnectionLines" instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.109
+anchor_top = 0.982
+anchor_right = 0.109
+anchor_bottom = 0.982
+offset_left = -20.28
+offset_top = -75.5601
+offset_right = 19.72
+offset_bottom = 76.4399
+rotation = 0.0115585
+pivot_offset = Vector2(20.8602, 81.8433)
+SWITCH_GATE = true
+
+[node name="ConnectionLine-GATE1" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.166
+anchor_top = 0.693
+anchor_right = 0.166
+anchor_bottom = 0.693
+offset_left = 95.024
+offset_top = -106.44
+offset_right = 135.024
+offset_bottom = 176.56
+rotation = 0.868583
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
+
+[node name="ConnectionLine-GATE1(2)" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.079
+anchor_top = 0.695
+anchor_right = 0.079
+anchor_bottom = 0.695
+offset_left = -38.936
+offset_top = -113.6
+offset_right = 1.064
+offset_bottom = 127.4
+rotation = -0.646159
+pivot_offset = Vector2(19.8129, 87.5865)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
+
+[node name="ConnectionLine-GATE2" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.089
+anchor_top = 0.41
+anchor_right = 0.089
+anchor_bottom = 0.41
+offset_left = -46.88
+offset_top = 106.2
+offset_right = -6.88
+offset_bottom = 335.2
+rotation = -2.54905
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 2")
+
+[node name="ConnectionLine-GATE3" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.171
+anchor_top = 0.41
+anchor_right = 0.171
+anchor_bottom = 0.41
+offset_left = 80.68
+offset_top = 83.2
+offset_right = 120.68
+offset_bottom = 312.2
+rotation = -3.7404
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 3")
+
+[node name="ConnectionLine-GATE4" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.36
+anchor_top = 0.563
+anchor_right = 0.36
+anchor_bottom = 0.563
+offset_left = -398.2
+offset_top = -299.04
+offset_right = -358.2
+offset_bottom = 696.96
+rotation = -0.88736
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 4")
+
+[node name="ConnectionLine-GATE5" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.632
+anchor_top = 0.729
+anchor_right = 0.632
+anchor_bottom = 0.729
+offset_left = -13.4401
+offset_top = -97.32
+offset_right = 26.5599
+offset_bottom = 100.68
+rotation = 0.615559
+pivot_offset = Vector2(19.8129, 87.5865)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
+
+[node name="ConnectionLine-GATE5(2)" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.675
+anchor_top = 0.868
+anchor_right = 0.675
+anchor_bottom = 0.868
+offset_left = -12.0
+offset_top = -87.4401
+offset_right = 28.0
+offset_bottom = 72.5599
+rotation = -1.58305
+pivot_offset = Vector2(19.8129, 87.5865)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
+
+[node name="ConnectionLine-GATE6" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.719
+anchor_top = 0.726
+anchor_right = 0.719
+anchor_bottom = 0.726
+offset_left = -27.4801
+offset_top = -96.08
+offset_right = 12.5199
+offset_bottom = 101.92
+rotation = -0.662792
+pivot_offset = Vector2(19.8129, 87.5865)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 6")
+
+[node name="ConnectionLine-GATE7" parent="Layouts/Layout3 - HARD/ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.6
+anchor_top = 0.489
+anchor_right = 0.6
+anchor_bottom = 0.489
+offset_left = -29.0
+offset_top = -142.12
+offset_right = 11.0
+offset_bottom = 148.88
+rotation = -0.998863
+pivot_offset = Vector2(21.5004, 135.421)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 7")
+
+[node name="FINAL_LINE_FINAL_GATE" parent="Layouts/Layout3 - HARD/ConnectionLines" instance=ExtResource("7_ed55j")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.272
+anchor_right = 0.5
+anchor_bottom = 0.272
+offset_left = -21.0
+offset_top = -65.76
+offset_right = 19.0
+offset_bottom = 65.24
+rotation = 0.0115585
+pivot_offset = Vector2(20.8602, 81.8433)
+FINAL_GATE = true
+
+[node name="MainGoal" type="TextureRect" parent="Layouts/Layout3 - HARD"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -59,166 +491,7 @@ expand_mode = 4
 stretch_mode = 5
 script = ExtResource("7_8vhff")
 
-[node name="ConnectionLines" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="SWITCH_GATE(FIRST GATE)" parent="ConnectionLines" instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.109
-anchor_top = 0.982
-anchor_right = 0.109
-anchor_bottom = 0.982
-offset_left = -20.28
-offset_top = -75.5601
-offset_right = 19.72
-offset_bottom = 76.4399
-rotation = 0.0115585
-pivot_offset = Vector2(20.8602, 81.8433)
-SWITCH_GATE = true
-
-[node name="ConnectionLine-GATE1" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.166
-anchor_top = 0.693
-anchor_right = 0.166
-anchor_bottom = 0.693
-offset_left = 95.024
-offset_top = -106.44
-offset_right = 135.024
-offset_bottom = 176.56
-rotation = 0.868583
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
-
-[node name="ConnectionLine-GATE1(2)" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.079
-anchor_top = 0.695
-anchor_right = 0.079
-anchor_bottom = 0.695
-offset_left = -38.936
-offset_top = -113.6
-offset_right = 1.064
-offset_bottom = 127.4
-rotation = -0.646159
-pivot_offset = Vector2(19.8129, 87.5865)
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
-
-[node name="ConnectionLine-GATE2" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.089
-anchor_top = 0.41
-anchor_right = 0.089
-anchor_bottom = 0.41
-offset_left = -46.88
-offset_top = 106.2
-offset_right = -6.88
-offset_bottom = 335.2
-rotation = -2.54905
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 2")
-
-[node name="ConnectionLine-GATE3" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.171
-anchor_top = 0.41
-anchor_right = 0.171
-anchor_bottom = 0.41
-offset_left = 80.68
-offset_top = 83.2
-offset_right = 120.68
-offset_bottom = 312.2
-rotation = -3.7404
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 3")
-
-[node name="ConnectionLine-GATE4" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.36
-anchor_top = 0.563
-anchor_right = 0.36
-anchor_bottom = 0.563
-offset_left = -398.2
-offset_top = -299.04
-offset_right = -358.2
-offset_bottom = 696.96
-rotation = -0.88736
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 4")
-
-[node name="ConnectionLine-GATE5" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.632
-anchor_top = 0.729
-anchor_right = 0.632
-anchor_bottom = 0.729
-offset_left = -13.4401
-offset_top = -97.32
-offset_right = 26.5599
-offset_bottom = 100.68
-rotation = 0.615559
-pivot_offset = Vector2(19.8129, 87.5865)
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
-
-[node name="ConnectionLine-GATE5(2)" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.675
-anchor_top = 0.868
-anchor_right = 0.675
-anchor_bottom = 0.868
-offset_left = -12.0
-offset_top = -87.4401
-offset_right = 28.0
-offset_bottom = 72.5599
-rotation = -1.58305
-pivot_offset = Vector2(19.8129, 87.5865)
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
-
-[node name="ConnectionLine-GATE6" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.719
-anchor_top = 0.726
-anchor_right = 0.719
-anchor_bottom = 0.726
-offset_left = -27.4801
-offset_top = -96.08
-offset_right = 12.5199
-offset_bottom = 101.92
-rotation = -0.662792
-pivot_offset = Vector2(19.8129, 87.5865)
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 6")
-
-[node name="ConnectionLine-GATE7" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.6
-anchor_top = 0.489
-anchor_right = 0.6
-anchor_bottom = 0.489
-offset_left = -29.0
-offset_top = -142.12
-offset_right = 11.0
-offset_bottom = 148.88
-rotation = -0.998863
-pivot_offset = Vector2(21.5004, 135.421)
-connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 7")
-
-[node name="FINAL_LINE_FINAL_GATE" parent="ConnectionLines" instance=ExtResource("7_ed55j")]
-layout_mode = 1
-anchor_left = 0.5
-anchor_top = 0.272
-anchor_right = 0.5
-anchor_bottom = 0.272
-offset_left = -21.0
-offset_top = -65.76
-offset_right = 19.0
-offset_bottom = 65.24
-rotation = 0.0115585
-pivot_offset = Vector2(20.8602, 81.8433)
-FINAL_GATE = true
-
-[node name="Gates" type="Control" parent="."]
+[node name="Gates" type="Control" parent="Layouts/Layout3 - HARD"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,7 +501,7 @@ grow_vertical = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 
-[node name="GATE" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.076
@@ -243,7 +516,7 @@ grow_vertical = 2
 texture = ExtResource("8_vkipc")
 gatetype = 4
 
-[node name="GATE2" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE2" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.203
@@ -258,7 +531,7 @@ grow_vertical = 2
 texture = ExtResource("7_4nx7n")
 gatetype = 1
 
-[node name="GATE3" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE3" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.326
@@ -273,7 +546,7 @@ grow_vertical = 2
 texture = ExtResource("8_vkipc")
 gatetype = 4
 
-[node name="GATE4" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE4" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.45
@@ -287,7 +560,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("6_lidkr")
 
-[node name="GATE5" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE5" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.571
@@ -302,7 +575,7 @@ grow_vertical = 2
 texture = ExtResource("7_4nx7n")
 gatetype = 1
 
-[node name="GATE6" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE6" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.693
@@ -316,7 +589,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("6_lidkr")
 
-[node name="GATE7" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE7" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.814
@@ -331,7 +604,7 @@ grow_vertical = 2
 texture = ExtResource("8_vkipc")
 gatetype = 4
 
-[node name="GATE8" parent="Gates" instance=ExtResource("2_wnkhe")]
+[node name="GATE8" parent="Layouts/Layout3 - HARD/Gates" instance=ExtResource("2_wnkhe")]
 layout_mode = 1
 anchor_left = 0.968
 anchor_top = 0.932
@@ -346,7 +619,7 @@ grow_vertical = 2
 texture = ExtResource("8_vkipc")
 gatetype = 4
 
-[node name="DropZones" type="Control" parent="."]
+[node name="DropZones" type="Control" parent="Layouts/Layout3 - HARD"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -355,7 +628,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="DROP ZONE - 1" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 1" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.11
 anchor_top = 0.854
@@ -367,7 +640,7 @@ offset_right = 70.5433
 offset_bottom = 69.6799
 correct_gate = 1
 
-[node name="DROP ZONE - 2" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 2" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.044
 anchor_top = 0.54
@@ -378,7 +651,7 @@ offset_right = 69.52
 correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 3" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 3" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.22
 anchor_top = 0.543
@@ -391,7 +664,7 @@ offset_bottom = 69.5601
 correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 4" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 4" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.126
 anchor_top = 0.271
@@ -403,7 +676,7 @@ offset_right = 69.0809
 offset_bottom = 70.3202
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 5" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 5" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.595812
 anchor_top = 0.862481
@@ -416,7 +689,7 @@ offset_bottom = 69.52
 correct_gate = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 6" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 6" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.755187
 anchor_top = 0.862481
@@ -429,7 +702,7 @@ offset_bottom = 69.52
 correct_gate = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 7" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 7" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.677062
 anchor_top = 0.609704
@@ -441,7 +714,7 @@ offset_right = 70.04
 offset_bottom = 69.52
 metadata/_edit_use_anchors_ = true
 
-[node name="DROP ZONE - 8" parent="DropZones" instance=ExtResource("5_7j5xk")]
+[node name="DROP ZONE - 8" parent="Layouts/Layout3 - HARD/DropZones" instance=ExtResource("5_7j5xk")]
 layout_mode = 1
 anchor_left = 0.498
 anchor_top = 0.395
@@ -453,7 +726,7 @@ offset_right = 70.8396
 offset_bottom = 70.4002
 correct_gate = 4
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="CheckButton" type="CheckButton" parent="Layouts/Layout3 - HARD"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.234
@@ -469,4 +742,5 @@ grow_vertical = 0
 mouse_default_cursor_shape = 2
 script = ExtResource("5_0fy78")
 
-[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Layouts/Layout1 - EASY/CheckButton" to="Layouts/Layout1 - EASY/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Layouts/Layout3 - HARD/CheckButton" to="Layouts/Layout3 - HARD/CheckButton" method="_on_toggled"]

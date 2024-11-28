@@ -6,8 +6,8 @@ const LIGHTBULB_ON = preload("res://Art/2D/LogicGatePuzzle/LightOn.png")
 @onready var drop_zones: Node = $"../DropZones"
 
 @export var color_rect_node: NodePath
+@export var final_main_goal : bool = false
 #@onready var color_rect: ColorRect = $"../ColorRect"
-
 
 var correct_gates : Array
 var number_of_drop_zones
@@ -38,12 +38,17 @@ func reset_puzzle() -> void:
 	correct_gates.clear()
 	
 func check_puzzle_solved(toggled_on : bool) -> void:
+	if get_parent().visible == false:
+		return
 	if !toggled_on:
 		return
 	if correct_gates.size() == number_of_drop_zones:
 		print_debug("GATE SOLVED!")
 		texture = LIGHTBULB_ON
-		Events.gate_solved.emit()
+		if final_main_goal:
+			Events.final_gate_solved.emit()
+		else:
+			Events.gate_solved.emit()
 	else:
 		Events.gate_not_solved_sound.emit()
 		await get_tree().create_timer(3).timeout

@@ -36,6 +36,7 @@ signal valid_drop_target_exited
 
 signal correct_gate_entered(zone: DropZone)
 signal wrong_gate_entered(zone: DropZone)
+signal final_gate_solved()
 signal gate_solved()
 signal gate_not_solved()
 signal gate_not_solved_sound()

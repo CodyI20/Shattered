@@ -15,9 +15,11 @@ func _ready() -> void:
 	Events.gate_not_solved.connect(reset_puzzle)
 	if SWITCH_GATE:
 		FINAL_GATE = false
+		connected_drop_zone = null
 		Events.toggle_electricity.connect(switch_gate_logic)
 	if FINAL_GATE:
 		SWITCH_GATE = false
+		connected_drop_zone = null
 		Events.gate_solved.connect(final_gate_logic)
 	if SWITCH_GATE and FINAL_GATE:
 		printerr("You are setting it as both SWITCH_GATE and FINAL_GATE. Please choose one!")
