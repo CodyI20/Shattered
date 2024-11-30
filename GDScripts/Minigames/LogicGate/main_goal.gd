@@ -6,6 +6,8 @@ const LIGHTBULB_ON = preload("res://Art/2D/LogicGatePuzzle/LightOn.png")
 @onready var drop_zones: Node = $"../DropZones"
 
 @export var color_rect_node: NodePath
+
+## Set this variable to true in order to mark the solution of this puzzle as the final completion (ONLY SET IT FOR THE LAST PUZZLE LAYOUT - HARD)
 @export var final_main_goal : bool = false
 #@onready var color_rect: ColorRect = $"../ColorRect"
 
@@ -13,11 +15,15 @@ var correct_gates : Array
 var number_of_drop_zones
 
 func _ready() -> void:
+	_event_subscription()
 	texture = LIGHTBULB_OFF
+	number_of_drop_zones = drop_zones.get_child_count()
+	
+func _event_subscription() -> void:
 	Events.correct_gate_entered.connect(increment_correct_gates_number)
 	Events.wrong_gate_entered.connect(decrease_correct_gates_number)
 	Events.toggle_electricity.connect(check_puzzle_solved)
-	number_of_drop_zones = drop_zones.get_child_count()
+	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
 
 func increment_correct_gates_number(o: DropZone) -> void:
 	if !correct_gates.has(o):
@@ -35,6 +41,8 @@ func decrease_correct_gates_number(o: DropZone) -> void:
 
 func reset_puzzle() -> void:
 	print_debug("MainGOAL has been reset...")
+	texture = LIGHTBULB_OFF
+	number_of_drop_zones = drop_zones.get_child_count()
 	correct_gates.clear()
 	
 func check_puzzle_solved(toggled_on : bool) -> void:

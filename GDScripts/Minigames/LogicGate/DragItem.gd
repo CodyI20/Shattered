@@ -9,17 +9,18 @@ var personal_zone : DropZone
 @export var gatetype = Enums.gate_type.NONE
 
 func _ready() -> void:
-	original_position = global_position
-	personal_zone = DropZone.new()
-	create_drop_zone()
+	reset_puzzle()
 	Events.valid_drop_target_entered.connect(_on_valid_drop_target_entered)
 	Events.valid_drop_target_exited.connect(_on_valid_drop_target_exited)
-	Events.gate_solved.connect(disable_process)
+	#Events.gate_solved.connect(disable_process)
 	Events.gate_not_solved.connect(reset_puzzle)
+	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
 
 func reset_puzzle() -> void:
 	print_debug("DragItem has been reset...")
-	personal_zone.set_item(self)
+	original_position = global_position
+	personal_zone = DropZone.new()
+	create_drop_zone()
 	
 func create_drop_zone() -> void:
 	if current_slot == null:
@@ -64,4 +65,4 @@ func _on_valid_drop_target_exited(dropTarget: DropZone):
 	set_valid_drop_target(null)
 	
 func disable_process() -> void:
-	set_script(null)
+	self.set_script(null)

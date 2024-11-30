@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://drj8ped027upn"]
+
+[ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_2cw6t"]
+
+[node name="Layout - HARD" instance=ExtResource("1_2cw6t")]

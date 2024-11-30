@@ -5,7 +5,7 @@ const LINE_DISCONNECTED = preload("res://Art/2D/LogicGatePuzzle/LineDisconnected
 
 var saved_texture := LINE_DISCONNECTED
 @export var connected_drop_zone : DropZone
-@export var SWITCH_GATE : bool = false
+@export var STARTING_LINE : bool = false
 @export var FINAL_GATE : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -13,27 +13,29 @@ func _ready() -> void:
 	set_line_to_disconnected()
 	apply_saved_texture(true)
 	Events.gate_not_solved.connect(reset_puzzle)
-	if SWITCH_GATE:
+	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
+	if STARTING_LINE:
 		FINAL_GATE = false
 		connected_drop_zone = null
-		Events.toggle_electricity.connect(switch_gate_logic)
+		Events.toggle_electricity.connect(STARTING_LINE_logic)
 	if FINAL_GATE:
-		SWITCH_GATE = false
+		STARTING_LINE = false
 		connected_drop_zone = null
 		Events.gate_solved.connect(final_gate_logic)
-	if SWITCH_GATE and FINAL_GATE:
-		printerr("You are setting it as both SWITCH_GATE and FINAL_GATE. Please choose one!")
-	if SWITCH_GATE or FINAL_GATE:
+	if STARTING_LINE and FINAL_GATE:
+		printerr("You are setting it as both STARTING_LINE and FINAL_GATE. Please choose one!")
+	if STARTING_LINE or FINAL_GATE:
 		return
 	_event_subscription()
 	
-	if !SWITCH_GATE and !FINAL_GATE and connected_drop_zone == null:
+	if !STARTING_LINE and !FINAL_GATE and connected_drop_zone == null:
 		printerr("There seems to be no drop zone connected to this line...")
 		
 func _event_subscription() -> void:
 	Events.correct_gate_entered.connect(display_line_connected)
 	Events.wrong_gate_entered.connect(display_line_disconnected)
 	Events.toggle_electricity.connect(apply_saved_texture)
+	
 	
 func display_line_connected(zone: DropZone) -> void:
 	if zone == connected_drop_zone:
@@ -49,7 +51,7 @@ func set_line_to_connected() -> void:
 func set_line_to_disconnected() -> void:
 	saved_texture = LINE_DISCONNECTED
 	
-func switch_gate_logic(toggle_on: bool) -> void:
+func STARTING_LINE_logic(toggle_on: bool) -> void:
 	if toggle_on:
 		set_line_to_connected()
 	else:

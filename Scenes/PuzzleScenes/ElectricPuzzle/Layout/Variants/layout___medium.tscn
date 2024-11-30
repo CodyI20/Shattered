@@ -1,0 +1,226 @@
+[gd_scene load_steps=9 format=3 uid="uid://b46nh7ka30q7t"]
+
+[ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_ndlpj"]
+[ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="2_bv4jo"]
+[ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/connection_line.tscn" id="2_pku57"]
+[ext_resource type="Texture2D" uid="uid://dboir8hljrp1q" path="res://Art/2D/LogicGatePuzzle/LineDisconnected.png" id="3_21otv"]
+[ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="3_qcrjo"]
+[ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="4_w5lmy"]
+[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_lu34s"]
+[ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="7_ob5s3"]
+
+[node name="Layout - MEDIUM" instance=ExtResource("1_ndlpj")]
+
+[node name="NOT" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.752083
+anchor_top = 0.0888889
+anchor_right = 0.827083
+anchor_bottom = 0.222222
+offset_left = 33.0
+offset_top = 40.0
+offset_right = -39.0
+offset_bottom = -32.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(36, 36)
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_bv4jo")
+expand_mode = 4
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="STARTING" parent="ConnectionLines" index="0" instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.284375
+anchor_top = 0.850926
+anchor_right = 0.305208
+anchor_bottom = 1.11852
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+STARTING_LINE = true
+metadata/_edit_use_anchors_ = true
+
+[node name="STARTING2" parent="ConnectionLines" index="1" instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.588542
+anchor_top = 0.866667
+anchor_right = 0.609375
+anchor_bottom = 1.13426
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+STARTING_LINE = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ConnectionLine2" parent="ConnectionLines" index="2" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.378646
+anchor_top = 0.509259
+anchor_right = 0.399479
+anchor_bottom = 0.776852
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+rotation = 0.537466
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE")
+metadata/_edit_use_anchors_ = true
+
+[node name="ConnectionLine3" parent="ConnectionLines" index="3" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.485417
+anchor_top = 0.524074
+anchor_right = 0.50625
+anchor_bottom = 0.791667
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+rotation = -1.53842
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE2")
+metadata/_edit_use_anchors_ = true
+
+[node name="ConnectionLine4" parent="ConnectionLines" index="4" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.470313
+anchor_top = 0.578704
+anchor_right = 0.491146
+anchor_bottom = 0.846296
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+rotation = -0.736795
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE3")
+metadata/_edit_use_anchors_ = true
+
+[node name="FINAL_LINE" parent="ConnectionLines" index="5" instance=ExtResource("2_pku57")]
+layout_mode = 1
+anchor_left = 0.653646
+anchor_top = 0.423148
+anchor_right = 0.674479
+anchor_bottom = 0.690741
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+rotation = -3.83801
+FINAL_GATE = true
+metadata/_edit_use_anchors_ = true
+
+[node name="DISCONNECTED_LINE" type="TextureRect" parent="ConnectionLines" index="6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.717708
+anchor_top = 0.452778
+anchor_right = 0.738542
+anchor_bottom = 0.72037
+rotation = -2.59916
+texture = ExtResource("3_21otv")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BUFFER" parent="Gates" index="0" instance=ExtResource("4_w5lmy")]
+layout_mode = 1
+anchor_left = 0.913021
+anchor_top = 0.199074
+anchor_right = 0.988021
+anchor_bottom = 0.332407
+offset_left = 36.0
+offset_top = 36.0
+offset_right = -36.0
+offset_bottom = -36.0
+gatetype = 4
+
+[node name="BUFFER2" parent="Gates" index="1" instance=ExtResource("4_w5lmy")]
+layout_mode = 1
+anchor_left = 0.913021
+anchor_top = 0.344444
+anchor_right = 0.988021
+anchor_bottom = 0.477778
+offset_left = 36.0
+offset_top = 36.0
+offset_right = -36.0
+offset_bottom = -36.0
+gatetype = 4
+
+[node name="AND" parent="Gates" index="2" instance=ExtResource("4_w5lmy")]
+layout_mode = 1
+anchor_left = 0.913021
+anchor_top = 0.490741
+anchor_right = 0.988021
+anchor_bottom = 0.624074
+offset_left = 36.0
+offset_top = 36.0
+offset_right = -36.0
+offset_bottom = -36.0
+texture = ExtResource("6_lu34s")
+
+[node name="OR" parent="Gates" index="3" instance=ExtResource("4_w5lmy")]
+layout_mode = 1
+anchor_left = 0.913021
+anchor_top = 0.643519
+anchor_right = 0.988021
+anchor_bottom = 0.776852
+offset_left = 36.0
+offset_top = 36.0
+offset_right = -36.0
+offset_bottom = -36.0
+texture = ExtResource("7_ob5s3")
+gatetype = 1
+
+[node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("3_qcrjo")]
+layout_mode = 1
+anchor_left = 0.263542
+anchor_top = 0.738889
+anchor_right = 0.336458
+anchor_bottom = 0.868519
+offset_left = 0.0
+offset_top = 6.10352e-05
+offset_right = 0.0
+offset_bottom = 0.0
+correct_gate = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="DROP ZONE2" parent="DropZones" index="1" instance=ExtResource("3_qcrjo")]
+layout_mode = 1
+anchor_left = 0.402604
+anchor_top = 0.443518
+anchor_right = 0.475521
+anchor_bottom = 0.573148
+offset_left = 0.0
+offset_top = 6.10352e-05
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DROP ZONE3" parent="DropZones" index="2" instance=ExtResource("3_qcrjo")]
+layout_mode = 1
+anchor_left = 0.567187
+anchor_top = 0.743518
+anchor_right = 0.640104
+anchor_bottom = 0.873148
+offset_left = 0.0
+offset_top = 6.10352e-05
+offset_right = 0.0
+offset_bottom = 0.0
+correct_gate = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="DROP ZONE4" parent="DropZones" index="3" instance=ExtResource("3_qcrjo")]
+layout_mode = 1
+anchor_left = 0.636458
+anchor_top = 0.419444
+anchor_right = 0.709375
+anchor_bottom = 0.549074
+offset_left = 0.0
+offset_top = 6.10352e-05
+offset_right = 0.0
+offset_bottom = 0.0
+correct_gate = 1
+metadata/_edit_use_anchors_ = true

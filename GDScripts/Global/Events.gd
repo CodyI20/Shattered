@@ -43,6 +43,7 @@ signal gate_not_solved_sound()
 
 signal logic_gate_puzzle_on()
 signal logic_gate_puzzle_off()
+signal logic_gates_puzzle_layout_change()
 
 signal toggle_electricity(toggled_on: bool)
 

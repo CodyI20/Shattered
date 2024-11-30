@@ -16,7 +16,7 @@ func _ready() -> void:
 func toggle_item(item : Control, toggle_on : bool = false) -> void:
 	item.visible = toggle_on
 	if toggle_on:
-		item.mouse_filter = Control.MOUSE_FILTER_STOP
+		item.mouse_filter = Control.MOUSE_FILTER_PASS
 	else:
 		item.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
@@ -28,6 +28,6 @@ func handle_gate_solved() -> void:
 		print_debug("GONNA GET OUT OF BOUNDS!")
 		return
 	await get_tree().create_timer(2).timeout
-	print_debug("DOING...")
+	Events.logic_gates_puzzle_layout_change.emit()
 	toggle_item(layout_children[current_active_child_index-1])
 	toggle_item(layout_children[current_active_child_index], true)

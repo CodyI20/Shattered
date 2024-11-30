@@ -12,7 +12,8 @@ func _ready() -> void:
 	Events.logic_gate_puzzle_on.connect(toggle_on)
 	Events.logic_gate_puzzle_off.connect(toggle_off)
 	Events.gate_not_solved.connect(reset_puzzle)
-	#puzzle_active = true
+	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
+	puzzle_active = true
 	
 func reset_puzzle() -> void:
 	print_debug("DropZone has been reset...")
