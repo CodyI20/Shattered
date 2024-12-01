@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://7hbgyb5a0nrd"]
+
+[ext_resource type="PackedScene" uid="uid://d2jvgcvp8euq5" path="res://Scenes/Inventory 2.0/inventory_slots.tscn" id="1_jdh5j"]
+[ext_resource type="Script" path="res://Scenes/Inventory 2.0/InventoryManager.gd" id="1_pudwc"]
+[ext_resource type="PackedScene" uid="uid://bf8nikvvphc0r" path="res://Scenes/Inventory 2.0/letter_inventory.tscn" id="2_lk2ru"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pudwc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 40
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+current_tab = 0
+
+[node name="Inventory" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("1_jdh5j")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Letters" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("2_lk2ru")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
+text = "Return"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxajj0gpkpq0"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory 2.0/slot.gd" id="1_5d0qf"]
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(128, 128)
+script = ExtResource("1_5d0qf")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Selected" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
