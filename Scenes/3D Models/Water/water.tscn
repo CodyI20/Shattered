@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhehc5xcucbke"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2n7ku"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp6kc"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_2n7ku")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rpa3p"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_2n7ku")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyqej"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.594177, 0.840338, 1, 0.34902)
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_dp6kc")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_rpa3p")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xh4ww"]
+material = SubResource("StandardMaterial3D_qyqej")
+
+[node name="Water" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_xh4ww")

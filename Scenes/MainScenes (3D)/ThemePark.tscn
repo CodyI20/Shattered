@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ddb8fb6bh37fv" path="res://Art/3D/barrier.fbx" id="11_ruoq0"]
 [ext_resource type="PackedScene" uid="uid://bohi8ypp5kr55" path="res://Scenes/3D Models/busstop.tscn" id="12_yrx65"]
 [ext_resource type="PackedScene" uid="uid://buv1hrihkk4vr" path="res://Scenes/3D Models/light.tscn" id="13_w0ryh"]
+[ext_resource type="PackedScene" uid="uid://dhehc5xcucbke" path="res://Scenes/3D Models/Water/water.tscn" id="17_1aky5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kquoo"]
 albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
@@ -59,8 +60,6 @@ points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6uo6"]
 albedo_color = Color(0.619608, 0.92549, 0.564706, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scuwn"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xa208"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hdnac"]
@@ -78,13 +77,13 @@ points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xkwdc"]
 points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881v8"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c1l1"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkldj"]
 albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881v8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06ihw"]
 size = Vector3(4.007, 5.509, 350)
@@ -99,6 +98,7 @@ size = Vector3(25.5324, 5.50867, 3.21144)
 
 [node name="underground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
+visible = false
 material_override = SubResource("StandardMaterial3D_kquoo")
 use_collision = true
 size = Vector3(799.863, 0.1, 650)
@@ -106,6 +106,7 @@ metadata/_edit_lock_ = true
 
 [node name="Hill" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 309.51, 0, 324.637)
+visible = false
 material_override = SubResource("StandardMaterial3D_kquoo")
 polygon = PackedVector2Array(0, 0, 1.87897, 0.229481, 9.05023, 1.05548, 18.1017, 1.83617, 29.2619, 2.65754, 34.0656, 3.26956, 41.4149, 4.70094, 44.7008, 5.78977, 47.6041, 6.56997, 57.3152, 8.26653, 63.7732, 9.84144, 71.7503, 11.0746, 84.5842, 10.9099, 98.3858, 9.55283, 108.728, 8.04558, 121.579, 0.183196, 66.6189, 0.458304)
 depth = 1000.0
@@ -114,7 +115,7 @@ depth = 1000.0
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Water" type="CSGPolygon3D" parent="."]
+[node name="Water place holder" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358193, 0)
 visible = false
 polygon = PackedVector2Array(0, 0, 2, 2, 2, 0)
@@ -1942,45 +1943,24 @@ cone = true
 
 [node name="Park entrance path" type="Node3D" parent="."]
 
-[node name="Park path entrance #1" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 265.498, 0.025, 59.8751)
-material_override = SubResource("StandardMaterial3D_scuwn")
-use_collision = true
-size = Vector3(100.59, 0.05, 20)
-
-[node name="Park path entrance #2" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.602, 0.025, -0.42)
+[node name="Park path entrance" type="CSGBox3D" parent="Park entrance path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.796, 0.025, -0.42)
 material_override = SubResource("StandardMaterial3D_xa208")
 use_collision = true
-size = Vector3(82.9969, 0.05, 20)
+size = Vector3(83.3852, 0.05, 20)
 
 [node name="Building" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.653, 2.475, 14.1944)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.534, 2.475, 14.1944)
 use_collision = true
-size = Vector3(56.586, 7, 12)
+size = Vector3(72.3477, 7, 12)
 
 [node name="Building3" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.901, 2.475, -14.771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.049, 2.475, -14.771)
 use_collision = true
-size = Vector3(73.4459, 7, 12)
-
-[node name="Building4" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.759, 2.5, 42.9379)
-use_collision = true
-size = Vector3(11.816, 7, 67.7209)
-
-[node name="Building5" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.955, 2.5, 49.8874)
-use_collision = true
-size = Vector3(12, 7, 59.3293)
-
-[node name="Building6" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.091, 2.5, 112.288)
-use_collision = true
-size = Vector3(12.2724, 7, 4.24574)
+size = Vector3(71.7426, 7, 12)
 
 [node name="House" type="MeshInstance3D" parent="Park entrance path"]
-transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 271.523, -0.642674, 113.013)
+transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 235.131, 3.60928, -47.0936)
 mesh = ExtResource("9_gyndg")
 skeleton = NodePath("../../Ferris wheel area")
 
@@ -1990,7 +1970,7 @@ skeleton = NodePath("../../Ferris wheel area")
 shape = SubResource("ConvexPolygonShape3D_hdnac")
 
 [node name="House2" type="MeshInstance3D" parent="Park entrance path"]
-transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 262.411, -0.642674, 113.013)
+transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 226.019, 3.60928, -47.0936)
 mesh = ExtResource("9_gyndg")
 skeleton = NodePath("../../Ferris wheel area")
 
@@ -2000,7 +1980,7 @@ skeleton = NodePath("../../Ferris wheel area")
 shape = SubResource("ConvexPolygonShape3D_qhx00")
 
 [node name="House3" type="MeshInstance3D" parent="Park entrance path"]
-transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 252.417, -0.642674, 103.061)
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 255.43, 3.60928, -45.3176)
 mesh = ExtResource("9_gyndg")
 skeleton = NodePath("../../Ferris wheel area")
 
@@ -2010,7 +1990,7 @@ skeleton = NodePath("../../Ferris wheel area")
 shape = SubResource("ConvexPolygonShape3D_hbb1k")
 
 [node name="House4" type="MeshInstance3D" parent="Park entrance path"]
-transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 252.417, -0.642674, 93.9028)
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 255.43, 3.60928, -54.4756)
 mesh = ExtResource("9_gyndg")
 skeleton = NodePath("../../Ferris wheel area")
 
@@ -2020,7 +2000,7 @@ skeleton = NodePath("../../Ferris wheel area")
 shape = SubResource("ConvexPolygonShape3D_yifk6")
 
 [node name="House5" type="MeshInstance3D" parent="Park entrance path"]
-transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 252.417, -0.642674, 84.7562)
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 255.43, 3.60928, -63.6226)
 mesh = ExtResource("9_gyndg")
 skeleton = NodePath("../../Ferris wheel area")
 
@@ -2029,23 +2009,86 @@ skeleton = NodePath("../../Ferris wheel area")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Park entrance path/House5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_xkwdc")
 
-[node name="Building7" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.216, 2.5, 108.615)
-use_collision = true
-size = Vector3(10.5238, 7, 3.09993)
-
 [node name="barrier" parent="Park entrance path" instance=ExtResource("11_ruoq0")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 259.928, 1.2509, 75.3364)
 
 [node name="barrier2" parent="Park entrance path" instance=ExtResource("11_ruoq0")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 269.638, 1.2509, 75.3364)
 
+[node name="Wall" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 275.415, 3.8147e-06, 111.004)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4165, 3, 0.589996)
+use_collision = true
+size = Vector3(218.24, 6, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.1, 3, -382.87)
+use_collision = true
+size = Vector3(1, 6, 765.848)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.364, 3, -762.976)
+use_collision = true
+size = Vector3(648.997, 6, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435.898, 3, -365.34)
+use_collision = true
+size = Vector3(1, 6, 798.861)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.855, 3, 16.5753)
+use_collision = true
+size = Vector3(1, 6, 32.9684)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.374, 3, 33.6027)
+use_collision = true
+size = Vector3(210.033, 6, 1.04602)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.005, 3, 17.112)
+use_collision = true
+size = Vector3(1, 6, 34.0439)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.902, 3, 17.8233)
+use_collision = true
+size = Vector3(1.27289, 6, 33.456)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.022, 3, 34.0489)
+use_collision = true
+size = Vector3(92.9658, 6, 1.00482)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.529, 3, 0.589996)
+use_collision = true
+size = Vector3(99.6511, 6, 1)
+
 [node name="Front area" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 286.857, 0, 126.047)
-metadata/_edit_lock_ = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 286.857, 0, 0)
+
+[node name="Entrance" type="Node3D" parent="Front area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.352)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Front area/Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3005, 0, 0)
+material_override = SubResource("StandardMaterial3D_881v8")
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 6, 0, 10, 0.261375, 10.8102, 0.629532, 11.5225, 1.13668, 12.0357, 1.72266, 12.3648, 2.71223, 12.4908, 3.62254, 12.8059, 4.32278, 13.3311, 4.70792, 14.1364, 5.16307, 15.4318, 5.96835, 16.9374, 7.15877, 18.0577, 8.52424, 18.863, 10.0298, 19.5282, 11.8154, 20.0534, 13.5, 20.334, 15.2116, 20.1235, 16.9622, 19.7733, 18.3626, 19.3182, 19.8682, 18.3729, 20.7785, 17.3575, 21.4437, 15.887, 21.8989, 14.3465, 22.4591, 13.4361, 23.1593, 12.911, 23.9646, 12.5258, 24.8049, 12.4208, 25.5401, 12.1057, 26.2054, 11.8256, 26.6955, 11.3004, 27, 10, 27, 6, 27, 0, 26, 0, 26, 6, 25.6627, 7.37904, 25.085, 8.25434, 24.2622, 8.77953, 23.25, 9, 22.1965, 8.74451, 21.4262, 8.18432, 20.726, 7.274, 20.5, 6, 20.5, 0.048, 20.5, -0.022, 19.5, 0, 19.5, 6, 19.2555, 7.274, 18.5902, 8.14931, 17.785, 8.74451, 16.75, 9, 15.7192, 8.74451, 14.8789, 8.14931, 14.3187, 7.34403, 14, 6, 14, 0, 13, 0, 13, 6, 12.7082, 7.34403, 12.148, 8.18432, 11.2027, 8.77953, 10.25, 9, 9.31201, 8.74451, 8.50674, 8.25434, 7.87652, 7.30902, 7.5, 6, 7.5, 0, 6.5, 0, 6.5, 6, 6.26596, 7.30902, 5.63574, 8.21933, 4.76044, 8.77953, 3.75, 9, 2.72974, 8.74451, 1.88944, 8.07928, 1.25922, 7.09895, 1, 6, 1, 0)
+
+[node name="Label3D" type="Label3D" parent="Front area/Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20482, 16.0026, 0.0133667)
+pixel_size = 0.05
+modulate = Color(0.173261, 0.0394588, 0.000280584, 1)
+text = "BAKER VALLEY"
+outline_size = 5
 
 [node name="Parking lot" type="Node3D" parent="Front area"]
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8312, 0, 0.000488281)
 
 [node name="Street" type="CSGBox3D" parent="Front area/Parking lot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2272, 0, 5.95602)
@@ -15668,123 +15711,158 @@ size = Vector3(0.3, 0.012, 0.03)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.44)
 size = Vector3(0.3, 0.012, 0.03)
 
-[node name="Front paths" type="Node3D" parent="Front area"]
+[node name="Benches" type="Node3D" parent="Front area/Parking lot"]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="busstop" parent="Front area/Parking lot/Benches" instance=ExtResource("12_yrx65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.2043, 0, -1.02426)
+
+[node name="busstop2" parent="Front area/Parking lot/Benches" instance=ExtResource("12_yrx65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.7755, 0, -1.02426)
+
+[node name="busstop3" parent="Front area/Parking lot/Benches" instance=ExtResource("12_yrx65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.759, 0, -1.02426)
+
+[node name="Light" type="Node3D" parent="Front area/Parking lot"]
+
+[node name="light" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 49.7616, 0.05, 5.27402)
+
+[node name="light2" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 17.0772, 0.05, 17.0215)
+
+[node name="light3" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.95938, 0.05, -1.56277)
+
+[node name="light4" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -195.707, 0.05, -8.67612)
+
+[node name="light5" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -195.856, 0.049999, 22.0143)
+
+[node name="light6" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -136.806, 0.0499995, 22.0494)
+
+[node name="light7" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -75.8, 0.050001, 22.1614)
+
+[node name="light8" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -41.6241, 0.049999, 22.1849)
+
+[node name="light9" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.52992, 0.049999, 22.1587)
+
+[node name="light10" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.52992, 0.049999, -8.90994)
+
+[node name="light11" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -41.6241, 0.049999, -8.65991)
+
+[node name="light12" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -75.8, 0.050001, -8.77612)
+
+[node name="light13" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -136.806, 0.0499995, -8.77109)
+
+[node name="light14" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -107.516, 0.0499995, 22.0494)
+
+[node name="light15" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -107.516, 0.0499995, -8.88611)
+
+[node name="light16" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -166.111, 0.0499995, -8.77109)
+
+[node name="light17" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -166.075, 0.0499995, 21.9461)
+
+[node name="light18" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -24.1552, 0.049999, 6.29254)
+
+[node name="light19" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -58.7706, 0.049999, 6.29254)
+
+[node name="light20" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -96.6373, 0.049999, 6.29254)
+
+[node name="light21" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -118.522, 0.049999, 6.29254)
+
+[node name="light22" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -153.899, 0.049999, 6.29254)
+
+[node name="light23" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -178.241, 0.049999, 6.29254)
+
+[node name="light24" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 144.8, 0.05, 5.27402)
+
+[node name="light25" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 97.9321, 0.05, 5.27402)
+
+[node name="light26" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 73.3395, 0.05, 5.27402)
+
+[node name="light27" parent="Front area/Parking lot/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 123.2, 0.05, 5.27402)
+
+[node name="Front paths" type="Node3D" parent="Front area/Parking lot"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.0924, 0.025, -9.86417)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(246.765, 0.05, 3.00327)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.474, 0.025, 6.27686)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(2.1235, 0.05, 32.8228)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.938, 0.025, 3.04156)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(32.7044, 0.05, 28.8147)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6216, 0.025, -3.99997)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(96.7998, 0.05, 19.9986)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0384, 0.025, 22.0197)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(103.563, 0.05, 1.39225)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0571, 0.025, -4.76453)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(7.04778, 0.05, 7.24595)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5387, 0.024999, 23.0998)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(225.873, 0.05, 3.00327)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.249, 0.025, 9.77832)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(0.773837, 0.05, 7.55278)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Front area/Front paths"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.393, 0.025, 13.662)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(0.773837, 0.05, 15.32)
 
-[node name="Entrance" type="Node3D" parent="Front area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8312, 0, -10.2005)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Front area/Entrance"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3005, 0, 0)
-material_override = SubResource("StandardMaterial3D_881v8")
-use_collision = true
-polygon = PackedVector2Array(0, 0, 0, 6, 0, 10, 0.261375, 10.8102, 0.629532, 11.5225, 1.13668, 12.0357, 1.72266, 12.3648, 2.71223, 12.4908, 3.62254, 12.8059, 4.32278, 13.3311, 4.70792, 14.1364, 5.16307, 15.4318, 5.96835, 16.9374, 7.15877, 18.0577, 8.52424, 18.863, 10.0298, 19.5282, 11.8154, 20.0534, 13.5, 20.334, 15.2116, 20.1235, 16.9622, 19.7733, 18.3626, 19.3182, 19.8682, 18.3729, 20.7785, 17.3575, 21.4437, 15.887, 21.8989, 14.3465, 22.4591, 13.4361, 23.1593, 12.911, 23.9646, 12.5258, 24.8049, 12.4208, 25.5401, 12.1057, 26.2054, 11.8256, 26.6955, 11.3004, 27, 10, 27, 6, 27, 0, 26, 0, 26, 6, 25.6627, 7.37904, 25.085, 8.25434, 24.2622, 8.77953, 23.25, 9, 22.1965, 8.74451, 21.4262, 8.18432, 20.726, 7.274, 20.5, 6, 20.5, 0.048, 20.5, -0.022, 19.5, 0, 19.5, 6, 19.2555, 7.274, 18.5902, 8.14931, 17.785, 8.74451, 16.75, 9, 15.7192, 8.74451, 14.8789, 8.14931, 14.3187, 7.34403, 14, 6, 14, 0, 13, 0, 13, 6, 12.7082, 7.34403, 12.148, 8.18432, 11.2027, 8.77953, 10.25, 9, 9.31201, 8.74451, 8.50674, 8.25434, 7.87652, 7.30902, 7.5, 6, 7.5, 0, 6.5, 0, 6.5, 6, 6.26596, 7.30902, 5.63574, 8.21933, 4.76044, 8.77953, 3.75, 9, 2.72974, 8.74451, 1.88944, 8.07928, 1.25922, 7.09895, 1, 6, 1, 0)
-
-[node name="Label3D" type="Label3D" parent="Front area/Entrance"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20482, 16.0026, 0.0133667)
-pixel_size = 0.05
-modulate = Color(0.173261, 0.0394588, 0.000280584, 1)
-text = "BAKER VALLEY"
-outline_size = 5
-
-[node name="Wall" type="Node3D" parent="Front area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0427, 3.8147e-06, -11.4424)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.563, 3, 0.59)
-use_collision = true
-size = Vector3(218.084, 6, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.1, 3, -382.87)
-use_collision = true
-size = Vector3(1, 6, 765.848)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.892, 3, -765.27)
-use_collision = true
-size = Vector3(648.997, 6, 1)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 435.898, 3, -365.34)
-use_collision = true
-size = Vector3(1, 6, 798.861)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.279, 3, 15.2563)
-use_collision = true
-size = Vector3(1, 6, 35.6063)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 283.085, 3, 33.6027)
-use_collision = true
-size = Vector3(304.611, 6, 1.04602)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3644, 3, 0.737305)
-use_collision = true
-size = Vector3(3.67209, 6, 1.01031)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Front area/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.005, 3, 17.112)
-use_collision = true
-size = Vector3(1, 6, 34.0439)
-
 [node name="Invisible walls" type="Node3D" parent="Front area"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -198.59, 0, 22.6526)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -230.421, 0, 22.6531)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Front area/Invisible walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -175.388)
@@ -15808,7 +15886,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54337, 3, -1.21363)
 shape = SubResource("BoxShape3D_x15l6")
 
 [node name="bushgame node" type="Node3D" parent="Front area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.332, 0, 17.7096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4992, 0, 17.7101)
 
 [node name="bushgame_eight" parent="Front area/bushgame node" instance=ExtResource("6_w13g1")]
 transform = Transform3D(165.4, 0, 0, 0, -1.97172e-05, 165.4, 0, -165.4, -1.97172e-05, -1.21958, 1.5075, -20.9891)
@@ -15833,100 +15911,6 @@ transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 
 
 [node name="bushgame_four5" parent="Front area/bushgame node" instance=ExtResource("8_kvljt")]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 26.2613, 0.898195, -26.7745)
-
-[node name="Benches" type="Node3D" parent="Front area"]
-
-[node name="busstop" parent="Front area/Benches" instance=ExtResource("12_yrx65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.2043, 0, -1.02426)
-
-[node name="busstop2" parent="Front area/Benches" instance=ExtResource("12_yrx65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.7755, 0, -1.02426)
-
-[node name="busstop3" parent="Front area/Benches" instance=ExtResource("12_yrx65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.759, 0, -1.02426)
-
-[node name="Light" type="Node3D" parent="Front area"]
-
-[node name="light" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 49.7616, 0.05, 5.27402)
-
-[node name="light2" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 17.0772, 0.05, 17.0215)
-
-[node name="light3" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.95938, 0.05, -1.56277)
-
-[node name="light4" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -195.707, 0.05, -8.67612)
-
-[node name="light5" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -195.856, 0.049999, 22.0143)
-
-[node name="light6" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -136.806, 0.0499995, 22.0494)
-
-[node name="light7" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -75.8, 0.050001, 22.1614)
-
-[node name="light8" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -41.6241, 0.049999, 22.1849)
-
-[node name="light9" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.52992, 0.049999, 22.1587)
-
-[node name="light10" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.52992, 0.049999, -8.90994)
-
-[node name="light11" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -41.6241, 0.049999, -8.65991)
-
-[node name="light12" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -75.8, 0.050001, -8.77612)
-
-[node name="light13" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -136.806, 0.0499995, -8.77109)
-
-[node name="light14" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -107.516, 0.0499995, 22.0494)
-
-[node name="light15" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -107.516, 0.0499995, -8.88611)
-
-[node name="light16" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -166.111, 0.0499995, -8.77109)
-
-[node name="light17" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -166.075, 0.0499995, 21.9461)
-
-[node name="light18" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -24.1552, 0.049999, 6.29254)
-
-[node name="light19" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -58.7706, 0.049999, 6.29254)
-
-[node name="light20" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -96.6373, 0.049999, 6.29254)
-
-[node name="light21" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -118.522, 0.049999, 6.29254)
-
-[node name="light22" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -153.899, 0.049999, 6.29254)
-
-[node name="light23" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -178.241, 0.049999, 6.29254)
-
-[node name="light24" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 144.8, 0.05, 5.27402)
-
-[node name="light25" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 97.9321, 0.05, 5.27402)
-
-[node name="light26" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 73.3395, 0.05, 5.27402)
-
-[node name="light27" parent="Front area/Light" instance=ExtResource("13_w0ryh")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 123.2, 0.05, 5.27402)
 
 [node name="Rollercoaster v1_6" parent="." instance=ExtResource("6_pxdvj")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -231.45, 0, 2.53)
@@ -15954,3 +15938,5 @@ transform = Transform3D(-0.193417, 0, 0.350128, 0, 0.4, 0, -0.350128, 0, -0.1934
 
 [node name="Rollercoaster v1_6_7" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -364.45, 0, -200.47)
+
+[node name="Water2" parent="." instance=ExtResource("17_1aky5")]
