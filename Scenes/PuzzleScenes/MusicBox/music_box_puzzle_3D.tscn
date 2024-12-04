@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b87y2ee4qnw0q"]
+
+[ext_resource type="PackedScene" uid="uid://b2spvqv0r4h4l" path="res://Scenes/PuzzleScenes/MusicBox/music_box.tscn" id="1_rh72h"]
+
+[node name="MusicBoxPuzzle3D" type="Node3D"]
+
+[node name="MusicBox" parent="." instance=ExtResource("1_rh72h")]
+
+[node name="PausableUI" type="CanvasLayer" parent="."]
+process_mode = 1
+
+[node name="MusicBoxUIPuzzle" type="Control" parent="PausableUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
