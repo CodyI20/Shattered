@@ -1,5 +1,8 @@
 extends Control
+class_name PuzzleUI
 
+## The name of the interactable ( refer to the get_interaction_text())
+@export var puzzle_name : String
 var puzzle_active : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +12,7 @@ func _ready() -> void:
 	#visible = false
 
 func toggle_puzzle(interactable: Interactable) -> void:
-	if interactable.get_interaction_text() != "ElectricPanel":
+	if interactable.get_interaction_text() != puzzle_name:
 		return
 	toggle_puzzle_non_event()
 	

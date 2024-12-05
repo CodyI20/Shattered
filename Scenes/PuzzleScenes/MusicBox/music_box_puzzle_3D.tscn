@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b87y2ee4qnw0q"]
+[gd_scene load_steps=5 format=3 uid="uid://b87y2ee4qnw0q"]
 
 [ext_resource type="PackedScene" uid="uid://b2spvqv0r4h4l" path="res://Scenes/PuzzleScenes/MusicBox/music_box.tscn" id="1_rh72h"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/generic_puzzle_ui.gd" id="2_khtta"]
+[ext_resource type="Texture2D" uid="uid://fhudkroavdak" path="res://Art/2D/icon.svg" id="2_qe7d7"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_main_audio.gd" id="4_lqct5"]
 
 [node name="MusicBoxPuzzle3D" type="Node3D"]
 
@@ -9,10 +12,53 @@
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
 
-[node name="MusicBoxUIPuzzle" type="Control" parent="PausableUI"]
+[node name="MusicBoxPuzzleUI" type="Control" parent="PausableUI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_khtta")
+puzzle_name = "MusicBox"
+
+[node name="SoundwaveImage" type="TextureRect" parent="PausableUI/MusicBoxPuzzleUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.339063
+anchor_top = 0.0916667
+anchor_right = 0.6375
+anchor_bottom = 0.191667
+metadata/_edit_use_anchors_ = true
+
+[node name="ReplayButton" type="Button" parent="PausableUI/MusicBoxPuzzleUI/SoundwaveImage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.303
+anchor_top = 0.139
+anchor_right = 0.303
+anchor_bottom = 0.139
+offset_left = -310.619
+offset_top = -18.012
+offset_right = -173.619
+offset_bottom = 89.988
+text = "REPLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicBoxButton" type="Button" parent="PausableUI/MusicBoxPuzzleUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.542
+anchor_right = 0.221
+anchor_bottom = 0.542
+offset_left = -67.32
+offset_top = -68.36
+offset_right = 68.68
+offset_bottom = 67.64
+icon = ExtResource("2_qe7d7")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainAudio" type="AudioStreamPlayer" parent="PausableUI/MusicBoxPuzzleUI"]
+bus = &"SFX"
+script = ExtResource("4_lqct5")

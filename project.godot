@@ -86,6 +86,7 @@ Events="*res://GDScripts/Global/Events.gd"
 FilePaths="*res://GDScripts/Global/FilePaths.gd"
 Utility="*res://GDScripts/Global/Utility.gd"
 Enums="*res://GDScripts/Global/Enums.gd"
+UnitTesting="*res://GDScripts/Global/UnitTesting.gd"
 
 [display]
 

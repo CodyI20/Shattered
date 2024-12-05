@@ -27,3 +27,25 @@ func go_to_final_screen() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(FilePaths.END_DEMO_SCENE)
+
+func get_random_result(input: Array):
+	var random_generator = RandomNumberGenerator.new()
+	var position = random_generator.randi_range(0, input.size()-1)
+	return input[position]
+
+## Generates a new array with the same elements, but in different positions
+func jumble_array(input: Array) -> Array:
+	# Random number here for performance...
+	var random_generator = RandomNumberGenerator.new()
+	
+	var new_array : Array
+	var input_array_size := input.size()
+	var input_copy : Array
+	input_copy.append_array(input)
+	for i in range(0,input_array_size):
+		var position = random_generator.randi_range(0, input_copy.size()-1)
+		var element_to_append = input_copy[position]
+		new_array.append(element_to_append)
+		# ... no need for input.find() anymore
+		input_copy.remove_at(position)
+	return new_array
