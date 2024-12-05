@@ -3,6 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://bmhw2mdtx750y" path="res://Scenes/PuzzleScenes/generic_puzzle_interaction.tscn" id="1_8ws4g"]
 
 [node name="MusicBox" instance=ExtResource("1_8ws4g")]
-
-[node name="StaticBody3D" parent="." index="0"]
-interaction_text = "MusicBox"

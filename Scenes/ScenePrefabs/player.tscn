@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwgdjyovkr0dc"]
+[gd_scene load_steps=26 format=3 uid="uid://dwgdjyovkr0dc"]
 
 [ext_resource type="Script" path="res://GDScripts/Player/player.gd" id="1_xrn6u"]
 [ext_resource type="Script" path="res://GDScripts/Player/Interaction.gd" id="2_i2c3v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://GDScripts/Player/AlterNameUI.gd" id="5_ucrh1"]
 [ext_resource type="Script" path="res://GDScripts/Player/AlterSwapCooldownDisplay.gd" id="5_w81jm"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/jump_state.gd" id="6_corkh"]
+[ext_resource type="Script" path="res://GDScripts/Player/AlterSwappingUIKeyToPress.gd" id="6_wh202"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/walking_state.gd" id="7_ykbpr"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/run_state.gd" id="9_6x174"]
 [ext_resource type="Script" path="res://GDScripts/DesignPatterns/FSM/States/Movement/falling_state.gd" id="9_m1dmj"]
@@ -22,6 +23,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_ukwcf"]
 font_size = 40
 outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ceg2"]
+font_size = 20
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5jo5"]
@@ -86,22 +92,6 @@ mouse_filter = 2
 texture = ExtResource("3_hlger")
 script = ExtResource("3_i5qdl")
 
-[node name="KeyToPress" type="RichTextLabel" parent="CanvasLayer/AlterUI/AlterAvatar"]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -39.0
-offset_top = 12.0001
-offset_right = -18.0
-offset_bottom = 35.0001
-grow_horizontal = 0
-mouse_filter = 2
-bbcode_enabled = true
-text = "[font size = 100] [b]N[/b]"
-scroll_active = false
-
 [node name="VSlider" type="VSlider" parent="CanvasLayer/AlterUI/AlterAvatar"]
 visible = false
 layout_mode = 1
@@ -116,6 +106,23 @@ grow_vertical = 2
 mouse_filter = 2
 value = 100.0
 script = ExtResource("5_w81jm")
+
+[node name="KeyToPress" type="Label" parent="CanvasLayer/AlterUI/AlterAvatar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.852
+anchor_top = 0.147
+anchor_right = 0.852
+anchor_bottom = 0.147
+offset_left = -17.064
+offset_top = -52.4909
+offset_right = 22.936
+offset_bottom = -11.4909
+text = "N"
+label_settings = SubResource("LabelSettings_2ceg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_wh202")
 
 [node name="AlterNameLabel" type="Label" parent="CanvasLayer/AlterUI"]
 layout_mode = 1

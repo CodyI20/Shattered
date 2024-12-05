@@ -6,18 +6,21 @@
 [sub_resource type="BoxMesh" id="BoxMesh_3fb8n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxqg3"]
+size = Vector3(1.72058, 1.74017, 0.989136)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6e1bb"]
-size = Vector3(0.122412, 0.187964, 0.1)
+size = Vector3(0.122412, 0.187964, 0.709082)
 
-[node name="PuzzleInteractable" type="MeshInstance3D"]
+[node name="PuzzleInteractable" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("2_er6lx")
+
+[node name="Model" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_3fb8n")
 script = ExtResource("1_14lq6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("2_er6lx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.003479)
 shape = SubResource("BoxShape3D_hxqg3")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -26,4 +29,4 @@ shape = SubResource("BoxShape3D_hxqg3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0.00114746, 0.00462647, 1.38778e-17)
 shape = SubResource("BoxShape3D_6e1bb")
 
-[connection signal="body_exited" from="Area3D" to="StaticBody3D" method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

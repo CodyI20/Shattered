@@ -10,13 +10,13 @@ var SFX_VOLUME_INDEX = AudioServer.get_bus_index("SFX")
 var DIALOGUE_VOLUME_INDEX = AudioServer.get_bus_index("Dialogue")
 #endregion
 
-@onready var resolutions: OptionButton = $OptionsContainer/Resolution/Resolutions
-@onready var window_modes: OptionButton = $OptionsContainer/Resolution/WindowModes
-@onready var v_sync: CheckButton = $"OptionsContainer/Resolution/V-SYNC"
-@onready var master_slider: HSlider = $OptionsContainer/Audio/MasterSlider
-@onready var sfx_slider: HSlider = $OptionsContainer/Audio/SFXSlider
-@onready var music_slider: HSlider = $OptionsContainer/Audio/MusicSlider
-@onready var dialogue_slider: HSlider = $OptionsContainer/Audio/DialogueSlider
+@export var resolutions: OptionButton
+@export var window_modes: OptionButton
+@export var v_sync: CheckButton
+@export var master_slider: HSlider
+@export var sfx_slider: HSlider
+@export var music_slider: HSlider
+@export var dialogue_slider: HSlider
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,18 +27,25 @@ func _ready() -> void:
 	toggle_menu(false)
 	
 func set_saved_settings() -> void:
+	# RESOLUTION
 	DisplayServer.window_set_size(saved_settings.resolution)
 	resolutions.selected = saved_settings.resolution_index
+	# WINDOW MODE
 	DisplayServer.window_set_mode(saved_settings.window_mode)
 	window_modes.selected = saved_settings.window_mode_index
+	# V-SYNC
 	DisplayServer.window_set_vsync_mode(saved_settings.v_sync)
 	v_sync.button_pressed = saved_settings.v_sync_bool
+	# MASTER VOLUME
 	AudioServer.set_bus_volume_db(MASTER_VOLUME_INDEX, linear2db(clamp(saved_settings.master_volume/100, 0.0, 1.0)))
 	master_slider.value = saved_settings.master_volume
+	# MUSIC VOLUME
 	AudioServer.set_bus_volume_db(MUSIC_VOLUME_INDEX, linear2db(clamp(saved_settings.music_volume/100, 0.0, 1.0)))
 	music_slider.value = saved_settings.music_volume
+	# SFX VOLUME
 	AudioServer.set_bus_volume_db(SFX_VOLUME_INDEX, linear2db(clamp(saved_settings.sfx_volume/100, 0.0, 1.0)))
 	sfx_slider.value = saved_settings.sfx_volume
+	# DIALOGUE VOLUME
 	AudioServer.set_bus_volume_db(DIALOGUE_VOLUME_INDEX, linear2db(clamp(saved_settings.dialogue_volume/100, 0.0, 1.0)))
 	dialogue_slider.value = saved_settings.dialogue_volume
 
@@ -55,9 +62,13 @@ func _on_resolutions_item_selected(index: int) -> void:
 	var res_vector = Vector2i(1920,1080) # Safe guard default resolution
 	match index:
 		0:
-			res_vector = Vector2i(1920,1080)
+			res_vector = Vector2i(2560, 1440)
 		1:
-			res_vector = Vector2i(1280,720)
+			res_vector = Vector2i(1920, 1080)
+		2:
+			res_vector = Vector2i(1280, 720)
+		3:
+			res_vector = Vector2i(1024, 768)
 	
 	DisplayServer.window_set_size(res_vector)
 	saved_settings.resolution = res_vector
@@ -70,9 +81,15 @@ func _on_window_modes_item_selected(index: int) -> void:
 		0:
 			window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 		1:
-			DisplayServer.WINDOW_MODE_WINDOWED
+			window_mode = DisplayServer.WINDOW_MODE_WINDOWED
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		2:
+			window_mode = DisplayServer.WINDOW_MODE_WINDOWED
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 	
 	DisplayServer.window_set_mode(window_mode)
+	DisplayServer.window_set_size(saved_settings.resolution)
+	
 	saved_settings.window_mode = window_mode
 	saved_settings.window_mode_index = index
 	saved_settings.save()

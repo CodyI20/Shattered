@@ -1,5 +1,20 @@
 extends Node
 
+#region SETTINGS - INPUT ACTIONS TO REMAP
+var input_actions = {
+	"up" : "Move Forward",
+	"down" : "Move Backwards",
+	"left" : "Move Left",
+	"right" : "Move Right",
+	"jump" : "Jump",
+	"sprint" : "Toggle Sprint",
+	"crouch" : "Crouch",
+	"inventory" : "Toggle Inventory",
+	"CyclePersonalities" : "Alter swap",
+	"Interact" : "Interact"
+}
+#endregion
+
 func findByClass(node: Node, className : String, result : Array) -> Array:
 	if node.is_class(className) :
 		result.push_back(node)
