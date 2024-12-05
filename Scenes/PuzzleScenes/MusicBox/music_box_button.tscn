@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2o1dp1whs47j"]
+
+[ext_resource type="Texture2D" uid="uid://fhudkroavdak" path="res://Art/2D/icon.svg" id="1_el2kp"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_button.gd" id="2_8b0iu"]
+
+[node name="MusicBoxButton" type="Button"]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_top = 0.542
+anchor_right = 0.221
+anchor_bottom = 0.542
+offset_left = -67.32
+offset_top = -68.36
+offset_right = 68.68
+offset_bottom = 67.64
+icon = ExtResource("1_el2kp")
+script = ExtResource("2_8b0iu")
+metadata/_edit_use_anchors_ = true

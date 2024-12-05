@@ -1,34 +1,40 @@
 extends Node
 
-# PLAYER EVENTS
+
+#region PLAYER EVENTS
 
 signal player_jumped()
 signal player_waking(is_walking: bool)
 signal toggle_inventory()
 
-# GAME EVENTS
+#endregion
+#region GAME EVENTS
 
 signal start_game()
 signal go_to_final_screen()
 
-# ALTER EVENTS
-
+#endregion
+#region ALTER EVENTS
 signal personality_swap(personality: Enums)
 
-# STATE EVENTS
-
+#endregion
+#region STATE EVENTS
 signal on_state_swap(timer: Timer)
 
-# INTERACTION EVENTS
+#endregion
+#region INTERACTION EVENTS
 
 signal on_interact(interactable: Interactable)
 signal on_interact_with_keypad_button()
 
-# PASSWORD PUZZLE
+#endregion
+
+
+#region PASSWORD PUZZLE
 signal on_correct_password()
 signal on_wrong_password()
-
-# LOGIC GATE MINIGAME EVENTS
+#endregion
+#region LOGIC GATE PUZZLE
 signal object_started_dragging(object: DragItem)
 signal object_stopped_dragging(object: DragItem)
 signal valid_drop_target_entered
@@ -46,22 +52,34 @@ signal logic_gate_puzzle_off()
 signal logic_gates_puzzle_layout_change()
 
 signal toggle_electricity(toggled_on: bool)
-
-# UI PUZZLES
+#endregion
+#region MUSIC BOX PUZZLE
+signal music_box_audio_finished()
+signal music_box_button_pressed(sound : AudioStream)
+signal music_box_puzzle_reset()
+signal music_box_puzzle_reset_sound_finished()
+signal music_box_puzzle_complete()
+signal music_box_puzzle_started()
+signal music_box_replay_sound()
+#endregion
+#region UI PUZZLES
 signal exited_puzzle_area()
+#endregion
 
-# INVENTORY
+
+#region INVENTORY
 signal OnItemPickedUp(item: ItemData)
 signal item_inspected(item: ItemData)
-
-# OPTIONS
+#endregion
+#region OPTIONS
 signal options_menu_toggle(is_on: bool)
 signal sfx_slider_value_set()
-
-# TUTORIAL
+#endregion
+#region TUTORIAL
 signal play_tutorial_step(step: TutorialStep)
 signal complete_tutorial_step(step: TutorialStep)
-
-# PAUSE
+#endregion
+#region PAUSE
 signal no_pause_signal()
 signal no_resume_signal()
+#endregion
