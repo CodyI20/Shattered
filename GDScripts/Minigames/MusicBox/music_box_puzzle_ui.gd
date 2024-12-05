@@ -14,9 +14,12 @@ func _event_subscription() -> void:
 	Events.music_box_button_pressed.connect(check_button_press)
 
 func check_button_press(sound : AudioStream) -> void:
-	current_sound_index += 1
-	if current_sound_index == main_audio.new_sounds_array.size():
+	if sound == main_audio.new_sounds_array[current_sound_index]:
+		print_debug("Sound is the same!...")
+		correct_sounds_in_sequence += 1
+	if current_sound_index == main_audio.new_sounds_array.size()-1:
 		if correct_sounds_in_sequence == main_audio.new_sounds_array.size():
+			print_debug("HOURRAAAAAAAAAAAY!")
 			Events.music_box_puzzle_complete.emit()
 			await get_tree().create_timer(1.5).timeout
 			close_puzzle()
@@ -24,13 +27,14 @@ func check_button_press(sound : AudioStream) -> void:
 			print_debug("Sounds are different...")
 			reset_puzzle()
 		return
-	if sound == main_audio.new_sounds_array[current_sound_index]:
-		print_debug("Sound is the same!...")
-		correct_sounds_in_sequence += 1
+	current_sound_index += 1
 		
 
 func _on_replay_button_pressed() -> void:
 	Events.music_box_replay_sound.emit()
+
+func _on_retry_button_pressed() -> void:
+	reset_puzzle()
 
 func reset_puzzle() -> void:
 	current_sound_index = 0

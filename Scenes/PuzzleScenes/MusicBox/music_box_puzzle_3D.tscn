@@ -31,6 +31,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_bv0dm")
 
+[node name="RetryButton" type="Button" parent="PausableUI/MusicBoxPuzzleUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79
+anchor_top = 0.098
+anchor_right = 0.79
+anchor_bottom = 0.098
+offset_left = -56.8
+offset_top = -34.84
+offset_right = 58.2
+offset_bottom = 34.16
+text = "RETRY"
+
 [node name="SoundwaveImage" type="TextureRect" parent="PausableUI/MusicBoxPuzzleUI"]
 layout_mode = 1
 anchors_preset = -1
@@ -153,4 +166,5 @@ script = ExtResource("11_5lfqc")
 failure_color = Color(1, 0, 0, 0.27451)
 success_color = Color(0, 1, 0, 0.27451)
 
+[connection signal="pressed" from="PausableUI/MusicBoxPuzzleUI/RetryButton" to="PausableUI/MusicBoxPuzzleUI" method="_on_retry_button_pressed"]
 [connection signal="pressed" from="PausableUI/MusicBoxPuzzleUI/SoundwaveImage/ReplayButton" to="PausableUI/MusicBoxPuzzleUI" method="_on_replay_button_pressed"]

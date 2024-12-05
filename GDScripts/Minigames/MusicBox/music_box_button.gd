@@ -25,7 +25,7 @@ func _on_pressed() -> void:
 
 func shortly_disable_button(input_sound : AudioStream) -> void:
 	disabled = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(input_sound.get_length() + 0.25).timeout
 	if not has_been_pressed:
 		disabled = false
 
