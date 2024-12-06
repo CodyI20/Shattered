@@ -1,8 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb0cjv6t6xo7b"]
+[gd_scene load_steps=9 format=3 uid="uid://cb0cjv6t6xo7b"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Menus/cinematic_scene.gd" id="1_rur3u"]
 [ext_resource type="VideoStream" path="res://Art/Video/Cutscene-Intro-Part-2.ogv" id="2_5ex4t"]
 [ext_resource type="PackedScene" uid="uid://dk1rgtf8maf0i" path="res://Scenes/UIScenes/options.tscn" id="3_arorg"]
+
+[sub_resource type="Animation" id="Animation_encvy"]
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_hdjb1"]
+resource_name = "cinematic_sub"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8, 15.4, 17, 19.5, 21, 22.1333, 23.4, 24.8, 27.1333, 27.7, 28.4333, 29.4, 34.8667, 35.7, 37.0667, 51.6333, 53.1, 53.5, 54.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Colby: So… Nick, explain to me again why we’re heading to an abandoned amusement park with work equipment?", "", "Nick: I got a job from someone", "Colby: From “someone”? Who?", "", "Nick: Don’t know", "", "Colby: Does Jim or anyone else know?", "", "Nick: … No.", "", "Colby: You’re definitely going to get fired, this can be illegal.", "", "Nick: I know.", "", "Colby: Well, here we are.", "", "Nick: Hm.", ""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omrjj"]
+_data = {
+"RESET": SubResource("Animation_encvy"),
+"cinematic_sub": SubResource("Animation_hdjb1")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcbqy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6m6kk"]
 font_size = 40
@@ -26,6 +65,30 @@ grow_vertical = 2
 stream = ExtResource("2_5ex4t")
 autoplay = true
 expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_omrjj")
+}
+autoplay = "cinematic_sub"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -409.0
+offset_top = -168.0
+offset_right = 409.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_pcbqy")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SkipButton" type="Button" parent="."]
 layout_mode = 1

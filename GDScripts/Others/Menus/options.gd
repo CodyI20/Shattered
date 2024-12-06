@@ -15,6 +15,7 @@ var SFX_VOLUME_INDEX = AudioServer.get_bus_index("SFX")
 @onready var master_slider: HSlider = $OptionsContainer/Audio/MasterSlider
 @onready var sfx_slider: HSlider = $OptionsContainer/Audio/SFXSlider
 @onready var music_slider: HSlider = $OptionsContainer/Audio/MusicSlider
+#@onready var subtitles: CheckButton = $OptionsContainer/Resolution/Subtitles
 
 
 # Called when the node enters the scene tree for the first time.
@@ -124,3 +125,7 @@ func _on_menu_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 #endregion
+
+
+#func _on_subtitles_toggled(toggled_on: bool) -> void:
+	#pass

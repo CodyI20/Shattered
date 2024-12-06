@@ -1,6 +1,8 @@
 extends Control
 
 @onready var video_stream_player: VideoStreamPlayer = $VideoStreamPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var paused : bool = false
 
 func _ready() -> void:
@@ -13,4 +15,5 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Esc"):
 		paused = !paused
 		video_stream_player.paused = paused
+		animation_player.pause()
 		Events.options_menu_toggle.emit(paused)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=250 format=4 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=251 format=4 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="10_4563f"]
 [ext_resource type="PackedScene" uid="uid://cbmnemwe37g5b" path="res://Scenes/MainScenes (3D)/ThemePark.tscn" id="11_s7rjm"]
 [ext_resource type="Texture2D" uid="uid://cpj0gf85ony0s" path="res://Art/2D/Input_legend.jpg" id="14_53y3s"]
+[ext_resource type="PackedScene" uid="uid://cfhm3xlcvn8ru" path="res://Scenes/UIScenes/quest_manager.tscn" id="14_esor6"]
 [ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="14_k5qdb"]
 [ext_resource type="Script" path="res://GDScripts/Others/input_legend_rect.gd" id="16_w44n4"]
 [ext_resource type="PackedScene" uid="uid://dppk3c2nuif5d" path="res://Scenes/PuzzleScenes/electric_panel.tscn" id="18_6heic"]
@@ -3660,6 +3661,8 @@ theme_override_constants/outline_size = 0
 autowrap_mode = 3
 
 [node name="LogicGatesPuzzle" parent="PausableUI" instance=ExtResource("7_d856g")]
+
+[node name="QuestManager" parent="." instance=ExtResource("14_esor6")]
 
 [node name="WhenPausedUI" type="CanvasLayer" parent="."]
 process_mode = 2
