@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbmnemwe37g5b"]
+[gd_scene load_steps=59 format=3 uid="uid://cbmnemwe37g5b"]
 
 [ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="1_mh1w6"]
 [ext_resource type="PackedScene" uid="uid://cvhqy5semf2wp" path="res://Scenes/3D Models/bench.tscn" id="2_vxs5w"]
@@ -13,21 +13,21 @@
 [ext_resource type="ArrayMesh" uid="uid://bjluhsp7rm4xl" path="res://Art/3D/house.obj" id="9_gyndg"]
 [ext_resource type="PackedScene" uid="uid://bdjseegng0d0j" path="res://Scenes/3D Models/Bushgame/bushgame_ten.tscn" id="9_p2cyl"]
 [ext_resource type="PackedScene" uid="uid://hu646x1u0nu3" path="res://Scenes/3D Models/car.tscn" id="11_1wfoc"]
+[ext_resource type="Texture2D" uid="uid://d0xqk4hyaw3dq" path="res://addons/terrain_3d_textures/cobblestone_floor_04_diff_1k_Myron_edit.png" id="11_jc8wj"]
 [ext_resource type="PackedScene" uid="uid://ddb8fb6bh37fv" path="res://Art/3D/barrier.fbx" id="11_ruoq0"]
+[ext_resource type="Texture2D" uid="uid://dps5rhs71wt8s" path="res://addons/terrain_3d_textures/cobblestone_floor_04_nor_gl_1k.png" id="12_scss2"]
 [ext_resource type="PackedScene" uid="uid://bohi8ypp5kr55" path="res://Scenes/3D Models/busstop.tscn" id="12_yrx65"]
+[ext_resource type="Texture2D" uid="uid://b4xnatrlq5sou" path="res://addons/terrain_3d_textures/cobblestone_floor_04_rough_1k.png" id="13_51q2o"]
 [ext_resource type="PackedScene" uid="uid://buv1hrihkk4vr" path="res://Scenes/3D Models/light.tscn" id="13_w0ryh"]
+[ext_resource type="Texture2D" uid="uid://cmpc671qjm1jx" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_diff_1k.png" id="15_0tfwf"]
+[ext_resource type="Texture2D" uid="uid://djvjxpbjra5tr" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_nor_gl_1k.png" id="16_d2ka5"]
+[ext_resource type="Texture2D" uid="uid://c1dxuuyvubbj0" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_rough_1k.png" id="17_0khq7"]
+[ext_resource type="Texture2D" uid="uid://t7c7hpxa1dvl" path="res://addons/terrain_3d_textures/gravel_embedded_concrete_diff_1k.png" id="20_435x7"]
+[ext_resource type="Texture2D" uid="uid://hakubeu51psv" path="res://addons/terrain_3d_textures/gravel_embedded_concrete_nor_gl_1k.png" id="21_ji25s"]
+[ext_resource type="Texture2D" uid="uid://btiajmof00e4n" path="res://addons/terrain_3d_textures/gravel_embedded_concrete_rough_1k.png" id="22_fdhog"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kquoo"]
 albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_an21h"]
-bake_interval = 49.43
-_data = {
-"points": PackedVector3Array(0, 0, 20, 0, 0, 20, -100, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 50, 0, 40, 0, 0, 20, 0, 0, -20, 100, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, -40, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0, 0, 0, 0, 0, 0, -50, 0, -40, 0, 0, -20, 0, 0, 0, -100, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 9
-up_vector_enabled = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmnq1"]
 transparency = 1
@@ -61,6 +61,12 @@ points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625,
 albedo_color = Color(0.619608, 0.92549, 0.564706, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xa208"]
+albedo_texture = ExtResource("11_jc8wj")
+metallic = 1.0
+roughness_texture = ExtResource("13_51q2o")
+normal_enabled = true
+normal_texture = ExtResource("12_scss2")
+uv1_scale = Vector3(8.744, 27.74, 30.214)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hdnac"]
 points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625, 264.858, 363.473, 362.585, 286.488, 57.571, 402.008, 310.124, 9.01746, 94.2585, 310.124, 32.3989, -210.857, 277.29, 274.911, -125.688, 23.4258, 528.729, 362.585, 264.858, 363.473, -469.525, 162.566, 519.98, -142.195, 18.6317, 530.878, 362.585, 13.0014, 531.697, 362.585, -259.37, 57.571, 402.008, 286.488, 9.01746, 402.008, 310.124, 9.01746, -210.857, 286.488, 57.571, -494.988, 23.4258, 528.729, -469.525, 162.566, 519.98, -262.924, 7.37112, 530.878, 362.585, 13.0014, 531.645, -469.525, 7.37112, 530.878, -469.525, -259.37, 9.01746, 402.008, 2.57703, 528.729, 362.585, -238.856, 363.473, 362.585, -259.37, 57.571, -494.988, 286.488, 9.01746, -494.988, 18.6317, 530.878, -469.525, 2.57703, 528.729, -469.525, -259.37, 9.01746, -494.988, -238.856, 363.473, -469.525)
@@ -80,10 +86,67 @@ points = PackedVector3Array(310.124, 32.3989, 94.2585, 277.29, 274.911, 15.7625,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_881v8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c1l1"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.351563, 0.351563, 0.351563, 1)
+albedo_texture = ExtResource("15_0tfwf")
+roughness_texture = ExtResource("17_0khq7")
+normal_enabled = true
+normal_scale = 3.44
+normal_texture = ExtResource("16_d2ka5")
+uv1_scale = Vector3(2.616, -26.135, 2.616)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahtum"]
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(0.361, 18.923, 0.361)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkldj"]
-albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(3.44, 3.44, 3.44)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uiy78"]
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(4.205, 4.205, 4.205)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbvub"]
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(3.368, 11.075, 10.047)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt0nd"]
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(1.54, 0.7, 0.52)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duvha"]
+albedo_color = Color(0.687215, 0.687215, 0.687215, 1)
+albedo_texture = ExtResource("20_435x7")
+roughness_texture = ExtResource("22_fdhog")
+normal_enabled = true
+normal_scale = 4.11
+normal_texture = ExtResource("21_ji25s")
+uv1_scale = Vector3(0.398, 28.86, 0.398)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06ihw"]
 size = Vector3(4.007, 5.509, 350)
@@ -129,40 +192,12 @@ size = Vector3(600, 100, 600)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
 visible = false
 material_override = SubResource("StandardMaterial3D_kquoo")
-use_collision = true
 size = Vector3(799.863, 0.1, 650)
 metadata/_edit_lock_ = true
-
-[node name="Hill" type="CSGPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 309.51, 0, 324.637)
-visible = false
-material_override = SubResource("StandardMaterial3D_kquoo")
-polygon = PackedVector2Array(0, 0, 1.87897, 0.229481, 9.05023, 1.05548, 18.1017, 1.83617, 29.2619, 2.65754, 34.0656, 3.26956, 41.4149, 4.70094, 44.7008, 5.78977, 47.6041, 6.56997, 57.3152, 8.26653, 63.7732, 9.84144, 71.7503, 11.0746, 84.5842, 10.9099, 98.3858, 9.55283, 108.728, 8.04558, 121.579, 0.183196, 66.6189, 0.458304)
-depth = 1000.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Water place holder" type="CSGPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358193, 0)
-visible = false
-polygon = PackedVector2Array(0, 0, 2, 2, 2, 0)
-mode = 2
-path_node = NodePath("../Path3D")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 2
-path_local = false
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530461, 4.76837e-07, -0.0265627)
-visible = false
-curve = SubResource("Curve3D_an21h")
 
 [node name="Water as platform" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -574,7 +609,6 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 
 [node name="Cabin" parent="Ferris wheel area/Ferris wheel/The wheel/Beams and cabins/345 degrees/Node3D" instance=ExtResource("4_pgfrj")]
 
 [node name="Stability" type="Node3D" parent="Ferris wheel area/Ferris wheel"]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Ferris wheel area/Ferris wheel/Stability"]
@@ -1979,14 +2013,14 @@ use_collision = true
 size = Vector3(83.3852, 0.05, 20)
 
 [node name="Building" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.534, 2.475, 14.1944)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.929, 2.475, 16.2648)
 use_collision = true
-size = Vector3(72.3477, 7, 12)
+size = Vector3(75.1387, 7, 7.85913)
 
 [node name="Building3" type="CSGBox3D" parent="Park entrance path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.049, 2.475, -14.771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.841, 2.475, -17.7603)
 use_collision = true
-size = Vector3(71.7426, 7, 12)
+size = Vector3(75.3275, 7, 6.02136)
 
 [node name="House" type="MeshInstance3D" parent="Park entrance path"]
 transform = Transform3D(-4.80825e-10, 0, 0.011, 0, 0.011, 0, -0.011, 0, -4.80825e-10, 235.131, 3.60928, -47.0936)
@@ -2110,10 +2144,20 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 6, 0, 10, 0.261375, 10.8102, 0.629532, 11.5225, 1.13668, 12.0357, 1.72266, 12.3648, 2.71223, 12.4908, 3.62254, 12.8059, 4.32278, 13.3311, 4.70792, 14.1364, 5.16307, 15.4318, 5.96835, 16.9374, 7.15877, 18.0577, 8.52424, 18.863, 10.0298, 19.5282, 11.8154, 20.0534, 13.5, 20.334, 15.2116, 20.1235, 16.9622, 19.7733, 18.3626, 19.3182, 19.8682, 18.3729, 20.7785, 17.3575, 21.4437, 15.887, 21.8989, 14.3465, 22.4591, 13.4361, 23.1593, 12.911, 23.9646, 12.5258, 24.8049, 12.4208, 25.5401, 12.1057, 26.2054, 11.8256, 26.6955, 11.3004, 27, 10, 27, 6, 27, 0, 26, 0, 26, 6, 25.6627, 7.37904, 25.085, 8.25434, 24.2622, 8.77953, 23.25, 9, 22.1965, 8.74451, 21.4262, 8.18432, 20.726, 7.274, 20.5, 6, 20.5, 0.048, 20.5, -0.022, 19.5, 0, 19.5, 6, 19.2555, 7.274, 18.5902, 8.14931, 17.785, 8.74451, 16.75, 9, 15.7192, 8.74451, 14.8789, 8.14931, 14.3187, 7.34403, 14, 6, 14, 0, 13, 0, 13, 6, 12.7082, 7.34403, 12.148, 8.18432, 11.2027, 8.77953, 10.25, 9, 9.31201, 8.74451, 8.50674, 8.25434, 7.87652, 7.30902, 7.5, 6, 7.5, 0, 6.5, 0, 6.5, 6, 6.26596, 7.30902, 5.63574, 8.21933, 4.76044, 8.77953, 3.75, 9, 2.72974, 8.74451, 1.88944, 8.07928, 1.25922, 7.09895, 1, 6, 1, 0)
 
 [node name="Label3D" type="Label3D" parent="Front area/Entrance"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20482, 16.0026, 0.0133667)
+transform = Transform3D(0.996687, -0.0813297, -1.44805e-10, 0.0813297, 0.996687, 3.55503e-09, -1.44805e-10, -3.55503e-09, 1, 0.474662, 17.1175, 0.0133667)
 pixel_size = 0.05
 modulate = Color(0.173261, 0.0394588, 0.000280584, 1)
-text = "BAKER VALLEY"
+text = "BAKER
+"
+font_size = 48
+outline_size = 5
+
+[node name="Label3D2" type="Label3D" parent="Front area/Entrance"]
+transform = Transform3D(0.999998, -0.00198967, -8.88178e-14, 0.00198967, 0.999998, 8.69718e-11, -8.52651e-14, -8.69713e-11, 1, 2.10357, 14.9192, 0.0133667)
+pixel_size = 0.05
+modulate = Color(0.173261, 0.0394588, 0.000280584, 1)
+text = "
+      V   LLEY"
 outline_size = 5
 
 [node name="Parking lot" type="Node3D" parent="Front area"]
@@ -2121,6 +2165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8312, 0, 0.000488281)
 
 [node name="Street" type="CSGBox3D" parent="Front area/Parking lot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2272, 0, 5.95602)
+use_collision = true
 size = Vector3(344.822, 0.01, 34.6485)
 material = SubResource("StandardMaterial3D_0c1l1")
 
@@ -12284,7 +12329,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.44)
 size = Vector3(0.3, 0.012, 0.03)
 
 [node name="car" parent="Front area/Parking lot/Parking spots/Group 6/Spot7" instance=ExtResource("11_1wfoc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.44, 0, -1.22)
+transform = Transform3D(-4.80825e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.80825e-08, 2.44, 0, -1.22)
 
 [node name="Group 7" type="Node3D" parent="Front area/Parking lot/Parking spots"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.8109, 0, -51.2685)
@@ -15837,28 +15882,28 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 123.2, 0.05, 5.27402)
 [node name="Front paths" type="Node3D" parent="Front area/Parking lot"]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.0924, 0.025, -9.86417)
-material_override = SubResource("StandardMaterial3D_jkldj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.9706, 0.025, -9.54352)
+material_override = SubResource("StandardMaterial3D_ahtum")
 use_collision = true
-size = Vector3(246.765, 0.05, 3.00327)
+size = Vector3(207.009, 0.05, 2.36199)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.474, 0.025, 6.27686)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.474, 0.025, 6.29758)
 material_override = SubResource("StandardMaterial3D_jkldj")
 use_collision = true
 size = Vector3(2.1235, 0.05, 32.8228)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.938, 0.025, 3.04156)
-material_override = SubResource("StandardMaterial3D_jkldj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.93, 0.025, 3.035)
+material_override = SubResource("StandardMaterial3D_uiy78")
 use_collision = true
 size = Vector3(32.7044, 0.05, 28.8147)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6216, 0.025, -3.99997)
-material_override = SubResource("StandardMaterial3D_jkldj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6519, 0.025, -3.99997)
+material_override = SubResource("StandardMaterial3D_vbvub")
 use_collision = true
-size = Vector3(96.7998, 0.05, 19.9986)
+size = Vector3(96.7393, 0.05, 19.9986)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0384, 0.025, 22.0197)
@@ -15867,14 +15912,14 @@ use_collision = true
 size = Vector3(103.563, 0.05, 1.39225)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0571, 0.025, -4.76453)
-material_override = SubResource("StandardMaterial3D_jkldj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0553, 0.025, -5.74664)
+material_override = SubResource("StandardMaterial3D_bt0nd")
 use_collision = true
-size = Vector3(7.04778, 0.05, 7.24595)
+size = Vector3(7.04411, 0.05, 9.21019)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Front area/Parking lot/Front paths"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.5387, 0.024999, 23.0998)
-material_override = SubResource("StandardMaterial3D_jkldj")
+material_override = SubResource("StandardMaterial3D_duvha")
 use_collision = true
 size = Vector3(225.873, 0.05, 3.00327)
 
