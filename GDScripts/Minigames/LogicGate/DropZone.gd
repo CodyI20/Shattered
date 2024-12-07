@@ -58,7 +58,7 @@ func set_item(new_item: DragItem, checkItem: bool = true):
 	if item != null:
 		item.current_slot = self
 		# Calculate the center position of the slot
-		var slot_center = global_position + (size / 2)
+		var slot_center = global_position + (size / 4)
 
 		# Calculate the offset needed to center the item
 		var item_offset = item.size / 2

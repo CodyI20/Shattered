@@ -26,6 +26,8 @@ func _event_subscription() -> void:
 	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
 
 func increment_correct_gates_number(o: DropZone) -> void:
+	if get_parent().visible == false:
+		return
 	if !correct_gates.has(o):
 		print_debug("Adding a gate to the ARRAY...")
 		correct_gates.push_back(o)
@@ -33,6 +35,8 @@ func increment_correct_gates_number(o: DropZone) -> void:
 			#color_rect.change_to_green()
 	
 func decrease_correct_gates_number(o: DropZone) -> void:
+	if get_parent().visible == false:
+		return
 	var index = correct_gates.find(o)
 	print_debug(index)
 	if index != -1:
@@ -40,6 +44,8 @@ func decrease_correct_gates_number(o: DropZone) -> void:
 		correct_gates.remove_at(index)
 
 func reset_puzzle() -> void:
+	if get_parent().visible == false:
+		return
 	print_debug("MainGOAL has been reset...")
 	texture = LIGHTBULB_OFF
 	number_of_drop_zones = drop_zones.get_child_count()

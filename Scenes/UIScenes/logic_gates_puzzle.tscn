@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=6 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/generic_puzzle_ui.gd" id="1_8efon"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_28j61"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/layouts.gd" id="3_rwtqb"]
 [ext_resource type="PackedScene" uid="uid://n2vew7cs5ujl" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/Variants/layout___easy.tscn" id="4_dnsvv"]
-[ext_resource type="PackedScene" uid="uid://b46nh7ka30q7t" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/Variants/layout___medium.tscn" id="5_dplhi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0whwx"]
 shader = ExtResource("2_28j61")
@@ -51,8 +50,4 @@ grow_vertical = 2
 script = ExtResource("3_rwtqb")
 
 [node name="LAYOUT - EASY" parent="Layouts" instance=ExtResource("4_dnsvv")]
-layout_mode = 1
-
-[node name="Layout - MEDIUM" parent="Layouts" instance=ExtResource("5_dplhi")]
-visible = false
 layout_mode = 1
