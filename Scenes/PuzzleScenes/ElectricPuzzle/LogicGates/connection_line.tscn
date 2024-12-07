@@ -16,3 +16,4 @@ offset_bottom = 144.28
 texture = ExtResource("1_sk4jy")
 expand_mode = 1
 script = ExtResource("2_83otc")
+metadata/_edit_use_anchors_ = true

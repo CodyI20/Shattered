@@ -19,6 +19,7 @@ texture = ExtResource("1_avtsv")
 expand_mode = 1
 script = ExtResource("2_oq4ym")
 correct_gate = 0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,5 +1,324 @@
-[gd_scene load_steps=2 format=3 uid="uid://drj8ped027upn"]
+[gd_scene load_steps=9 format=3 uid="uid://drj8ped027upn"]
 
 [ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_2cw6t"]
+[ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/connection_line.tscn" id="2_85cle"]
+[ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="2_idxt4"]
+[ext_resource type="Texture2D" uid="uid://dboir8hljrp1q" path="res://Art/2D/LogicGatePuzzle/LineDisconnected.png" id="3_t2jik"]
+[ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="4_6vru7"]
+[ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="5_pgsis"]
+[ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="6_3ieoa"]
+[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_doo8l"]
 
 [node name="Layout - HARD" instance=ExtResource("1_2cw6t")]
+
+[node name="MainGoal" parent="." index="0"]
+offset_left = -88.0
+offset_right = 115.0
+
+[node name="NOT" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0453125
+anchor_top = 0.0694444
+anchor_right = 0.120312
+anchor_bottom = 0.202778
+offset_left = 33.0
+offset_top = 40.0
+offset_right = -39.0
+offset_bottom = -32.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(36, 36)
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_6vru7")
+expand_mode = 4
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="NOT2" type="TextureRect" parent="." index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689062
+anchor_top = 0.37037
+anchor_right = 0.764063
+anchor_bottom = 0.503703
+offset_left = 33.0
+offset_top = 40.0
+offset_right = -39.0
+offset_bottom = -32.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(36, 36)
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_6vru7")
+expand_mode = 4
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="DISCONNECTED_LINE" type="TextureRect" parent="." index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0697917
+anchor_top = 0.205556
+anchor_right = 0.0906257
+anchor_bottom = 0.473148
+offset_bottom = -3.05176e-05
+scale = Vector2(1, 0.84)
+texture = ExtResource("3_t2jik")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DISCONNECTED_LINE2" type="TextureRect" parent="." index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.713542
+anchor_top = 0.50463
+anchor_right = 0.734376
+anchor_bottom = 0.772222
+offset_bottom = -3.05176e-05
+scale = Vector2(1, 0.76)
+texture = ExtResource("3_t2jik")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="STARTING_LINE" parent="ConnectionLines" index="0" instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.0671875
+anchor_top = 0.867593
+anchor_right = 0.0671875
+anchor_bottom = 0.867593
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+STARTING_LINE = true
+
+[node name="STARTING_LINE2" parent="ConnectionLines" index="1" instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.706771
+anchor_top = 0.830556
+anchor_right = 0.706771
+anchor_bottom = 0.830556
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+STARTING_LINE = true
+
+[node name="ConnectionLine2" parent="ConnectionLines" index="2" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.0692708
+anchor_top = 0.555556
+anchor_right = 0.0692708
+anchor_bottom = 0.555556
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+scale = Vector2(1, 0.719999)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE")
+
+[node name="ConnectionLine3" parent="ConnectionLines" index="3" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.263542
+anchor_top = 0.458333
+anchor_right = 0.263542
+anchor_bottom = 0.458333
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+rotation = 1.5708
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE2")
+
+[node name="ConnectionLine4" parent="ConnectionLines" index="4" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.279167
+anchor_top = 0.536111
+anchor_right = 0.279167
+anchor_bottom = 0.536111
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+scale = Vector2(1, 0.640001)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE3")
+
+[node name="ConnectionLine6" parent="ConnectionLines" index="5" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.467187
+anchor_top = 0.746296
+anchor_right = 0.467187
+anchor_bottom = 0.746296
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+rotation = 1.5708
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE4")
+
+[node name="ConnectionLine8" parent="ConnectionLines" index="6" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.689583
+anchor_top = 0.746296
+anchor_right = 0.689583
+anchor_bottom = 0.746296
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+rotation = 1.5708
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE6")
+
+[node name="ConnectionLine7" parent="ConnectionLines" index="7" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.493229
+anchor_top = 0.527778
+anchor_right = 0.493229
+anchor_bottom = 0.527778
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 289.0
+scale = Vector2(1, 0.68)
+connected_drop_zone = NodePath("../../DropZones/DROP ZONE5")
+
+[node name="FINAL_LINE" parent="ConnectionLines" index="8" instance=ExtResource("2_85cle")]
+layout_mode = 1
+anchor_left = 0.495833
+anchor_top = 0.212963
+anchor_right = 0.495833
+anchor_bottom = 0.212963
+offset_left = 0.0
+offset_top = 1.52588e-05
+offset_right = 40.0
+offset_bottom = 289.0
+scale = Vector2(1, 0.76)
+FINAL_GATE = true
+
+[node name="GATE" parent="Gates" index="0" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.0994815
+anchor_right = 0.955187
+anchor_bottom = 0.0994815
+grow_horizontal = 1
+grow_vertical = 1
+gatetype = 4
+
+[node name="GATE2" parent="Gates" index="1" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.234667
+anchor_right = 0.955187
+anchor_bottom = 0.234667
+grow_horizontal = 1
+grow_vertical = 1
+gatetype = 4
+
+[node name="GATE3" parent="Gates" index="2" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.374481
+anchor_right = 0.955187
+anchor_bottom = 0.374481
+grow_horizontal = 1
+grow_vertical = 1
+gatetype = 4
+
+[node name="GATE4" parent="Gates" index="3" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.509667
+anchor_right = 0.955187
+anchor_bottom = 0.509667
+grow_horizontal = 1
+grow_vertical = 1
+gatetype = 4
+
+[node name="GATE5" parent="Gates" index="4" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.639296
+anchor_right = 0.955187
+anchor_bottom = 0.639296
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_3ieoa")
+gatetype = 1
+
+[node name="GATE6" parent="Gates" index="5" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.769852
+anchor_right = 0.955187
+anchor_bottom = 0.769852
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_3ieoa")
+gatetype = 1
+
+[node name="GATE7" parent="Gates" index="6" instance=ExtResource("5_pgsis")]
+layout_mode = 1
+anchor_left = 0.955187
+anchor_top = 0.906889
+anchor_right = 0.955187
+anchor_bottom = 0.906889
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_doo8l")
+
+[node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.0761042
+anchor_top = 0.81037
+anchor_right = 0.0761042
+anchor_bottom = 0.81037
+correct_gate = 4
+
+[node name="DROP ZONE2" parent="DropZones" index="1" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.0802708
+anchor_top = 0.487222
+anchor_right = 0.0802708
+anchor_bottom = 0.487222
+correct_gate = 1
+
+[node name="DROP ZONE3" parent="DropZones" index="2" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.289646
+anchor_top = 0.477963
+anchor_right = 0.289646
+anchor_bottom = 0.477963
+correct_gate = 4
+
+[node name="DROP ZONE4" parent="DropZones" index="3" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.285479
+anchor_top = 0.770556
+anchor_right = 0.285479
+anchor_bottom = 0.770556
+correct_gate = 4
+
+[node name="DROP ZONE5" parent="DropZones" index="4" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.501625
+anchor_top = 0.766852
+anchor_right = 0.501625
+anchor_bottom = 0.766852
+
+[node name="DROP ZONE6" parent="DropZones" index="5" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.716208
+anchor_top = 0.765
+anchor_right = 0.716208
+anchor_bottom = 0.765
+correct_gate = 1
+
+[node name="DROP ZONE7" parent="DropZones" index="6" instance=ExtResource("2_idxt4")]
+layout_mode = 1
+anchor_left = 0.503187
+anchor_top = 0.475185
+anchor_right = 0.503187
+anchor_bottom = 0.475185
+correct_gate = 4
