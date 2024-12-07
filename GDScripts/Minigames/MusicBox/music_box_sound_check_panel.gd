@@ -1,10 +1,16 @@
 extends Panel
 
+@export var puzzle_name : String
+@export_multiline var label_text : String
+
 @onready var continue_button: Button = $ContinueButton
+@onready var label: Label = $Label
 
 func _ready() -> void:
 	toggle_button_functionality(false)
 	_enable_button()
+	
+	label.text = label_text
 	continue_button.pressed.connect(disable_panel)
 	
 func _enable_button() -> void:
@@ -17,5 +23,5 @@ func toggle_button_functionality(toggle_on : bool) -> void:
 
 # CONNECTED TO THE BUTTON
 func disable_panel() -> void:
-	Events.music_box_puzzle_started.emit()
+	Events.puzzle_started.emit(puzzle_name)
 	queue_free()

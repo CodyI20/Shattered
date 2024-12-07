@@ -34,8 +34,6 @@ func create_drop_zone() -> void:
 
 # Called when the dragging starts
 func _input(event):
-	if get_parent().visible == false:
-		return
 	if event is InputEventMouseButton:
 		if event.pressed and get_rect().has_point(event.position):
 			Events.object_started_dragging.emit(self)
@@ -51,6 +49,7 @@ func _input(event):
 				valid_drop_target = null
 			else:
 				position = original_position  # Reset to original position if no valid drop target
+				current_slot.set_item(null, false)
 
 # Dragging logic
 func _process(delta):

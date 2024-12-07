@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://vcpyf6oawkrf"]
+[gd_scene load_steps=7 format=3 uid="uid://vcpyf6oawkrf"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/generic_puzzle_ui.gd" id="1_8efon"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_28j61"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/layouts.gd" id="3_rwtqb"]
 [ext_resource type="PackedScene" uid="uid://n2vew7cs5ujl" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/Variants/layout___easy.tscn" id="4_dnsvv"]
+[ext_resource type="PackedScene" uid="uid://bfsp8t43p6eba" path="res://Scenes/UIScenes/explanation_panel.tscn" id="5_a77xh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0whwx"]
 shader = ExtResource("2_28j61")
@@ -51,3 +52,11 @@ script = ExtResource("3_rwtqb")
 
 [node name="LAYOUT - EASY" parent="Layouts" instance=ExtResource("4_dnsvv")]
 layout_mode = 1
+
+[node name="ExplanationPanel" parent="." instance=ExtResource("5_a77xh")]
+layout_mode = 1
+label_text = "Drag and drop the correct logic gates into the correct sockets!
+
+OR - At least one input needs to have electricity 
+AND - Both inputs need to have electricity
+Buffer - Allows the electricity to pass through"

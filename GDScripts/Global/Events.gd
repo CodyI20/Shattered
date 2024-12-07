@@ -29,7 +29,9 @@ signal on_interact_with_keypad_button()
 
 #endregion
 
-
+#region PUZZLES
+signal puzzle_started(puzzle_name : String)
+#endregion
 #region PASSWORD PUZZLE
 signal on_correct_password()
 signal on_wrong_password()
@@ -59,7 +61,6 @@ signal music_box_button_pressed(sound : AudioStream)
 signal music_box_puzzle_reset()
 signal music_box_puzzle_reset_sound_finished()
 signal music_box_puzzle_complete()
-signal music_box_puzzle_started()
 signal music_box_replay_sound()
 #endregion
 #region UI PUZZLES
