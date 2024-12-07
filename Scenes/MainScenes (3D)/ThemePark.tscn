@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cbmnemwe37g5b"]
+[gd_scene load_steps=60 format=3 uid="uid://cbmnemwe37g5b"]
 
 [ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="1_mh1w6"]
 [ext_resource type="PackedScene" uid="uid://cvhqy5semf2wp" path="res://Scenes/3D Models/bench.tscn" id="2_vxs5w"]
@@ -32,6 +32,16 @@ albedo_color = Color(0.474895, 0.830995, 0.407994, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmnq1"]
 transparency = 1
 albedo_color = Color(0.549, 1, 1, 0.064)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f85a0"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.462745)
+albedo_texture = ExtResource("11_jc8wj")
+metallic = 1.0
+roughness_texture = ExtResource("13_51q2o")
+normal_enabled = true
+normal_texture = ExtResource("12_scss2")
+uv1_scale = Vector3(57.29, 69.065, 117.757)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0s6m"]
 size = Vector3(18.674, 6, 1)
@@ -211,6 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0, 0)
 
 [node name="Ground" type="CSGPolygon3D" parent="Ferris wheel area"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -82.5047, 0, 0)
+material_override = SubResource("StandardMaterial3D_f85a0")
 polygon = PackedVector2Array(0, 0, 0, 50, 15, 50, 30, 35, 50, 20, 72, 10, 72, -10, 50, -20, 30, -35, 15, -50, 0, -50)
 depth = 0.05
 
@@ -1573,6 +1584,21 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -55.5654, 0.05, 39.1038
 [node name="light29" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -66.0761, 0.05, 49.421)
 
+[node name="light25" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12.769, 0.05, -11.623)
+
+[node name="light30" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -28.949, 0.05, -19.162)
+
+[node name="light31" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -42.318, 0.05, -28.397)
+
+[node name="light32" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -55.565, 0.05, -39.104)
+
+[node name="light33" parent="Ferris wheel area/Light" instance=ExtResource("13_w0ryh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -66.076, 0.05, -49.421)
+
 [node name="Park path left side" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 109.511, 0, 80.838)
 polygon = PackedVector2Array(11.4123, -13.64, 25.8725, -14.1895, 26.071, -3.01585, 27.9005, 5.42593, 32.4184, 12.6048, 38.3313, 16.5269, 48.1828, 18.1159, 59.6233, 17.7981, 69.157, 14.938, 78.0551, 11.1245, 86.3177, 11.1245, 90.449, 18.4337, 89.1778, 26.0607, 82.1864, 29.5564, 66.2969, 27.9674, 53.2675, 27.6496, 39.2933, 30.5785, 33.8909, 35.0275, 31.6663, 42.3367, 32.6197, 52.1882, 34.5264, 62.0398, 49.9863, 79.9205, 73.2429, 90.6645, 86.5573, 97.6721, 98.4702, 103.278, 107.346, 107.716, 115.989, 114.257, 121.595, 118.695, 125.333, 124.067, 127.435, 131.308, 126.501, 136.447, 122.296, 139.951, 115.522, 141.586, 108.514, 139.718, 100.267, 135.057, 92.3249, 127.816, 87.4196, 121.743, 79.2441, 116.604, 69.4335, 111.231, 58.7473, 106.033, 53.842, 103.23, 45.6664, 102.062, 39.1261, 102.996, 34.2207, 104.865, 30.2498, 110.471, 28.3811, 119.581, 26.9796, 126.121, 25.1986, 131.085, 19.0377, 137.1, 13.4403, 139.347, 8.05912, 138.034, 5.0225, 133.129, 5.0225, 127.289, 5.25609, 120.281, 6.19043, 113.507, 9.22705, 100.894, 12.4973, 92.0174, 13.6652, 85.477, 15.0293, 77.3782, 16.6183, 67.5267, 17.0479, 53.7772, 14.8234, 48.057, 12.0958, 41.6717, 7.32891, 37.8582, 3.19762, 34.9981, -2.52262, 35.6337, -13.6453, 34.9981, -24.0771, 35.0564, -36.954, 34.1979, -48.2857, 32.9961, -59.274, 31.2792, -68.0303, 30.249, -80.2205, 31.1075, -95.1578, 36.2583, -103.399, 41.0657, -110.095, 43.4693, -115.589, 44.8429, -125.19, 45.4852, -138.855, 45.1674, -147.487, 45.7174, -151.273, 45.3388, -153.292, 43.8244, -154.428, 42.0576, -155.059, 38.6502, -154.933, 35.1166, -154.05, 31.583, -152.409, 29.9425, -148.497, 29.5639, -137.087, 29.8615, -119.918, 29.1748, -113.737, 27.6295, -107.728, 24.1957, -99.1432, 20.9335, -93.2516, 18.4692, -89.3568, 13.2074, -86.7814, 8.05658, -85.0645, -9.45606, -85.8022, -27.2232, -84.8872, -29.4058, -81.425, -30.596, -76.5562, -30.9206, -72.8775, -30.7042, -69.8481, -29.8386, -68.9825, -27.9993, -68.0831, -17.8909, -65.1643, -3.29705, -62.2455, 5.11588, -57.0948, 10.9534, -51.0855, 13.8722, -46.4498, 16.1042, -40.9557, 17.8211, -33.5729, 18.8513, -26.4382, 19.5445, -19.3118, 19.7786, -12.6096, 18.7972, -2.7729, 16.1691, 5.90868, 12.9002, 9.55264, 2.77045)
@@ -2008,6 +2034,7 @@ cone = true
 
 [node name="Park path entrance" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.796, 0.025, -0.42)
+visible = false
 material_override = SubResource("StandardMaterial3D_xa208")
 use_collision = true
 size = Vector3(83.3852, 0.05, 20)
