@@ -9,9 +9,9 @@ var puzzle_active : bool = false
 func _ready() -> void:
 	Events.on_interact.connect(toggle_puzzle)
 	Events.exited_puzzle_area.connect(close_puzzle)
-	#visible = false
-	#mouse_filter = MOUSE_FILTER_IGNORE
-	#puzzle_active = false
+	visible = false
+	mouse_filter = MOUSE_FILTER_IGNORE
+	puzzle_active = false
 
 func toggle_puzzle(interactable: Interactable) -> void:
 	if interactable.get_interaction_text() != puzzle_name:
