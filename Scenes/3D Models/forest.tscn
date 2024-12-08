@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://mh0viw4dbgrv"]
+
+[ext_resource type="PackedScene" uid="uid://dt3xh8vongrne" path="res://Scenes/Imports/forest.fbx" id="1_m2bib"]
+
+[node name="forest" instance=ExtResource("1_m2bib")]
