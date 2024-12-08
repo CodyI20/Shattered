@@ -36,7 +36,6 @@ bus = &"SFX"
 [node name="walkSFX" type="AudioStreamPlayer" parent="SFX/PlayerMovementSFX"]
 process_mode = 1
 stream = ExtResource("3_lj4w1")
-volume_db = 6.559
 bus = &"SFX"
 
 [node name="jumpSFX" type="AudioStreamPlayer" parent="SFX/PlayerMovementSFX"]
