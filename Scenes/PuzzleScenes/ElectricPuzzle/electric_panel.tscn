@@ -9,7 +9,6 @@ albedo_color = Color(1, 1, 0, 1)
 radius = 2.369
 
 [node name="ElectricPanel" instance=ExtResource("1_nc8xk")]
-interaction_text = "ElectricPanel"
 
 [node name="Model" parent="." index="0"]
 transform = Transform3D(1.67218, 0, 0, 0, 1.7688, 0, 0, 0, 0.327764, 0, 0, 0)
