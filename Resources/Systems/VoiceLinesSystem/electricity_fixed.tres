@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VoiceLineData" load_steps=3 format=3 uid="uid://cb1em0kjrm1g1"]
+
+[ext_resource type="AudioStream" uid="uid://cfwu8wjlvu2ox" path="res://Art/Audio/Dialogue/Oh_-This-should-work_.ogg" id="1_c1lg5"]
+[ext_resource type="Script" path="res://GDScripts/Systems/VoiceLinesSystem/voice_lines_resource.gd" id="2_lqgrl"]
+
+[resource]
+script = ExtResource("2_lqgrl")
+audio_clip = ExtResource("1_c1lg5")
+subtitles = ""

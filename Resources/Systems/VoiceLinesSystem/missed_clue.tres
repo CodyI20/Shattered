@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VoiceLineData" load_steps=3 format=3 uid="uid://du0i4kyhh2x3h"]
+
+[ext_resource type="AudioStream" uid="uid://4k42i78k0l77" path="res://Art/Audio/Dialogue/Totally-missed-something.ogg" id="1_tfkcv"]
+[ext_resource type="Script" path="res://GDScripts/Systems/VoiceLinesSystem/voice_lines_resource.gd" id="1_vkicm"]
+
+[resource]
+script = ExtResource("1_vkicm")
+audio_clip = ExtResource("1_tfkcv")
+subtitles = "We totally missed something."

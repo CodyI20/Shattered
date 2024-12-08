@@ -1,7 +1,11 @@
 extends Control
 class_name VoiceLines
 
-@export var voice_lines_datas : Array[VoiceLineData]
+#@export var voice_lines_datas : Array[VoiceLineData]
+
+@export var keypad_voiceline : VoiceLineData
+@export var clue_missed : VoiceLineData
+@export var electricity_fixed : VoiceLineData
 
 @onready var subtitles_panel: Panel = $SubtitlesPanel
 @onready var voice_lines_player: AudioStreamPlayer = $VoiceLinesPlayer
@@ -11,15 +15,21 @@ class_name VoiceLines
 func _ready() -> void:
 	subtitles_label.text = ""
 	subtitles_panel.visible = false
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# Quick check
-	if Input.is_action_just_pressed("Interact"):
-		if voice_lines_datas.size() == 0:
-			return
-		play_voice_line(voice_lines_datas[0])
+	Events.on_interact_with_keypad_button_no_electricity.connect(play_keypad_voiceline)
+	Events.player_left_important_area.connect(play_clue_missed_sound)
+	Events.final_gate_solved.connect(play_final_gate_solved_sound)
+	
+func play_keypad_voiceline() -> void:
+	play_voice_line(keypad_voiceline)
+	Events.on_interact_with_keypad_button_no_electricity.disconnect(play_keypad_voiceline)
+	
+func play_clue_missed_sound() -> void:
+	play_voice_line(clue_missed)
+	Events.player_left_important_area.disconnect(play_clue_missed_sound)
+	
+func play_final_gate_solved_sound() -> void:
+	play_voice_line(electricity_fixed)
+	Events.final_gate_solved.disconnect(play_final_gate_solved_sound)
 
 
 func play_voice_line(voice_line : VoiceLineData) -> void:

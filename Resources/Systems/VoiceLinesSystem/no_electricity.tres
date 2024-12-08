@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VoiceLineData" load_steps=3 format=3 uid="uid://xo3wex54uqd4"]
+
+[ext_resource type="Script" path="res://GDScripts/Systems/VoiceLinesSystem/voice_lines_resource.gd" id="1_3ea1e"]
+[ext_resource type="AudioStream" uid="uid://c5gsiy2wfs22e" path="res://Art/Audio/Dialogue/Riiight, hmm.mp3" id="1_jsf7f"]
+
+[resource]
+script = ExtResource("1_3ea1e")
+audio_clip = ExtResource("1_jsf7f")
+subtitles = "Right... Hmm... Maybe we’re missing something. Let’s look around."

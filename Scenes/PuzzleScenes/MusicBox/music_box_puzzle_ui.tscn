@@ -1,14 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://de35ssdr6vji2"]
+[gd_scene load_steps=20 format=3 uid="uid://de35ssdr6vji2"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_puzzle_ui.gd" id="1_u8u0k"]
 [ext_resource type="PackedScene" uid="uid://d2o1dp1whs47j" path="res://Scenes/PuzzleScenes/MusicBox/music_box_button.tscn" id="2_280mx"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_bxvsf"]
+[ext_resource type="Texture2D" uid="uid://cgylf8adcfml7" path="res://Art/2D/MusicBox/Replay.png" id="3_2o2pd"]
 [ext_resource type="AudioStream" uid="uid://n8dn2naw1ntb" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound1.mp3" id="3_6dcnw"]
+[ext_resource type="Texture2D" uid="uid://b8okn3hlx8hs7" path="res://Art/2D/MusicBox/Restart.png" id="3_pkus4"]
+[ext_resource type="Texture2D" uid="uid://bftb2x8townux" path="res://Art/2D/MusicBox/A.png" id="4_42xah"]
 [ext_resource type="AudioStream" uid="uid://cy4go3opc6eft" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound2.wav" id="4_kso6e"]
 [ext_resource type="AudioStream" uid="uid://ccauhsa3buc30" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound3.wav" id="5_gnfi5"]
+[ext_resource type="Texture2D" uid="uid://bqhshgjm1qe66" path="res://Art/2D/MusicBox/Note template.png" id="5_n580u"]
 [ext_resource type="AudioStream" uid="uid://ch7vs0q6s12a6" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound4.wav" id="6_05wj3"]
+[ext_resource type="Texture2D" uid="uid://dj3ws7sjdlgbv" path="res://Art/2D/MusicBox/D.png" id="6_idmjd"]
+[ext_resource type="Texture2D" uid="uid://cl4por2hcm5si" path="res://Art/2D/MusicBox/B.png" id="7_ansuw"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_main_audio.gd" id="7_cmoox"]
 [ext_resource type="AudioStream" uid="uid://chff23og2wmt3" path="res://Art/Audio/SFX/failure_wrong.wav" id="8_aqpck"]
+[ext_resource type="Texture2D" uid="uid://ba1v54kb2ac2i" path="res://Art/2D/MusicBox/C.png" id="9_icb81"]
 [ext_resource type="PackedScene" uid="uid://bfsp8t43p6eba" path="res://Scenes/UIScenes/explanation_panel.tscn" id="9_y224s"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_puzzle_fail.gd" id="10_f3iwp"]
 
@@ -49,73 +56,118 @@ mouse_filter = 2
 [node name="RetryButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.79
-anchor_top = 0.098
-anchor_right = 0.79
-anchor_bottom = 0.098
-offset_left = -56.8
-offset_top = -34.84
-offset_right = 58.2
-offset_bottom = 34.16
-text = "RETRY"
+anchor_left = 0.82
+anchor_top = 0.094
+anchor_right = 0.82
+anchor_bottom = 0.094
+offset_left = 65.5999
+offset_top = -48.52
+offset_right = 292.6
+offset_bottom = 67.48
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="RetryButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368057
+anchor_top = 0.509103
+anchor_right = 0.601537
+anchor_bottom = 0.509103
+offset_left = -105.549
+offset_top = -132.056
+offset_right = 105.451
+offset_bottom = 131.944
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pkus4")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117688
+anchor_top = 0.3598
+anchor_right = 0.117688
+anchor_bottom = 0.3598
+offset_left = -89.9601
+offset_top = -45.584
+offset_right = 90.0399
+offset_bottom = 45.416
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ReplayButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_top = 0.5
+anchor_right = 0.472
+anchor_bottom = 0.5
+offset_left = -107.961
+offset_top = -116.5
+offset_right = 108.039
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2o2pd")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="SoundwaveImage" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.339063
-anchor_top = 0.0916667
-anchor_right = 0.6375
-anchor_bottom = 0.191667
-metadata/_edit_use_anchors_ = true
-
-[node name="ReplayButton" type="Button" parent="SoundwaveImage"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.303
-anchor_top = 0.139
-anchor_right = 0.303
-anchor_bottom = 0.139
-offset_left = -310.619
-offset_top = -18.012
-offset_right = -173.619
-offset_bottom = 89.988
-text = "REPLAY"
-metadata/_edit_use_anchors_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_n580u")
 
 [node name="MusicBoxButton" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.305833
-anchor_top = 0.511148
-anchor_right = 0.305833
-anchor_bottom = 0.511148
+anchor_left = 0.176146
+anchor_top = 0.591704
+anchor_right = 0.176146
+anchor_bottom = 0.591704
 offset_left = -67.2
 offset_top = -68.04
 offset_right = 68.8
 offset_bottom = 67.96
+icon = ExtResource("4_42xah")
+expand_icon = true
 sound = ExtResource("3_6dcnw")
 
 [node name="MusicBoxButton2" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.630896
-anchor_top = 0.519778
-anchor_right = 0.630896
-anchor_bottom = 0.519778
+anchor_left = 0.448604
+anchor_top = 0.800333
+anchor_right = 0.448604
+anchor_bottom = 0.800333
+icon = ExtResource("6_idmjd")
+expand_icon = true
 sound = ExtResource("4_kso6e")
 
 [node name="MusicBoxButton3" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.389229
-anchor_top = 0.723481
-anchor_right = 0.389229
-anchor_bottom = 0.723481
+anchor_left = 0.260063
+anchor_top = 0.804963
+anchor_right = 0.260063
+anchor_bottom = 0.804963
+icon = ExtResource("7_ansuw")
+expand_icon = true
 sound = ExtResource("5_gnfi5")
 
 [node name="MusicBoxButton4" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.577771
-anchor_top = 0.724407
-anchor_right = 0.577771
-anchor_bottom = 0.724407
+anchor_left = 0.746521
+anchor_top = 0.591074
+anchor_right = 0.746521
+anchor_bottom = 0.591074
+icon = ExtResource("9_icb81")
+expand_icon = true
 sound = ExtResource("6_05wj3")
 
 [node name="MainAudio" type="AudioStreamPlayer" parent="."]
@@ -146,4 +198,4 @@ failure_color = Color(1, 0, 0, 0.27451)
 success_color = Color(0, 1, 0, 0.27451)
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="SoundwaveImage/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]

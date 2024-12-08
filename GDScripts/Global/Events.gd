@@ -6,6 +6,7 @@ extends Node
 signal player_jumped()
 signal player_waking(is_walking: bool)
 signal toggle_inventory()
+signal player_left_important_area()
 
 #endregion
 #region GAME EVENTS
@@ -26,6 +27,7 @@ signal on_state_swap(timer: Timer)
 
 signal on_interact(interactable: Interactable)
 signal on_interact_with_keypad_button()
+signal on_interact_with_keypad_button_no_electricity()
 
 #endregion
 
