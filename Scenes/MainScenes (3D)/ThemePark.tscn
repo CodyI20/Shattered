@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cbmnemwe37g5b"]
+[gd_scene load_steps=63 format=3 uid="uid://cbmnemwe37g5b"]
 
 [ext_resource type="PackedScene" uid="uid://yxh56gfb2vng" path="res://Scenes/3D Models/treenumbertwo.tscn" id="1_mh1w6"]
 [ext_resource type="PackedScene" uid="uid://cvhqy5semf2wp" path="res://Scenes/3D Models/bench.tscn" id="2_vxs5w"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bohi8ypp5kr55" path="res://Scenes/3D Models/busstop.tscn" id="12_yrx65"]
 [ext_resource type="Texture2D" uid="uid://b4xnatrlq5sou" path="res://addons/terrain_3d_textures/cobblestone_floor_04_rough_1k.png" id="13_51q2o"]
 [ext_resource type="PackedScene" uid="uid://buv1hrihkk4vr" path="res://Scenes/3D Models/light.tscn" id="13_w0ryh"]
+[ext_resource type="PackedScene" uid="uid://dtod24enkb66f" path="res://Scenes/3D Models/carousel.tscn" id="14_ab2t0"]
 [ext_resource type="Texture2D" uid="uid://cmpc671qjm1jx" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_diff_1k.png" id="15_0tfwf"]
 [ext_resource type="Texture2D" uid="uid://djvjxpbjra5tr" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_nor_gl_1k.png" id="16_d2ka5"]
 [ext_resource type="Texture2D" uid="uid://c1dxuuyvubbj0" path="res://addons/terrain_3d_textures/concrete_floor_worn_001_rough_1k.png" id="17_0khq7"]
@@ -42,20 +43,20 @@ normal_enabled = true
 normal_texture = ExtResource("12_scss2")
 uv1_scale = Vector3(57.29, 69.065, 117.757)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h340j"]
+size = Vector3(103.442, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hqeq"]
+size = Vector3(1, 6, 17.6064)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0s6m"]
-size = Vector3(18.674, 6, 1)
+size = Vector3(22.9475, 6, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkahx"]
 size = Vector3(36.9095, 6, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_458e8"]
 size = Vector3(1, 6, 32.6538)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_h340j"]
-size = Vector3(103.442, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3hqeq"]
-size = Vector3(1, 6, 17.6064)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21jng"]
 size = Vector3(4.15491, 5.50867, 5.6387)
@@ -212,7 +213,6 @@ size = Vector3(600, 100, 600)
 
 [node name="underground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4234, -0.05, -0.392)
-visible = false
 material_override = SubResource("StandardMaterial3D_kquoo")
 size = Vector3(799.863, 0.1, 650)
 metadata/_edit_lock_ = true
@@ -234,7 +234,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.609, 0, 0)
 
 [node name="Ground" type="CSGPolygon3D" parent="Ferris wheel area"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -82.5047, 0, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_f85a0")
 polygon = PackedVector2Array(0, 0, 0, 50, 15, 50, 30, 35, 50, 20, 72, 10, 72, -10, 50, -20, 30, -35, 15, -50, 0, -50)
 depth = 0.05
@@ -692,59 +691,72 @@ polygon = PackedVector2Array(0, 0, -0.0775146, 2.90546, 6.46359, -0.0903478)
 depth = 3.0
 
 [node name="Invisible walls" type="Node3D" parent="Ferris wheel area"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -198.59, 0, 22.6526)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -175.388)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.830198, 3, -13.3301)
-shape = SubResource("BoxShape3D_t0s6m")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8972, 0, -186.535)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7901, 3, -1.60901)
-shape = SubResource("BoxShape3D_fkahx")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.0531, 0, -145.247)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08723, 3, 14.6133)
-shape = SubResource("BoxShape3D_458e8")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.3451, 0, -126.667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6925, 0, 71.923)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6729, 3, 11.3086)
 shape = SubResource("BoxShape3D_h340j")
 disabled = true
 
-[node name="StaticBody3D5" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0765, 0, -126.667)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78994, 3, 3.00542)
-shape = SubResource("BoxShape3D_3hqeq")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0765, 0, -126.667)
-
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Ferris wheel area/Invisible walls/StaticBody3D6"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.179, 3, -10.176)
-depth = 6.0
-polygon = PackedVector2Array(6.24951, 4.35707, 8.9775, -3.5768, 5.59372, -14.7019, -14.5345, -56.0561, -14.7599, -41.5691, -15.6116, -33.9427, -13.8493, -22.4458, -10.5468, -18.5006, -2.08322, -13.0721, 2.17744, -7.70052, 4.29161, -1.78403, 3.13687, 4.42987)
-
 [node name="StaticBody3D7" type="StaticBody3D" parent="Ferris wheel area/Invisible walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0765, 0, -126.667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7291, 0, 71.923)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Ferris wheel area/Invisible walls/StaticBody3D7"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -43.9644, 3, 35.7551)
 depth = 6.0
 polygon = PackedVector2Array(17.3557, -8.60085, 17.4817, -18.8496, -1.1846, -18.9807, -0.930503, -24.9493, 47.2353, -25.0485, 44.9652, -16.6562, 33.3398, -6.40661, 21.3148, -6.07988, -16.3326, -6.26956, -53.7447, -5.97438, -53.7447, -24.8227, -4.43464, -24.9636, -4.60971, -18.8691, -22.8264, -18.714, -22.8684, -8.5493, 5.7064, -8.55885)
+
+[node name="Left side" type="Node3D" parent="Ferris wheel area/Invisible walls"]
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Left side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7291, 0, 71.923)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/Left side/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78994, 3, 3.00542)
+shape = SubResource("BoxShape3D_3hqeq")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Left side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7291, 0, 71.923)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Ferris wheel area/Invisible walls/Left side/StaticBody3D6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.179, 3, -10.176)
+depth = 6.0
+polygon = PackedVector2Array(6.24951, 4.35707, 8.9775, -3.5768, 5.59372, -14.7019, -14.5345, -56.0561, -14.7599, -41.5691, -15.6116, -33.9427, -13.8493, -22.4458, -10.5468, -18.5006, -2.08322, -13.0721, 2.17744, -7.70052, 4.29161, -1.78403, 3.13687, 4.42987)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Left side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6526, 0, 23.202)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/Left side/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96693, 3, -13.3301)
+shape = SubResource("BoxShape3D_t0s6m")
+
+[node name="Right side" type="Node3D" parent="Ferris wheel area/Invisible walls"]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Right side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2446, 0, 12.055)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/Right side/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7901, 3, -1.60901)
+shape = SubResource("BoxShape3D_fkahx")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Right side"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4005, 0, 53.343)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ferris wheel area/Invisible walls/Right side/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08723, 3, 14.6133)
+shape = SubResource("BoxShape3D_458e8")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Ferris wheel area/Invisible walls/Right side"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.729, 0, 71.923)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Ferris wheel area/Invisible walls/Right side/StaticBody3D8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.179, 3, -10.176)
+depth = 6.0
+polygon = PackedVector2Array(6.24951, 4.35707, 8.9775, -3.5768, 5.59372, -14.7019, -14.5345, -56.0561, -14.7599, -41.5691, -15.6116, -33.9427, -13.8493, -22.4458, -10.5468, -18.5006, -2.08322, -13.0721, 2.17744, -7.70052, 4.29161, -1.78403, 3.13687, 4.42987)
 
 [node name="Decoration" type="Node3D" parent="Ferris wheel area"]
 
@@ -1615,7 +1627,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -66.076, 0.05, -49.421)
 
 [node name="Park path left side" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 109.511, 0, 80.838)
-visible = false
 material_override = SubResource("StandardMaterial3D_wmirc")
 polygon = PackedVector2Array(11.4123, -13.64, 25.8725, -14.1895, 26.071, -3.01585, 27.9005, 5.42593, 32.4184, 12.6048, 38.3313, 16.5269, 48.1828, 18.1159, 59.6233, 17.7981, 69.157, 14.938, 78.0551, 11.1245, 86.3177, 11.1245, 90.449, 18.4337, 89.1778, 26.0607, 82.1864, 29.5564, 66.2969, 27.9674, 53.2675, 27.6496, 39.2933, 30.5785, 33.8909, 35.0275, 31.6663, 42.3367, 32.6197, 52.1882, 34.5264, 62.0398, 49.9863, 79.9205, 73.2429, 90.6645, 86.5573, 97.6721, 98.4702, 103.278, 107.346, 107.716, 115.989, 114.257, 121.595, 118.695, 125.333, 124.067, 127.435, 131.308, 126.501, 136.447, 122.296, 139.951, 115.522, 141.586, 108.514, 139.718, 100.267, 135.057, 92.3249, 127.816, 87.4196, 121.743, 79.2441, 116.604, 69.4335, 111.231, 58.7473, 106.033, 53.842, 103.23, 45.6664, 102.062, 39.1261, 102.996, 34.2207, 104.865, 30.2498, 110.471, 28.3811, 119.581, 26.9796, 126.121, 25.1986, 131.085, 19.0377, 137.1, 13.4403, 139.347, 8.05912, 138.034, 5.0225, 133.129, 5.0225, 127.289, 5.25609, 120.281, 6.19043, 113.507, 9.22705, 100.894, 12.4973, 92.0174, 13.6652, 85.477, 15.0293, 77.3782, 16.6183, 67.5267, 17.0479, 53.7772, 14.8234, 48.057, 12.0958, 41.6717, 7.32891, 37.8582, 3.19762, 34.9981, -2.52262, 35.6337, -13.6453, 34.9981, -24.0771, 35.0564, -36.954, 34.1979, -48.2857, 32.9961, -59.274, 31.2792, -68.0303, 30.249, -80.2205, 31.1075, -95.1578, 36.2583, -103.399, 41.0657, -110.095, 43.4693, -115.589, 44.8429, -125.19, 45.4852, -138.855, 45.1674, -147.487, 45.7174, -151.273, 45.3388, -153.292, 43.8244, -154.428, 42.0576, -155.059, 38.6502, -154.933, 35.1166, -154.05, 31.583, -152.409, 29.9425, -148.497, 29.5639, -137.087, 29.8615, -119.918, 29.1748, -113.737, 27.6295, -107.728, 24.1957, -99.1432, 20.9335, -93.2516, 18.4692, -89.3568, 13.2074, -86.7814, 8.05658, -85.0645, -9.45606, -85.8022, -27.2232, -84.8872, -29.4058, -81.425, -30.596, -76.5562, -30.9206, -72.8775, -30.7042, -69.8481, -29.8386, -68.9825, -27.9993, -68.0831, -17.8909, -65.1643, -3.29705, -62.2455, 5.11588, -57.0948, 10.9534, -51.0855, 13.8722, -46.4498, 16.1042, -40.9557, 17.8211, -33.5729, 18.8513, -26.4382, 19.5445, -19.3118, 19.7786, -12.6096, 18.7972, -2.7729, 16.1691, 5.90868, 12.9002, 9.55264, 2.77045)
 depth = 0.05
@@ -1656,7 +1667,6 @@ metadata/_edit_lock_ = true
 
 [node name="Tree area in the middle #2" type="CSGPolygon3D" parent="Park right and top side/Park right area middle trees"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.88794, 0.05, 1.80652)
-visible = false
 polygon = PackedVector2Array(-22.1231, 22.2584, -26.6478, 22.5566, -31.3953, 23.2504, -37.7633, 23.3882, -43.3899, 22.858, -47.4461, 23.8238, -50.5255, 24.1339, -54.6067, 25.5697, -56.4376, 24.5314, -57.391, 20.24, -60.4105, 14.8978, -64.8896, 10.4213, -68.75, 7.62667, -73.0685, 4.57214, -72.4998, 2.71664, -70.7558, 0.922882, -67.193, 0.402969, -62.9129, -0.314896, -57.421, -1.67596, -51.9542, -2.56694, -47.2174, -3.02496, -40.1067, -3.82939, -33.4913, -4.18854, -26.9134, -3.84282, -18.0489, -2.19908, -13.7094, 0.384583, -8.43662, 4.21996, -2.77156, 6.60213, 5.15325, 7.70887, 10.2781, 8.28841, 13.1081, 9.12521, 14.9411, 9.42613, 15.5423, 10.1278, 15.2896, 11.4105, 14.0407, 12.2659, 12.1522, 12.9823, 5.64025, 15.6034, -1.77048, 18.0936, -11.1981, 20.183, -16.7975, 21.352)
 depth = 0.05
 material = SubResource("StandardMaterial3D_s6uo6")
@@ -1677,355 +1687,356 @@ material = SubResource("StandardMaterial3D_s6uo6")
 metadata/_edit_lock_ = true
 
 [node name="Trees" type="Node3D" parent="Park right and top side/Park right area middle trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0157, 0.0162061, 18.0091)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.016, 0, 18.009)
 
 [node name="treenumbertwo" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69282, 0, 2.39953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69282, -0.433725, 2.39953)
 
 [node name="treenumbertwo(very big)" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, -16.3581, 0, 0.274803)
+transform = Transform3D(1.40954, 0, -0.51303, 0, 1.5, 0, 0.51303, 0, 1.40954, -16.3581, -0.433725, 0.274803)
 
 [node name="treenumbertwo(big)" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, 0, -0.427843)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -8.32563, -0.433725, -0.427841)
 
 [node name="treenumbertwo(very big)2" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 10.5536, 0, 22.8882)
+transform = Transform3D(1.29904, 0, 0.75, 0, 1.5, 0, -0.75, 0, 1.29904, 10.5536, -0.433725, 22.8882)
 
 [node name="treenumbertwo(very big)3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 24.9674, 0, -7.84876)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 24.9674, -0.433725, -7.84876)
 
 [node name="treenumbertwo2" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, 0, -16.9342)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.8122, -0.433725, -16.9342)
 
 [node name="treenumbertwo(big)2" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -8.28487, 0, -13.9777)
+transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, -8.28487, -0.433725, -13.9777)
 
 [node name="treenumbertwo3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.877, 0, -8.4896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.877, -0.433725, -8.4896)
 
 [node name="treenumbertwo4" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26246, 0, -6.43287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26246, -0.433725, -6.43287)
 
 [node name="treenumber3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3017, 0, -5.80257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3017, 0.888452, -5.80257)
 
 [node name="treenumber3(big)" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.973, 0, 0.881401)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.973, 0.888452, 0.881401)
 
 [node name="treenumber3(big)2" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1195, 0, 15.6565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1195, 0.888452, 15.6565)
 
 [node name="treenumber3_2" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4776, 0, -20.7535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4776, 0.888452, -20.7535)
 
 [node name="treenumber3_3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2688, 0, -6.68204)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2688, 0.888452, -6.68204)
 
 [node name="treenumber3(big)3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.868, 0, 6.86179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.868, 0.888452, 6.86179)
 
 [node name="treenumber3(big)4" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8715, 0, 12.3145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8715, 0.888452, 12.3145)
 
 [node name="treenumber3(big)5" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5036, 0, -30.2518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5036, 0.888452, -30.2518)
 
 [node name="treenumber3(big)6" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.142, 0, -19.8741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.142, 0.888452, -19.8741)
 
 [node name="treenumber3(big)7" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3669, 0, 16.3601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3669, 0.888452, 16.3601)
 
 [node name="treenumber3(big)8" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2141, 0, 26.2101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2141, 0.888452, 26.2101)
 
 [node name="treenumber3(big)9" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7201, 0, 27.7932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7201, 0.888452, 27.7932)
 
 [node name="treenumber3(big)10" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5898, 0, 5.27875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5898, 0.888452, 5.27875)
 
 [node name="treenumber3(big)11" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.6319, 0, 17.4154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.6319, 0.888452, 17.4154)
 
 [node name="treenumber3(big)12" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1749, 0, -29.1964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1749, 0.888452, -29.1964)
 
 [node name="treenumber3(big)13" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73543, 0, -32.8902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73543, 0.888452, -32.8902)
 
 [node name="treenumber3(big)14" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5933, 0, -31.8348)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5933, 0.888452, -31.8348)
 
 [node name="treenumber3(big)15" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3614, 0, -24.7991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3614, 0.888452, -24.7991)
 
 [node name="treenumber3(big)16" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0327, 0, -23.3919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0327, 0.888452, -23.3919)
 
 [node name="treenumber3(big)17" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189594, 0, 22.5163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189594, 0.888452, 22.5163)
 
 [node name="treenumber3_4" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1322, 0, 2.64033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1322, 0.888452, 2.64033)
 
 [node name="treenumber3_5" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.3957, 0, 19.8779)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.3957, 0.888452, 19.8779)
 
 [node name="treenumber3_6" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2513, 0, 21.6369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2513, 0.888452, 21.6369)
 
 [node name="treenumber3_7" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4104, 0, 0.00192261)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4104, 0.888452, 0.00192261)
 
 [node name="treenumber3_8" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76283, 0, 4.57516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76283, 0.888452, 4.57516)
 
 [node name="treenumber3_9" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.629, 0, -11.6071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.629, 0.888452, -11.6071)
 
 [node name="treenumber3_10" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1357, 0, -33.5938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1357, 0.888452, -33.5938)
 
 [node name="treenumber3_11" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7516, 0, -35.3527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7516, 0.888452, -35.3527)
 
 [node name="treenumber3_12" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57713, 0, -36.2322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57713, 0.888452, -36.2322)
 
 [node name="treenumber3_13" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9156, 0, -36.0563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9156, 0.888452, -36.0563)
 
 [node name="treenumber3_14" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0166, 0, -26.3822)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0166, 0.888452, -26.3822)
 
 [node name="treenumber3_15" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8652, 0, 9.50019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8652, 0.888452, 9.50019)
 
 [node name="treenumber3_16" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("5_uxgdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7818, 0, -32.1866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7818, 0.888452, -32.1866)
 
 [node name="treenumbertwo(very big)4" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.49782, 0, 0.0808073, 0, 1.5, 0, -0.0808073, 0, 1.49782, 85.9119, 0, 11.3033)
+transform = Transform3D(1.49782, 0, 0.0808073, 0, 1.5, 0, -0.0808073, 0, 1.49782, 85.9119, -0.433725, 11.3033)
 
 [node name="treenumbertwo(very big)5" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 80.6058, 0, -1.89231)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 80.6058, -0.433725, -1.89231)
 
 [node name="treenumbertwo(very big)6" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 64.5986, 0, 15.4284)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 64.5986, -0.433725, 15.4284)
 
 [node name="treenumbertwo(very big)7" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 37.8928, 0, 21.289)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 37.8928, -0.433725, 21.289)
 
 [node name="treenumbertwo(very big)8" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 62.1531, 0, -25.2762)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 62.1531, -0.433725, -25.2762)
 
 [node name="treenumbertwo(very big)9" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.41808, 0, 0.488925, 0, 1.5, 0, -0.488925, 0, 1.41808, 37.7608, 0, -2.23395)
+transform = Transform3D(1.41808, 0, 0.488925, 0, 1.5, 0, -0.488925, 0, 1.41808, 37.7608, -0.433725, -2.23395)
 
 [node name="treenumbertwo(very big)10" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 41.714, 0, 10.4069)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, 41.714, -0.433725, 10.4069)
 
 [node name="treenumbertwo(very big)11" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.186673, 0, 1.48834, 0, 1.5, 0, -1.48834, 0, 0.186673, 32.6984, 0, -22.1667)
+transform = Transform3D(0.186673, 0, 1.48834, 0, 1.5, 0, -1.48834, 0, 0.186673, 32.6984, -0.433725, -22.1667)
 
 [node name="treenumbertwo(very big)12" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -4.71796, 0, 17.0189)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -4.71796, -0.433725, 17.0189)
 
 [node name="treenumbertwo(very big)13" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -68.6413, -3.8147e-06, 9.16121)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -68.6413, -0.433729, 9.16121)
 
 [node name="treenumbertwo(very big)14" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -29.3129, 0, 25.6139)
+transform = Transform3D(0.964181, 0, 1.14907, 0, 1.5, 0, -1.14907, 0, 0.964181, -29.3129, -0.433725, 25.6139)
 
 [node name="treenumbertwo(very big)15" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.42492, 0, -0.468625, 0, 1.5, 0, 0.468625, 0, 1.42492, -61.8532, 0, -24.8779)
+transform = Transform3D(1.42492, 0, -0.468625, 0, 1.5, 0, 0.468625, 0, 1.42492, -61.8532, -0.433725, -24.8779)
 
 [node name="treenumbertwo5" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0764, 0, -23.3036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0764, -0.433725, -23.3036)
 
 [node name="treenumbertwo6" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.722931, 0, -0.69092, 0, 1, 0, 0.69092, 0, 0.722931, -35.1226, 0, 9.67391)
+transform = Transform3D(0.722931, 0, -0.69092, 0, 1, 0, 0.69092, 0, 0.722931, -35.1226, -0.433725, 9.67391)
 
 [node name="treenumbertwo7" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244558, 0, -30.4696)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244558, -0.433725, -30.4696)
 
 [node name="treenumbertwo(big)3" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.360308, 0, 1.19695, 0, 1.25, 0, -1.19695, 0, 0.360308, -15.2455, -1.90735e-06, -36.1696)
+transform = Transform3D(0.360308, 0, 1.19695, 0, 1.25, 0, -1.19695, 0, 0.360308, -15.2455, -0.433727, -36.1696)
 
 [node name="treenumbertwo(big)4" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(0.0119553, 0, -1.24994, 0, 1.25, 0, 1.24994, 0, 0.0119553, -60.538, -1.90735e-06, 23.3593)
+transform = Transform3D(0.0119553, 0, -1.24994, 0, 1.25, 0, 1.24994, 0, 0.0119553, -60.538, -0.433727, 23.3593)
 
 [node name="treenumbertwo(big)5" parent="Park right and top side/Park right area middle trees/Trees" instance=ExtResource("1_mh1w6")]
-transform = Transform3D(1.01771, 0, -0.72579, 0, 1.25, 0, 0.72579, 0, 1.01771, 40.5565, 0, -26.8164)
+transform = Transform3D(1.01771, 0, -0.72579, 0, 1.25, 0, 0.72579, 0, 1.01771, 40.5565, -0.433725, -26.8164)
 
 [node name="Buildings" type="Node3D" parent="Park right and top side"]
 
-[node name="Carousel" type="Node3D" parent="Park right and top side/Buildings"]
+[node name="Carousel (old)" type="Node3D" parent="Park right and top side/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.041, 5.05, -54.3819)
+visible = false
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 radius = 8.0
 height = 1.0
 sides = 16
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 radius = 8.0
 height = 1.0
 sides = 16
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 radius = 1.5
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278352, 0)
 radius = 5.0
 height = 1.0
 sides = 16
 
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74133, 0, 0)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17596, 0, -1.67099)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19088, 0, 0.0393066)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25322, 0, -4.29515)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60741, 0, -3.91718)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00757599, 0, -6.21938)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72563, 0, -4.02026)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47453, 0, -4.39824)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58114, 0, -1.40881)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46748, 0, 0.0343628)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58114, 0, 1.51189)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19963, 0, 4.26079)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55383, 0, 3.95154)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267944, 0, 6.08194)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60741, 0, 3.67665)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11578, 0, 3.9859)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0127, 0, 1.61497)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267868, 0, 2.43965)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.40933, 0, 0.034359)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00757599, 0, -2.16476)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53868, 0, -1.54626)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4356, 0, 1.54625)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65691, 0, 1.78678)
 radius = 0.05
 height = 10.0
 sides = 16
 
-[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel"]
+[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="Park right and top side/Buildings/Carousel (old)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79436, 0, -1.6837)
 radius = 0.05
 height = 10.0
@@ -2037,10 +2048,14 @@ size = Vector3(1.76929, 3, 2.79355)
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Park right and top side/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.041, 12.05, -54.3819)
+visible = false
 radius = 8.0
 height = 4.0
 sides = 16
 cone = true
+
+[node name="carousel" parent="Park right and top side/Buildings" instance=ExtResource("14_ab2t0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.041, 0, -54.382)
 
 [node name="Park path right and top side" type="CSGPolygon3D" parent="Park right and top side"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 130.125, 0, -36.1219)
@@ -2053,7 +2068,6 @@ depth = 0.05
 
 [node name="Park path entrance" type="CSGBox3D" parent="Park entrance path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.796, 0.025, -0.42)
-visible = false
 material_override = SubResource("StandardMaterial3D_xa208")
 use_collision = true
 size = Vector3(83.3852, 0.05, 20)
@@ -16057,25 +16071,25 @@ metadata/_edit_lock_ = true
 [node name="Placeholder rollercoasters" type="Node3D" parent="."]
 
 [node name="Rollercoaster v1_6_1" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(0.399915, 0, 0.00825132, 0, 0.4, 0, -0.00825132, 0, 0.399915, -6.54834, 1.52588e-05, 262.436)
+transform = Transform3D(0.299936, 0, 0.00618849, 0, 0.3, 0, -0.00618849, 0, 0.299936, -6.54834, 1.52588e-05, 262.436)
 
 [node name="Rollercoaster v1_6_2" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -50.686, 0, -264.852)
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -50.686, 0, -264.852)
 
 [node name="Rollercoaster v1_6_3" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(0.297547, 0, 0.26733, 0, 0.4, 0, -0.26733, 0, 0.297547, 196.789, -1.52588e-05, -171.796)
+transform = Transform3D(0.223161, 0, 0.200498, 0, 0.3, 0, -0.200498, 0, 0.223161, 196.789, -1.52588e-05, -171.796)
 
 [node name="Rollercoaster v1_6_4" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(0.399951, 0, -0.00628994, 0, 0.4, 0, 0.00628994, 0, 0.399951, 172.54, 0, 318.685)
+transform = Transform3D(0.299963, 0, -0.00471745, 0, 0.3, 0, 0.00471745, 0, 0.299963, 172.54, 0, 318.685)
 
 [node name="Rollercoaster v1_6_5" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(-0.271366, 0, 0.293871, 0, 0.4, 0, -0.293871, 0, -0.271366, -259.303, 0, 195.387)
+transform = Transform3D(-0.203525, 0, 0.220404, 0, 0.3, 0, -0.220404, 0, -0.203525, -259.303, 0, 195.387)
 
 [node name="Rollercoaster v1_6_6" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(-0.193417, 0, 0.350128, 0, 0.4, 0, -0.350128, 0, -0.193417, -377.663, 0, -7.22229)
+transform = Transform3D(-0.145063, 0, 0.262596, 0, 0.3, 0, -0.262596, 0, -0.145063, -377.663, 0, -7.22229)
 
 [node name="Rollercoaster v1_6_7" parent="Placeholder rollercoasters" instance=ExtResource("6_pxdvj")]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -364.45, 0, -200.47)
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -364.45, 0, -200.47)
 
 [node name="Water node" type="Node3D" parent="."]
 
