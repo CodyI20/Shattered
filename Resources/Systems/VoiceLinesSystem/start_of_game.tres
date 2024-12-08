@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VoiceLineData" load_steps=3 format=3 uid="uid://ctyqpwhw8xms2"]
+
+[ext_resource type="AudioStream" uid="uid://bqnn8xbgxql6f" path="res://Art/Audio/Dialogue/Haven_t-been-here-in-years-2.ogg" id="1_754ow"]
+[ext_resource type="Script" path="res://GDScripts/Systems/VoiceLinesSystem/voice_lines_resource.gd" id="1_r34qm"]
+
+[resource]
+script = ExtResource("1_r34qm")
+audio_clip = ExtResource("1_754ow")
+subtitles = "Man, I haven’t been here in years. Not since, well, you know. I’m surprised anyone would still care about this place. I thought after the owner was gone it would just be bulldozed or turned into a parking lot"

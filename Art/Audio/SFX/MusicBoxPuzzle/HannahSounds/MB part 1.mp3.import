@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bahklglrmo3dr"
+path="res://.godot/imported/MB part 1.mp3-d82b6eab8faf754233a626d5c984a8aa.mp3str"
+
+[deps]
+
+source_file="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/MB part 1.mp3"
+dest_files=["res://.godot/imported/MB part 1.mp3-d82b6eab8faf754233a626d5c984a8aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy7hu76sun3ph"
+path="res://.godot/imported/D# (low).mp3-563621d58e9f27d73893661a9913fcf2.mp3str"
+
+[deps]
+
+source_file="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/D# (low).mp3"
+dest_files=["res://.godot/imported/D# (low).mp3-563621d58e9f27d73893661a9913fcf2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://n2vew7cs5ujl"]
+[gd_scene load_steps=7 format=3 uid="uid://n2vew7cs5ujl"]
 
 [ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_n5851"]
 [ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/connection_line.tscn" id="2_xaac7"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="3_r2m7l"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="3_yv674"]
-[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="4_fljmj"]
+[ext_resource type="Texture2D" uid="uid://dsph5d73m6655" path="res://Art/2D/LogicGatePuzzle/NEW/Buffer.png" id="4_ynjc2"]
+[ext_resource type="Texture2D" uid="uid://chtwvx8ikcb8q" path="res://Art/2D/LogicGatePuzzle/NEW/And.png" id="5_xr8ik"]
 
 [node name="LAYOUT - EASY" instance=ExtResource("1_n5851")]
 
@@ -93,6 +94,7 @@ offset_left = -36.8401
 offset_right = 35.1599
 offset_bottom = 35.56
 grow_horizontal = 0
+texture = ExtResource("4_ynjc2")
 gatetype = 4
 
 [node name="AND_GATE" parent="Gates" index="1" instance=ExtResource("3_yv674")]
@@ -106,7 +108,7 @@ offset_top = -35.6801
 offset_right = 35.1599
 offset_bottom = 36.3199
 grow_horizontal = 0
-texture = ExtResource("4_fljmj")
+texture = ExtResource("5_xr8ik")
 
 [node name="BUFFER_GATE2" parent="Gates" index="2" instance=ExtResource("3_yv674")]
 layout_mode = 1
@@ -119,6 +121,7 @@ offset_top = -36.2001
 offset_right = 35.1599
 offset_bottom = 35.7999
 grow_horizontal = 0
+texture = ExtResource("4_ynjc2")
 gatetype = 4
 
 [node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("3_r2m7l")]

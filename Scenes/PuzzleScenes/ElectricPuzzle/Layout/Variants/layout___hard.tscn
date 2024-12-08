@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://drj8ped027upn"]
+[gd_scene load_steps=10 format=3 uid="uid://drj8ped027upn"]
 
 [ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_2cw6t"]
 [ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/connection_line.tscn" id="2_85cle"]
+[ext_resource type="Texture2D" uid="uid://de7wtgn4nqk1i" path="res://Art/2D/LogicGatePuzzle/NEW/Danger.png" id="2_dtpak"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="2_idxt4"]
 [ext_resource type="Texture2D" uid="uid://dboir8hljrp1q" path="res://Art/2D/LogicGatePuzzle/LineDisconnected.png" id="3_t2jik"]
-[ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="4_6vru7"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="5_pgsis"]
-[ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="6_3ieoa"]
-[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_doo8l"]
+[ext_resource type="Texture2D" uid="uid://dsph5d73m6655" path="res://Art/2D/LogicGatePuzzle/NEW/Buffer.png" id="6_cd7q5"]
+[ext_resource type="Texture2D" uid="uid://td4ydlfu6ino" path="res://Art/2D/LogicGatePuzzle/NEW/Or.png" id="7_hupax"]
+[ext_resource type="Texture2D" uid="uid://chtwvx8ikcb8q" path="res://Art/2D/LogicGatePuzzle/NEW/And.png" id="8_ea1df"]
 
 [node name="Layout - HARD" instance=ExtResource("1_2cw6t")]
 
@@ -31,7 +32,7 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(36, 36)
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("4_6vru7")
+texture = ExtResource("2_dtpak")
 expand_mode = 4
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -51,7 +52,7 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(36, 36)
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("4_6vru7")
+texture = ExtResource("2_dtpak")
 expand_mode = 4
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -205,6 +206,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.0994815
 grow_horizontal = 1
 grow_vertical = 1
+texture = ExtResource("6_cd7q5")
 gatetype = 4
 
 [node name="GATE2" parent="Gates" index="1" instance=ExtResource("5_pgsis")]
@@ -215,6 +217,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.234667
 grow_horizontal = 1
 grow_vertical = 1
+texture = ExtResource("6_cd7q5")
 gatetype = 4
 
 [node name="GATE3" parent="Gates" index="2" instance=ExtResource("5_pgsis")]
@@ -225,6 +228,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.374481
 grow_horizontal = 1
 grow_vertical = 1
+texture = ExtResource("6_cd7q5")
 gatetype = 4
 
 [node name="GATE4" parent="Gates" index="3" instance=ExtResource("5_pgsis")]
@@ -235,6 +239,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.509667
 grow_horizontal = 1
 grow_vertical = 1
+texture = ExtResource("6_cd7q5")
 gatetype = 4
 
 [node name="GATE5" parent="Gates" index="4" instance=ExtResource("5_pgsis")]
@@ -245,7 +250,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.639296
 grow_horizontal = 1
 grow_vertical = 1
-texture = ExtResource("6_3ieoa")
+texture = ExtResource("7_hupax")
 gatetype = 1
 
 [node name="GATE6" parent="Gates" index="5" instance=ExtResource("5_pgsis")]
@@ -256,7 +261,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.769852
 grow_horizontal = 1
 grow_vertical = 1
-texture = ExtResource("6_3ieoa")
+texture = ExtResource("7_hupax")
 gatetype = 1
 
 [node name="GATE7" parent="Gates" index="6" instance=ExtResource("5_pgsis")]
@@ -267,7 +272,7 @@ anchor_right = 0.955187
 anchor_bottom = 0.906889
 grow_horizontal = 1
 grow_vertical = 1
-texture = ExtResource("6_doo8l")
+texture = ExtResource("8_ea1df")
 
 [node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("2_idxt4")]
 layout_mode = 1
@@ -323,3 +328,7 @@ anchor_top = 0.475185
 anchor_right = 0.503187
 anchor_bottom = 0.475185
 correct_gate = 4
+
+[node name="CheckButton" parent="." index="8"]
+anchor_left = 0.379333
+anchor_right = 0.379333

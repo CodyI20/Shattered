@@ -6,6 +6,7 @@ class_name VoiceLines
 @export var keypad_voiceline : VoiceLineData
 @export var clue_missed : VoiceLineData
 @export var electricity_fixed : VoiceLineData
+@export var start_of_game : VoiceLineData
 
 @onready var subtitles_panel: Panel = $SubtitlesPanel
 @onready var voice_lines_player: AudioStreamPlayer = $VoiceLinesPlayer
@@ -18,6 +19,7 @@ func _ready() -> void:
 	Events.on_interact_with_keypad_button_no_electricity.connect(play_keypad_voiceline)
 	Events.player_left_important_area.connect(play_clue_missed_sound)
 	Events.final_gate_solved.connect(play_final_gate_solved_sound)
+	play_voice_line(start_of_game)
 	
 func play_keypad_voiceline() -> void:
 	play_voice_line(keypad_voiceline)

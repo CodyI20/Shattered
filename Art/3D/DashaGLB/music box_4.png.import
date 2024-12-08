@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dgfi3260qwmwe"
+path.s3tc="res://.godot/imported/music box_4.png-b57945b43c5697b8b9f4c240f3c2886e.s3tc.ctex"
+path.etc2="res://.godot/imported/music box_4.png-b57945b43c5697b8b9f4c240f3c2886e.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d5205fe4147cff717bbd74d67bd56789"
+}
+
+[deps]
+
+source_file="res://Art/3D/DashaGLB/music box_4.png"
+dest_files=["res://.godot/imported/music box_4.png-b57945b43c5697b8b9f4c240f3c2886e.s3tc.ctex", "res://.godot/imported/music box_4.png-b57945b43c5697b8b9f4c240f3c2886e.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://Art/3D/DashaGLB/music box_5.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -7,7 +7,7 @@ class_name Player
 # The default for a player sprinting 21 km/h would be 5.833 m/s 
 const WALK_SPEED = 1.336
 const JOG_SPEED = 5.778 # was 2.778
-const SPRINT_SPEED = 19.833 # was 5.833
+const SPRINT_SPEED = 10.833 # was 5.833
 
 # DO NOT TOUCH
 var movement_speed := 2.778

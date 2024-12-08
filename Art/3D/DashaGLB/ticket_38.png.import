@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cux4d278f4r2k"
+path.s3tc="res://.godot/imported/ticket_38.png-a88e4a1dde5ac43a3e7e20f585816746.s3tc.ctex"
+path.etc2="res://.godot/imported/ticket_38.png-a88e4a1dde5ac43a3e7e20f585816746.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c4e8ccc2f9f8c3bf89ab26238658786a"
+}
+
+[deps]
+
+source_file="res://Art/3D/DashaGLB/ticket_38.png"
+dest_files=["res://.godot/imported/ticket_38.png-a88e4a1dde5ac43a3e7e20f585816746.s3tc.ctex", "res://.godot/imported/ticket_38.png-a88e4a1dde5ac43a3e7e20f585816746.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Art/3D/DashaGLB/ticket_38.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

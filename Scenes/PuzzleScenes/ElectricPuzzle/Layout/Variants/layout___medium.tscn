@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://b46nh7ka30q7t"]
+[gd_scene load_steps=10 format=3 uid="uid://b46nh7ka30q7t"]
 
 [ext_resource type="PackedScene" uid="uid://coniejlbvhi1w" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/layout_scene.tscn" id="1_ndlpj"]
-[ext_resource type="Texture2D" uid="uid://bxvuu4ymrcd6c" path="res://Art/2D/danger.png" id="2_bv4jo"]
+[ext_resource type="Texture2D" uid="uid://de7wtgn4nqk1i" path="res://Art/2D/LogicGatePuzzle/NEW/Danger.png" id="2_fsrge"]
 [ext_resource type="PackedScene" uid="uid://cc8t67um7t1io" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/connection_line.tscn" id="2_pku57"]
 [ext_resource type="Texture2D" uid="uid://dboir8hljrp1q" path="res://Art/2D/LogicGatePuzzle/LineDisconnected.png" id="3_21otv"]
 [ext_resource type="PackedScene" uid="uid://cxpljelyfm62u" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/drop_zone.tscn" id="3_qcrjo"]
 [ext_resource type="PackedScene" uid="uid://bivo58jalqj7k" path="res://Scenes/PuzzleScenes/ElectricPuzzle/LogicGates/gate.tscn" id="4_w5lmy"]
-[ext_resource type="Texture2D" uid="uid://cfwpliyugfao1" path="res://Art/2D/LogicGatePuzzle/ANDButton.png" id="6_lu34s"]
-[ext_resource type="Texture2D" uid="uid://i3hhuv68gig7" path="res://Art/2D/LogicGatePuzzle/ORButton.png" id="7_ob5s3"]
+[ext_resource type="Texture2D" uid="uid://dsph5d73m6655" path="res://Art/2D/LogicGatePuzzle/NEW/Buffer.png" id="6_8mnje"]
+[ext_resource type="Texture2D" uid="uid://chtwvx8ikcb8q" path="res://Art/2D/LogicGatePuzzle/NEW/And.png" id="7_y6cjl"]
+[ext_resource type="Texture2D" uid="uid://td4ydlfu6ino" path="res://Art/2D/LogicGatePuzzle/NEW/Or.png" id="8_t62gi"]
 
 [node name="Layout - MEDIUM" instance=ExtResource("1_ndlpj")]
 
@@ -26,7 +27,7 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(36, 36)
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("2_bv4jo")
+texture = ExtResource("2_fsrge")
 expand_mode = 4
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -133,6 +134,7 @@ offset_left = -36.9197
 offset_top = -36.2801
 offset_right = 35.0803
 offset_bottom = 35.7196
+texture = ExtResource("6_8mnje")
 gatetype = 4
 
 [node name="BUFFER2" parent="Gates" index="1" instance=ExtResource("4_w5lmy")]
@@ -145,6 +147,7 @@ offset_left = -36.9197
 offset_top = -35.8805
 offset_right = 35.0803
 offset_bottom = 36.1202
+texture = ExtResource("6_8mnje")
 gatetype = 4
 
 [node name="AND" parent="Gates" index="2" instance=ExtResource("4_w5lmy")]
@@ -157,7 +160,7 @@ offset_left = -36.9197
 offset_top = -35.5598
 offset_right = 35.0803
 offset_bottom = 36.4398
-texture = ExtResource("6_lu34s")
+texture = ExtResource("7_y6cjl")
 
 [node name="OR" parent="Gates" index="3" instance=ExtResource("4_w5lmy")]
 layout_mode = 1
@@ -169,7 +172,7 @@ offset_left = -36.9197
 offset_top = -35.7996
 offset_right = 35.0803
 offset_bottom = 36.2001
-texture = ExtResource("7_ob5s3")
+texture = ExtResource("8_t62gi")
 gatetype = 1
 
 [node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("3_qcrjo")]
@@ -218,3 +221,7 @@ offset_top = -69.7205
 offset_right = 69.84
 offset_bottom = 70.2799
 correct_gate = 1
+
+[node name="CheckButton" parent="." index="5"]
+anchor_left = 0.455896
+anchor_right = 0.455896

@@ -10,9 +10,9 @@ signal on_interact
 var active_puzzle := false
 
 func _ready() -> void:
-	Events.final_gate_solved.connect(_enable_key)
+	Events.final_gate_solved.connect(enable_key)
 	
-func _enable_key() -> void:
+func enable_key() -> void:
 	active_puzzle = true
 
 # Sets the number on the keypad to the numbner in the export value

@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://oka1lxj7q37k"
+path.s3tc="res://.godot/imported/carousel_38.png-b08a85a08903f82c70b25d95ae8e3dbf.s3tc.ctex"
+path.etc2="res://.godot/imported/carousel_38.png-b08a85a08903f82c70b25d95ae8e3dbf.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5e9713700a6e37efd7beb350163e768c"
+}
+
+[deps]
+
+source_file="res://Art/3D/DashaGLB/carousel_38.png"
+dest_files=["res://.godot/imported/carousel_38.png-b08a85a08903f82c70b25d95ae8e3dbf.s3tc.ctex", "res://.godot/imported/carousel_38.png-b08a85a08903f82c70b25d95ae8e3dbf.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Art/3D/DashaGLB/carousel_38.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
