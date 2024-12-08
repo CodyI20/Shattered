@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qfdbf37ln3ry"]
+[gd_scene load_steps=12 format=3 uid="uid://qfdbf37ln3ry"]
 
 [ext_resource type="Script" path="res://Scenes/UIScenes/tutorials.gd" id="1_fs6sw"]
 [ext_resource type="Script" path="res://GDScripts/Tutorial/tutorial_step.gd" id="2_l8cb2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://xe8wcln07v53" path="res://Resources/Tutorial/Steps/Sequenced/walk_right.tres" id="6_bex6t"]
 [ext_resource type="Resource" uid="uid://bjlkcbyp6acr1" path="res://Resources/Tutorial/Steps/Sequenced/sprint.tres" id="7_tlrcc"]
 [ext_resource type="Resource" uid="uid://bsa12lq2f5r8b" path="res://Resources/Tutorial/Steps/Sequenced/alter_swap.tres" id="8_gipcq"]
+[ext_resource type="Resource" uid="uid://cndgc70nci6kn" path="res://Resources/Tutorial/Steps/Sequenced/check_settings.tres" id="9_3t8xo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vwgyw"]
 font_size = 50
@@ -28,7 +29,7 @@ offset_right = 962.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_fs6sw")
-tutorial_steps_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("3_5ie5m"), ExtResource("4_oywsh"), ExtResource("5_o836r"), ExtResource("6_bex6t"), ExtResource("7_tlrcc"), ExtResource("8_gipcq")])
+tutorial_steps_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("3_5ie5m"), ExtResource("4_oywsh"), ExtResource("5_o836r"), ExtResource("6_bex6t"), ExtResource("7_tlrcc"), ExtResource("8_gipcq"), ExtResource("9_3t8xo")])
 tutorial_steps_non_sequence = Array[ExtResource("2_l8cb2")]([ExtResource("4_bkbek")])
 
 [node name="Panel" type="Panel" parent="."]

@@ -14,6 +14,7 @@
 [node name="MainGoal" parent="." index="0"]
 offset_left = -88.0
 offset_right = 115.0
+final_main_goal = true
 
 [node name="NOT" type="TextureRect" parent="." index="1"]
 layout_mode = 1

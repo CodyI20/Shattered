@@ -9,8 +9,8 @@ var puzzle_active = false
 
 func _ready() -> void:
 	Events.object_started_dragging.connect(clear_item)
-	Events.logic_gate_puzzle_on.connect(toggle_on)
-	Events.logic_gate_puzzle_off.connect(toggle_off)
+	Events.puzzle_toggled_on.connect(toggle_on)
+	Events.puzzle_toggled_off.connect(toggle_off)
 	Events.gate_not_solved.connect(reset_puzzle)
 	Events.logic_gates_puzzle_layout_change.connect(reset_puzzle)
 	puzzle_active = true
@@ -29,10 +29,14 @@ func _on_mouse_exited():
 	is_hovered = false
 	Events.valid_drop_target_exited.emit(self)
 	
-func toggle_on() -> void:
+func toggle_on(puzzle_name : int) -> void:
+	if puzzle_name != Enums.puzzle_types.ELECTRICAL_ROOM:
+		return
 	puzzle_active = true
 
-func toggle_off() -> void:
+func toggle_off(puzzle_name : int) -> void:
+	if puzzle_name != Enums.puzzle_types.ELECTRICAL_ROOM:
+		return
 	puzzle_active = false
 	
 func clear_item(input_item: DragItem):

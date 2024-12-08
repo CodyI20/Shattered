@@ -2,7 +2,7 @@ extends Resource
 class_name TutorialStep
 
 
-@export var tutorial_text : String
+@export_multiline var tutorial_text : String
 @export var tutorial_action : String
 var completed : bool = false
 

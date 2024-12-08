@@ -60,6 +60,7 @@ func check_puzzle_solved(toggled_on : bool) -> void:
 		print_debug("GATE SOLVED!")
 		texture = LIGHTBULB_ON
 		if final_main_goal:
+			Events.gate_solved.emit()
 			Events.final_gate_solved.emit()
 		else:
 			Events.gate_solved.emit()

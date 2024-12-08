@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmhw2mdtx750y"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/outline_shader_application.gd" id="1_14lq6"]
-[ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box.gd" id="2_er6lx"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/generic_puzzle_interactable.gd" id="2_er6lx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3fb8n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxqg3"]
 size = Vector3(1.72058, 1.74017, 0.989136)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6e1bb"]
-size = Vector3(0.122412, 0.187964, 0.709082)
+[sub_resource type="SphereShape3D" id="SphereShape3D_mfxpy"]
+radius = 2.08237
 
 [node name="PuzzleInteractable" type="StaticBody3D"]
 collision_layer = 2
@@ -27,6 +27,6 @@ shape = SubResource("BoxShape3D_hxqg3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0.00114746, 0.00462647, 1.38778e-17)
-shape = SubResource("BoxShape3D_6e1bb")
+shape = SubResource("SphereShape3D_mfxpy")
 
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

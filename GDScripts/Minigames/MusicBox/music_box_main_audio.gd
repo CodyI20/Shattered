@@ -17,8 +17,8 @@ func _event_subscription() -> void:
 	Events.music_box_button_pressed.connect(play_sound)
 	Events.music_box_replay_sound.connect(play_sounds_no_event)
 	
-func puzzle_setup(puzzle_name : String) -> void:
-	if puzzle_name != "MusicBox":
+func puzzle_setup(puzzle_type : Enums.puzzle_types) -> void:
+	if puzzle_type != Enums.puzzle_types.MUSIC_BOX:
 		return
 	print_debug("Starting the puzzle...")
 	new_sounds_array.append_array(Utility.jumble_array(puzzle_sounds))

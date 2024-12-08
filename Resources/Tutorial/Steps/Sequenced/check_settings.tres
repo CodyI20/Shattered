@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialStep" load_steps=2 format=3 uid="uid://cndgc70nci6kn"]
+
+[ext_resource type="Script" path="res://GDScripts/Tutorial/tutorial_step.gd" id="1_6qrb0"]
+
+[resource]
+script = ExtResource("1_6qrb0")
+tutorial_text = "You don't like the current layout? Fear not, by pressing the '%s' key you can navigate to the Controls tab where you can customize them all!"
+tutorial_action = "Esc"

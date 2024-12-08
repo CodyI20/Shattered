@@ -1,6 +1,6 @@
 extends Panel
 
-@export var puzzle_name : String
+@export var puzzle_type : Enums.puzzle_types
 @export_multiline var label_text : String
 
 @onready var continue_button: Button = $ContinueButton
@@ -23,5 +23,5 @@ func toggle_button_functionality(toggle_on : bool) -> void:
 
 # CONNECTED TO THE BUTTON
 func disable_panel() -> void:
-	Events.puzzle_started.emit(puzzle_name)
+	Events.puzzle_started.emit(puzzle_type)
 	queue_free()

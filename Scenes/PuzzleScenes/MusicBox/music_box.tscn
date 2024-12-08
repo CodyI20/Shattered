@@ -1,5 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2spvqv0r4h4l"]
+[gd_scene load_steps=3 format=3 uid="uid://b2spvqv0r4h4l"]
 
 [ext_resource type="PackedScene" uid="uid://bmhw2mdtx750y" path="res://Scenes/PuzzleScenes/generic_puzzle_interaction.tscn" id="1_8ws4g"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbh46"]
+radius = 2.09268
+
 [node name="MusicBox" instance=ExtResource("1_8ws4g")]
+interaction_type = 1
+
+[node name="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("SphereShape3D_nbh46")

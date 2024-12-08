@@ -30,7 +30,9 @@ signal on_interact_with_keypad_button()
 #endregion
 
 #region PUZZLES
-signal puzzle_started(puzzle_name : String)
+signal puzzle_started(puzzle_name : Enums)
+signal puzzle_toggled_on(puzzle_name : Enums)
+signal puzzle_toggled_off(puzzle_name : Enums)
 #endregion
 #region PASSWORD PUZZLE
 signal on_correct_password()
@@ -48,9 +50,6 @@ signal final_gate_solved()
 signal gate_solved()
 signal gate_not_solved()
 signal gate_not_solved_sound()
-
-signal logic_gate_puzzle_on()
-signal logic_gate_puzzle_off()
 signal logic_gates_puzzle_layout_change()
 
 signal toggle_electricity(toggled_on: bool)

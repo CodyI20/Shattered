@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=4 uid="uid://b8udo8om1fcon"]
+[gd_scene load_steps=243 format=4 uid="uid://b8udo8om1fcon"]
 
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/game_manager.gd" id="1_my0g2"]
 [ext_resource type="Script" path="res://GDScripts/Others/Managers/input_manager.gd" id="2_fawn2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm1vno74sk26l" path="res://Scenes/PuzzleScenes/ElectricPuzzle/__electricity_puzzle_scene__.tscn" id="9_5l43b"]
 [ext_resource type="PackedScene" uid="uid://cjpt0ihtv1t6q" path="res://Scenes/Props/Keypad/Keypad.tscn" id="9_lyo1c"]
 [ext_resource type="PackedScene" uid="uid://b3mouro4ujgh4" path="res://Scenes/Props/Paper.tscn" id="10_4563f"]
+[ext_resource type="PackedScene" uid="uid://b87y2ee4qnw0q" path="res://Scenes/PuzzleScenes/MusicBox/music_box_puzzle_3D.tscn" id="10_l2wm8"]
 [ext_resource type="PackedScene" uid="uid://cbmnemwe37g5b" path="res://Scenes/MainScenes (3D)/ThemePark.tscn" id="11_s7rjm"]
 [ext_resource type="Script" path="res://GDScripts/Others/Inventory/ui#letter.gd" id="21_421gg"]
 
@@ -3601,8 +3602,14 @@ libraries = {
 
 [node name="--ElectricityPuzzleScene--" parent="WorldRoot" instance=ExtResource("9_5l43b")]
 
+[node name="SpotLight3D" parent="WorldRoot/--ElectricityPuzzleScene--" index="0"]
+transform = Transform3D(-4.37113e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37113e-08, 1.91068e-15, 257.264, 4.66965, 14.4095)
+
 [node name="ElectricPanel" parent="WorldRoot/--ElectricityPuzzleScene--" index="1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 257.085, 2.49528, 14.3952)
+
+[node name="MusicBoxPuzzle3D" parent="WorldRoot" instance=ExtResource("10_l2wm8")]
+transform = Transform3D(0.00763486, 0.0863648, -0.996234, 0, 0.996263, 0.0863673, 0.999971, -0.000659402, 0.00760633, 257.346, 2.67181, 31.5173)
 
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
@@ -3689,4 +3696,5 @@ script = ExtResource("2_fawn2")
 
 [editable path="WorldRoot/ThemePark"]
 [editable path="WorldRoot/--ElectricityPuzzleScene--"]
+[editable path="WorldRoot/MusicBoxPuzzle3D"]
 [editable path="WhenPausedUI/PauseMenu"]

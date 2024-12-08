@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://de35ssdr6vji2"]
+[gd_scene load_steps=13 format=3 uid="uid://de35ssdr6vji2"]
 
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_puzzle_ui.gd" id="1_u8u0k"]
 [ext_resource type="PackedScene" uid="uid://d2o1dp1whs47j" path="res://Scenes/PuzzleScenes/MusicBox/music_box_button.tscn" id="2_280mx"]
+[ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_bxvsf"]
 [ext_resource type="AudioStream" uid="uid://n8dn2naw1ntb" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound1.mp3" id="3_6dcnw"]
 [ext_resource type="AudioStream" uid="uid://cy4go3opc6eft" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound2.wav" id="4_kso6e"]
 [ext_resource type="AudioStream" uid="uid://ccauhsa3buc30" path="res://Art/Audio/SFX/MusicBoxPuzzle/sound3.wav" id="5_gnfi5"]
@@ -11,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bfsp8t43p6eba" path="res://Scenes/UIScenes/explanation_panel.tscn" id="9_y224s"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_puzzle_fail.gd" id="10_f3iwp"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_upv33"]
+shader = ExtResource("2_bxvsf")
+shader_parameter/lod = 0.8
+
 [node name="MusicBoxPuzzleUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +24,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u8u0k")
+puzzle_type = 1
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0768358, 0.0768358, 0.0768358, 0.588235)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_upv33")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="RetryButton" type="Button" parent="."]
 layout_mode = 1
@@ -100,7 +126,7 @@ failure_sound = ExtResource("8_aqpck")
 
 [node name="ExplanationPanel" parent="." instance=ExtResource("9_y224s")]
 layout_mode = 1
-puzzle_name = "MusicBox"
+puzzle_type = 1
 label_text = "This puzzle uses sound (SFX - in game)
 Please make sure your sound is on!
 

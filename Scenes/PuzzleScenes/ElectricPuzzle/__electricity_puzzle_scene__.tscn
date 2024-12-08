@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bt1scj7tnnv4t" path="res://Scenes/PuzzleScenes/ElectricPuzzle/spot_light_3d.tscn" id="1_x8piy"]
 [ext_resource type="PackedScene" uid="uid://cuhe6pj3lg0wr" path="res://Scenes/PuzzleScenes/ElectricPuzzle/electric_panel.tscn" id="2_wvbkp"]
 [ext_resource type="PackedScene" uid="uid://vcpyf6oawkrf" path="res://Scenes/UIScenes/logic_gates_puzzle.tscn" id="3_p3xuu"]
-[ext_resource type="Script" path="res://GDScripts/pausable_ui.gd" id="3_s2po5"]
+[ext_resource type="Script" path="res://GDScripts/puzzle_pausable_ui.gd" id="3_s2po5"]
 
 [node name="--ElectricityPuzzleScene--" type="Node3D"]
 

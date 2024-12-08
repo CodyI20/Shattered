@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b87y2ee4qnw0q"]
+[gd_scene load_steps=4 format=3 uid="uid://b87y2ee4qnw0q"]
 
 [ext_resource type="PackedScene" uid="uid://b2spvqv0r4h4l" path="res://Scenes/PuzzleScenes/MusicBox/music_box.tscn" id="1_rh72h"]
+[ext_resource type="Script" path="res://GDScripts/puzzle_pausable_ui.gd" id="2_53uvd"]
 [ext_resource type="PackedScene" uid="uid://de35ssdr6vji2" path="res://Scenes/PuzzleScenes/MusicBox/music_box_puzzle_ui.tscn" id="2_n4l1t"]
 
 [node name="MusicBoxPuzzle3D" type="Node3D"]
@@ -9,5 +10,6 @@
 
 [node name="PausableUI" type="CanvasLayer" parent="."]
 process_mode = 1
+script = ExtResource("2_53uvd")
 
 [node name="MusicBoxPuzzleUI" parent="PausableUI" instance=ExtResource("2_n4l1t")]
