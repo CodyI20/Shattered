@@ -150,3 +150,7 @@ func _on_menu_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 #endregion
+
+
+#func _on_subtitles_toggled(toggled_on: bool) -> void:
+	#pass
