@@ -63,3 +63,6 @@ signal complete_tutorial_step(step: TutorialStep)
 # PAUSE
 signal no_pause_signal()
 signal no_resume_signal()
+
+# TESTACTION FOR HINTS ------------------------------ #
+signal test_key_press(action: String)

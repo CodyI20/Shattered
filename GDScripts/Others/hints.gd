@@ -8,7 +8,7 @@ var hints = [
 ]
 
 var current_hint_index = 0
-var max_objects = 4
+var max_objects
 var interacted_objects = 0
 
 @onready var hint_label: Label = $Panel/MarginContainer/Label
@@ -19,11 +19,14 @@ var interacted_objects = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Ready function called!")
+	max_objects = hints.size()
 	hint_panel.visible = false
 	hint_label.text = ""
-	
 	hint_timer.wait_time = 4.0
 	hint_timer.connect("timeout", Callable(self, "on_timer_timeout"))
+	
+	#--------------------------------#
+	Events.test_key_press.connect(action_received)
 	
 	hint_timer.start()
 	print("Timer started with wait time:", hint_timer.wait_time)
@@ -36,24 +39,22 @@ func _on_timer_timeout():
 		show_ui_with_hint()
 
 func show_ui_with_hint():
+	#--------------------------#
+	if current_hint_index >= max_objects:
+		return
 	print("Showing hint:", hints[current_hint_index])
 	hint_label.text = hints[current_hint_index]
 	hint_panel.visible = true
 
 func close_ui():
 	hint_panel.visible = false
+	
+	#-------------------------#
+func action_received(action_name: String) -> void:
+	on_interacted_objects(current_hint_index)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("key_1") and current_hint_index == 0:
-		on_interacted_objects(0)
-	elif Input.is_action_just_pressed("key_2") and current_hint_index == 1:
-		on_interacted_objects(1)
-	elif Input.is_action_just_pressed("key_3") and current_hint_index == 2:
-		on_interacted_objects(2)
-	elif Input.is_action_just_pressed("key_4") and current_hint_index == 3:
-		on_interacted_objects(3)
-	
 	if Input.is_action_just_pressed("ui_cancel"):
 		close_ui()
 

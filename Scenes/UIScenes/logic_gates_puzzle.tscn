@@ -80,6 +80,7 @@ offset_right = 19.72
 offset_bottom = 76.4399
 rotation = 0.0115585
 pivot_offset = Vector2(20.8602, 81.8433)
+texture = null
 SWITCH_GATE = true
 
 [node name="ConnectionLine-GATE1" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -93,6 +94,7 @@ offset_top = -106.44
 offset_right = 135.024
 offset_bottom = 176.56
 rotation = 0.868583
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
 
 [node name="ConnectionLine-GATE1(2)" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -107,6 +109,7 @@ offset_right = 1.064
 offset_bottom = 127.4
 rotation = -0.646159
 pivot_offset = Vector2(19.8129, 87.5865)
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 1")
 
 [node name="ConnectionLine-GATE2" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -120,6 +123,7 @@ offset_top = 106.2
 offset_right = -6.88
 offset_bottom = 335.2
 rotation = -2.54905
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 2")
 
 [node name="ConnectionLine-GATE3" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -133,6 +137,7 @@ offset_top = 83.2
 offset_right = 120.68
 offset_bottom = 312.2
 rotation = -3.7404
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 3")
 
 [node name="ConnectionLine-GATE4" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -146,6 +151,7 @@ offset_top = -299.04
 offset_right = -358.2
 offset_bottom = 696.96
 rotation = -0.88736
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 4")
 
 [node name="ConnectionLine-GATE5" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -160,6 +166,7 @@ offset_right = 26.5599
 offset_bottom = 100.68
 rotation = 0.615559
 pivot_offset = Vector2(19.8129, 87.5865)
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
 
 [node name="ConnectionLine-GATE5(2)" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -174,6 +181,7 @@ offset_right = 28.0
 offset_bottom = 72.5599
 rotation = -1.58305
 pivot_offset = Vector2(19.8129, 87.5865)
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 5")
 
 [node name="ConnectionLine-GATE6" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -188,6 +196,7 @@ offset_right = 12.5199
 offset_bottom = 101.92
 rotation = -0.662792
 pivot_offset = Vector2(19.8129, 87.5865)
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 6")
 
 [node name="ConnectionLine-GATE7" parent="ConnectionLines" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("7_ed55j")]
@@ -202,6 +211,7 @@ offset_right = 11.0
 offset_bottom = 148.88
 rotation = -0.998863
 pivot_offset = Vector2(21.5004, 135.421)
+texture = null
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE - 7")
 
 [node name="FINAL_LINE_FINAL_GATE" parent="ConnectionLines" instance=ExtResource("7_ed55j")]
@@ -216,6 +226,7 @@ offset_right = 19.0
 offset_bottom = 65.24
 rotation = 0.0115585
 pivot_offset = Vector2(20.8602, 81.8433)
+texture = null
 FINAL_GATE = true
 
 [node name="Gates" type="Control" parent="."]
