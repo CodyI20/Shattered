@@ -608,6 +608,9 @@ interaction_type = 1
 [node name="Model" parent="." index="0"]
 visible = false
 
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031654, 0.629494, -0.003479)
+
 [node name="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("SphereShape3D_nbh46")
 

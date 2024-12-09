@@ -16,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://cnd1dofrxf6y" path="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/G#.mp3" id="10_0a5x4"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/MusicBox/music_box_puzzle_fail.gd" id="10_f3iwp"]
 [ext_resource type="AudioStream" uid="uid://bvxwqflrjw87l" path="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/C#.mp3" id="12_5a370"]
-[ext_resource type="Texture2D" uid="uid://bwictmwyt2j1y" path="res://Art/2D/MusicBox/A#.png" id="13_8romq"]
-[ext_resource type="AudioStream" uid="uid://d32haaqvrfxvt" path="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/A#.mp3" id="14_ovca6"]
+[ext_resource type="Texture2D" uid="uid://8r62pfxpwu6y" path="res://Art/2D/MusicBox/D#.png" id="13_d1c5b"]
+[ext_resource type="AudioStream" uid="uid://dy7hu76sun3ph" path="res://Art/Audio/SFX/MusicBoxPuzzle/HannahSounds/D# (low).mp3" id="14_otoh2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_upv33"]
 shader = ExtResource("2_bxvsf")
@@ -128,10 +128,10 @@ texture = ExtResource("5_n580u")
 
 [node name="B" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.176146
-anchor_top = 0.591704
-anchor_right = 0.176146
-anchor_bottom = 0.591704
+anchor_left = 0.271979
+anchor_top = 0.801889
+anchor_right = 0.271979
+anchor_bottom = 0.801889
 offset_left = -67.2
 offset_top = -68.04
 offset_right = 68.8
@@ -142,38 +142,38 @@ sound = ExtResource("8_urven")
 
 [node name="G#" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.260063
-anchor_top = 0.804963
-anchor_right = 0.260063
-anchor_bottom = 0.804963
+anchor_left = 0.465792
+anchor_top = 0.591074
+anchor_right = 0.465792
+anchor_bottom = 0.591074
 icon = ExtResource("9_xq7nn")
 expand_icon = true
 sound = ExtResource("10_0a5x4")
 
 [node name="C#" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
-anchor_left = 0.448604
-anchor_top = 0.800333
-anchor_right = 0.448604
-anchor_bottom = 0.800333
+anchor_left = 0.184021
+anchor_top = 0.590148
+anchor_right = 0.184021
+anchor_bottom = 0.590148
 icon = ExtResource("9_icb81")
 expand_icon = true
 sound = ExtResource("12_5a370")
 
-[node name="A#" parent="." instance=ExtResource("2_280mx")]
+[node name="D# (low)" parent="." instance=ExtResource("2_280mx")]
 layout_mode = 1
 anchor_left = 0.746521
-anchor_top = 0.591074
+anchor_top = 0.801259
 anchor_right = 0.746521
-anchor_bottom = 0.591074
-icon = ExtResource("13_8romq")
+anchor_bottom = 0.801259
+icon = ExtResource("13_d1c5b")
 expand_icon = true
-sound = ExtResource("14_ovca6")
+sound = ExtResource("14_otoh2")
 
 [node name="MainAudio" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 script = ExtResource("7_cmoox")
-puzzle_sounds = Array[AudioStream]([ExtResource("8_urven"), ExtResource("10_0a5x4"), ExtResource("12_5a370"), ExtResource("14_ovca6")])
+puzzle_sounds = Array[AudioStream]([ExtResource("8_urven"), ExtResource("10_0a5x4"), ExtResource("12_5a370"), ExtResource("14_otoh2")])
 failure_sound = ExtResource("8_aqpck")
 
 [node name="ExplanationPanel" parent="." instance=ExtResource("9_y224s")]

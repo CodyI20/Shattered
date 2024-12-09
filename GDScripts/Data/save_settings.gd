@@ -2,8 +2,8 @@ extends Resource
 class_name SaveSettings
 
 # SETTINGS - GRAPHICS
-@export var resolution := Vector2i(1280,720)
-@export var resolution_index := 2
+@export var resolution := Vector2i(1920,1080)
+@export var resolution_index := 1
 @export var window_mode := DisplayServer.WINDOW_MODE_WINDOWED
 @export var window_mode_index := 1
 @export var v_sync := DisplayServer.VSYNC_DISABLED

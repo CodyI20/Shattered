@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("2_lqgrl")
 audio_clip = ExtResource("1_c1lg5")
-subtitles = ""
+subtitles = "Ooh! This should work!"

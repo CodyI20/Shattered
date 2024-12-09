@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vcpyf6oawkrf"]
 
-[ext_resource type="Script" path="res://GDScripts/Minigames/generic_puzzle_ui.gd" id="1_8efon"]
+[ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/logic_gates_puzzle_ui.gd" id="1_mgi8w"]
 [ext_resource type="Shader" path="res://Art/Shaders/PauseMenu.gdshader" id="2_28j61"]
 [ext_resource type="Script" path="res://GDScripts/Minigames/LogicGate/layouts.gd" id="3_rwtqb"]
 [ext_resource type="PackedScene" uid="uid://n2vew7cs5ujl" path="res://Scenes/PuzzleScenes/ElectricPuzzle/Layout/Variants/layout___easy.tscn" id="4_dnsvv"]
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8efon")
+script = ExtResource("1_mgi8w")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
