@@ -42,7 +42,7 @@ func _ready() -> void:
 	Events.no_pause_signal.connect(no_pause)
 	Events.no_resume_signal.connect(no_resume)
 
-func _process(delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	game_state_change()
 
 func game_state_change():

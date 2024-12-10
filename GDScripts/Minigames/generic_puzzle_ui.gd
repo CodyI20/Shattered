@@ -43,3 +43,4 @@ func toggle_puzzle_non_event() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if puzzle_active && Input.is_action_just_pressed("Esc"):
 		toggle_puzzle_non_event()
+		accept_event()
