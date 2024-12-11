@@ -34,10 +34,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="STARTING" parent="ConnectionLines" index="0" instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.295
-anchor_top = 0.985
-anchor_right = 0.295
-anchor_bottom = 0.985
+anchor_left = 0.298125
+anchor_top = 0.995185
+anchor_right = 0.298125
+anchor_bottom = 0.995185
 offset_left = -20.4
 offset_top = -144.8
 offset_right = 19.5993
@@ -46,9 +46,9 @@ STARTING_LINE = true
 
 [node name="STARTING2" parent="ConnectionLines" index="1" instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.599
+anchor_left = 0.604729
 anchor_top = 1.0
-anchor_right = 0.599
+anchor_right = 0.604729
 anchor_bottom = 1.0
 offset_left = -20.0795
 offset_top = -144.0
@@ -58,15 +58,15 @@ STARTING_LINE = true
 
 [node name="ConnectionLine2" parent="ConnectionLines" index="2" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.349
-anchor_top = 0.634
-anchor_right = 0.349
-anchor_bottom = 0.634
-offset_left = 56.9203
-offset_top = -134.72
-offset_right = 96.9197
-offset_bottom = 154.28
-rotation = 0.537466
+anchor_left = 0.356792
+anchor_top = 0.654889
+anchor_right = 0.356792
+anchor_bottom = 0.654889
+offset_left = 74.9599
+offset_top = -105.28
+offset_right = 114.96
+offset_bottom = 149.72
+rotation = 0.766449
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE")
 
 [node name="ConnectionLine3" parent="ConnectionLines" index="3" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
@@ -84,28 +84,29 @@ connected_drop_zone = NodePath("../../DropZones/DROP ZONE2")
 
 [node name="ConnectionLine4" parent="ConnectionLines" index="4" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.529
-anchor_top = 0.665
-anchor_right = 0.529
-anchor_bottom = 0.665
-offset_left = -112.679
-offset_top = -93.1997
-offset_right = -72.6797
-offset_bottom = 195.8
+anchor_left = 0.523
+anchor_top = 0.655
+anchor_right = 0.523
+anchor_bottom = 0.655
+offset_left = -107.16
+offset_top = -88.4
+offset_right = -67.16
+offset_bottom = 186.6
 rotation = -0.736795
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE3")
 
 [node name="FINAL_LINE" parent="ConnectionLines" index="5" instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.597
-anchor_top = 0.332
-anchor_right = 0.597
-anchor_bottom = 0.332
-offset_left = 108.76
-offset_top = 98.4398
-offset_right = 148.76
-offset_bottom = 387.44
-rotation = -3.83801
+anchor_left = 0.575643
+anchor_top = 0.400139
+anchor_right = 0.575643
+anchor_bottom = 0.400139
+offset_left = 8.76514
+offset_top = -225.15
+offset_right = 48.7651
+offset_bottom = 63.8505
+rotation = -0.698132
+pivot_offset = Vector2(20, 145)
 FINAL_GATE = true
 
 [node name="DISCONNECTED_LINE" type="TextureRect" parent="ConnectionLines" index="6"]

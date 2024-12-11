@@ -161,15 +161,16 @@ connected_drop_zone = NodePath("../../DropZones/DROP ZONE4")
 
 [node name="ConnectionLine8" parent="ConnectionLines" index="6" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]
 layout_mode = 1
-anchor_left = 0.689583
-anchor_top = 0.746296
-anchor_right = 0.689583
-anchor_bottom = 0.746296
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 40.0
-offset_bottom = 289.0
-rotation = 1.5708
+anchor_left = 0.610086
+anchor_top = 0.765256
+anchor_right = 0.610086
+anchor_bottom = 0.765256
+offset_left = -34.3654
+offset_top = -130.477
+offset_right = 5.63464
+offset_bottom = 158.523
+rotation = -1.5708
+pivot_offset = Vector2(20, 130)
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE6")
 
 [node name="ConnectionLine7" parent="ConnectionLines" index="7" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_85cle")]

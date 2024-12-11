@@ -148,6 +148,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_o0080")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

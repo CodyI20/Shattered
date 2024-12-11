@@ -11,10 +11,10 @@
 
 [node name="STARTING LINE" parent="ConnectionLines" index="0" instance=ExtResource("2_xaac7")]
 layout_mode = 1
-anchor_left = 0.286458
-anchor_top = 1.049
-anchor_right = 0.286458
-anchor_bottom = 1.049
+anchor_left = 0.329688
+anchor_top = 0.975852
+anchor_right = 0.329688
+anchor_bottom = 0.975852
 offset_left = 0.0
 offset_top = -144.92
 offset_right = 40.0013
@@ -25,10 +25,10 @@ STARTING_LINE = true
 
 [node name="STARTING LINE2" parent="ConnectionLines" index="1" instance=ExtResource("2_xaac7")]
 layout_mode = 1
-anchor_left = 0.724479
-anchor_top = 1.053
-anchor_right = 0.724479
-anchor_bottom = 1.053
+anchor_left = 0.683333
+anchor_top = 0.984482
+anchor_right = 0.683333
+anchor_bottom = 0.984482
 offset_left = 0.0
 offset_top = -144.241
 offset_right = 40.0012
@@ -39,14 +39,14 @@ STARTING_LINE = true
 
 [node name="LINE ZONE2" parent="ConnectionLines" index="2" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_xaac7")]
 layout_mode = 1
-anchor_left = 0.63
-anchor_top = 0.641
-anchor_right = 0.63
-anchor_bottom = 0.641
-offset_left = -203.601
-offset_top = -147.28
-offset_right = -163.601
-offset_bottom = 141.72
+anchor_left = 0.601
+anchor_top = 0.597
+anchor_right = 0.601
+anchor_bottom = 0.597
+offset_left = -147.921
+offset_top = -99.76
+offset_right = -107.921
+offset_bottom = 105.24
 grow_horizontal = 2
 grow_vertical = 0
 rotation = -0.865012
@@ -55,14 +55,14 @@ connected_drop_zone = NodePath("../../DropZones/DROP ZONE2")
 
 [node name="LINE ZONE 1" parent="ConnectionLines" index="3" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_xaac7")]
 layout_mode = 1
-anchor_left = 0.393
-anchor_top = 0.637
-anchor_right = 0.393
-anchor_bottom = 0.637
-offset_left = 143.44
-offset_top = -168.96
-offset_right = 183.44
-offset_bottom = 120.04
+anchor_left = 0.417
+anchor_top = 0.595
+anchor_right = 0.417
+anchor_bottom = 0.595
+offset_left = 97.3599
+offset_top = -123.6
+offset_right = 137.36
+offset_bottom = 80.4
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 0.796346
@@ -126,10 +126,10 @@ gatetype = 4
 
 [node name="DROP ZONE" parent="DropZones" index="0" instance=ExtResource("3_r2m7l")]
 layout_mode = 1
-anchor_left = 0.297
-anchor_top = 0.851
-anchor_right = 0.297
-anchor_bottom = 0.851
+anchor_left = 0.344916
+anchor_top = 0.776926
+anchor_right = 0.344916
+anchor_bottom = 0.776926
 offset_left = -70.2394
 offset_top = -70.0801
 offset_right = 69.7593
@@ -138,10 +138,10 @@ correct_gate = 4
 
 [node name="DROP ZONE2" parent="DropZones" index="1" instance=ExtResource("3_r2m7l")]
 layout_mode = 1
-anchor_left = 0.732
-anchor_top = 0.851
-anchor_right = 0.732
-anchor_bottom = 0.851
+anchor_left = 0.692417
+anchor_top = 0.785259
+anchor_right = 0.692417
+anchor_bottom = 0.785259
 offset_left = -69.4407
 offset_top = -70.0801
 offset_right = 70.5599
