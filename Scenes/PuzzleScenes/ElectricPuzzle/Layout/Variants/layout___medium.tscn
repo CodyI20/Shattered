@@ -71,15 +71,15 @@ connected_drop_zone = NodePath("../../DropZones/DROP ZONE")
 
 [node name="ConnectionLine3" parent="ConnectionLines" index="3" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
 layout_mode = 1
-anchor_left = 0.561
-anchor_top = 0.51
-anchor_right = 0.561
-anchor_bottom = 0.51
+anchor_left = 0.706312
+anchor_top = 0.465556
+anchor_right = 0.706312
+anchor_bottom = 0.465556
 offset_left = -145.119
 offset_top = 15.1999
 offset_right = -105.12
 offset_bottom = 304.2
-rotation = -1.53842
+rotation = 1.56993
 connected_drop_zone = NodePath("../../DropZones/DROP ZONE2")
 
 [node name="ConnectionLine4" parent="ConnectionLines" index="4" node_paths=PackedStringArray("connected_drop_zone") instance=ExtResource("2_pku57")]
